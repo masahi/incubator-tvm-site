@@ -5,8 +5,8 @@
         <description>TVM - </description>
         <link>https://tvm.apache.org</link>
         <atom:link href="https://tvm.apache.org" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Mon, 30 Mar 2020 10:20:31 -0700</lastBuildDate>
-        <pubDate>Mon, 30 Mar 2020 10:20:31 -0700</pubDate>
+        <lastBuildDate>Mon, 30 Mar 2020 11:16:12 -0700</lastBuildDate>
+        <pubDate>Mon, 30 Mar 2020 11:16:12 -0700</pubDate>
         <ttl>60</ttl>
 
 
@@ -153,7 +153,7 @@ With an efficient dot product operator, we can implement high-level operators su
 This is a typical use case of &lt;code class=&quot;highlighter-rouge&quot;&gt;dp4a&lt;/code&gt;.
 TVM uses tensorization to support calling external intrinsics.
 We do not need to modify the original computation declaration; we use the schedule primitive &lt;code class=&quot;highlighter-rouge&quot;&gt;tensorize&lt;/code&gt; to replace the accumulation with &lt;code class=&quot;highlighter-rouge&quot;&gt;dp4a&lt;/code&gt; tensor intrinsic.
-More details of tensorization can be found in the &lt;a href=&quot;https://docs.tvm.ai/tutorials/language/tensorize.html&quot;&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
+More details of tensorization can be found in the &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/language/tensorize.html&quot;&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;data-layout-rearrangement&quot;&gt;Data Layout Rearrangement&lt;/h2&gt;
 &lt;p&gt;One of the challenges in tensorization is that we may need to design special computation logic to adapt to the requirement of tensor intrinsics.
@@ -195,7 +195,7 @@ We also do some manual tiling such as splitting axes by 4 or 16 to facilitate ve
 &lt;p&gt;In quantized 2d convolution, we design a search space that includes a set of tunable options, such as the tile size, the axes to fuse, configurations of loop unrolling and double buffering.
 The templates of quantized &lt;code class=&quot;highlighter-rouge&quot;&gt;conv2d&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;dense&lt;/code&gt; on CUDA are registered under template key &lt;code class=&quot;highlighter-rouge&quot;&gt;int8&lt;/code&gt;.
 During automatic tuning, we can create tuning tasks for these quantized operators by setting the &lt;code class=&quot;highlighter-rouge&quot;&gt;template_key&lt;/code&gt; argument.
-Details of how to launch automatic optimization can be found in the &lt;a href=&quot;https://docs.tvm.ai/tutorials/autotvm/tune_relay_cuda.html&quot;&gt;AutoTVM tutorial&lt;/a&gt;.&lt;/p&gt;
+Details of how to launch automatic optimization can be found in the &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/autotvm/tune_relay_cuda.html&quot;&gt;AutoTVM tutorial&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h1 id=&quot;general-workflow&quot;&gt;General Workflow&lt;/h1&gt;
 
@@ -214,14 +214,14 @@ Details of how to launch automatic optimization can be found in the &lt;a href=&
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;relay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quantize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quantize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Then, we use AutoTVM to extract tuning tasks for the operators in the model and perform automatic optimization. The &lt;a href=&quot;https://docs.tvm.ai/tutorials/autotvm/tune_relay_cuda.html&quot;&gt;AutoTVM tutorial&lt;/a&gt; provides an example for this.&lt;/p&gt;
+&lt;p&gt;Then, we use AutoTVM to extract tuning tasks for the operators in the model and perform automatic optimization. The &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/autotvm/tune_relay_cuda.html&quot;&gt;AutoTVM tutorial&lt;/a&gt; provides an example for this.&lt;/p&gt;
 
 &lt;p&gt;Finally, we build the model and run inference in the quantized mode.&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;relay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build_config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opt_level&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;relay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;The result of &lt;code class=&quot;highlighter-rouge&quot;&gt;relay.build&lt;/code&gt; is a deployable library.
-We can either run inference &lt;a href=&quot;https://docs.tvm.ai/tutorials/frontend/from_mxnet.html#execute-the-portable-graph-on-tvm&quot;&gt;on the GPU&lt;/a&gt; directly or deploy &lt;a href=&quot;https://docs.tvm.ai/tutorials/frontend/deploy_model_on_rasp.html#deploy-the-model-remotely-by-rpc&quot;&gt;on the remote devices&lt;/a&gt; via RPC.&lt;/p&gt;
+We can either run inference &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/frontend/from_mxnet.html#execute-the-portable-graph-on-tvm&quot;&gt;on the GPU&lt;/a&gt; directly or deploy &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/frontend/deploy_model_on_rasp.html#deploy-the-model-remotely-by-rpc&quot;&gt;on the remote devices&lt;/a&gt; via RPC.&lt;/p&gt;
 
 &lt;h1 id=&quot;benchmark&quot;&gt;Benchmark&lt;/h1&gt;
 &lt;p&gt;To verify the performance of the quantized operators in TVM, we benchmark the performance of several popular network models including VGG-19, ResNet-50 and Inception V3.
@@ -272,7 +272,7 @@ We show that automatic optimization in TVM makes it easy and flexible to support
 
 &lt;p&gt;We would like to take this chance to thank the Allen School for supporting the SAMPL team that gave birth to the TVM project. We would also like to thank the Halide project which provided the basis for TVM’s loop-level IR and initial code generation. We would like to thank our Apache incubator mentors for introducing the project to Apache and providing useful guidance. Finally, we would like to thank the TVM community and all of the organizations, as listed above, that supported the developers of TVM.&lt;/p&gt;
 
-&lt;p&gt;See also the &lt;a href=&quot;https://news.cs.washington.edu/2019/03/18/allen-schools-tvm-deep-learning-compiler-framework-transitions-to-apache/&quot;&gt;Allen School news about the transition here&lt;/a&gt;, &lt;a href=&quot;https://sampl.cs.washington.edu/tvmconf/#about-tvmconf&quot;&gt;TVM conference program slides and recordings&lt;/a&gt;, and &lt;a href=&quot;https://docs.tvm.ai/contribute/community.html&quot;&gt;our community guideline here&lt;/a&gt;. Follow us on Twitter: &lt;a href=&quot;https://twitter.com/ApacheTVM&quot;&gt;@ApacheTVM&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;See also the &lt;a href=&quot;https://news.cs.washington.edu/2019/03/18/allen-schools-tvm-deep-learning-compiler-framework-transitions-to-apache/&quot;&gt;Allen School news about the transition here&lt;/a&gt;, &lt;a href=&quot;https://sampl.cs.washington.edu/tvmconf/#about-tvmconf&quot;&gt;TVM conference program slides and recordings&lt;/a&gt;, and &lt;a href=&quot;https://tvm.apache.org/docs//contribute/community.html&quot;&gt;our community guideline here&lt;/a&gt;. Follow us on Twitter: &lt;a href=&quot;https://twitter.com/ApacheTVM&quot;&gt;@ApacheTVM&lt;/a&gt;.&lt;/p&gt;
 </description>
                 <link>https://tvm.apache.org/2019/03/18/tvm-apache-announcement</link>
                 <guid>https://tvm.apache.org/2019/03/18/tvm-apache-announcement</guid>
@@ -295,7 +295,7 @@ deploy deep learning models from a variety of frameworks to a choice of hardware
 
 &lt;p&gt;The TVM import and compilation process generates a graph JSON, a module and a params. Any application that
 integrates the TVM runtime can load these compiled modules and perform inference. A detailed tutorial of module
-import and compilation using TVM can be found at &lt;a href=&quot;https://docs.tvm.ai/tutorials/&quot;&gt;tutorials&lt;/a&gt;.&lt;/p&gt;
+import and compilation using TVM can be found at &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/&quot;&gt;tutorials&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;TVM now supports deploying compiled modules through Golang. Golang applications can make use of this
 to deploy the deep learning models through TVM. The scope of this blog is the introduction of &lt;code class=&quot;highlighter-rouge&quot;&gt;gotvm&lt;/code&gt; package,
@@ -325,7 +325,7 @@ Developers can make use of TVM to import and compile deep learning models and ge
 &lt;center&gt; Import, Compile, Integrate and Deploy&lt;/center&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;TVM &lt;a href=&quot;https://docs.tvm.ai/tutorials/#compile-deep-learning-models&quot;&gt;Compile Deep Learning Models&lt;/a&gt; tutorials
+&lt;p&gt;TVM &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/#compile-deep-learning-models&quot;&gt;Compile Deep Learning Models&lt;/a&gt; tutorials
 are available to compile models from all frameworks supported by the TVM frontend. This compilation process
 generates the artifacts required to integrate and deploy the model on a target.&lt;/p&gt;
 
@@ -1108,9 +1108,9 @@ for inference deployment. TVM just provides such a solution.&lt;/p&gt;
 
 &lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
 &lt;p&gt;[1] benchmark: &lt;a href=&quot;https://github.com/dmlc/tvm/tree/master/apps/benchmark&quot;&gt;https://github.com/dmlc/tvm/tree/master/apps/benchmark&lt;/a&gt;&lt;br /&gt;
-[2] Tutorial on tuning for ARM CPU: &lt;a href=&quot;https://docs.tvm.ai/tutorials/autotvm/tune_nnvm_arm.html&quot;&gt;https://docs.tvm.ai/tutorials/autotvm/tune_nnvm_arm.html&lt;/a&gt;&lt;br /&gt;
-[3] Tutorial on tuning for Mobile GPU: &lt;a href=&quot;https://docs.tvm.ai/tutorials/autotvm/tune_nnvm_mobile_gpu.html&quot;&gt;https://docs.tvm.ai/tutorials/autotvm/tune_nnvm_mobile_gpu.html&lt;/a&gt;&lt;br /&gt;
-[4] Tutorial on tuning for NVIDIA/AMD GPU: &lt;a href=&quot;https://docs.tvm.ai/tutorials/autotvm/tune_nnvm_cuda.html&quot;&gt;https://docs.tvm.ai/tutorials/autotvm/tune_nnvm_cuda.html&lt;/a&gt;&lt;br /&gt;
+[2] Tutorial on tuning for ARM CPU: &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/autotvm/tune_nnvm_arm.html&quot;&gt;https://tvm.apache.org/docs//tutorials/autotvm/tune_nnvm_arm.html&lt;/a&gt;&lt;br /&gt;
+[3] Tutorial on tuning for Mobile GPU: &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/autotvm/tune_nnvm_mobile_gpu.html&quot;&gt;https://tvm.apache.org/docs//tutorials/autotvm/tune_nnvm_mobile_gpu.html&lt;/a&gt;&lt;br /&gt;
+[4] Tutorial on tuning for NVIDIA/AMD GPU: &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/autotvm/tune_nnvm_cuda.html&quot;&gt;https://tvm.apache.org/docs//tutorials/autotvm/tune_nnvm_cuda.html&lt;/a&gt;&lt;br /&gt;
 [5] Paper about AutoTVM: &lt;a href=&quot;https://arxiv.org/abs/1805.08166&quot;&gt;Learning to Optimize Tensor Program&lt;/a&gt;&lt;br /&gt;
 [6] Paper about Intel CPU (by AWS contributors) :  &lt;a href=&quot;https://arxiv.org/abs/1809.02697&quot;&gt;Optimizing CNN Model Inference on CPUs&lt;/a&gt;&lt;/p&gt;
 
@@ -1205,7 +1205,7 @@ schedule:&lt;/p&gt;
 &lt;p&gt;For brevity, we do not cover TVM’s large collection of scheduling primitives
 that we can use to optimize matrix multiplication. If you wish to make a custom
 GEMM operator run &lt;em&gt;fast&lt;/em&gt; on your hardware device, a detailed tutorial can be
-found &lt;a href=&quot;https://docs.tvm.ai/tutorials/optimize/opt_gemm.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+found &lt;a href=&quot;https://tvm.apache.org/docs//tutorials/optimize/opt_gemm.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;We then convert the TVM function into one that supports PyTorch tensors:&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tvm.contrib.dlpack&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to_pytorch_func&lt;/span&gt;
@@ -1392,7 +1392,7 @@ This kind of high-level visibility is essential to system designers who want to 
 &lt;h2 id=&quot;get-started&quot;&gt;Get Started!&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;TVM and VTA Github page can be found here: &lt;a href=&quot;https://github.com/dmlc/tvm&quot;&gt;https://github.com/dmlc/tvm&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;You can get started with easy to follow &lt;a href=&quot;https://docs.tvm.ai/vta/tutorials/index.html&quot;&gt;tutorials on programming VTA with TVM&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;You can get started with easy to follow &lt;a href=&quot;https://tvm.apache.org/docs//vta/tutorials/index.html&quot;&gt;tutorials on programming VTA with TVM&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;For more technical details on VTA, read our &lt;a href=&quot;https://arxiv.org/abs/1807.04188&quot;&gt;VTA technical report&lt;/a&gt; on ArXiv.&lt;/li&gt;
 &lt;/ul&gt;
 </description>

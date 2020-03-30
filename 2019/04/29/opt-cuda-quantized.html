@@ -201,7 +201,7 @@ With an efficient dot product operator, we can implement high-level operators su
 This is a typical use case of <code class="highlighter-rouge">dp4a</code>.
 TVM uses tensorization to support calling external intrinsics.
 We do not need to modify the original computation declaration; we use the schedule primitive <code class="highlighter-rouge">tensorize</code> to replace the accumulation with <code class="highlighter-rouge">dp4a</code> tensor intrinsic.
-More details of tensorization can be found in the <a href="https://docs.tvm.ai/tutorials/language/tensorize.html">tutorial</a>.</p>
+More details of tensorization can be found in the <a href="https://tvm.apache.org/docs//tutorials/language/tensorize.html">tutorial</a>.</p>
 
 <h2 id="data-layout-rearrangement">Data Layout Rearrangement</h2>
 <p>One of the challenges in tensorization is that we may need to design special computation logic to adapt to the requirement of tensor intrinsics.
@@ -243,7 +243,7 @@ We also do some manual tiling such as splitting axes by 4 or 16 to facilitate ve
 <p>In quantized 2d convolution, we design a search space that includes a set of tunable options, such as the tile size, the axes to fuse, configurations of loop unrolling and double buffering.
 The templates of quantized <code class="highlighter-rouge">conv2d</code> and <code class="highlighter-rouge">dense</code> on CUDA are registered under template key <code class="highlighter-rouge">int8</code>.
 During automatic tuning, we can create tuning tasks for these quantized operators by setting the <code class="highlighter-rouge">template_key</code> argument.
-Details of how to launch automatic optimization can be found in the <a href="https://docs.tvm.ai/tutorials/autotvm/tune_relay_cuda.html">AutoTVM tutorial</a>.</p>
+Details of how to launch automatic optimization can be found in the <a href="https://tvm.apache.org/docs//tutorials/autotvm/tune_relay_cuda.html">AutoTVM tutorial</a>.</p>
 
 <h1 id="general-workflow">General Workflow</h1>
 
@@ -262,14 +262,14 @@ Details of how to launch automatic optimization can be found in the <a href="htt
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">net</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">quantize</span><span class="o">.</span><span class="n">quantize</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Then, we use AutoTVM to extract tuning tasks for the operators in the model and perform automatic optimization. The <a href="https://docs.tvm.ai/tutorials/autotvm/tune_relay_cuda.html">AutoTVM tutorial</a> provides an example for this.</p>
+<p>Then, we use AutoTVM to extract tuning tasks for the operators in the model and perform automatic optimization. The <a href="https://tvm.apache.org/docs//tutorials/autotvm/tune_relay_cuda.html">AutoTVM tutorial</a> provides an example for this.</p>
 
 <p>Finally, we build the model and run inference in the quantized mode.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="n">relay</span><span class="o">.</span><span class="n">build_config</span><span class="p">(</span><span class="n">opt_level</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">graph</span><span class="p">,</span> <span class="n">lib</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
 </code></pre></div></div>
 <p>The result of <code class="highlighter-rouge">relay.build</code> is a deployable library.
-We can either run inference <a href="https://docs.tvm.ai/tutorials/frontend/from_mxnet.html#execute-the-portable-graph-on-tvm">on the GPU</a> directly or deploy <a href="https://docs.tvm.ai/tutorials/frontend/deploy_model_on_rasp.html#deploy-the-model-remotely-by-rpc">on the remote devices</a> via RPC.</p>
+We can either run inference <a href="https://tvm.apache.org/docs//tutorials/frontend/from_mxnet.html#execute-the-portable-graph-on-tvm">on the GPU</a> directly or deploy <a href="https://tvm.apache.org/docs//tutorials/frontend/deploy_model_on_rasp.html#deploy-the-model-remotely-by-rpc">on the remote devices</a> via RPC.</p>
 
 <h1 id="benchmark">Benchmark</h1>
 <p>To verify the performance of the quantized operators in TVM, we benchmark the performance of several popular network models including VGG-19, ResNet-50 and Inception V3.
