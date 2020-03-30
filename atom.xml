@@ -4,7 +4,7 @@
  <title>TVM</title>
  <link href="https://tvm.apache.org" rel="self"/>
  <link href="https://tvm.apache.org"/>
- <updated>2020-03-30T11:16:12-07:00</updated>
+ <updated>2020-03-30T15:47:25-07:00</updated>
  <id>https://tvm.apache.org</id>
  <author>
    <name></name>
@@ -269,7 +269,7 @@ We show that automatic optimization in TVM makes it easy and flexible to support
 
 &lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/images/main/tvm-stack.png&quot; alt=&quot;image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;TVM stack began as a research project at the &lt;a href=&quot;https://sampl.cs.washington.edu/&quot;&gt;SAMPL group&lt;/a&gt; of Paul G. Allen School of Computer Science &amp;amp; Engineering, University of Washington. The project uses the loop-level IR and several optimizations from the &lt;a href=&quot;http://halide-lang.org/&quot;&gt;Halide project&lt;/a&gt;, in addition to &lt;a href=&quot;https://tvm.ai/about&quot;&gt;a full deep learning compiler stack&lt;/a&gt; to support machine learning workloads for diverse hardware backends.&lt;/p&gt;
+&lt;p&gt;TVM stack began as a research project at the &lt;a href=&quot;https://sampl.cs.washington.edu/&quot;&gt;SAMPL group&lt;/a&gt; of Paul G. Allen School of Computer Science &amp;amp; Engineering, University of Washington. The project uses the loop-level IR and several optimizations from the &lt;a href=&quot;http://halide-lang.org/&quot;&gt;Halide project&lt;/a&gt;, in addition to &lt;a href=&quot;https://tvm.apache.org/about&quot;&gt;a full deep learning compiler stack&lt;/a&gt; to support machine learning workloads for diverse hardware backends.&lt;/p&gt;
 
 &lt;p&gt;Since its introduction, the project was driven by an open source community involving multiple industry and academic institutions. Currently, the TVM stack includes a high-level differentiable programming IR for high-level optimization, a machine learning driven program optimizer and VTA – a fully open sourced deep learning accelerator. The community brings innovations from machine learning, compiler systems, programming languages, and computer architecture to build a full-stack open source deep learning compiler system. The project has been used in production in &lt;a href=&quot;https://sampl.cs.washington.edu/tvmconf/#about-tvmconf&quot;&gt;several major companies&lt;/a&gt;.&lt;/p&gt;
 
@@ -1276,7 +1276,7 @@ support, and can be used to implement convenient converters, such as
 
 &lt;p&gt;VTA is more than a standalone accelerator design: it’s an end-to-end solution that includes drivers, a JIT runtime, and an optimizing compiler stack based on TVM. The current release includes a behavioral hardware simulator, as well as the infrastructure to deploy VTA on low-cost FPGA hardware for fast prototyping. By extending the TVM stack with a customizable, and open source deep learning hardware accelerator design, we are exposing a transparent end-to-end deep learning stack from the high-level deep learning framework, down to the actual hardware design and implementation. This forms a truly end-to-end, hardware-software open source stack for deep learning systems.&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://raw.githubusercontent.com/uwsaml/web-data/master/vta/blogpost/vta_stack.png&quot; alt=&quot;image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/uwsaml/web-data/master/vta/blogpost/vta_stack.png&quot; alt=&quot;image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The VTA and TVM stack together constitute a blueprint for end-to-end, accelerator-centric deep learning system that can:&lt;/p&gt;
 
@@ -1331,7 +1331,7 @@ The extendability of the compiler stack, combined with the ability to modify the
 &lt;p&gt;The Vanilla Tensor Accelerator (VTA) is a generic deep learning accelerator built around a GEMM core, which performs dense matrix multiplication at a high computational throughput.
 The design is inspired by mainstream deep learning accelerators, of the likes of Google’s TPU accelerator. The design adopts decoupled access-execute to hide memory access latency and maximize utilization of compute resources. To a broader extent, VTA can serve as a template deep learning accelerator design, exposing a clean tensor computation abstraction to the compiler stack.&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://raw.githubusercontent.com/uwsaml/web-data/master/vta/blogpost/vta_overview.png&quot; alt=&quot;image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/uwsaml/web-data/master/vta/blogpost/vta_overview.png&quot; alt=&quot;image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The figure above presents a high-level overview of the VTA hardware organization. VTA is composed of four modules that communicate between each other via FIFO queues and single-writer/single-reader SRAM memory blocks, to allow for task-level pipeline parallelism.
 The compute module performs both dense linear algebra computation with its GEMM core, and general computation with its tensor ALU.
@@ -1348,7 +1348,7 @@ The first approach, which doesn’t require special hardware is to run deep lear
 This simulator back-end is readily available for developers to experiment with.
 The second approach relies on an off-the-shelf and low-cost FPGA development board – the &lt;a href=&quot;http://www.pynq.io/&quot;&gt;Pynq board&lt;/a&gt;, which exposes a reconfigurable FPGA fabric and an ARM SoC.&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://raw.githubusercontent.com/uwsaml/web-data/master/vta/blogpost/vta_system.png&quot; alt=&quot;image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/uwsaml/web-data/master/vta/blogpost/vta_system.png&quot; alt=&quot;image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The VTA release offers a simple compilation and deployment flow of the VTA hardware design and TVM workloads on the Pynq platform, with the help of an RPC server interface.
 The RPC server handles FPGA reconfiguration tasks and TVM module invocation offloading onto the VTA runtime.
@@ -1371,7 +1371,7 @@ While this platform is meant for prototyping (the 2012 FPGA cannot compete with 
 &lt;p&gt;A popular method used to assess the efficient use of hardware are roofline diagrams: given a hardware design, how efficiently are different workloads utilizing the hardware compute and memory resources. The roofline plot below shows the throughput achieved on different convolution layers of the ResNet-18 inference benchmark. Each layer has a different arithmetic intensity, i.e. compute to data movement ratio.
 In the left half, convolution layers are bandwidth limited, whereas on the right half, they are compute limited.&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://raw.githubusercontent.com/uwsaml/web-data/master/vta/blogpost/vta_roofline.png&quot; alt=&quot;image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/uwsaml/web-data/master/vta/blogpost/vta_roofline.png&quot; alt=&quot;image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The goal behind designing a hardware architecture, and a compiler stack is to bring each workload as close as possible to the roofline of the target hardware.
 The roofline plot shows the effects of having the hardware and compiler work together to maximize utilization of the available hardware resources.
@@ -1380,7 +1380,7 @@ The result is an overall higher utilization of the available compute and memory 
 
 &lt;h3 id=&quot;end-to-end-resnet-18-evaluation&quot;&gt;End to end ResNet-18 evaluation&lt;/h3&gt;
 
-&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://raw.githubusercontent.com/uwsaml/web-data/master/vta/blogpost/vta_e2e.png&quot; alt=&quot;image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/uwsaml/web-data/master/vta/blogpost/vta_e2e.png&quot; alt=&quot;image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A benefit of having a complete compiler stack built for VTA is the ability to run end-to-end workloads. This is compelling in the context of hardware acceleration because we need to understand what performance bottlenecks, and Amdahl limitations stand in the way to obtaining faster performance.
 The bar plot above shows inference performance with and without offloading the ResNet convolutional layers to the FPGA-based VTA design, on the Pynq board’s ARM Cortex A9 SoC.
