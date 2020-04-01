@@ -71,7 +71,7 @@ Execute on CPU vs. VTA, and define the model.
 .. code-block:: default
 
 
-    # Load VTA parameters from the vta/vta-hw/config/vta_config.json file
+    # Load VTA parameters from the 3rdparty/vta-hw/config/vta_config.json file
     env = vta.get_env()
 
     # Set ``device=arm_cpu`` to run inference on the CPU
@@ -243,8 +243,8 @@ The compilation steps are:
 
  .. code-block:: none
 
-    ...12%, 0.01 MB, 19 KB/s, 0 seconds passed    ...25%, 0.02 MB, 39 KB/s, 0 seconds passed    ...38%, 0.02 MB, 59 KB/s, 0 seconds passed    ...51%, 0.03 MB, 78 KB/s, 0 seconds passed    ...64%, 0.04 MB, 98 KB/s, 0 seconds passed    ...77%, 0.05 MB, 117 KB/s, 0 seconds passed    ...90%, 0.05 MB, 137 KB/s, 0 seconds passed    ...100%, 0.06 MB, 156 KB/s, 0 seconds passed
-    resnet18_v1 inference graph built in 5.76s!
+    ...12%, 0.01 MB, 33 KB/s, 0 seconds passed    ...25%, 0.02 MB, 65 KB/s, 0 seconds passed    ...38%, 0.02 MB, 98 KB/s, 0 seconds passed    ...51%, 0.03 MB, 128 KB/s, 0 seconds passed    ...64%, 0.04 MB, 160 KB/s, 0 seconds passed    ...77%, 0.05 MB, 191 KB/s, 0 seconds passed    ...90%, 0.05 MB, 222 KB/s, 0 seconds passed    ...100%, 0.06 MB, 254 KB/s, 0 seconds passed
+    resnet18_v1 inference graph built in 5.68s!
 
 
 
@@ -364,7 +364,7 @@ and an input test image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  27.929 seconds)
+   **Total running time of the script:** ( 0 minutes  25.108 seconds)
 
 
 .. _sphx_glr_download_vta_tutorials_frontend_deploy_classification.py:

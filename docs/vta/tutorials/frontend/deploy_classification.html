@@ -248,7 +248,7 @@ tensorization in the core) to massage the compute graph for the hardware target.
 <div class="section" id="define-the-platform-and-model-targets">
 <h2>Define the platform and model targets<a class="headerlink" href="#define-the-platform-and-model-targets" title="Permalink to this headline">¶</a></h2>
 <p>Execute on CPU vs. VTA, and define the model.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Load VTA parameters from the vta/vta-hw/config/vta_config.json file</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Load VTA parameters from the 3rdparty/vta-hw/config/vta_config.json file</span>
 <span class="n">env</span> <span class="o">=</span> <span class="n">vta</span><span class="o">.</span><span class="n">get_env</span><span class="p">()</span>
 
 <span class="c1"># Set ``device=arm_cpu`` to run inference on the CPU</span>
@@ -394,15 +394,15 @@ and dense layer which will both be executed in fp32 on the CPU.</p></li>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>...12%, 0.01 MB, 19 KB/s, 0 seconds passed
-...25%, 0.02 MB, 39 KB/s, 0 seconds passed
-...38%, 0.02 MB, 59 KB/s, 0 seconds passed
-...51%, 0.03 MB, 78 KB/s, 0 seconds passed
-...64%, 0.04 MB, 98 KB/s, 0 seconds passed
-...77%, 0.05 MB, 117 KB/s, 0 seconds passed
-...90%, 0.05 MB, 137 KB/s, 0 seconds passed
-...100%, 0.06 MB, 156 KB/s, 0 seconds passed
-resnet18_v1 inference graph built in 5.76s!
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>...12%, 0.01 MB, 33 KB/s, 0 seconds passed
+...25%, 0.02 MB, 65 KB/s, 0 seconds passed
+...38%, 0.02 MB, 98 KB/s, 0 seconds passed
+...51%, 0.03 MB, 128 KB/s, 0 seconds passed
+...64%, 0.04 MB, 160 KB/s, 0 seconds passed
+...77%, 0.05 MB, 191 KB/s, 0 seconds passed
+...90%, 0.05 MB, 222 KB/s, 0 seconds passed
+...100%, 0.06 MB, 254 KB/s, 0 seconds passed
+resnet18_v1 inference graph built in 5.68s!
 </pre></div>
 </div>
 </div>
@@ -504,7 +504,7 @@ resnet18_v1 prediction for sample 0
         #5: weasel
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  27.929 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  25.108 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-vta-tutorials-frontend-deploy-classification-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../../_downloads/ef2454f5c8b007c53ff214943df808ad/deploy_classification.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">deploy_classification.py</span></code></a></p>

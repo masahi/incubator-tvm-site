@@ -304,103 +304,106 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.fmod" title="tvm.te.fmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fmod</span></code></a>(x, y)</p></td>
 <td><p>Return the remainder of x divided by y with the same sign as x.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.if_then_else" title="tvm.te.if_then_else"><code class="xref py py-obj docutils literal notranslate"><span class="pre">if_then_else</span></code></a>(cond, t, f)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.gradient" title="tvm.te.gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gradient</span></code></a>(output, inputs[, head])</p></td>
+<td><p>Perform reverse-mode automatic differentiation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.if_then_else" title="tvm.te.if_then_else"><code class="xref py py-obj docutils literal notranslate"><span class="pre">if_then_else</span></code></a>(cond, t, f)</p></td>
 <td><p>Conditional selection expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.indexdiv" title="tvm.te.indexdiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexdiv</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.indexdiv" title="tvm.te.indexdiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexdiv</span></code></a>(a, b)</p></td>
 <td><p>Compute floor(a / b) where a and b are non-negative.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.indexmod" title="tvm.te.indexmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexmod</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.indexmod" title="tvm.te.indexmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexmod</span></code></a>(a, b)</p></td>
 <td><p>Compute the remainder of indexdiv.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.isfinite" title="tvm.te.isfinite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isfinite</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.isfinite" title="tvm.te.isfinite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isfinite</span></code></a>(x)</p></td>
 <td><p>Check if input value is finite.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.isinf" title="tvm.te.isinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isinf</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.isinf" title="tvm.te.isinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isinf</span></code></a>(x)</p></td>
 <td><p>Check if input value is infinite.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.isnan" title="tvm.te.isnan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnan</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.isnan" title="tvm.te.isnan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnan</span></code></a>(x)</p></td>
 <td><p>Check if input value is Nan.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.log" title="tvm.te.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.log" title="tvm.te.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(x)</p></td>
 <td><p>Take log of input x.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.max" title="tvm.te.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(expr, axis[, where])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.max" title="tvm.te.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(expr, axis[, where])</p></td>
 <td><p>Create a max expression over axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.max_value" title="tvm.te.max_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_value</span></code></a>(dtype)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.max_value" title="tvm.te.max_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_value</span></code></a>(dtype)</p></td>
 <td><p>maximum value of dtype</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.min" title="tvm.te.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(expr, axis[, where])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.min" title="tvm.te.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(expr, axis[, where])</p></td>
 <td><p>Create a min expression over axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.min_value" title="tvm.te.min_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_value</span></code></a>(dtype)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.min_value" title="tvm.te.min_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_value</span></code></a>(dtype)</p></td>
 <td><p>minimum value of dtype</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.nearbyint" title="tvm.te.nearbyint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nearbyint</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.nearbyint" title="tvm.te.nearbyint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nearbyint</span></code></a>(x)</p></td>
 <td><p>Round elements of the array to the nearest integer.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.placeholder" title="tvm.te.placeholder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">placeholder</span></code></a>(shape[, dtype, name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.placeholder" title="tvm.te.placeholder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">placeholder</span></code></a>(shape[, dtype, name])</p></td>
 <td><p>Construct an empty tensor object.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.popcount" title="tvm.te.popcount"><code class="xref py py-obj docutils literal notranslate"><span class="pre">popcount</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.popcount" title="tvm.te.popcount"><code class="xref py py-obj docutils literal notranslate"><span class="pre">popcount</span></code></a>(x)</p></td>
 <td><p>Count the number of set bits in input x.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.power" title="tvm.te.power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power</span></code></a>(x, y)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.power" title="tvm.te.power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power</span></code></a>(x, y)</p></td>
 <td><p>x power y</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.reduce_axis" title="tvm.te.reduce_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reduce_axis</span></code></a>(dom[, name])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.reduce_axis" title="tvm.te.reduce_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reduce_axis</span></code></a>(dom[, name])</p></td>
 <td><p>Create a new IterVar for reduction.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.round" title="tvm.te.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.round" title="tvm.te.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(x)</p></td>
 <td><p>Round elements of the array to the nearest integer.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.rsqrt" title="tvm.te.rsqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsqrt</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.rsqrt" title="tvm.te.rsqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsqrt</span></code></a>(x)</p></td>
 <td><p>Take reciprocal of square root of input x.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.scan" title="tvm.te.scan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scan</span></code></a>(init, update, state_placeholder[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.scan" title="tvm.te.scan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scan</span></code></a>(init, update, state_placeholder[, …])</p></td>
 <td><p>Construct new tensors by scanning over axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.sigmoid" title="tvm.te.sigmoid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigmoid</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.sigmoid" title="tvm.te.sigmoid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigmoid</span></code></a>(x)</p></td>
 <td><p>Quick function to get sigmoid</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.sin" title="tvm.te.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.sin" title="tvm.te.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a>(x)</p></td>
 <td><p>Take sin of input x.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.size_var" title="tvm.te.size_var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size_var</span></code></a>([name, dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.size_var" title="tvm.te.size_var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size_var</span></code></a>([name, dtype])</p></td>
 <td><p>Create a new variable represents a tensor shape size, which is non-negative.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.sqrt" title="tvm.te.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.sqrt" title="tvm.te.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a>(x)</p></td>
 <td><p>Take square root of input x.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.sum" title="tvm.te.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(expr, axis[, where])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.sum" title="tvm.te.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(expr, axis[, where])</p></td>
 <td><p>Create a sum expression over axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.tag_scope" title="tvm.te.tag_scope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tag_scope</span></code></a>(tag)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.tag_scope" title="tvm.te.tag_scope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tag_scope</span></code></a>(tag)</p></td>
 <td><p>The operator tag scope.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.tan" title="tvm.te.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.tan" title="tvm.te.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a>(x)</p></td>
 <td><p>Take tan of input x.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.tanh" title="tvm.te.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.tanh" title="tvm.te.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a>(x)</p></td>
 <td><p>Take hyperbolic tanh of input x.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.thread_axis" title="tvm.te.thread_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thread_axis</span></code></a>([dom, tag, name])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.thread_axis" title="tvm.te.thread_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thread_axis</span></code></a>([dom, tag, name])</p></td>
 <td><p>Create a new IterVar to represent thread index.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.trace" title="tvm.te.trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace</span></code></a>(args[, trace_action])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.trace" title="tvm.te.trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace</span></code></a>(args[, trace_action])</p></td>
 <td><p>Trace tensor data at the runtime.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.trunc" title="tvm.te.trunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trunc</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.trunc" title="tvm.te.trunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trunc</span></code></a>(x)</p></td>
 <td><p>Get truncated value of the input.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.truncdiv" title="tvm.te.truncdiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncdiv</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.truncdiv" title="tvm.te.truncdiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncdiv</span></code></a>(a, b)</p></td>
 <td><p>Compute the truncdiv of two expressions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.truncmod" title="tvm.te.truncmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncmod</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.truncmod" title="tvm.te.truncmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncmod</span></code></a>(a, b)</p></td>
 <td><p>Compute the truncmod of two expressions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.te.var" title="tvm.te.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>([name, dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.te.var" title="tvm.te.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>([name, dtype])</p></td>
 <td><p>Create a new variable with specified name and dtype</p></td>
 </tr>
 </tbody>
@@ -2333,6 +2336,48 @@ When str is passed, dom is set to None and str is used as tag</p></li>
 <dd><p>Represent the IterVar axis, also defined when it is a HybridOp</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.te.gradient">
+<code class="sig-prename descclassname">tvm.te.</code><code class="sig-name descname">gradient</code><span class="sig-paren">(</span><em class="sig-param">output</em>, <em class="sig-param">inputs</em>, <em class="sig-param">head=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.te.gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform reverse-mode automatic differentiation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output</strong> (<a class="reference internal" href="#tvm.te.Tensor" title="tvm.te.Tensor"><em>Tensor</em></a>) – The tensor to differentiate.</p></li>
+<li><p><strong>inputs</strong> (<em>List</em><em>[</em><a class="reference internal" href="#tvm.te.Tensor" title="tvm.te.Tensor"><em>Tensor</em></a><em>]</em>) – The list of input tensors to be differentiated wrt.</p></li>
+<li><p><strong>head</strong> (<a class="reference internal" href="#tvm.te.Tensor" title="tvm.te.Tensor"><em>Tensor</em></a>) – The adjoint of the output, in other words, some tensor, by which the Jacobians
+will be multiplied. Its shape must be of the form <cite>prefix + output.shape</cite>.
+If <cite>None</cite> is passed, the identity tensor of shape <cite>output.shape + output.shape</cite>
+will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>tensors</strong> – The result gradient, in the same order as the inputs</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#tvm.te.Tensor" title="tvm.te.Tensor">Tensor</a>]</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">placeholder</span><span class="p">((</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">w1</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">placeholder</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;w1&#39;</span><span class="p">)</span>
+<span class="n">w2</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">placeholder</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;w2&#39;</span><span class="p">)</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="n">topi</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">topi</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">topi</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">z2</span><span class="p">)</span>
+
+<span class="c1"># produce gradients</span>
+<span class="p">[</span><span class="n">dw1</span><span class="p">,</span> <span class="n">dw2</span><span class="p">]</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">])</span>
+
+<span class="c1"># produce Jacobians</span>
+<span class="p">[</span><span class="n">jw1</span><span class="p">,</span> <span class="n">jw2</span><span class="p">]</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">z2</span><span class="p">,</span> <span class="p">[</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">])</span>
+
+<span class="c1"># produce gradients, the head adjoint for z2 is provided manually</span>
+<span class="p">[</span><span class="n">dw1</span><span class="p">,</span> <span class="n">dw2</span><span class="p">]</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">z2</span><span class="p">,</span> <span class="p">[</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">],</span> <span class="n">topi</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">z2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>

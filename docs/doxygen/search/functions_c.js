@@ -40,12 +40,12 @@ var searchData=
   ['looppartition',['LoopPartition',['../namespacetvm_1_1tir.html#ae0606ab38faf2f31d42759f217fdec93',1,'tvm::tir']]],
   ['lower',['lower',['../namespacetvm.html#a9284f30c0e1daf1649838578fed1baa1',1,'tvm']]],
   ['lowercustomdatatypes',['LowerCustomDatatypes',['../namespacetvm_1_1tir.html#ac8725d2ad12962353ec11b6285cc6b3d',1,'tvm::tir']]],
-  ['lowerdevicestorageaccessinfo',['LowerDeviceStorageAccessInfo',['../namespacetvm_1_1tir.html#afcbd367b40fe2cd31d101c88a63a0b25',1,'tvm::tir']]],
+  ['lowerdevicestorageaccessinfo',['LowerDeviceStorageAccessInfo',['../namespacetvm_1_1tir.html#afcbd367b40fe2cd31d101c88a63a0b25',1,'tvm::tir::LowerDeviceStorageAccessInfo()'],['../namespacetvm_1_1tir_1_1transform.html#a53b7a3b7552ad5fa7b49e90470aff02b',1,'tvm::tir::transform::LowerDeviceStorageAccessInfo()']]],
   ['loweredfunc',['LoweredFunc',['../classtvm_1_1tir_1_1LoweredFunc.html#a12a1aae74cf8418a2126b542b7c9e902',1,'tvm::tir::LoweredFunc::LoweredFunc()'],['../classtvm_1_1tir_1_1LoweredFunc.html#a22bdc793811e5ecea8fae57ed8e7bf1d',1,'tvm::tir::LoweredFunc::LoweredFunc(ObjectPtr&lt; Object &gt; n)']]],
-  ['lowerintrin',['LowerIntrin',['../namespacetvm_1_1tir.html#adb8b5d13c11411299808c564adda2713',1,'tvm::tir']]],
+  ['lowerintrin',['LowerIntrin',['../namespacetvm_1_1tir.html#adb8b5d13c11411299808c564adda2713',1,'tvm::tir::LowerIntrin()'],['../namespacetvm_1_1tir_1_1transform.html#a0979c9d3bf0e64205f16aa00d331c6b5',1,'tvm::tir::transform::LowerIntrin()']]],
   ['lowerstorageaccessinfo',['LowerStorageAccessInfo',['../namespacetvm_1_1tir.html#a3b6c7e53cce5184e897b0bd24adb06b6',1,'tvm::tir']]],
   ['lowerthreadallreduce',['LowerThreadAllreduce',['../namespacetvm_1_1tir.html#a438729b72b0e38a28289d763b48995b1',1,'tvm::tir']]],
   ['lowertvmbuiltin',['LowerTVMBuiltin',['../namespacetvm_1_1tir.html#a9d59ba0cb48da1661593b7eeb2e96821',1,'tvm::tir']]],
-  ['lowerwarpmemory',['LowerWarpMemory',['../namespacetvm_1_1tir.html#af5111eb3e9b9d2f52998c5db4b4e3ae9',1,'tvm::tir']]],
+  ['lowerwarpmemory',['LowerWarpMemory',['../namespacetvm_1_1tir.html#af5111eb3e9b9d2f52998c5db4b4e3ae9',1,'tvm::tir::LowerWarpMemory()'],['../namespacetvm_1_1tir_1_1transform.html#ad5a726d95328c4e85c0c717c52aff4f2',1,'tvm::tir::transform::LowerWarpMemory()']]],
   ['lrn',['lrn',['../namespacetopi_1_1nn.html#a0ded232c2572637db6adc7cf5f0b35b2',1,'topi::nn']]]
 ];

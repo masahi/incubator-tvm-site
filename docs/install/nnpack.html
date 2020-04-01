@@ -239,6 +239,7 @@ Follow these simple steps:</p>
 <div class="section" id="build-nnpack">
 <h3>Build <a class="reference external" href="https://github.com/Maratyszcza/NNPACK">NNPACK</a><a class="headerlink" href="#build-nnpack" title="Permalink to this headline">¶</a></h3>
 <p>The new CMAKE version of NNPACK download <a class="reference external" href="https://github.com/Maratyszcza/PeachPy">Peach</a> and other dependencies alone</p>
+<p>Note: at least on OS X, running <code class="docutils literal notranslate"><span class="pre">ninja</span> <span class="pre">install</span></code> below will overwrite googletest libraries installed in <code class="docutils literal notranslate"><span class="pre">/usr/local/lib</span></code>. If you build googletest again to replace the nnpack copy, be sure to pass <code class="docutils literal notranslate"><span class="pre">-DBUILD_SHARED_LIBS=ON</span></code> to <code class="docutils literal notranslate"><span class="pre">cmake</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre>git clone --recursive https://github.com/Maratyszcza/NNPACK.git
 <span class="nb">cd</span> NNPACK
 <span class="c1"># Add PIC option in CFLAG and CXXFLAG to build NNPACK shared library</span>

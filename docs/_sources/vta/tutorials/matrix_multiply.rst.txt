@@ -37,7 +37,7 @@ as we did in the VTA introductory tutorial.
     from tvm.contrib import util
     from vta.testing import simulator
 
-    # Load VTA parameters from the vta/vta-hw/config/vta_config.json file
+    # Load VTA parameters from the 3rdparty/vta-hw/config/vta_config.json file
     env = vta.get_env()
 
     # We read the Pynq RPC host IP address and port number from the OS environment
@@ -722,7 +722,7 @@ The general workflow includes:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.349 seconds)
+   **Total running time of the script:** ( 0 minutes  0.403 seconds)
 
 
 .. _sphx_glr_download_vta_tutorials_matrix_multiply.py:

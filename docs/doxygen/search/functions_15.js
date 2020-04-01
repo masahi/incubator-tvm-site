@@ -5,6 +5,7 @@ var searchData=
   ['vector',['vector',['../classtvm_1_1arith_1_1IntSet.html#a3f8837f5cbe28739550a528214eb91c6',1,'tvm::arith::IntSet']]],
   ['vectorize',['vectorize',['../classtvm_1_1te_1_1Stage.html#a44d33e3920106e75dc7c68272f880812',1,'tvm::te::Stage']]],
   ['vectorizeloop',['VectorizeLoop',['../namespacetvm_1_1tir.html#abdd6d56877b9dd03803f433352b09060',1,'tvm::tir']]],
+  ['vectorjacobianproduct',['VectorJacobianProduct',['../namespacetvm_1_1te.html#a547183f5a311af53ab598faba423fd64',1,'tvm::te']]],
   ['verifycompactbuffer',['VerifyCompactBuffer',['../namespacetvm_1_1tir.html#ae892521d99d9475a59e2d01df9413b49',1,'tvm::tir']]],
   ['verifygpucode',['VerifyGPUCode',['../namespacetvm_1_1tir.html#a705b3e58180a12eba5297cb2442fd1a2',1,'tvm::tir']]],
   ['verifymemory',['VerifyMemory',['../namespacetvm_1_1tir.html#aa649448c69d8324ba1fd7ec5e3e54731',1,'tvm::tir']]],

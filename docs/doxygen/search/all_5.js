@@ -43,6 +43,7 @@ var searchData=
   ['depth',['depth',['../structtvm_1_1relay_1_1OneHotAttrs.html#a698ab8a2112fff60a95425155e015a78',1,'tvm::relay::OneHotAttrs']]],
   ['depthwise_5fconv2d_5fnchw',['depthwise_conv2d_nchw',['../namespacetopi.html#a8f9fd494ac9bbb4d174d758b447037d3',1,'topi']]],
   ['depthwise_5fconv2d_5fnhwc',['depthwise_conv2d_nhwc',['../namespacetopi.html#a3bc090c96d064609982d155da4c7a9d9',1,'topi']]],
+  ['derivative',['Derivative',['../namespacetvm_1_1te.html#a5c207a8c51face2c69657fb93ecec9c8',1,'tvm::te']]],
   ['describe',['describe',['../structtvm_1_1detail_1_1AttrNopEntry.html#a9bd1f913549c1b4376c0137f4101b791',1,'tvm::detail::AttrNopEntry::describe()'],['../structtvm_1_1detail_1_1AttrInitEntry.html#a64eca870988f14379a2c47085cb5a0f2',1,'tvm::detail::AttrInitEntry::describe()'],['../classtvm_1_1detail_1_1AttrDocEntry.html#a8b5f78f95056953d0460740f916c8e6c',1,'tvm::detail::AttrDocEntry::describe()'],['../structtvm_1_1detail_1_1AttrTriggerNonDefaultEntry.html#aa9eac8ca63d91dab631e14547ec4ce00',1,'tvm::detail::AttrTriggerNonDefaultEntry::describe()'],['../classtvm_1_1OpRegistry.html#a0a72aecfe0d1b5d65f8518a70febb4bc',1,'tvm::OpRegistry::describe()']]],
   ['description',['description',['../classtvm_1_1AttrFieldInfoNode.html#a1a281d5417d10840872e3c2c67c7290b',1,'tvm::AttrFieldInfoNode::description()'],['../classtvm_1_1OpNode.html#a95d402556bd6c710a0b38f50c8e5e3bc',1,'tvm::OpNode::description()']]],
   ['detect_5fglobal_5fbarrier',['detect_global_barrier',['../classtvm_1_1BuildConfigNode.html#ae3f6cb045e5b3d85bdd39224444cb94d',1,'tvm::BuildConfigNode']]],

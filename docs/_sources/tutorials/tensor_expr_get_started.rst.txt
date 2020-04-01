@@ -324,7 +324,7 @@ The following code first performs the following steps:
 
  .. code-block:: none
 
-    ['myadd.tvm_meta.json', 'myadd.so', 'myadd.ptx', 'myadd.o']
+    ['myadd.tvm_meta.json', 'myadd.ptx', 'myadd.so', 'myadd.o']
 
 
 
@@ -450,7 +450,7 @@ and other features in TVM.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.323 seconds)
+   **Total running time of the script:** ( 0 minutes  0.335 seconds)
 
 
 .. _sphx_glr_download_tutorials_tensor_expr_get_started.py:

@@ -221,11 +221,11 @@
 </ol>
 <div class="section" id="vta-simulator-installation">
 <h2>VTA Simulator Installation<a class="headerlink" href="#vta-simulator-installation" title="Permalink to this headline">¶</a></h2>
-<p>You need <a class="reference external" href="https://docs.tvm.ai/install/index.html">TVM installed</a> on your machine.
-For a quick and easy start, use the pre-built <a class="reference external" href="https://docs.tvm.ai/install/docker.html">TVM Docker image</a>.</p>
+<p>You need <a class="reference external" href="https://tvm.apache.org/docs/install/index.html">TVM installed</a> on your machine.
+For a quick and easy start, checkout the <a class="reference external" href="https://tvm.apache.org/docs/install/docker.html">Docker Guide</a>.</p>
 <p>You’ll need to set the following paths to use VTA:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span class="nb">export</span> <span class="nv">TVM_PATH</span><span class="o">=</span>&lt;path to TVM root&gt;
-<span class="nb">export</span> <span class="nv">VTA_HW_PATH</span><span class="o">=</span>$TVM_PATH/vta/vta-hw
+<span class="nb">export</span> <span class="nv">VTA_HW_PATH</span><span class="o">=</span>$TVM_PATH/3rdparty/vta-hw
 </pre></div>
 </div>
 <p>The VTA functional simulation library needs to be enabled when building TVM.</p>
@@ -249,19 +249,19 @@ cp cmake/config.cmake build/.
 <blockquote>
 <div><p>Note: You’ll notice that for every convolution layer, the throughput gets reported in GOPS. These numbers are actually the computational throughput that the simulator achieves, by evaluating the convolutions in software.</p>
 </div></blockquote>
-<p>You are invited to try out our <a class="reference external" href="https://docs.tvm.ai/vta/tutorials/index.html">VTA programming tutorials</a>.</p>
+<p>You are invited to try out our <a class="reference external" href="https://tvm.apache.org/docs/vta/tutorials/index.html">VTA programming tutorials</a>.</p>
 </div>
 <div class="section" id="advanced-configuration-optional">
 <h3>Advanced Configuration (optional)<a class="headerlink" href="#advanced-configuration-optional" title="Permalink to this headline">¶</a></h3>
 <p>VTA is a generic configurable deep learning accelerator.
-The configuration is specified by <code class="docutils literal notranslate"><span class="pre">vta_config.json</span></code> under <code class="docutils literal notranslate"><span class="pre">vta/vta-hw/config</span></code>.
+The configuration is specified by <code class="docutils literal notranslate"><span class="pre">vta_config.json</span></code> under <code class="docutils literal notranslate"><span class="pre">3rdparty/vta-hw/config</span></code>.
 This file provides an architectural specification of the VTA accelerator to parameterize the TVM compiler stack and the VTA hardware stack.</p>
 <p>The VTA configuration file also specifies the TVM compiler target.
 When <code class="docutils literal notranslate"><span class="pre">TARGET</span></code> is set to <code class="docutils literal notranslate"><span class="pre">sim</span></code>, all TVM workloads execute on the VTA simulator.
 You can modify the content of the configuration file to rebuild VTA to a different parameterization.
 To do so,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span class="nb">cd</span> &lt;tvm root&gt;
-vim vta/vta-hw/config/vta_config.json
+vim 3rdparty/vta-hw/config/vta_config.json
 <span class="c1"># edit vta_config.json</span>
 make
 </pre></div>
@@ -320,7 +320,7 @@ mkdir build
 cp cmake/config.cmake build/.
 <span class="nb">echo</span> <span class="s1">&#39;set(USE_VTA_FPGA ON)&#39;</span> &gt;&gt; build/config.cmake
 <span class="c1"># Copy pynq specific configuration</span>
-cp vta/vta-hw/config/pynq_sample.json vta/vta-hw/config/vta_config.json
+cp 3rdparty/vta-hw/config/pynq_sample.json 3rdparty/vta-hw/config/vta_config.json
 <span class="nb">cd</span> build
 cmake ..
 make runtime vta -j2
@@ -354,7 +354,7 @@ sudo ./apps/vta_rpc/start_rpc_server.sh <span class="c1"># pw is &#39;xilinx&#39
 </div></blockquote>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span class="c1"># On the Host-side</span>
 <span class="nb">cd</span> &lt;tvm root&gt;
-cp vta/vta-hw/config/pynq_sample.json vta/vta-hw/config/vta_config.json
+cp 3rdparty/vta-hw/config/pynq_sample.json 3rdparty/vta-hw/config/vta_config.json
 </pre></div>
 </div>
 <p>This time again, we will run the 2D convolution testbench.
@@ -377,7 +377,7 @@ python &lt;tvm root&gt;/vta/tests/python/integration/test_benchmark_topi_conv2d.
 </pre></div>
 </div>
 <p>The performance metrics measured on the Pynq board will be reported for each convolutional layer.</p>
-<p>You can also try out our <a class="reference external" href="https://docs.tvm.ai/vta/tutorials/index.html">VTA programming tutorials</a>.</p>
+<p>You can also try out our <a class="reference external" href="https://tvm.apache.org/docs/vta/tutorials/index.html">VTA programming tutorials</a>.</p>
 </div>
 </div>
 <div class="section" id="vta-custom-test-setup-for-intel-fpga">
@@ -547,9 +547,9 @@ For this custom VTA bitstream compilation exercise, we’ll change the frequency
 <li><p>Set the <code class="docutils literal notranslate"><span class="pre">HW_FREQ</span></code> field to <code class="docutils literal notranslate"><span class="pre">142</span></code>. The Pynq board supports 100, 142, 167 and 200MHz clocks. Note that the higher the frequency, the harder it will be to close timing. Increasing the frequency can lead to timing violation and thus faulty hardware execution.</p></li>
 <li><p>Set the <code class="docutils literal notranslate"><span class="pre">HW_CLK_TARGET</span></code> to <code class="docutils literal notranslate"><span class="pre">6</span></code>. This parameters refers to the target clock period in nano seconds for HLS - a lower clock period leads to more aggressive pipelining to achieve timing closure at higher frequencies. Technically a 142MHz clock would require a 7ns target, but we intentionally lower the clock target to 6ns to more aggressively pipeline our design.</p></li>
 </ul>
-<p>Bitstream generation is driven by a top-level <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> under <code class="docutils literal notranslate"><span class="pre">&lt;tvm</span> <span class="pre">root&gt;/vta/vta-hw/hardware/xilinx/</span></code>.</p>
+<p>Bitstream generation is driven by a top-level <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> under <code class="docutils literal notranslate"><span class="pre">&lt;tvm</span> <span class="pre">root&gt;/3rdparty/vta-hw/hardware/xilinx/</span></code>.</p>
 <p>If you just want to simulate the VTA design in software emulation to make sure that it is functional, enter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span class="nb">cd</span> &lt;tvm root&gt;/vta/vta-hw/hardware/xilinx
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span class="nb">cd</span> &lt;tvm root&gt;/3rdparty/vta-hw/hardware/xilinx
 make ip <span class="nv">MODE</span><span class="o">=</span>sim
 </pre></div>
 </div>
@@ -557,7 +557,7 @@ make ip <span class="nv">MODE</span><span class="o">=</span>sim
 <div class="highlight-bash notranslate"><div class="highlight"><pre>make ip
 </pre></div>
 </div>
-<p>You’ll be able to view the HLS synthesis reports under <code class="docutils literal notranslate"><span class="pre">&lt;tvm</span> <span class="pre">root&gt;/vta/vta-hw/build/hardware/xilinx/hls/</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;configuration&gt;/&lt;block&gt;/solution0/syn/report/&lt;block&gt;_csynth.rpt</span></code></p>
+<p>You’ll be able to view the HLS synthesis reports under <code class="docutils literal notranslate"><span class="pre">&lt;tvm</span> <span class="pre">root&gt;/3rdparty/vta-hw/build/hardware/xilinx/hls/</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;configuration&gt;/&lt;block&gt;/solution0/syn/report/&lt;block&gt;_csynth.rpt</span></code></p>
 <blockquote>
 <div><p>Note: The <code class="docutils literal notranslate"><span class="pre">&lt;configuration&gt;</span></code> name is a string that summarizes the VTA configuration parameters listed in the <code class="docutils literal notranslate"><span class="pre">vta_config.json</span></code>. The <code class="docutils literal notranslate"><span class="pre">&lt;block&gt;</span></code> name refers to the specific module (or HLS function) that compose the high-level VTA pipeline.</p>
 </div></blockquote>
@@ -567,29 +567,29 @@ make ip <span class="nv">MODE</span><span class="o">=</span>sim
 </div>
 <p>This process is lengthy, and can take around up to an hour to complete depending on your machine’s specs.
 We recommend setting the <code class="docutils literal notranslate"><span class="pre">VTA_HW_COMP_THREADS</span></code> variable in the Makefile to take full advantage of all the cores on your development machine.</p>
-<p>Once the compilation completes, the generated bitstream can be found under <code class="docutils literal notranslate"><span class="pre">&lt;tvm</span> <span class="pre">root&gt;/vta/vta-hw/build/hardware/xilinx/vivado/&lt;configuration&gt;/export/vta.bit</span></code>.</p>
+<p>Once the compilation completes, the generated bitstream can be found under <code class="docutils literal notranslate"><span class="pre">&lt;tvm</span> <span class="pre">root&gt;/3rdparty/vta-hw/build/hardware/xilinx/vivado/&lt;configuration&gt;/export/vta.bit</span></code>.</p>
 </div>
 <div class="section" id="chisel-based-custom-vta-bitstream-compilation-for-de10-nano">
 <h3>Chisel-based Custom VTA Bitstream Compilation for DE10-Nano<a class="headerlink" href="#chisel-based-custom-vta-bitstream-compilation-for-de10-nano" title="Permalink to this headline">¶</a></h3>
-<p>Similar to the HLS-based design, high-level hardware parameters in Chisel-based design are listed in the VTA configuration file <a class="reference external" href="https://github.com/apache/incubator-tvm/blob/master/vta/vta-hw/hardware/chisel/src/main/scala/core/Configs.scala">Configs.scala</a>, and they can be customized by the user.</p>
-<p>For Intel FPGA, bitstream generation is driven by a top-level <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> under <code class="docutils literal notranslate"><span class="pre">&lt;tvmroot&gt;/vta/vta-hw/hardware/intel</span></code>.</p>
+<p>Similar to the HLS-based design, high-level hardware parameters in Chisel-based design are listed in the VTA configuration file <a class="reference external" href="https://github.com/apache/incubator-tvm/blob/master/3rdparty/vta-hw/hardware/chisel/src/main/scala/core/Configs.scala">Configs.scala</a>, and they can be customized by the user.</p>
+<p>For Intel FPGA, bitstream generation is driven by a top-level <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> under <code class="docutils literal notranslate"><span class="pre">&lt;tvm</span> <span class="pre">root&gt;/3rdparty/vta-hw/hardware/intel</span></code>.</p>
 <p>If you just want to generate the Chisel-based VTA IP core for the DE10-Nano board without compiling the design for the FPGA hardware, enter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span class="nb">cd</span> &lt;tvmroot&gt;/vta/vta-hw/hardware/intel
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span class="nb">cd</span> &lt;tvm root&gt;/3rdparty/vta-hw/hardware/intel
 make ip
 </pre></div>
 </div>
-<p>Then you’ll be able to locate the generated verilog file at <code class="docutils literal notranslate"><span class="pre">&lt;tvmroot&gt;/vta/vta-hw/build/hardware/intel/chisel/&lt;configuration&gt;/VTA.DefaultDe10Config.v</span></code>.</p>
+<p>Then you’ll be able to locate the generated verilog file at <code class="docutils literal notranslate"><span class="pre">&lt;tvm</span> <span class="pre">root&gt;/3rdparty/vta-hw/build/hardware/intel/chisel/&lt;configuration&gt;/VTA.DefaultDe10Config.v</span></code>.</p>
 <p>If you would like to run the full hardware compilation for the <code class="docutils literal notranslate"><span class="pre">de10nano</span></code> board:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre>make
 </pre></div>
 </div>
 <p>This process might be a bit lengthy, and might take up to half an hour to complete depending on the performance of your PC. The Quartus Prime software would automatically detect the number of cores available on your PC and try to utilize all of them to perform such process.</p>
-<p>Once the compilation completes, the generated bistream can be found under <code class="docutils literal notranslate"><span class="pre">&lt;tvmroot&gt;vtay/vta-hw/build/hardware/intel/quartus/&lt;configuration&gt;/export/vta.rbf</span></code>. You can also open the Quartus project file (.qpf) available at <code class="docutils literal notranslate"><span class="pre">&lt;tvmroot&gt;/vta/vta-hw/build/hardware/intel/quartus/&lt;configuration&gt;/de10_nano_top.qpf</span></code> to look around the generated reports.</p>
+<p>Once the compilation completes, the generated bistream can be found under <code class="docutils literal notranslate"><span class="pre">&lt;tvm</span> <span class="pre">root&gt;/3rdparty/vta-hw/build/hardware/intel/quartus/&lt;configuration&gt;/export/vta.rbf</span></code>. You can also open the Quartus project file (.qpf) available at <code class="docutils literal notranslate"><span class="pre">&lt;tvm</span> <span class="pre">root&gt;/3rdparty/vta-hw/build/hardware/intel/quartus/&lt;configuration&gt;/de10_nano_top.qpf</span></code> to look around the generated reports.</p>
 </div>
 <div class="section" id="use-the-custom-bitstream">
 <h3>Use the Custom Bitstream<a class="headerlink" href="#use-the-custom-bitstream" title="Permalink to this headline">¶</a></h3>
 <p>We can program the new VTA FPGA bitstream by setting the bitstream path of the <code class="docutils literal notranslate"><span class="pre">vta.program_fpga()</span></code> function in the tutorial examples, or in the <code class="docutils literal notranslate"><span class="pre">test_program_rpc.py</span></code> script.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span class="n">vta</span><span class="o">.</span><span class="n">program_fpga</span><span class="p">(</span><span class="n">remote</span><span class="p">,</span> <span class="n">bitstream</span><span class="o">=</span><span class="s2">&quot;&lt;tvm root&gt;/vta/vta-hw/build/hardware/xilinx/vivado/&lt;configuration&gt;/export/vta.bit&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span class="n">vta</span><span class="o">.</span><span class="n">program_fpga</span><span class="p">(</span><span class="n">remote</span><span class="p">,</span> <span class="n">bitstream</span><span class="o">=</span><span class="s2">&quot;&lt;tvm root&gt;/3rdparty/vta-hw/build/hardware/xilinx/vivado/&lt;configuration&gt;/export/vta.bit&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Instead of downloading a pre-built bitstream from the VTA bitstream repository, TVM will instead use the new bitstream you just generated, which is a VTA design clocked at a higher frequency.

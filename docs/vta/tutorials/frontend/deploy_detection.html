@@ -301,7 +301,7 @@ File /workspace/.tvm_test_data/data/arial.ttf exists, skip.
 <div class="section" id="define-the-platform-and-model-targets">
 <h2>Define the platform and model targets.<a class="headerlink" href="#define-the-platform-and-model-targets" title="Permalink to this headline">¶</a></h2>
 <p>Execute on CPU vs. VTA, and define the model.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Load VTA parameters from the vta/vta-hw/config/vta_config.json file</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Load VTA parameters from the 3rdparty/vta-hw/config/vta_config.json file</span>
 <span class="n">env</span> <span class="o">=</span> <span class="n">vta</span><span class="o">.</span><span class="n">get_env</span><span class="p">()</span>
 <span class="c1"># Set ``device=arm_cpu`` to run inference on the CPU</span>
 <span class="c1"># or ``device=vta`` to run inference on the FPGA.</span>
@@ -439,7 +439,7 @@ and dense layer which will both be executed in fp32 on the CPU.</p></li>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>yolov3-tiny inference graph built in 6.96s!
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>yolov3-tiny inference graph built in 6.79s!
 </pre></div>
 </div>
 </div>
@@ -539,7 +539,7 @@ Execution statistics:
         alu_counter     :          1061320
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  34.708 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  37.287 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-vta-tutorials-frontend-deploy-detection-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../../_downloads/ed4fcfc19b39f91a14d817676480a454/deploy_detection.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">deploy_detection.py</span></code></a></p>

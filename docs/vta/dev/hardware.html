@@ -229,7 +229,7 @@ VTA is composed of four modules that communicate among each other via FIFO queue
 <h2>HLS Hardware Source Organization<a class="headerlink" href="#hls-hardware-source-organization" title="Permalink to this headline">¶</a></h2>
 <p>The VTA design is currently specified in Vivado HLS C++, which is only supported
 by Xilinx toolchains.
-The VTA hardware sources are contained under <code class="docutils literal notranslate"><span class="pre">vta/vta-hw/hardware/xilinx/sources</span></code>:</p>
+The VTA hardware sources are contained under <code class="docutils literal notranslate"><span class="pre">3rdparty/vta-hw/hardware/xilinx/sources</span></code>:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">vta.cc</span></code> contains the definitions for each VTA module, as well as a top
@@ -238,10 +238,10 @@ level behavioral model for the top-level VTA design.</p></li>
 function prototypes declarations.</p></li>
 </ul>
 </div></blockquote>
-<p>In addition preprocessor macros are defined under <code class="docutils literal notranslate"><span class="pre">vta/vta-hw/include/vta/hw_spec.h</span></code>.
+<p>In addition preprocessor macros are defined under <code class="docutils literal notranslate"><span class="pre">3rdparty/vta-hw/include/vta/hw_spec.h</span></code>.
 Much of these macro definitions are derived from the parameters listed in the
-<code class="docutils literal notranslate"><span class="pre">vta/vta-hw/config/vta_config.json</span></code> file.
-The json file is processed by <code class="docutils literal notranslate"><span class="pre">vta/vta-hw/config/vta_config.py</span></code> to produce a string of
+<code class="docutils literal notranslate"><span class="pre">3rdparty/vta-hw/config/vta_config.json</span></code> file.
+The json file is processed by <code class="docutils literal notranslate"><span class="pre">3rdparty/vta-hw/config/vta_config.py</span></code> to produce a string of
 compile flags that define the preprocessor macros.
 That string is used by the makefile in order to set those high-level
 parameters in both the HLS hardware synthesis compiler, and the C++
@@ -400,7 +400,7 @@ Adding more stages has a cost however: it can add storage and extra logic overhe
 <div class="section" id="microarchitectural-overview">
 <span id="vta-uarch"></span><h2>Microarchitectural Overview<a class="headerlink" href="#microarchitectural-overview" title="Permalink to this headline">¶</a></h2>
 <p>We describe the modules that compose the VTA design.
-The module definitions are contained in <code class="docutils literal notranslate"><span class="pre">vta/vta-hw/hardware/xilinx/sources/vta.cc</span></code>.</p>
+The module definitions are contained in <code class="docutils literal notranslate"><span class="pre">3rdparty/vta-hw/hardware/xilinx/sources/vta.cc</span></code>.</p>
 <div class="section" id="fetch-module">
 <h3>Fetch Module<a class="headerlink" href="#fetch-module" title="Permalink to this headline">¶</a></h3>
 <p>VTA is programmed by a linear instruction stream.

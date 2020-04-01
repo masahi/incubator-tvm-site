@@ -267,7 +267,7 @@ otherwise normal CUDA code, with lower performance but equal functionality, will
 (2) The warp tile size is not 16x16x16 on CUDA9, or not one of {16x16x16, 32x8x16, 8x32x16} on CUDA version &gt;= 10.0.</p>
 </div>
 <p>In this schedule, storage_align is used to reduce bank conflicts of shared memory. Please refer to this
-<a class="reference external" href="https://docs.tvm.ai/api/python/schedule.html#tvm.te.schedule.Stage.storage_align">doc</a>
+<a class="reference external" href="https://tvm.apache.org/docs/api/python/schedule.html#tvm.te.schedule.Stage.storage_align">doc</a>
 for the usage of storage_align primitive. In short, we need to add an offset to some shared memory buffer
 to reduce bank conflicts.
 According to the <a class="reference external" href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#wmma-description">wmma doc</a>,
@@ -708,7 +708,7 @@ Time cost of this operator: 0.000008
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>This tutorial demonstrates how to use the AutoTensorCoreCodeGen of TVM
 to generate tensorcore kernels.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.162 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.200 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-optimize-opt-matmul-auto-tensorcore-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/10e16681be542cc483fa89e9b4678a27/opt_matmul_auto_tensorcore.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">opt_matmul_auto_tensorcore.py</span></code></a></p>

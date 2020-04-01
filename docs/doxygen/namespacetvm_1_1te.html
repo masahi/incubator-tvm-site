@@ -215,6 +215,18 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a5c207a8c51face2c69657fb93ecec9c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#a5c207a8c51face2c69657fb93ecec9c8">Derivative</a> (const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;expr, const <a class="el" href="classtvm_1_1tir_1_1Var.html">Var</a> &amp;<a class="el" href="namespacetvm_1_1te.html#ae0c71f84710b436cbe0b32289d0838f4">var</a>)</td></tr>
+<tr class="memdesc:a5c207a8c51face2c69657fb93ecec9c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take the derivative of the expression with respect to the given variable.  <a href="#a5c207a8c51face2c69657fb93ecec9c8">More...</a><br /></td></tr>
+<tr class="separator:a5c207a8c51face2c69657fb93ecec9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6298db2545a416ec1fd47c593b7217b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#a6298db2545a416ec1fd47c593b7217b7">Jacobian</a> (const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;output, const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;input)</td></tr>
+<tr class="memdesc:a6298db2545a416ec1fd47c593b7217b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the tensor representing the Jacobian of the output with respect to the input.  <a href="#a6298db2545a416ec1fd47c593b7217b7">More...</a><br /></td></tr>
+<tr class="separator:a6298db2545a416ec1fd47c593b7217b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a547183f5a311af53ab598faba423fd64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#a547183f5a311af53ab598faba423fd64">VectorJacobianProduct</a> (const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;output, const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;input, const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;head)</td></tr>
+<tr class="memdesc:a547183f5a311af53ab598faba423fd64"><td class="mdescLeft">&#160;</td><td class="mdescRight">The building block for reverse-mode AD.  <a href="#a547183f5a311af53ab598faba423fd64">More...</a><br /></td></tr>
+<tr class="separator:a547183f5a311af53ab598faba423fd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de1399717049f2b3582f0344b267d56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#a0de1399717049f2b3582f0344b267d56">Gradient</a> (const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;output, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &gt; &amp;inputs, const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;head=<a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a>())</td></tr>
+<tr class="memdesc:a0de1399717049f2b3582f0344b267d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform reverse mode automatic differentiation.  <a href="#a0de1399717049f2b3582f0344b267d56">More...</a><br /></td></tr>
+<tr class="separator:a0de1399717049f2b3582f0344b267d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0c71f84710b436cbe0b32289d0838f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1Var.html">Var</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#ae0c71f84710b436cbe0b32289d0838f4">var</a> (std::string name_hint, <a class="el" href="namespacetvm.html#a41918af1a1dc386388639a9d3ad06c5d">DataType</a> t=<a class="el" href="classtvm_1_1runtime_1_1DataType.html#ab45f13dd70d982d9f977c79b6f7fac98">DataType::Int</a>(32))</td></tr>
 <tr class="memdesc:ae0c71f84710b436cbe0b32289d0838f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Var expression.  <a href="#ae0c71f84710b436cbe0b32289d0838f4">More...</a><br /></td></tr>
 <tr class="separator:ae0c71f84710b436cbe0b32289d0838f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -828,6 +840,86 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5c207a8c51face2c69657fb93ecec9c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::Derivative </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1tir_1_1Var.html">Var</a> &amp;&#160;</td>
+          <td class="paramname"><em>var</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Take the derivative of the expression with respect to the given variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>The expression to differentiate. </td></tr>
+    <tr><td class="paramname">var</td><td>The variable to differentiate with respect to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The expression for the derivative. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0de1399717049f2b3582f0344b267d56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt;<a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a>&gt; tvm::te::Gradient </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>inputs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>head</em> = <code><a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform reverse mode automatic differentiation. </p>
+<p>Each item of the <code>result</code> field of the result is an adjoint for the corresponding item of <code>inputs</code>, i.e. <code>head</code> multiplied by the Jacobian of <code>output</code> with respect to the corresponding item of <code>inputs</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>The tensor to differentiate. </td></tr>
+    <tr><td class="paramname">inputs</td><td>The array of input tensors. When the array is empty, will perform differentiation wrt all tensors the output depends on. </td></tr>
+    <tr><td class="paramname">head</td><td>The adjoint of the output, in other words, some tensor, by which the Jacobians will be multiplied (using tensordot axes=<code>output.shape</code>). Its shape must be of the form <code>prefix + output.shape</code>. If the null pointer is provided, the identity tensor of shape <code>output.shape + output.shape</code> will be used. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An array of adjoints corresponding to <code>inputs</code>. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ac0effd02bbddf8ce2cce7073e175ca4c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -850,6 +942,43 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result bound of the iteration Variable </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6298db2545a416ec1fd47c593b7217b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> tvm::te::Jacobian </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>input</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the tensor representing the Jacobian of the output with respect to the input. </p>
+<p>Note that if <code>output</code> depends on <code>input</code> indirectly (by using some other tensor depending on <code>input</code>), this dependency won't contribute to the resulting Jacobian. For such cases use the function <a class="el" href="namespacetvm_1_1te.html#a0de1399717049f2b3582f0344b267d56" title="Perform reverse mode automatic differentiation. ">Gradient</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>The tensor to differentiate. </td></tr>
+    <tr><td class="paramname">input</td><td>The input tensor, which <code>output</code> should directly use. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The tensor representing the Jacobian of shape <code>output.shape + input.shape</code>. </dd></dl>
 
 </div>
 </div>
@@ -1537,9 +1666,11 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a6bb44656b78b7d6a02ede706ed0a85ec"></a>
+<a class="anchor" id="afba65b87ed8a5587c48b1f63ff9d8437"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1547,7 +1678,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -1607,7 +1738,41 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afba65b87ed8a5587c48b1f63ff9d8437"></a>
+<a class="anchor" id="a6bb44656b78b7d6a02ede706ed0a85ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a155868a829cdec5e04c00fee9fd6b8ab"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1617,15 +1782,15 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&lt;&lt; </td>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&lt;= </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -1713,42 +1878,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a155868a829cdec5e04c00fee9fd6b8ab"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&lt;= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a5d186948df24bd18a8aef7eee3b37727"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1785,11 +1914,9 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a640a91e87c3d3a55c5df248c1a194b90"></a>
+<a class="anchor" id="a643184f062c87081a55f9e4ba0e6d0d6"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1797,7 +1924,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator== </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -1821,9 +1948,11 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a643184f062c87081a55f9e4ba0e6d0d6"></a>
+<a class="anchor" id="a640a91e87c3d3a55c5df248c1a194b90"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1831,7 +1960,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator== </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -1961,6 +2090,42 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a54c35df3fc069cb65ad6e28fa6b35109"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a5cbaee6b481ab46d55c17206e2487eed"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2031,7 +2196,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a54c35df3fc069cb65ad6e28fa6b35109"></a>
+<a class="anchor" id="a8705a88b943011532ff4c94c4b06c213"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -2041,15 +2206,15 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt;= </td>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt;&gt; </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -2103,11 +2268,9 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a8705a88b943011532ff4c94c4b06c213"></a>
+<a class="anchor" id="a9d3d9a057d5f1a36277ac4005f38bafa"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2115,7 +2278,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt;&gt; </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -2139,15 +2302,17 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9d3d9a057d5f1a36277ac4005f38bafa"></a>
+<a class="anchor" id="a1fd6b8f8380a489cfcd806952c2aae42"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt;&gt; </td>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator|| </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -2155,7 +2320,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -2226,42 +2391,6 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1fd6b8f8380a489cfcd806952c2aae42"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator|| </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -2536,6 +2665,50 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a547183f5a311af53ab598faba423fd64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> tvm::te::VectorJacobianProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>head</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The building block for reverse-mode AD. </p>
+<p>Differentiate <code>output</code> wrt <code>input</code> and multiply the result by <code>head</code> on the left using tensor dot product. <code>input</code> must be an immediate dependency of <code>output</code> (must be called from within the body of <code>output</code>). That is, the function will compute one summand of the adjoint for <code>input</code> given the adjoint for <code>output</code> (which is called <code>head</code> here).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>The tensor to differentiate. </td></tr>
+    <tr><td class="paramname">input</td><td>The input tensor, which <code>output</code> should directly use. </td></tr>
+    <tr><td class="paramname">head</td><td>The adjoint of <code>output</code>. Must be of shape <code>prefix + output.shape</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The tensor of shape <code>prefix + input.shape</code> representing the partial adjoint of <code>input</code> wrt one of its consumers (output) </dd></dl>
 
 </div>
 </div>
