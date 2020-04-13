@@ -42,7 +42,8 @@ var searchData=
   ['conv2dtransposeattrs',['Conv2DTransposeAttrs',['../structtvm_1_1relay_1_1Conv2DTransposeAttrs.html',1,'tvm::relay']]],
   ['conv2dwinogradattrs',['Conv2DWinogradAttrs',['../structtvm_1_1relay_1_1Conv2DWinogradAttrs.html',1,'tvm::relay']]],
   ['conv2dwinogradnnpackweighttransformattrs',['Conv2DWinogradNNPACKWeightTransformAttrs',['../structtvm_1_1relay_1_1Conv2DWinogradNNPACKWeightTransformAttrs.html',1,'tvm::relay']]],
-  ['conv2dwinogradweighttransformattrs',['Conv2DWinogradWeightTransformAttrs',['../structtvm_1_1relay_1_1Conv2DWinogradWeightTransformAttrs.html',1,'tvm::relay']]],
   ['conv3dattrs',['Conv3DAttrs',['../structtvm_1_1relay_1_1Conv3DAttrs.html',1,'tvm::relay']]],
+  ['conv3dwinogradattrs',['Conv3DWinogradAttrs',['../structtvm_1_1relay_1_1Conv3DWinogradAttrs.html',1,'tvm::relay']]],
+  ['convwinogradweighttransformattrs',['ConvWinogradWeightTransformAttrs',['../structtvm_1_1relay_1_1ConvWinogradWeightTransformAttrs.html',1,'tvm::relay']]],
   ['cropandresizeattrs',['CropAndResizeAttrs',['../structtvm_1_1relay_1_1CropAndResizeAttrs.html',1,'tvm::relay']]]
 ];

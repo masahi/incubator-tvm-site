@@ -284,11 +284,6 @@ This tutorial provides a walk through of scan primitive.
 - For complicated workload, use multiple states and steps in scan cell.
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.510 seconds)
-
-
 .. _sphx_glr_download_tutorials_language_scan.py:
 
 

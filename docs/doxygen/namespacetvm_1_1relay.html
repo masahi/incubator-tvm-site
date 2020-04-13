@@ -201,11 +201,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1Conv2DWinogradNNPACKWeightTransformAttrs.html">Conv2DWinogradNNPACKWeightTransformAttrs</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attributes used in winograd weight transformation operators.  <a href="structtvm_1_1relay_1_1Conv2DWinogradNNPACKWeightTransformAttrs.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1Conv2DWinogradWeightTransformAttrs.html">Conv2DWinogradWeightTransformAttrs</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attributes used in winograd weight transformation operators.  <a href="structtvm_1_1relay_1_1Conv2DWinogradWeightTransformAttrs.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1Conv3DAttrs.html">Conv3DAttrs</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attributes used in convolution operators.  <a href="structtvm_1_1relay_1_1Conv3DAttrs.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1Conv3DWinogradAttrs.html">Conv3DWinogradAttrs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attributes used in 3d winograd convolution operators.  <a href="structtvm_1_1relay_1_1Conv3DWinogradAttrs.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1ConvWinogradWeightTransformAttrs.html">ConvWinogradWeightTransformAttrs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attributes used in winograd weight transformation operators.  <a href="structtvm_1_1relay_1_1ConvWinogradWeightTransformAttrs.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1CropAndResizeAttrs.html">CropAndResizeAttrs</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attributes used in image crop_and_resize operator.  <a href="structtvm_1_1relay_1_1CropAndResizeAttrs.html#details">More...</a><br /></td></tr>
@@ -238,6 +241,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1relay_1_1ExprMutator.html">ExprMutator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper around <a class="el" href="classtvm_1_1relay_1_1ExprFunctor.html" title="A dynamical functor that dispatches on in the first Expr argument. You can use this as a more powerfu...">ExprFunctor</a> which functionally updates the AST.  <a href="classtvm_1_1relay_1_1ExprMutator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1relay_1_1ExprRewriter.html">ExprRewriter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A non-iterating Expression Rewriter.  <a href="classtvm_1_1relay_1_1ExprRewriter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1relay_1_1ExprVisitor.html">ExprVisitor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple visitor wrapper around <a class="el" href="classtvm_1_1relay_1_1ExprFunctor.html" title="A dynamical functor that dispatches on in the first Expr argument. You can use this as a more powerfu...">ExprFunctor</a>. Recursively visit the content.  <a href="classtvm_1_1relay_1_1ExprVisitor.html#details">More...</a><br /></td></tr>
@@ -317,6 +323,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1MirrorPadAttrs.html">MirrorPadAttrs</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attributes used for the MirrorPadding operator.  <a href="structtvm_1_1relay_1_1MirrorPadAttrs.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1relay_1_1MixedModeMutator.html">MixedModeMutator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-recursive DFS Graph Traversal for Custom Rewriting Passes.  <a href="classtvm_1_1relay_1_1MixedModeMutator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1relay_1_1MixedModeVisitor.html">MixedModeVisitor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper around <a class="el" href="classtvm_1_1relay_1_1ExprVisitor.html" title="A simple visitor wrapper around ExprFunctor. Recursively visit the content. ">ExprVisitor</a> which traverses the Dataflow Normal AST.  <a href="classtvm_1_1relay_1_1MixedModeVisitor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1MultiBoxPriorAttrs.html">MultiBoxPriorAttrs</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attributes used in multibox_prior operators.  <a href="structtvm_1_1relay_1_1MultiBoxPriorAttrs.html#details">More...</a><br /></td></tr>
@@ -746,6 +758,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aa3a8cace40f8056fd6412f39c3eaa605"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1relay_1_1Pattern.html">Pattern</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay.html#aa3a8cace40f8056fd6412f39c3eaa605">UnmatchedCases</a> (const <a class="el" href="classtvm_1_1relay_1_1Match.html">Match</a> &amp;match, const <a class="el" href="classtvm_1_1IRModule.html">IRModule</a> &amp;mod)</td></tr>
 <tr class="memdesc:aa3a8cace40f8056fd6412f39c3eaa605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds cases that the given match expression does not catch, if any.  <a href="#aa3a8cace40f8056fd6412f39c3eaa605">More...</a><br /></td></tr>
 <tr class="separator:aa3a8cace40f8056fd6412f39c3eaa605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d10acef75390fa6d1a5e64a379c5036"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; const Object *, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay.html#a2d10acef75390fa6d1a5e64a379c5036">GetExprRefCount</a> (const <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &amp;body)</td></tr>
+<tr class="memdesc:a2d10acef75390fa6d1a5e64a379c5036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get reference counter of each internal ExprNode in body.  <a href="#a2d10acef75390fa6d1a5e64a379c5036">More...</a><br /></td></tr>
+<tr class="separator:a2d10acef75390fa6d1a5e64a379c5036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9893f416a18eb31c14adece02bf43f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay.html#ae9893f416a18eb31c14adece02bf43f8">PostOrderRewrite</a> (const <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &amp;expr, <a class="el" href="classtvm_1_1relay_1_1ExprRewriter.html">ExprRewriter</a> *rewriter)</td></tr>
+<tr class="memdesc:ae9893f416a18eb31c14adece02bf43f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-recursive DFS Graph Traversal for Custom Rewriting Passes.  <a href="#ae9893f416a18eb31c14adece02bf43f8">More...</a><br /></td></tr>
+<tr class="separator:ae9893f416a18eb31c14adece02bf43f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ede3d80c546097084cf98b60e600b80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay.html#a5ede3d80c546097084cf98b60e600b80">PostOrderVisit</a> (const <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &amp;node, std::function&lt; void(const <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &amp;)&gt; fvisit)</td></tr>
 <tr class="memdesc:a5ede3d80c546097084cf98b60e600b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">recursively visit the ir in post DFS order node, apply fvisit Each node is guaranteed to be visited only once.  <a href="#a5ede3d80c546097084cf98b60e600b80">More...</a><br /></td></tr>
 <tr class="separator:a5ede3d80c546097084cf98b60e600b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2405,6 +2423,31 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2d10acef75390fa6d1a5e64a379c5036"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;const Object*, size_t&gt; tvm::relay::GetExprRefCount </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &amp;&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get reference counter of each internal ExprNode in body. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">body</td><td>The body expression.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reference count mapping. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a18141658f627685d55704609111f57be"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2485,6 +2528,35 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The kind of the passed type. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae9893f416a18eb31c14adece02bf43f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> tvm::relay::PostOrderRewrite </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1relay_1_1ExprRewriter.html">ExprRewriter</a> *&#160;</td>
+          <td class="paramname"><em>rewriter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Non-recursive DFS Graph Traversal for Custom Rewriting Passes. </p>
+<p>PostOrderRewrite does a non-recursive traversal of the graph in Post-DFS order and calls the <a class="el" href="classtvm_1_1relay_1_1ExprRewriter.html" title="A non-iterating Expression Rewriter. ">ExprRewriter</a>'s Rewrite functions on nodes once their inputs are rewritten. At each rewrite call, PostOrderRewrite provides the original node and the node with altered inputs for use by the <a class="el" href="classtvm_1_1relay_1_1ExprRewriter.html" title="A non-iterating Expression Rewriter. ">ExprRewriter</a>. </p>
 
 </div>
 </div>

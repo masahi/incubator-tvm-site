@@ -30,6 +30,7 @@ var searchData=
   ['tvmargssetter',['TVMArgsSetter',['../classtvm_1_1runtime_1_1TVMArgsSetter.html',1,'tvm::runtime']]],
   ['tvmargvalue',['TVMArgValue',['../classtvm_1_1runtime_1_1TVMArgValue.html',1,'tvm::runtime']]],
   ['tvmbytearray',['TVMByteArray',['../structTVMByteArray.html',1,'']]],
+  ['tvmmovableargvalue_5f',['TVMMovableArgValue_',['../classtvm_1_1runtime_1_1TVMMovableArgValue__.html',1,'tvm::runtime']]],
   ['tvmparallelgroupenv',['TVMParallelGroupEnv',['../structTVMParallelGroupEnv.html',1,'']]],
   ['tvmpodvalue_5f',['TVMPODValue_',['../classtvm_1_1runtime_1_1TVMPODValue__.html',1,'tvm::runtime']]],
   ['tvmretvalue',['TVMRetValue',['../classtvm_1_1runtime_1_1TVMRetValue.html',1,'tvm::runtime']]],

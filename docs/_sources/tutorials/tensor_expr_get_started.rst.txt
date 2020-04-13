@@ -254,7 +254,7 @@ The following code fetches the device module and prints the content code.
  .. code-block:: none
 
     -----GPU code-----
-    extern "C" __global__ void myadd_kernel0(void** __restrict__ C, void** __restrict__ A, void** __restrict__ B, int n, int stride, int stride1, int stride2) {
+    extern "C" __global__ void myadd_kernel0(void* __restrict__ C, void* __restrict__ A, void* __restrict__ B, int n, int stride, int stride1, int stride2) {
       if (((int)blockIdx.x) < (n >> 6)) {
         (( float*)C)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride2))] = ((( float*)A)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride))] + (( float*)B)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride1))]);
       } else {
@@ -446,11 +446,6 @@ You are more than welcome to checkout other examples and
 tutorials to learn more about the supported operations, scheduling primitives
 and other features in TVM.
 
-
-
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.335 seconds)
 
 
 .. _sphx_glr_download_tutorials_tensor_expr_get_started.py:

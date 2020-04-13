@@ -110,13 +110,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../target.html">tvm.target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html">tvm.tir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.transform">tvm.tir.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.analysis">tvm.tir.analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../te.html">tvm.te</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../driver.html">tvm.driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hybrid.html">tvm.hybrid</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">tvm.relay</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">tvm.relay.backend</a></li>
@@ -489,7 +490,7 @@ contrib.graph_runtime or any other TVM runtime compatible systems.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>graph_json</strong> (<em>str</em>) – The graph json that can be consumed by runtime.</p></li>
-<li><p><strong>lowered_funcs</strong> (<em>List[tvm.LoweredFunc] or Dict[str, List[tvm.LoweredFunc]]</em>) – The lowered functions.</p></li>
+<li><p><strong>mod</strong> (<em>IRModule or Dict[str, IRModule]</em>) – The lowered functions.</p></li>
 <li><p><strong>params</strong> (<em>Dict[str, tvm.nd.NDArray]</em>) – Additional constant parameters.</p></li>
 </ul>
 </p>

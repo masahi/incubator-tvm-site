@@ -508,13 +508,13 @@ customized pass.</p>
         <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span>
 
         <span class="k">class</span> <span class="nc">ReplaceConstant</span><span class="p">(</span><a href="../../api/python/relay/index.html#tvm.relay.ExprMutator" title="View documentation for tvm.relay.ExprMutator"><span class="n">tvm</span><span class="o">.</span><span class="n">relay</span><span class="o">.</span><span class="n">ExprMutator</span></a><span class="p">):</span>
-            <span class="k">def</span> <span class="nf">visit_const</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+            <span class="k">def</span> <span class="nf">visit_constant</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
                 <span class="k">return</span> <a href="../../api/python/relay/index.html#tvm.relay.multiply" title="View documentation for tvm.relay.multiply"><span class="n">relay</span><span class="o">.</span><span class="n">multiply</span></a><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">multiplier</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ReplaceConstant</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">example</span><span class="p">()</span>
 <span class="n">mod</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">IRModule</span><span class="o">.</span><span class="n">from_expr</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="n">custom_pass</span> <span class="o">=</span> <span class="n">CustomPipeline</span><span class="p">(</span><span class="n">multiplier</span><span class="o">=</span><a href="../../api/python/relay/index.html#tvm.relay.const" title="View documentation for tvm.relay.const"><span class="n">relay</span><span class="o">.</span><span class="n">const</span></a><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">))</span>
+<span class="n">custom_pass</span> <span class="o">=</span> <span class="n">CustomPipeline</span><span class="p">(</span><span class="n">multiplier</span><span class="o">=</span><a href="../../api/python/relay/index.html#tvm.relay.const" title="View documentation for tvm.relay.const"><span class="n">relay</span><span class="o">.</span><span class="n">const</span></a><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;float32&quot;</span><span class="p">))</span>
 <span class="k">assert</span> <span class="n">custom_pass</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;CustomPipeline&quot;</span>
 <span class="n">mod3</span> <span class="o">=</span> <span class="n">custom_pass</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mod3</span><span class="p">)</span>
@@ -523,12 +523,14 @@ customized pass.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>def @main(%x: Tensor[(1, 64, 56, 56), float32], %weight: Tensor[(64, 64, 3, 3), float32]) -&gt; Tensor[(1, 64, 54, 54), float32] {
   %0 = nn.conv2d(%x, %weight, padding=[0, 0, 0, 0]) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-  %1 = add(meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */ /* ty=Tensor[(1, 64, 54, 54), float32] */, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */ /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-  %2 = multiply(%1, 2f /* ty=float32 */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-  %3 = add(%0, %2) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-  %4 = add(%3, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */ /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-  %5 = add(%3, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */ /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-  add(%4, %5) /* ty=Tensor[(1, 64, 54, 54), float32] */
+  %1 = multiply(3f /* ty=float32 */, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */ /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+  %2 = add(%1, %1) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+  %3 = multiply(3f /* ty=float32 */, 2f /* ty=float32 */) /* ty=float32 */;
+  %4 = multiply(%2, %3) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+  %5 = add(%0, %4) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+  %6 = add(%5, %1) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+  %7 = add(%5, %1) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+  add(%6, %7) /* ty=Tensor[(1, 64, 54, 54), float32] */
 }
 
 // meta data omitted. you can use show_meta_data=True to include meta data
@@ -558,7 +560,6 @@ them.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>done
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.361 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-dev-relay-pass-infra-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/52b04835c256bb81bbf4187f18950a0a/relay_pass_infra.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">relay_pass_infra.py</span></code></a></p>

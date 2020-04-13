@@ -96,7 +96,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="analysis_8h.html" target="_top" xlink:title="The set of Relay analysis passes written in C++. ">
+<g id="a_node6"><a xlink:href="relay_2analysis_8h.html" target="_top" xlink:title="The set of Relay analysis passes written in C++. ">
 <polygon fill="white" stroke="black" points="134,-73 134,-92 283,-92 283,-73 134,-73"/>
 <text text-anchor="middle" x="208.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">include/tvm/relay/analysis.h</text>
 </a>

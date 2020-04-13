@@ -162,6 +162,15 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1PackedFunc.html">PackedFunc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packed function is a type-erased function. The arguments are passed by packed format.  <a href="classtvm_1_1runtime_1_1PackedFunc.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1runtime_1_1PackedFuncValueConverter.html">PackedFuncValueConverter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtvm_1_1Type.html" title="Managed reference to TypeNode. ">Type</a> trait to specify special value conversion rules from <a class="el" href="classtvm_1_1runtime_1_1TVMArgValue.html" title="A single argument value to PackedFunc. Containing both type_code and TVMValue. ">TVMArgValue</a> and <a class="el" href="classtvm_1_1runtime_1_1TVMRetValue.html" title="Return Value container, Unlike TVMArgValue, which only holds reference and do not delete the underlyi...">TVMRetValue</a>.  <a href="structtvm_1_1runtime_1_1PackedFuncValueConverter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1runtime_1_1PackedFuncValueConverter_3_01PrimExpr_01_4.html">PackedFuncValueConverter&lt; PrimExpr &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1runtime_1_1PackedFuncValueConverter_3_01tvm_1_1Integer_01_4.html">PackedFuncValueConverter&lt; tvm::Integer &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1runtime_1_1PackedFuncValueConverter_3_1_1tvm_1_1runtime_1_1String_01_4.html">PackedFuncValueConverter&lt;::tvm::runtime::String &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1Registry.html">Registry</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtvm_1_1runtime_1_1Registry.html" title="Registry for global function. ">Registry</a> for global function.  <a href="classtvm_1_1runtime_1_1Registry.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,6 +189,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1TVMArgValue.html">TVMArgValue</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single argument value to <a class="el" href="classtvm_1_1runtime_1_1PackedFunc.html" title="Packed function is a type-erased function. The arguments are passed by packed format. ">PackedFunc</a>. Containing both type_code and <a class="el" href="unionTVMValue.html" title="Union type of values being passed through API and function calls. ">TVMValue</a>.  <a href="classtvm_1_1runtime_1_1TVMArgValue.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1TVMMovableArgValue__.html">TVMMovableArgValue_</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal auxiliary struct for <a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc.html" title="Please refer to TypedPackedFunc&lt;R(Args..)&gt;. ">TypedPackedFunc</a> to indicate a movable argument.  <a href="classtvm_1_1runtime_1_1TVMMovableArgValue__.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1TVMPODValue__.html">TVMPODValue_</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal base class to handle conversion to POD values.  <a href="classtvm_1_1runtime_1_1TVMPODValue__.html#details">More...</a><br /></td></tr>
@@ -239,6 +251,28 @@ Functions</h2></td></tr>
 <tr class="memitem:aee574cee6755b0c2f1aa664c6967686f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#aee574cee6755b0c2f1aa664c6967686f">TypeEqual</a> (DLDataType lhs, DLDataType rhs)</td></tr>
 <tr class="memdesc:aee574cee6755b0c2f1aa664c6967686f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether two types are equal .  <a href="#aee574cee6755b0c2f1aa664c6967686f">More...</a><br /></td></tr>
 <tr class="separator:aee574cee6755b0c2f1aa664c6967686f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06a49d761ea6373557c24c01eaceb07d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a06a49d761ea6373557c24c01eaceb07d">GetCustomTypeName</a> (uint8_t type_code)</td></tr>
+<tr class="memdesc:a06a49d761ea6373557c24c01eaceb07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime utility for getting custom type name from code.  <a href="#a06a49d761ea6373557c24c01eaceb07d">More...</a><br /></td></tr>
+<tr class="separator:a06a49d761ea6373557c24c01eaceb07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8eedadc5a269b2f9614ce69a9932e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a1b8eedadc5a269b2f9614ce69a9932e7">GetCustomTypeRegistered</a> (uint8_t type_code)</td></tr>
+<tr class="memdesc:a1b8eedadc5a269b2f9614ce69a9932e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime utility for checking whether custom type is registered.  <a href="#a1b8eedadc5a269b2f9614ce69a9932e7">More...</a><br /></td></tr>
+<tr class="separator:a1b8eedadc5a269b2f9614ce69a9932e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d167947285dff3c780bd5d01ace9b9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ac6d167947285dff3c780bd5d01ace9b9">ParseCustomDatatype</a> (const std::string &amp;s, const char **scan)</td></tr>
+<tr class="memdesc:ac6d167947285dff3c780bd5d01ace9b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime utility for parsing string of the form "custom[&lt;typename&gt;]".  <a href="#ac6d167947285dff3c780bd5d01ace9b9">More...</a><br /></td></tr>
+<tr class="separator:ac6d167947285dff3c780bd5d01ace9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a504dc7b1fd693412576703f44bcc3cfb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a504dc7b1fd693412576703f44bcc3cfb">TypeCode2Str</a> (int type_code)</td></tr>
+<tr class="memdesc:a504dc7b1fd693412576703f44bcc3cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert type code to its name.  <a href="#a504dc7b1fd693412576703f44bcc3cfb">More...</a><br /></td></tr>
+<tr class="separator:a504dc7b1fd693412576703f44bcc3cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a277f104e659f71cd8885744700016341"><td class="memItemLeft" align="right" valign="top">DLDataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a277f104e659f71cd8885744700016341">String2DLDataType</a> (std::string s)</td></tr>
+<tr class="memdesc:a277f104e659f71cd8885744700016341"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert a string to TVM type.  <a href="#a277f104e659f71cd8885744700016341">More...</a><br /></td></tr>
+<tr class="separator:a277f104e659f71cd8885744700016341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac360f2d9815036ab1b4d84d9cfb46b4f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ac360f2d9815036ab1b4d84d9cfb46b4f">DLDataType2String</a> (DLDataType t)</td></tr>
+<tr class="memdesc:ac360f2d9815036ab1b4d84d9cfb46b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert a TVM type to string.  <a href="#ac360f2d9815036ab1b4d84d9cfb46b4f">More...</a><br /></td></tr>
+<tr class="separator:ac360f2d9815036ab1b4d84d9cfb46b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11ed99740d7bb838d96617de83ff2363"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a11ed99740d7bb838d96617de83ff2363">operator&lt;&lt;</a> (std::ostream &amp;os, DLDataType t)</td></tr>
+<tr class="separator:a11ed99740d7bb838d96617de83ff2363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d447b7bdac52d26bca3422fe098f6f"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a59d447b7bdac52d26bca3422fe098f6f">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classtvm_1_1runtime_1_1DataType.html">DataType</a> &amp;dtype)</td></tr>
+<tr class="separator:a59d447b7bdac52d26bca3422fe098f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9109e4efe269213052ed6a94853c0c00"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a9109e4efe269213052ed6a94853c0c00">DeviceName</a> (int type)</td></tr>
 <tr class="memdesc:a9109e4efe269213052ed6a94853c0c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of Device API factory.  <a href="#a9109e4efe269213052ed6a94853c0c00">More...</a><br /></td></tr>
 <tr class="separator:a9109e4efe269213052ed6a94853c0c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,35 +317,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ac2d903012aff56c2bd54ff66f48450c3"><td class="memTemplParams" colspan="2">template&lt;typename BaseType , typename ObjType &gt; </td></tr>
 <tr class="memitem:ac2d903012aff56c2bd54ff66f48450c3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1runtime_1_1ObjectPtr.html">ObjectPtr</a>&lt; BaseType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ac2d903012aff56c2bd54ff66f48450c3">GetObjectPtr</a> (ObjType *ptr)</td></tr>
 <tr class="separator:ac2d903012aff56c2bd54ff66f48450c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a49d761ea6373557c24c01eaceb07d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a06a49d761ea6373557c24c01eaceb07d">GetCustomTypeName</a> (uint8_t type_code)</td></tr>
-<tr class="memdesc:a06a49d761ea6373557c24c01eaceb07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime utility for getting custom type name from code.  <a href="#a06a49d761ea6373557c24c01eaceb07d">More...</a><br /></td></tr>
-<tr class="separator:a06a49d761ea6373557c24c01eaceb07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b8eedadc5a269b2f9614ce69a9932e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a1b8eedadc5a269b2f9614ce69a9932e7">GetCustomTypeRegistered</a> (uint8_t type_code)</td></tr>
-<tr class="memdesc:a1b8eedadc5a269b2f9614ce69a9932e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime utility for checking whether custom type is registered.  <a href="#a1b8eedadc5a269b2f9614ce69a9932e7">More...</a><br /></td></tr>
-<tr class="separator:a1b8eedadc5a269b2f9614ce69a9932e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6d167947285dff3c780bd5d01ace9b9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ac6d167947285dff3c780bd5d01ace9b9">ParseCustomDatatype</a> (const std::string &amp;s, const char **scan)</td></tr>
-<tr class="memdesc:ac6d167947285dff3c780bd5d01ace9b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime utility for parsing string of the form "custom[&lt;typename&gt;]".  <a href="#ac6d167947285dff3c780bd5d01ace9b9">More...</a><br /></td></tr>
-<tr class="separator:ac6d167947285dff3c780bd5d01ace9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a504dc7b1fd693412576703f44bcc3cfb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a504dc7b1fd693412576703f44bcc3cfb">TypeCode2Str</a> (int type_code)</td></tr>
-<tr class="memdesc:a504dc7b1fd693412576703f44bcc3cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert type code to its name.  <a href="#a504dc7b1fd693412576703f44bcc3cfb">More...</a><br /></td></tr>
-<tr class="separator:a504dc7b1fd693412576703f44bcc3cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a277f104e659f71cd8885744700016341"><td class="memItemLeft" align="right" valign="top">DLDataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a277f104e659f71cd8885744700016341">String2DLDataType</a> (std::string s)</td></tr>
-<tr class="memdesc:a277f104e659f71cd8885744700016341"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert a string to TVM type.  <a href="#a277f104e659f71cd8885744700016341">More...</a><br /></td></tr>
-<tr class="separator:a277f104e659f71cd8885744700016341"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac360f2d9815036ab1b4d84d9cfb46b4f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ac360f2d9815036ab1b4d84d9cfb46b4f">DLDataType2String</a> (DLDataType t)</td></tr>
-<tr class="memdesc:ac360f2d9815036ab1b4d84d9cfb46b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert a TVM type to string.  <a href="#ac360f2d9815036ab1b4d84d9cfb46b4f">More...</a><br /></td></tr>
-<tr class="separator:ac360f2d9815036ab1b4d84d9cfb46b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11ed99740d7bb838d96617de83ff2363"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a11ed99740d7bb838d96617de83ff2363">operator&lt;&lt;</a> (std::ostream &amp;os, DLDataType t)</td></tr>
-<tr class="separator:a11ed99740d7bb838d96617de83ff2363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59d447b7bdac52d26bca3422fe098f6f"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a59d447b7bdac52d26bca3422fe098f6f">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classtvm_1_1runtime_1_1DataType.html">DataType</a> &amp;dtype)</td></tr>
-<tr class="separator:a59d447b7bdac52d26bca3422fe098f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac8a77303649fb143634796b3dc50a286"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ac8a77303649fb143634796b3dc50a286">kAllocAlignment</a> = 64</td></tr>
+<tr class="memitem:ac8a77303649fb143634796b3dc50a286"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ac8a77303649fb143634796b3dc50a286">kAllocAlignment</a> = 128</td></tr>
 <tr class="memdesc:ac8a77303649fb143634796b3dc50a286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes each allocation must align to.  <a href="#ac8a77303649fb143634796b3dc50a286">More...</a><br /></td></tr>
 <tr class="separator:ac8a77303649fb143634796b3dc50a286"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f5819cabea098a1818cf7cda40fdb1f"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a8f5819cabea098a1818cf7cda40fdb1f">kTempAllocaAlignment</a> = 64</td></tr>
+<tr class="memitem:a8f5819cabea098a1818cf7cda40fdb1f"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a8f5819cabea098a1818cf7cda40fdb1f">kTempAllocaAlignment</a> = 128</td></tr>
 <tr class="memdesc:a8f5819cabea098a1818cf7cda40fdb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes each allocation must align to in temporary allocation.  <a href="#a8f5819cabea098a1818cf7cda40fdb1f">More...</a><br /></td></tr>
 <tr class="separator:a8f5819cabea098a1818cf7cda40fdb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f6f769f6dbbbb24929b7c9f91a48c90"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a2f6f769f6dbbbb24929b7c9f91a48c90">kMaxStackAlloca</a> = 1024</td></tr>
@@ -1299,7 +1311,7 @@ template&lt;typename T , typename... Args&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int tvm::runtime::kAllocAlignment = 64</td>
+          <td class="memname">constexpr int tvm::runtime::kAllocAlignment = 128</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1341,7 +1353,7 @@ template&lt;typename T , typename... Args&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int tvm::runtime::kTempAllocaAlignment = 64</td>
+          <td class="memname">constexpr int tvm::runtime::kTempAllocaAlignment = 128</td>
         </tr>
       </table>
 </div><div class="memdoc">

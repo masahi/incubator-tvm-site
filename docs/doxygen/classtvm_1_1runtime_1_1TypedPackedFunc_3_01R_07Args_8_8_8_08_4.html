@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Collaboration diagram for tvm::runtime::TypedPackedFunc&lt; R(Args...)&gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1runtime_1_1TypedPackedFunc_3_01R_07Args_8_8_8_08_4__coll__graph.svg" width="206" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1runtime_1_1TypedPackedFunc_3_01R_07Args_8_8_8_08_4__coll__graph.svg" width="206" height="308"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -131,6 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0161d426f9ca366c860ad48c384f7192"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc_3_01R_07Args_8_8_8_08_4.html#a0161d426f9ca366c860ad48c384f7192">TypedPackedFunc</a> (const <a class="el" href="classtvm_1_1runtime_1_1TVMArgValue.html">TVMArgValue</a> &amp;value)</td></tr>
 <tr class="memdesc:a0161d426f9ca366c860ad48c384f7192"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor from <a class="el" href="classtvm_1_1runtime_1_1TVMArgValue.html" title="A single argument value to PackedFunc. Containing both type_code and TVMValue. ">TVMArgValue</a>  <a href="#a0161d426f9ca366c860ad48c384f7192">More...</a><br /></td></tr>
 <tr class="separator:a0161d426f9ca366c860ad48c384f7192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1347229c4794682ee76d5d167195fe55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc_3_01R_07Args_8_8_8_08_4.html#a1347229c4794682ee76d5d167195fe55">TypedPackedFunc</a> (<a class="el" href="classtvm_1_1runtime_1_1TVMMovableArgValue__.html">TVMMovableArgValue_</a> &amp;&amp;value)</td></tr>
+<tr class="memdesc:a1347229c4794682ee76d5d167195fe55"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor from <a class="el" href="classtvm_1_1runtime_1_1TVMMovableArgValue__.html" title="Internal auxiliary struct for TypedPackedFunc to indicate a movable argument. ">TVMMovableArgValue_</a>  <a href="#a1347229c4794682ee76d5d167195fe55">More...</a><br /></td></tr>
+<tr class="separator:a1347229c4794682ee76d5d167195fe55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36ca0d1876544463ee848766e70e5e96"><td class="memTemplParams" colspan="2">template&lt;typename FLambda , typename  = typename std::enable_if&lt;             std::is_convertible&lt;FLambda,                                 std::function&lt;R(Args...)&gt;                                 &gt;::value&gt;::type&gt; </td></tr>
 <tr class="memitem:a36ca0d1876544463ee848766e70e5e96"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc_3_01R_07Args_8_8_8_08_4.html#a36ca0d1876544463ee848766e70e5e96">TypedPackedFunc</a> (const FLambda &amp;typed_lambda)</td></tr>
 <tr class="memdesc:a36ca0d1876544463ee848766e70e5e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct from a lambda function with the same signature.  <a href="#a36ca0d1876544463ee848766e70e5e96">More...</a><br /></td></tr>
@@ -350,6 +353,40 @@ template&lt;typename R , typename... Args&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The <a class="el" href="classtvm_1_1runtime_1_1TVMArgValue.html" title="A single argument value to PackedFunc. Containing both type_code and TVMValue. ">TVMArgValue</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1347229c4794682ee76d5d167195fe55"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename R , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc.html">tvm::runtime::TypedPackedFunc</a>&lt; R(Args...)&gt;::<a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc.html">TypedPackedFunc</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1runtime_1_1TVMMovableArgValue__.html">TVMMovableArgValue_</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>constructor from <a class="el" href="classtvm_1_1runtime_1_1TVMMovableArgValue__.html" title="Internal auxiliary struct for TypedPackedFunc to indicate a movable argument. ">TVMMovableArgValue_</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The <a class="el" href="classtvm_1_1runtime_1_1TVMMovableArgValue__.html" title="Internal auxiliary struct for TypedPackedFunc to indicate a movable argument. ">TVMMovableArgValue_</a> </td></tr>
   </table>
   </dd>
 </dl>

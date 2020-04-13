@@ -452,8 +452,8 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a85e4536ea4e1c8d3d48c61135f0a8ff0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a85e4536ea4e1c8d3d48c61135f0a8ff0">CallingConv</a> : int { <a class="el" href="namespacetvm.html#a85e4536ea4e1c8d3d48c61135f0a8ff0a6867faeaa475fda467e48267db2bb8a8">CallingConv::kDefault</a> = 0, 
-<a class="el" href="namespacetvm.html#a85e4536ea4e1c8d3d48c61135f0a8ff0aea7c0ea92da6200bb14ea17a6094e2bc">CallingConv::kDeviceKernelLaunch</a> = 2, 
-<a class="el" href="namespacetvm.html#a85e4536ea4e1c8d3d48c61135f0a8ff0ae7694043e4825265becdb58550b4e443">CallingConv::kCPackedFunc</a> = 3
+<a class="el" href="namespacetvm.html#a85e4536ea4e1c8d3d48c61135f0a8ff0ae7694043e4825265becdb58550b4e443">CallingConv::kCPackedFunc</a> = 1, 
+<a class="el" href="namespacetvm.html#a85e4536ea4e1c8d3d48c61135f0a8ff0aea7c0ea92da6200bb14ea17a6094e2bc">CallingConv::kDeviceKernelLaunch</a> = 2
  }<tr class="memdesc:a85e4536ea4e1c8d3d48c61135f0a8ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible Calling conventions.  <a href="namespacetvm.html#a85e4536ea4e1c8d3d48c61135f0a8ff0">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:a85e4536ea4e1c8d3d48c61135f0a8ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -472,21 +472,18 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9284f30c0e1daf1649838578fed1baa1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a9284f30c0e1daf1649838578fed1baa1">lower</a> (<a class="el" href="classtvm_1_1te_1_1Schedule.html">te::Schedule</a> sch, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">te::Tensor</a> &gt; &amp;args, const std::string &amp;name, const std::unordered_map&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">te::Tensor</a>, <a class="el" href="classtvm_1_1tir_1_1Buffer.html">tir::Buffer</a> &gt; &amp;binds, const <a class="el" href="classtvm_1_1BuildConfig.html">BuildConfig</a> &amp;config)</td></tr>
-<tr class="memdesc:a9284f30c0e1daf1649838578fed1baa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a LoweredFunc given a schedule, args and binds.  <a href="#a9284f30c0e1daf1649838578fed1baa1">More...</a><br /></td></tr>
-<tr class="separator:a9284f30c0e1daf1649838578fed1baa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66b6a4702f9c98e4e4c6c385da231903"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a66b6a4702f9c98e4e4c6c385da231903">split_dev_host_funcs</a> (const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a> &gt; &amp;funcs, const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;target, const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;target_host, const <a class="el" href="classtvm_1_1BuildConfig.html">BuildConfig</a> &amp;config)</td></tr>
-<tr class="memdesc:a66b6a4702f9c98e4e4c6c385da231903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split host/device function and running necessary pass before build.  <a href="#a66b6a4702f9c98e4e4c6c385da231903">More...</a><br /></td></tr>
-<tr class="separator:a66b6a4702f9c98e4e4c6c385da231903"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50a9a7e42c754dc31caf6d74e4423ddc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1runtime_1_1Module.html">runtime::Module</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a50a9a7e42c754dc31caf6d74e4423ddc">build</a> (const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a> &gt; &amp;funcs, const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;target, const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;target_host, const <a class="el" href="classtvm_1_1BuildConfig.html">BuildConfig</a> &amp;config)</td></tr>
-<tr class="memdesc:a50a9a7e42c754dc31caf6d74e4423ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from an array of lowered functions.  <a href="#a50a9a7e42c754dc31caf6d74e4423ddc">More...</a><br /></td></tr>
-<tr class="separator:a50a9a7e42c754dc31caf6d74e4423ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab60e7a2ecb2573f5380a476d8c5aca6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1runtime_1_1Module.html">runtime::Module</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#ab60e7a2ecb2573f5380a476d8c5aca6d">build</a> (const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1Target.html">Target</a>, <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a> &gt;&gt; &amp;input, const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;target_host, const <a class="el" href="classtvm_1_1BuildConfig.html">BuildConfig</a> &amp;config)</td></tr>
-<tr class="memdesc:ab60e7a2ecb2573f5380a476d8c5aca6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from a map contains target to a list of lowered functions pairs. This function is used for heterogeneous build.  <a href="#ab60e7a2ecb2573f5380a476d8c5aca6d">More...</a><br /></td></tr>
-<tr class="separator:ab60e7a2ecb2573f5380a476d8c5aca6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a879a810167b7f65cbfe7975da151c06d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1runtime_1_1Module.html">runtime::Module</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a879a810167b7f65cbfe7975da151c06d">build</a> (const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; std::string, <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a> &gt;&gt; &amp;input, const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;target_host, const <a class="el" href="classtvm_1_1BuildConfig.html">BuildConfig</a> &amp;config)</td></tr>
-<tr class="memdesc:a879a810167b7f65cbfe7975da151c06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from a map contains target to a list of lowered functions pairs. This function is used for heterogeneous build.  <a href="#a879a810167b7f65cbfe7975da151c06d">More...</a><br /></td></tr>
-<tr class="separator:a879a810167b7f65cbfe7975da151c06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32321779cd7a6ecbfed207d610dbdf1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1IRModule.html">IRModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#af32321779cd7a6ecbfed207d610dbdf1">lower</a> (<a class="el" href="classtvm_1_1te_1_1Schedule.html">te::Schedule</a> sch, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">te::Tensor</a> &gt; &amp;args, const std::string &amp;name, const std::unordered_map&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">te::Tensor</a>, <a class="el" href="classtvm_1_1tir_1_1Buffer.html">tir::Buffer</a> &gt; &amp;binds, const <a class="el" href="classtvm_1_1BuildConfig.html">BuildConfig</a> &amp;config)</td></tr>
+<tr class="memdesc:af32321779cd7a6ecbfed207d610dbdf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a> given a schedule, args and binds.  <a href="#af32321779cd7a6ecbfed207d610dbdf1">More...</a><br /></td></tr>
+<tr class="separator:af32321779cd7a6ecbfed207d610dbdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1ed8b9bb177bf976290ec7275f0e6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1runtime_1_1Module.html">runtime::Module</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a8f1ed8b9bb177bf976290ec7275f0e6d">build</a> (const <a class="el" href="classtvm_1_1IRModule.html">IRModule</a> &amp;funcs, const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;target, const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;target_host, const <a class="el" href="classtvm_1_1BuildConfig.html">BuildConfig</a> &amp;config)</td></tr>
+<tr class="memdesc:a8f1ed8b9bb177bf976290ec7275f0e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from an <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>.  <a href="#a8f1ed8b9bb177bf976290ec7275f0e6d">More...</a><br /></td></tr>
+<tr class="separator:a8f1ed8b9bb177bf976290ec7275f0e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6430484248acb549a8be622d60dd32d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1runtime_1_1Module.html">runtime::Module</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#ad6430484248acb549a8be622d60dd32d">build</a> (const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1Target.html">Target</a>, <a class="el" href="classtvm_1_1IRModule.html">IRModule</a> &gt; &amp;input, const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;target_host, const <a class="el" href="classtvm_1_1BuildConfig.html">BuildConfig</a> &amp;config)</td></tr>
+<tr class="memdesc:ad6430484248acb549a8be622d60dd32d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from a map contains target to <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>. This function is used for heterogeneous build.  <a href="#ad6430484248acb549a8be622d60dd32d">More...</a><br /></td></tr>
+<tr class="separator:ad6430484248acb549a8be622d60dd32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c0f6aefe6bce8d6621bb3ee6ea3e00f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1runtime_1_1Module.html">runtime::Module</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a7c0f6aefe6bce8d6621bb3ee6ea3e00f">build</a> (const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; std::string, <a class="el" href="classtvm_1_1IRModule.html">IRModule</a> &gt; &amp;input, const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;target_host, const <a class="el" href="classtvm_1_1BuildConfig.html">BuildConfig</a> &amp;config)</td></tr>
+<tr class="memdesc:a7c0f6aefe6bce8d6621bb3ee6ea3e00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from a map contains target to <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>. This function is used for heterogeneous build.  <a href="#a7c0f6aefe6bce8d6621bb3ee6ea3e00f">More...</a><br /></td></tr>
+<tr class="separator:a7c0f6aefe6bce8d6621bb3ee6ea3e00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6c242e8ac09beb463fba306948b7f15"><td class="memTemplParams" colspan="2">template&lt;typename TObjectRef &gt; </td></tr>
 <tr class="memitem:ab6c242e8ac09beb463fba306948b7f15"><td class="memTemplItemLeft" align="right" valign="top">TObjectRef&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm.html#ab6c242e8ac09beb463fba306948b7f15">NullValue</a> ()</td></tr>
 <tr class="memdesc:ab6c242e8ac09beb463fba306948b7f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a NodeRef type that represents null.  <a href="#ab6c242e8ac09beb463fba306948b7f15">More...</a><br /></td></tr>
@@ -515,9 +512,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a7f0738778e1a4f1725bea3d6c801aab4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Type.html">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a7f0738778e1a4f1725bea3d6c801aab4">Bind</a> (const <a class="el" href="classtvm_1_1Type.html">Type</a> &amp;type, const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1TypeVar.html">TypeVar</a>, <a class="el" href="classtvm_1_1Type.html">Type</a> &gt; &amp;args_map)</td></tr>
 <tr class="memdesc:a7f0738778e1a4f1725bea3d6c801aab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind free type variables in the type.  <a href="#a7f0738778e1a4f1725bea3d6c801aab4">More...</a><br /></td></tr>
 <tr class="separator:a7f0738778e1a4f1725bea3d6c801aab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23b1dfa894bd954c9a1eea4ab8199764"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a23b1dfa894bd954c9a1eea4ab8199764">Dump</a> (const ObjectRef &amp;node)</td></tr>
-<tr class="memdesc:a23b1dfa894bd954c9a1eea4ab8199764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump the node to stderr, used for debug purposes.  <a href="#a23b1dfa894bd954c9a1eea4ab8199764">More...</a><br /></td></tr>
-<tr class="separator:a23b1dfa894bd954c9a1eea4ab8199764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a410120ad997c7470798b98a1c48ee3e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a410120ad997c7470798b98a1c48ee3e6">Dump</a> (const <a class="el" href="classtvm_1_1runtime_1_1ObjectRef.html">runtime::ObjectRef</a> &amp;node)</td></tr>
+<tr class="memdesc:a410120ad997c7470798b98a1c48ee3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump the node to stderr, used for debug purposes.  <a href="#a410120ad997c7470798b98a1c48ee3e6">More...</a><br /></td></tr>
+<tr class="separator:a410120ad997c7470798b98a1c48ee3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4909861f9bc606426c65c65da4da3734"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a4909861f9bc606426c65c65da4da3734">Dump</a> (const <a class="el" href="classtvm_1_1runtime_1_1Object.html">runtime::Object</a> *node)</td></tr>
+<tr class="memdesc:a4909861f9bc606426c65c65da4da3734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump the node to stderr, used for debug purposes.  <a href="#a4909861f9bc606426c65c65da4da3734">More...</a><br /></td></tr>
+<tr class="separator:a4909861f9bc606426c65c65da4da3734"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad98af358976b1598430090b7db92823"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#aad98af358976b1598430090b7db92823">SaveJSON</a> (const <a class="el" href="classtvm_1_1runtime_1_1ObjectRef.html">runtime::ObjectRef</a> &amp;node)</td></tr>
 <tr class="memdesc:aad98af358976b1598430090b7db92823"><td class="mdescLeft">&#160;</td><td class="mdescRight">save the node as well as all the node it depends on as json. This can be used to serialize any TVM object  <a href="#aad98af358976b1598430090b7db92823">More...</a><br /></td></tr>
 <tr class="separator:aad98af358976b1598430090b7db92823"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -964,18 +964,18 @@ Functions</h2></td></tr>
 <li>Implementation: specified by the native target. </li>
 </ul>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a85e4536ea4e1c8d3d48c61135f0a8ff0aea7c0ea92da6200bb14ea17a6094e2bc"></a>kDeviceKernelLaunch&#160;</td><td class="fielddoc">
-<p>Device kernel launch. </p>
-<ul>
-<li>Call by PackedFunc calling convention.</li>
-<li>Implementation: defined by device runtime(e.g. runtime/cuda) </li>
-</ul>
-</td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a85e4536ea4e1c8d3d48c61135f0a8ff0ae7694043e4825265becdb58550b4e443"></a>kCPackedFunc&#160;</td><td class="fielddoc">
 <p>PackedFunc that exposes a CPackedFunc signature. </p>
 <ul>
 <li>Calling by PackedFunc calling convention.</li>
 <li>Implementation: Expose a function with the CPackedFunc signature. </li>
+</ul>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a85e4536ea4e1c8d3d48c61135f0a8ff0aea7c0ea92da6200bb14ea17a6094e2bc"></a>kDeviceKernelLaunch&#160;</td><td class="fielddoc">
+<p>Device kernel launch. </p>
+<ul>
+<li>Call by PackedFunc calling convention.</li>
+<li>Implementation: defined by device runtime(e.g. runtime/cuda) </li>
 </ul>
 </td></tr>
 </table>
@@ -1211,14 +1211,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a50a9a7e42c754dc31caf6d74e4423ddc"></a>
+<a class="anchor" id="a8f1ed8b9bb177bf976290ec7275f0e6d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classtvm_1_1runtime_1_1Module.html">runtime::Module</a> tvm::build </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1IRModule.html">IRModule</a> &amp;&#160;</td>
           <td class="paramname"><em>funcs</em>, </td>
         </tr>
         <tr>
@@ -1247,7 +1247,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Build a device and host module for a specific target from an array of lowered functions. </p>
+<p>Build a device and host module for a specific target from an <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">funcs</td><td>The functions to be built. </td></tr>
@@ -1261,14 +1261,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab60e7a2ecb2573f5380a476d8c5aca6d"></a>
+<a class="anchor" id="ad6430484248acb549a8be622d60dd32d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classtvm_1_1runtime_1_1Module.html">runtime::Module</a> tvm::build </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1Target.html">Target</a>, <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1Target.html">Target</a>, <a class="el" href="classtvm_1_1IRModule.html">IRModule</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>input</em>, </td>
         </tr>
         <tr>
@@ -1291,10 +1291,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Build a device and host module for a specific target from a map contains target to a list of lowered functions pairs. This function is used for heterogeneous build. </p>
+<p>Build a device and host module for a specific target from a map contains target to <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>. This function is used for heterogeneous build. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>The map contains target to a list of lowered functions pairs. </td></tr>
+    <tr><td class="paramname">input</td><td>The map contains target to an <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>. </td></tr>
     <tr><td class="paramname">target_host</td><td>The target for building host code. To use the default, pass Target(). </td></tr>
     <tr><td class="paramname">config</td><td>The build configuration. </td></tr>
   </table>
@@ -1304,14 +1304,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a879a810167b7f65cbfe7975da151c06d"></a>
+<a class="anchor" id="a7c0f6aefe6bce8d6621bb3ee6ea3e00f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classtvm_1_1runtime_1_1Module.html">runtime::Module</a> tvm::build </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; std::string, <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; std::string, <a class="el" href="classtvm_1_1IRModule.html">IRModule</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>input</em>, </td>
         </tr>
         <tr>
@@ -1334,10 +1334,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Build a device and host module for a specific target from a map contains target to a list of lowered functions pairs. This function is used for heterogeneous build. </p>
+<p>Build a device and host module for a specific target from a map contains target to <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>. This function is used for heterogeneous build. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>The map contains target string to a list of lowered functions pairs. </td></tr>
+    <tr><td class="paramname">input</td><td>The map contains target string to an <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>. </td></tr>
     <tr><td class="paramname">target_host</td><td>The target for building host code. To use the default, pass Target(). </td></tr>
     <tr><td class="paramname">config</td><td>The build configuration. </td></tr>
   </table>
@@ -1701,14 +1701,38 @@ template&lt;typename TA &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a23b1dfa894bd954c9a1eea4ab8199764"></a>
+<a class="anchor" id="a410120ad997c7470798b98a1c48ee3e6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void tvm::Dump </td>
           <td>(</td>
-          <td class="paramtype">const ObjectRef &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1runtime_1_1ObjectRef.html">runtime::ObjectRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dump the node to stderr, used for debug purposes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>The input node </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4909861f9bc606426c65c65da4da3734"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tvm::Dump </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1runtime_1_1Object.html">runtime::Object</a> *&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2323,40 +2347,6 @@ template&lt;typename TA &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ac4d2991113bb8e0b634e4c83183eb5c1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::indexmod </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="abd2345bc3cd37ab4f762c0f971042daa"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2374,6 +2364,40 @@ template&lt;typename TA &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac4d2991113bb8e0b634e4c83183eb5c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::indexmod </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -2716,12 +2740,12 @@ template&lt;typename TA &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9284f30c0e1daf1649838578fed1baa1"></a>
+<a class="anchor" id="af32321779cd7a6ecbfed207d610dbdf1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt;<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a>&gt; tvm::lower </td>
+          <td class="memname"><a class="el" href="classtvm_1_1IRModule.html">IRModule</a> tvm::lower </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtvm_1_1te_1_1Schedule.html">te::Schedule</a>&#160;</td>
           <td class="paramname"><em>sch</em>, </td>
@@ -2758,7 +2782,7 @@ template&lt;typename TA &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Build a LoweredFunc given a schedule, args and binds. </p>
+<p>Build an <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a> given a schedule, args and binds. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sch</td><td>The schedule to lower. </td></tr>
@@ -2769,7 +2793,7 @@ template&lt;typename TA &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The lowered function. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result module. </dd></dl>
 
 </div>
 </div>
@@ -4241,6 +4265,40 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="af7c46ff33a2727f48b10d7d563f4a746"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a028ba217f99b6cb1592a6a56b2bc9ee5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -4360,40 +4418,6 @@ template&lt;typename TB &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af7c46ff33a2727f48b10d7d563f4a746"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -4659,6 +4683,40 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="aa672271dbd566a0e7b9e4c87664bccb4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a46877235265ab97544ec2e561f521b0f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -4710,40 +4768,6 @@ template&lt;typename TB &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa672271dbd566a0e7b9e4c87664bccb4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&lt; </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -4903,40 +4927,6 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a6eea8276bcc178425bc14f3d878970ff"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&lt;= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a06d97bd5ee2c12e8547be0cc42f6b300"></a>
 <div class="memitem">
 <div class="memproto">
@@ -4954,40 +4944,6 @@ template&lt;typename TB &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad5dbec0c48b8644c5c6e9d773ddc106b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&lt;= </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5050,6 +5006,74 @@ template&lt;typename TB &gt; </div>
           <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&lt;= </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6eea8276bcc178425bc14f3d878970ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad5dbec0c48b8644c5c6e9d773ddc106b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -5147,40 +5171,6 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a6aeb6ed068c5de8ab908ff234337aeeb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&gt; </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="acc92dcd3d81981e983ddf05347bc9371"></a>
 <div class="memitem">
 <div class="memproto">
@@ -5198,6 +5188,40 @@ template&lt;typename TB &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6d0ad14c882c11311836138a2c164cf3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5249,7 +5273,7 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9cea8f3789d8f3dc78acae43e9a6aad6"></a>
+<a class="anchor" id="a6aeb6ed068c5de8ab908ff234337aeeb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5259,13 +5283,13 @@ template&lt;typename TB &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&gt; </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5283,7 +5307,7 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a6d0ad14c882c11311836138a2c164cf3"></a>
+<a class="anchor" id="a9cea8f3789d8f3dc78acae43e9a6aad6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5293,13 +5317,13 @@ template&lt;typename TB &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&gt; </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5422,40 +5446,6 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ac194836fc11a8ba34e44738da17fd116"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&gt;= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="aae1dcfef78728c5490d3c107b4abac5a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -5473,6 +5463,40 @@ template&lt;typename TB &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac194836fc11a8ba34e44738da17fd116"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5561,40 +5585,6 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="abccc3d3e96ee608022b148ffa05034eb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&gt;&gt; </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a550c2a251b2a6fd2a72172fe3db75d40"></a>
 <div class="memitem">
 <div class="memproto">
@@ -5612,6 +5602,40 @@ template&lt;typename TB &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abccc3d3e96ee608022b148ffa05034eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5666,40 +5690,6 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a6f638564e5e4d1023096523800f2579e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator^ </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a82dc2fe21e7a64be5a1b11c2a8775d31"></a>
 <div class="memitem">
 <div class="memproto">
@@ -5717,6 +5707,40 @@ template&lt;typename TB &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6f638564e5e4d1023096523800f2579e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::operator^ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -6268,56 +6292,6 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a66b6a4702f9c98e4e4c6c385da231903"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt;<a class="el" href="classtvm_1_1Array.html">Array</a>&lt;<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a>&gt; &gt; tvm::split_dev_host_funcs </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">tir::LoweredFunc</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>funcs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;&#160;</td>
-          <td class="paramname"><em>target</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1Target.html">Target</a> &amp;&#160;</td>
-          <td class="paramname"><em>target_host</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1BuildConfig.html">BuildConfig</a> &amp;&#160;</td>
-          <td class="paramname"><em>config</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Split host/device function and running necessary pass before build. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">funcs</td><td>The functions to be built. </td></tr>
-    <tr><td class="paramname">target</td><td>The target device to build for. </td></tr>
-    <tr><td class="paramname">target_host</td><td>The target for building host code. To use the default, pass Target() </td></tr>
-    <tr><td class="paramname">config</td><td>The build configuration. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classtvm_1_1Array.html" title="Array container of NodeRef in DSL graph. Array implements copy on write semantics, which means array is mutable but copy will happen when array is referenced in more than two places. ">Array</a>&lt;Array&lt;LoweredFunc&gt;&gt; with 2 elements. First is host function <a class="el" href="classtvm_1_1Array.html" title="Array container of NodeRef in DSL graph. Array implements copy on write semantics, which means array is mutable but copy will happen when array is referenced in more than two places. ">Array</a>, second is device function array </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a0a4fcbbd8d9db345d4d7e8bb0a76671a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -6488,40 +6462,6 @@ template&lt;typename TB &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a5b5bb91649c681b0ea799689be9647bf"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::truncdiv </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ae50afd0565c00f594ee188bab7323372"></a>
 <div class="memitem">
 <div class="memproto">
@@ -6539,6 +6479,40 @@ template&lt;typename TB &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b5bb91649c681b0ea799689be9647bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::truncdiv </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>

@@ -141,9 +141,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8c90a03541fb6c3f068cc8fccf83762a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fbb9197b832b52e3da2fb37643199d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1TVMArgsSetter.html#a0fbb9197b832b52e3da2fb37643199d9">operator()</a> (size_t i, const <a class="el" href="classtvm_1_1runtime_1_1TVMRetValue.html">TVMRetValue</a> &amp;value) const </td></tr>
 <tr class="separator:a0fbb9197b832b52e3da2fb37643199d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa55c2d96af79e07cdf0ca253ec49dc19"><td class="memTemplParams" colspan="2">template&lt;typename TObjectRef , typename  = typename std::enable_if&lt;             std::is_base_of&lt;ObjectRef, TObjectRef&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:aa55c2d96af79e07cdf0ca253ec49dc19"><td class="memTemplParams" colspan="2">template&lt;typename TObjectRef , typename  = typename std::enable_if&lt;             std::is_base_of&lt;ObjectRef, TObjectRef&gt;::value&gt; ::type&gt; </td></tr>
 <tr class="memitem:aa55c2d96af79e07cdf0ca253ec49dc19"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1TVMArgsSetter.html#aa55c2d96af79e07cdf0ca253ec49dc19">operator()</a> (size_t i, const TObjectRef &amp;value) const </td></tr>
 <tr class="separator:aa55c2d96af79e07cdf0ca253ec49dc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8efcda8c0b276ae54f31d2f21607f376"><td class="memTemplParams" colspan="2">template&lt;typename TObjectRef , typename  = typename std::enable_if&lt;             std::is_base_of&lt;ObjectRef,                             typename std::remove_reference&lt;TObjectRef&gt;::type&gt;::value&gt; ::type&gt; </td></tr>
+<tr class="memitem:a8efcda8c0b276ae54f31d2f21607f376"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1TVMArgsSetter.html#a8efcda8c0b276ae54f31d2f21607f376">operator()</a> (size_t i, TObjectRef &amp;&amp;value) const </td></tr>
+<tr class="separator:a8efcda8c0b276ae54f31d2f21607f376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd71fc2907e37ca9739940f9abc5d1b9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:abd71fc2907e37ca9739940f9abc5d1b9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1TVMArgsSetter.html#abd71fc2907e37ca9739940f9abc5d1b9">SetObject</a> (size_t i, T &amp;&amp;value) const </td></tr>
+<tr class="separator:abd71fc2907e37ca9739940f9abc5d1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5882f7eda112e825eb5a87e45aeb85b0"></a>
@@ -733,7 +739,7 @@ template&lt;typename FType &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TObjectRef , typename &gt; </div>
+template&lt;typename TObjectRef , typename  = typename std::enable_if&lt;             std::is_base_of&lt;ObjectRef, TObjectRef&gt;::value&gt; ::type&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -748,6 +754,78 @@ template&lt;typename TObjectRef , typename &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const TObjectRef &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8efcda8c0b276ae54f31d2f21607f376"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TObjectRef , typename  = typename std::enable_if&lt;             std::is_base_of&lt;ObjectRef,                             typename std::remove_reference&lt;TObjectRef&gt;::type&gt;::value&gt; ::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tvm::runtime::TVMArgsSetter::operator() </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TObjectRef &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abd71fc2907e37ca9739940f9abc5d1b9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tvm::runtime::TVMArgsSetter::SetObject </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>

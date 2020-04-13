@@ -42,7 +42,6 @@ be unstable.
     import numpy as np
 
     from tvm.contrib.download import download_testdata
-    from tvm.relay.frontend.pytorch import get_graph_input_names
 
     # PyTorch imports
     import torch
@@ -120,10 +119,10 @@ Convert PyTorch graph to Relay graph.
 
 .. code-block:: default
 
-    input_name = get_graph_input_names(scripted_model)[0]  # only one input
-    shape_dict = {input_name: img.shape}
+    input_name = 'input0'  # only one input, set it to this name
+    shape_list = [(input_name, img.shape)]
     mod, params = relay.frontend.from_pytorch(scripted_model,
-                                              shape_dict)
+                                              shape_list)
 
 
 
@@ -237,11 +236,6 @@ Look up prediction top 1 index in 1000 class synset.
     Torch top-1 id: 281, class name: tabby, tabby cat
 
 
-
-
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  5.746 seconds)
 
 
 .. _sphx_glr_download_tutorials_frontend_from_pytorch.py:

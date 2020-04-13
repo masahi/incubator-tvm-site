@@ -182,39 +182,40 @@
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="classtvm_1_1runtime_1_1ObjectRef.html" target="_top" xlink:title="Base class of all object reference. ">
-<polygon fill="white" stroke="black" points="4,-1015 4,-1226 134,-1226 134,-1015 4,-1015"/>
-<text text-anchor="middle" x="69" y="-1214" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::runtime::ObjectRef</text>
-<polyline fill="none" stroke="black" points="4,-1207 134,-1207 "/>
-<text text-anchor="middle" x="69" y="-1195" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="4,-1188 134,-1188 "/>
-<text text-anchor="start" x="12" y="-1176" font-family="Helvetica,sans-Serif" font-size="10.00">+ ObjectRef()</text>
-<text text-anchor="start" x="12" y="-1165" font-family="Helvetica,sans-Serif" font-size="10.00">+ ObjectRef()</text>
-<text text-anchor="start" x="12" y="-1154" font-family="Helvetica,sans-Serif" font-size="10.00">+ same_as()</text>
-<text text-anchor="start" x="12" y="-1143" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator==()</text>
-<text text-anchor="start" x="12" y="-1132" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator!=()</text>
-<text text-anchor="start" x="12" y="-1121" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator&lt;()</text>
-<text text-anchor="start" x="12" y="-1110" font-family="Helvetica,sans-Serif" font-size="10.00">+ defined()</text>
-<text text-anchor="start" x="12" y="-1099" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
-<text text-anchor="start" x="12" y="-1088" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator&#45;&gt;()</text>
-<text text-anchor="start" x="12" y="-1077" font-family="Helvetica,sans-Serif" font-size="10.00">+ unique()</text>
-<text text-anchor="start" x="12" y="-1066" font-family="Helvetica,sans-Serif" font-size="10.00">+ as()</text>
-<text text-anchor="start" x="12" y="-1055" font-family="Helvetica,sans-Serif" font-size="10.00"># get_mutable()</text>
-<text text-anchor="start" x="12" y="-1044" font-family="Helvetica,sans-Serif" font-size="10.00"># DowncastNoCheck()</text>
-<text text-anchor="start" x="12" y="-1033" font-family="Helvetica,sans-Serif" font-size="10.00"># FFIClearAfterMove()</text>
-<text text-anchor="start" x="12" y="-1022" font-family="Helvetica,sans-Serif" font-size="10.00"># GetDataPtr()</text>
+<polygon fill="white" stroke="black" points="4,-1009.5 4,-1231.5 134,-1231.5 134,-1009.5 4,-1009.5"/>
+<text text-anchor="middle" x="69" y="-1219.5" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::runtime::ObjectRef</text>
+<polyline fill="none" stroke="black" points="4,-1212.5 134,-1212.5 "/>
+<text text-anchor="middle" x="69" y="-1200.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="4,-1193.5 134,-1193.5 "/>
+<text text-anchor="start" x="12" y="-1181.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ObjectRef()</text>
+<text text-anchor="start" x="12" y="-1170.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ObjectRef()</text>
+<text text-anchor="start" x="12" y="-1159.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ same_as()</text>
+<text text-anchor="start" x="12" y="-1148.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator==()</text>
+<text text-anchor="start" x="12" y="-1137.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator!=()</text>
+<text text-anchor="start" x="12" y="-1126.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator&lt;()</text>
+<text text-anchor="start" x="12" y="-1115.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ defined()</text>
+<text text-anchor="start" x="12" y="-1104.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
+<text text-anchor="start" x="12" y="-1093.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator&#45;&gt;()</text>
+<text text-anchor="start" x="12" y="-1082.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ unique()</text>
+<text text-anchor="start" x="12" y="-1071.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ use_count()</text>
+<text text-anchor="start" x="12" y="-1060.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ as()</text>
+<text text-anchor="start" x="12" y="-1049.5" font-family="Helvetica,sans-Serif" font-size="10.00"># get_mutable()</text>
+<text text-anchor="start" x="12" y="-1038.5" font-family="Helvetica,sans-Serif" font-size="10.00"># DowncastNoCheck()</text>
+<text text-anchor="start" x="12" y="-1027.5" font-family="Helvetica,sans-Serif" font-size="10.00"># FFIClearAfterMove()</text>
+<text text-anchor="start" x="12" y="-1016.5" font-family="Helvetica,sans-Serif" font-size="10.00"># GetDataPtr()</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node1 -->
 <g id="edge9" class="edge"><title>Node6&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M45.4345,-1014.85C15.7517,-859.266 -20.2586,-561.145 79,-336 101.336,-285.336 143.109,-239.794 180.793,-205.952"/>
+<path fill="none" stroke="#404040" d="M44.3859,-1009.31C14.9242,-852.271 -19.0925,-558.5 79,-336 101.336,-285.336 143.109,-239.794 180.793,-205.952"/>
 <polygon fill="none" stroke="#404040" points="181.266,-205.535 183.125,-198.568 190.271,-197.604 188.412,-204.571 181.266,-205.535"/>
 <text text-anchor="middle" x="59" y="-679" font-family="Helvetica,sans-Serif" font-size="10.00"> #return_register_</text>
 </g>
 <!-- Node6&#45;&gt;Node5 -->
 <g id="edge7" class="edge"><title>Node6&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M90.2371,-1004.86C99.2054,-956.442 109.282,-902.046 116.769,-861.628"/>
-<polygon fill="none" stroke="midnightblue" points="86.7806,-1004.3 88.4005,-1014.77 93.6635,-1005.57 86.7806,-1004.3"/>
+<path fill="none" stroke="midnightblue" d="M91.2279,-999.507C99.9238,-952.564 109.519,-900.766 116.727,-861.856"/>
+<polygon fill="none" stroke="midnightblue" points="87.7671,-998.974 89.3871,-1009.44 94.65,-1000.25 87.7671,-998.974"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
@@ -241,8 +242,8 @@
 </g>
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge8" class="edge"><title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="#404040" d="M69,-1356.24C69,-1319.92 69,-1277.34 69,-1238.48"/>
-<polygon fill="none" stroke="#404040" points="69.0001,-1238.29 65,-1232.29 69,-1226.29 73,-1232.29 69.0001,-1238.29"/>
+<path fill="none" stroke="#404040" d="M69,-1356.24C69,-1321.52 69,-1281.07 69,-1243.63"/>
+<polygon fill="none" stroke="#404040" points="69.0001,-1243.59 65,-1237.59 69,-1231.59 73,-1237.59 69.0001,-1243.59"/>
 <text text-anchor="middle" x="88.5" y="-1330" font-family="Helvetica,sans-Serif" font-size="10.00"> #data_</text>
 </g>
 <!-- Node8 -->

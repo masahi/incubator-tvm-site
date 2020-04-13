@@ -5,20 +5,20 @@
 
 Computation times
 =================
-**03:41.816** total execution time for **tutorials_frontend** files:
+**03:29.978** total execution time for **tutorials_frontend** files:
 
-- **00:35.197**: :ref:`sphx_glr_tutorials_frontend_deploy_ssd_gluoncv.py` (``deploy_ssd_gluoncv.py``)
-- **00:26.943**: :ref:`sphx_glr_tutorials_frontend_from_tensorflow.py` (``from_tensorflow.py``)
-- **00:26.171**: :ref:`sphx_glr_tutorials_frontend_deploy_quantized.py` (``deploy_quantized.py``)
-- **00:25.351**: :ref:`sphx_glr_tutorials_frontend_from_tflite.py` (``from_tflite.py``)
-- **00:21.056**: :ref:`sphx_glr_tutorials_frontend_from_darknet.py` (``from_darknet.py``)
-- **00:19.512**: :ref:`sphx_glr_tutorials_frontend_deploy_model_on_android.py` (``deploy_model_on_android.py``)
-- **00:18.447**: :ref:`sphx_glr_tutorials_frontend_from_keras.py` (``from_keras.py``)
-- **00:13.186**: :ref:`sphx_glr_tutorials_frontend_from_caffe2.py` (``from_caffe2.py``)
-- **00:07.437**: :ref:`sphx_glr_tutorials_frontend_from_coreml.py` (``from_coreml.py``)
-- **00:06.591**: :ref:`sphx_glr_tutorials_frontend_from_mxnet.py` (``from_mxnet.py``)
-- **00:05.777**: :ref:`sphx_glr_tutorials_frontend_deploy_model_on_rasp.py` (``deploy_model_on_rasp.py``)
-- **00:05.746**: :ref:`sphx_glr_tutorials_frontend_from_pytorch.py` (``from_pytorch.py``)
-- **00:05.505**: :ref:`sphx_glr_tutorials_frontend_build_gcn.py` (``build_gcn.py``)
-- **00:02.995**: :ref:`sphx_glr_tutorials_frontend_using_external_lib.py` (``using_external_lib.py``)
-- **00:01.903**: :ref:`sphx_glr_tutorials_frontend_from_onnx.py` (``from_onnx.py``)
+- **00:28.508**: :ref:`sphx_glr_tutorials_frontend_deploy_ssd_gluoncv.py` (``deploy_ssd_gluoncv.py``)
+- **00:25.585**: :ref:`sphx_glr_tutorials_frontend_deploy_quantized.py` (``deploy_quantized.py``)
+- **00:25.001**: :ref:`sphx_glr_tutorials_frontend_from_tflite.py` (``from_tflite.py``)
+- **00:24.408**: :ref:`sphx_glr_tutorials_frontend_from_tensorflow.py` (``from_tensorflow.py``)
+- **00:19.450**: :ref:`sphx_glr_tutorials_frontend_from_darknet.py` (``from_darknet.py``)
+- **00:18.118**: :ref:`sphx_glr_tutorials_frontend_deploy_model_on_android.py` (``deploy_model_on_android.py``)
+- **00:17.282**: :ref:`sphx_glr_tutorials_frontend_from_keras.py` (``from_keras.py``)
+- **00:13.611**: :ref:`sphx_glr_tutorials_frontend_from_caffe2.py` (``from_caffe2.py``)
+- **00:08.364**: :ref:`sphx_glr_tutorials_frontend_deploy_model_on_rasp.py` (``deploy_model_on_rasp.py``)
+- **00:07.265**: :ref:`sphx_glr_tutorials_frontend_from_pytorch.py` (``from_pytorch.py``)
+- **00:06.705**: :ref:`sphx_glr_tutorials_frontend_from_coreml.py` (``from_coreml.py``)
+- **00:05.867**: :ref:`sphx_glr_tutorials_frontend_from_mxnet.py` (``from_mxnet.py``)
+- **00:05.391**: :ref:`sphx_glr_tutorials_frontend_build_gcn.py` (``build_gcn.py``)
+- **00:02.711**: :ref:`sphx_glr_tutorials_frontend_using_external_lib.py` (``using_external_lib.py``)
+- **00:01.710**: :ref:`sphx_glr_tutorials_frontend_from_onnx.py` (``from_onnx.py``)

@@ -89,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classtvm_1_1tir_1_1FunctionBaseNode-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">tvm::tir::FunctionBaseNode Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -102,13 +103,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for tvm::tir::FunctionBaseNode:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1tir_1_1FunctionBaseNode__inherit__graph.svg" width="1620" height="1308"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1tir_1_1FunctionBaseNode__inherit__graph.svg" width="1620" height="1382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for tvm::tir::FunctionBaseNode:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1tir_1_1FunctionBaseNode__coll__graph.svg" width="206" height="243"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1tir_1_1FunctionBaseNode__coll__graph.svg" width="219" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -121,6 +122,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aef4781fcdee32ca1b19929fd6a2fa090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86d8a47eb472945b01ab508c1ff94930"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1FunctionBaseNode.html#a86d8a47eb472945b01ab508c1ff94930">num_outputs</a> () const =0</td></tr>
 <tr class="separator:a86d8a47eb472945b01ab508c1ff94930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48998732056d9e0b79eb4b38a0f58256"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1FunctionBaseNode.html#a48998732056d9e0b79eb4b38a0f58256">SEqualReduce</a> (const <a class="el" href="classtvm_1_1tir_1_1FunctionBaseNode.html">FunctionBaseNode</a> *other, <a class="el" href="classtvm_1_1SEqualReducer.html">SEqualReducer</a> equal) const </td></tr>
+<tr class="separator:a48998732056d9e0b79eb4b38a0f58256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9354e2a1e95e1aa498111c00f511131"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1FunctionBaseNode.html#aa9354e2a1e95e1aa498111c00f511131">SHashReduce</a> (<a class="el" href="classtvm_1_1SHashReducer.html">SHashReducer</a> hash_reduce) const </td></tr>
+<tr class="separator:aa9354e2a1e95e1aa498111c00f511131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ac59190b6fa36d73015abdf17d0a03288"><td class="memItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1FunctionBaseNode.html#ac59190b6fa36d73015abdf17d0a03288">_type_has_method_sequal_reduce</a> = true</td></tr>
+<tr class="separator:ac59190b6fa36d73015abdf17d0a03288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3741d355b944e3700b84bc519fff11e1"><td class="memItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1FunctionBaseNode.html#a3741d355b944e3700b84bc519fff11e1">_type_has_method_shash_reduce</a> = true</td></tr>
+<tr class="separator:a3741d355b944e3700b84bc519fff11e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base node of internal functions. </p>
@@ -173,7 +185,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the name of the function </dd></dl>
 
-<p>Implemented in <a class="el" href="classtvm_1_1tir_1_1LoweredFuncNode.html#adea0c3a6dee4e102714d23340586fc2b">tvm::tir::LoweredFuncNode</a>, and <a class="el" href="classtvm_1_1te_1_1OperationNode.html#a03b4cec709aed13088b1127a5f90c382">tvm::te::OperationNode</a>.</p>
+<p>Implemented in <a class="el" href="classtvm_1_1te_1_1OperationNode.html#a03b4cec709aed13088b1127a5f90c382">tvm::te::OperationNode</a>.</p>
 
 </div>
 </div>
@@ -199,7 +211,106 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the number of outputs of this function </dd></dl>
 
-<p>Implemented in <a class="el" href="classtvm_1_1te_1_1HybridOpNode.html#aa0ad4d918a2da7686be57ffacaff971c">tvm::te::HybridOpNode</a>, <a class="el" href="classtvm_1_1te_1_1ExternOpNode.html#a1a0ce8401e57d9c66ece44dd59b3fb7d">tvm::te::ExternOpNode</a>, <a class="el" href="classtvm_1_1te_1_1ScanOpNode.html#a1c3059f01aa644a41a6fbfec16538d1e">tvm::te::ScanOpNode</a>, <a class="el" href="classtvm_1_1te_1_1TensorComputeOpNode.html#afccdc3ad7b735d87f93dfecfc6f4021b">tvm::te::TensorComputeOpNode</a>, <a class="el" href="classtvm_1_1te_1_1ComputeOpNode.html#ac4b034b11601367864722954c1b7c7fe">tvm::te::ComputeOpNode</a>, <a class="el" href="classtvm_1_1te_1_1PlaceholderOpNode.html#a777ce9b0843eaaa37d0667b14d50059a">tvm::te::PlaceholderOpNode</a>, and <a class="el" href="classtvm_1_1tir_1_1LoweredFuncNode.html#a00ac40b83b414dfa2af245f7a5117d38">tvm::tir::LoweredFuncNode</a>.</p>
+<p>Implemented in <a class="el" href="classtvm_1_1te_1_1HybridOpNode.html#aa0ad4d918a2da7686be57ffacaff971c">tvm::te::HybridOpNode</a>, <a class="el" href="classtvm_1_1te_1_1ExternOpNode.html#a1a0ce8401e57d9c66ece44dd59b3fb7d">tvm::te::ExternOpNode</a>, <a class="el" href="classtvm_1_1te_1_1ScanOpNode.html#a1c3059f01aa644a41a6fbfec16538d1e">tvm::te::ScanOpNode</a>, <a class="el" href="classtvm_1_1te_1_1TensorComputeOpNode.html#afccdc3ad7b735d87f93dfecfc6f4021b">tvm::te::TensorComputeOpNode</a>, <a class="el" href="classtvm_1_1te_1_1ComputeOpNode.html#ac4b034b11601367864722954c1b7c7fe">tvm::te::ComputeOpNode</a>, and <a class="el" href="classtvm_1_1te_1_1PlaceholderOpNode.html#a777ce9b0843eaaa37d0667b14d50059a">tvm::te::PlaceholderOpNode</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a48998732056d9e0b79eb4b38a0f58256"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tvm::tir::FunctionBaseNode::SEqualReduce </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1tir_1_1FunctionBaseNode.html">FunctionBaseNode</a> *&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1SEqualReducer.html">SEqualReducer</a>&#160;</td>
+          <td class="paramname"><em>equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa9354e2a1e95e1aa498111c00f511131"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tvm::tir::FunctionBaseNode::SHashReduce </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1SHashReducer.html">SHashReducer</a>&#160;</td>
+          <td class="paramname"><em>hash_reduce</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ac59190b6fa36d73015abdf17d0a03288"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const bool tvm::tir::FunctionBaseNode::_type_has_method_sequal_reduce = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3741d355b944e3700b84bc519fff11e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const bool tvm::tir::FunctionBaseNode::_type_has_method_shash_reduce = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

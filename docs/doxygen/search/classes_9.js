@@ -9,12 +9,10 @@ var searchData=
   ['leakyreluattrs',['LeakyReluAttrs',['../structtvm_1_1relay_1_1LeakyReluAttrs.html',1,'tvm::relay']]],
   ['lenode',['LENode',['../structtvm_1_1tir_1_1LENode.html',1,'tvm::tir']]],
   ['let',['Let',['../classtvm_1_1relay_1_1Let.html',1,'tvm::relay']]],
-  ['letnode',['LetNode',['../classtvm_1_1tir_1_1LetNode.html',1,'tvm::tir']]],
   ['letnode',['LetNode',['../classtvm_1_1relay_1_1LetNode.html',1,'tvm::relay']]],
+  ['letnode',['LetNode',['../classtvm_1_1tir_1_1LetNode.html',1,'tvm::tir']]],
   ['letstmtnode',['LetStmtNode',['../classtvm_1_1tir_1_1LetStmtNode.html',1,'tvm::tir']]],
   ['loadnode',['LoadNode',['../classtvm_1_1tir_1_1LoadNode.html',1,'tvm::tir']]],
-  ['loweredfunc',['LoweredFunc',['../classtvm_1_1tir_1_1LoweredFunc.html',1,'tvm::tir']]],
-  ['loweredfuncnode',['LoweredFuncNode',['../classtvm_1_1tir_1_1LoweredFuncNode.html',1,'tvm::tir']]],
   ['lrnattrs',['LRNAttrs',['../structtvm_1_1relay_1_1LRNAttrs.html',1,'tvm::relay']]],
   ['ltnode',['LTNode',['../classtvm_1_1tir_1_1LTNode.html',1,'tvm::tir']]]
 ];

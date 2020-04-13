@@ -28,6 +28,7 @@ var searchData=
   ['devicename',['DeviceName',['../namespacetvm_1_1runtime.html#a9109e4efe269213052ed6a94853c0c00',1,'tvm::runtime']]],
   ['dictattrs',['DictAttrs',['../classtvm_1_1DictAttrs.html#a9a1c2ab8ebd3b2304f65a4c21856611e',1,'tvm::DictAttrs']]],
   ['dilate',['dilate',['../namespacetopi_1_1nn.html#a6ac795264be73287d92fcd7be8943ddc',1,'topi::nn']]],
+  ['dispatchvisitexpr',['DispatchVisitExpr',['../classtvm_1_1relay_1_1MixedModeMutator.html#abf42e17fa95968153e0cff75c6280918',1,'tvm::relay::MixedModeMutator']]],
   ['div',['div',['../namespacetvm.html#a40fcc9952e1ff01a76f3b75dbd368fc1',1,'tvm::div(PrimExpr a, PrimExpr b)'],['../namespacetvm.html#ae2d70142d842bb07be508adb2d4f7447',1,'tvm::div(const PrimExpr &amp;a, float b)'],['../namespacetvm.html#a85c28d529a26976f3d5f67511f2aef8b',1,'tvm::div(float a, const PrimExpr &amp;b)'],['../namespacetvm.html#a8a958cb2612b58e6464f5421bb8ab74b',1,'tvm::div(int a, const PrimExpr &amp;b)'],['../namespacetvm.html#ac9f587b864957447e3d0c64ac9159633',1,'tvm::div(const PrimExpr &amp;a, int b)'],['../namespacetvm.html#a1180d1f0ef1d427bad98a89c66d84c0f',1,'tvm::div(const PrimExpr &amp;a, double b)']]],
   ['divambiguityerror',['DivAmbiguityError',['../namespacetvm.html#a31e7a3e4a160a1d048e3ba741966f1a8',1,'tvm']]],
   ['divide',['divide',['../namespacetopi.html#ab98c1bef2250b920060a8d92f2db2d93',1,'topi::divide(const tvm::PrimExpr &amp;a, const tvm::PrimExpr &amp;b)'],['../namespacetopi.html#a05b9306831fc8eba0b3796252129430e',1,'topi::divide(const tvm::te::Tensor &amp;A, const tvm::te::Tensor &amp;B, std::string name=&quot;T_&quot;&quot;divide&quot;, std::string tag=kBroadcast)'],['../namespacetopi.html#a5907acb7699792da001c148fc85390f8',1,'topi::divide(const tvm::te::Tensor &amp;A, const tvm::PrimExpr &amp;B, std::string name=&quot;T_&quot;&quot;divide&quot;, std::string tag=kElementWise)'],['../namespacetopi.html#a6f29afd22f13ef5cec1c247c93381199',1,'topi::divide(const tvm::PrimExpr &amp;A, const tvm::te::Tensor &amp;B, std::string name=&quot;T_&quot;&quot;divide&quot;, std::string tag=kElementWise)']]],
@@ -38,5 +39,5 @@ var searchData=
   ['downcast',['Downcast',['../namespacetvm_1_1runtime.html#a756a222aed384e208f32d35d3412c918',1,'tvm::runtime']]],
   ['downcastnocheck',['DowncastNoCheck',['../classtvm_1_1runtime_1_1ObjectRef.html#acd04bb22a6861e9952c344ee8547411f',1,'tvm::runtime::ObjectRef']]],
   ['dtype',['dtype',['../classtvm_1_1PrimExpr.html#a1098008618699c33adfbd19e582f9ffd',1,'tvm::PrimExpr']]],
-  ['dump',['Dump',['../namespacetvm.html#a23b1dfa894bd954c9a1eea4ab8199764',1,'tvm']]]
+  ['dump',['Dump',['../namespacetvm.html#a410120ad997c7470798b98a1c48ee3e6',1,'tvm::Dump(const runtime::ObjectRef &amp;node)'],['../namespacetvm.html#a4909861f9bc606426c65c65da4da3734',1,'tvm::Dump(const runtime::Object *node)']]]
 ];

@@ -110,13 +110,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../target.html">tvm.target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html">tvm.tir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.transform">tvm.tir.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.analysis">tvm.tir.analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../te.html">tvm.te</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../driver.html">tvm.driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hybrid.html">tvm.hybrid</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">tvm.relay</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">tvm.relay.analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
@@ -385,7 +386,7 @@ None if not found.</p>
 <dd><p>Return the number of references to the global var</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>var</strong> (<em>Union</em><em>[</em><em>String</em><em>, </em><em>tvm.relay.GlobalVar</em><em>]</em>) – </p>
+<dd class="field-odd"><p><strong>var</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String"><em>String</em></a><em>, </em><em>tvm.relay.GlobalVar</em><em>]</em>) – </p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>ret</strong> – The number reference to the global var</p>
@@ -402,7 +403,7 @@ None if not found.</p>
 <dd><p>Return the number of global function calls from a given global var.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>var</strong> (<em>Union</em><em>[</em><em>String</em><em>, </em><em>tvm.relay.GlobalVar</em><em>]</em>) – </p>
+<dd class="field-odd"><p><strong>var</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String"><em>String</em></a><em>, </em><em>tvm.relay.GlobalVar</em><em>]</em>) – </p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>ret</strong> – The number of global function calls from the given var.</p>
@@ -420,7 +421,7 @@ None if not found.</p>
 function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>var</strong> (<em>Union</em><em>[</em><em>String</em><em>, </em><em>tvm.relay.GlobalVar</em><em>]</em>) – </p>
+<dd class="field-odd"><p><strong>var</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String"><em>String</em></a><em>, </em><em>tvm.relay.GlobalVar</em><em>]</em>) – </p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>ret</strong> – If the function corresponding to var is recurisve.</p>
@@ -437,13 +438,13 @@ function.</p>
 <dd><p>Print a call graph of a global function by name or by variable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>var</strong> (<em>Union</em><em>[</em><em>String</em><em>, </em><em>tvm.relay.GlobalVar</em><em>]</em>) – The name or global variable.</p>
+<dd class="field-odd"><p><strong>var</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String"><em>String</em></a><em>, </em><em>tvm.relay.GlobalVar</em><em>]</em>) – The name or global variable.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>ret</strong> – The call graph represented in string.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>String</p>
+<dd class="field-odd"><p><a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String">String</a></p>
 </dd>
 </dl>
 </dd></dl>

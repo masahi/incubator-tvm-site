@@ -141,8 +141,17 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1Buffer.html">Buffer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtvm_1_1tir_1_1Buffer.html" title="Buffer is a symbolic n-darray structure. It is a composition of primitive symbolic types...">Buffer</a> is a symbolic n-darray structure. It is a composition of primitive symbolic types, used to specify the memory layout of the Tensor used in program input.  <a href="classtvm_1_1tir_1_1Buffer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1BufferLoad.html">BufferLoad</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1BufferLoadNode.html">BufferLoadNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load value from the high dimension buffer.  <a href="classtvm_1_1tir_1_1BufferLoadNode.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1BufferNode.html">BufferNode</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node to represent a buffer.  <a href="classtvm_1_1tir_1_1BufferNode.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1BufferStore.html">BufferStore</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1BufferStoreNode.html">BufferStoreNode</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1CallNode.html">CallNode</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call node.  <a href="classtvm_1_1tir_1_1CallNode.html#details">More...</a><br /></td></tr>
@@ -166,6 +175,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1EvaluateNode.html">EvaluateNode</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates an expression. This is mostly used for putting a Call node into <a class="el" href="classtvm_1_1tir_1_1Stmt.html" title="Container of all statements. ">Stmt</a>.  <a href="classtvm_1_1tir_1_1EvaluateNode.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1tir_1_1ExprDeepEqual.html">ExprDeepEqual</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two expressions recursively and check if they are equal to each other without var remapping.  <a href="structtvm_1_1tir_1_1ExprDeepEqual.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1ExprFunctor.html">ExprFunctor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dynamical functor that dispatches on in the first Expr argument. You can use this as a more powerful Visitor, since it allows you to define function signatures of Visit Function.  <a href="classtvm_1_1tir_1_1ExprFunctor.html#details">More...</a><br /></td></tr>
@@ -229,12 +241,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1LoadNode.html">LoadNode</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the value from buffer_var.  <a href="classtvm_1_1tir_1_1LoadNode.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html" title="LoweredFunc represents function after lowering. This is the final IR representation before codegen...">LoweredFunc</a> represents function after lowering. This is the final IR representation before codegen.  <a href="classtvm_1_1tir_1_1LoweredFunc.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1LoweredFuncNode.html">LoweredFuncNode</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node container of <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html" title="LoweredFunc represents function after lowering. This is the final IR representation before codegen...">LoweredFunc</a>.  <a href="classtvm_1_1tir_1_1LoweredFuncNode.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1LTNode.html">LTNode</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">a &lt; b  <a href="classtvm_1_1tir_1_1LTNode.html#details">More...</a><br /></td></tr>
@@ -348,14 +354,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a8277e2a3d81a80a4776705673df51e0a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a8277e2a3d81a80a4776705673df51e0a">Region</a> = <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1Range.html">Range</a> &gt;</td></tr>
-<tr class="separator:a8277e2a3d81a80a4776705673df51e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa177c432dd27540d34b22c05559324ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#aa177c432dd27540d34b22c05559324ab">Domain</a> = <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1Range.html">Range</a> &gt;</td></tr>
-<tr class="separator:aa177c432dd27540d34b22c05559324ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8c7db788e840dc1c2ed1f365d5ea829"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ae8c7db788e840dc1c2ed1f365d5ea829">IntImmNode</a> = <a class="el" href="classtvm_1_1IntImmNode.html">tvm::IntImmNode</a></td></tr>
 <tr class="separator:ae8c7db788e840dc1c2ed1f365d5ea829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb123be81447d2871f4c716ce2d1dc00"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#adb123be81447d2871f4c716ce2d1dc00">FloatImmNode</a> = <a class="el" href="classtvm_1_1FloatImmNode.html">tvm::FloatImmNode</a></td></tr>
 <tr class="separator:adb123be81447d2871f4c716ce2d1dc00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8277e2a3d81a80a4776705673df51e0a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a8277e2a3d81a80a4776705673df51e0a">Region</a> = <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1Range.html">Range</a> &gt;</td></tr>
+<tr class="separator:a8277e2a3d81a80a4776705673df51e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa177c432dd27540d34b22c05559324ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#aa177c432dd27540d34b22c05559324ab">Domain</a> = <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1Range.html">Range</a> &gt;</td></tr>
+<tr class="separator:aa177c432dd27540d34b22c05559324ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -364,6 +370,16 @@ Enumerations</h2></td></tr>
  }<tr class="memdesc:a9ac05a14db42ca73da1d3945e7ce2fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">buffer type  <a href="namespacetvm_1_1tir.html#a9ac05a14db42ca73da1d3945e7ce2fd1">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:a9ac05a14db42ca73da1d3945e7ce2fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35cce8e3f1e8d7366dc0d9b15536736"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736">ForType</a> : int { <a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736a5255d3daaa0a6276b844d61401e6f493">ForType::Serial</a> = 0, 
+<a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736a98402eecfbcefc336954458a01752131">ForType::Parallel</a> = 1, 
+<a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736a138bc087eaaaf426b54f9a466f0cc725">ForType::Vectorized</a> = 2, 
+<a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736ae53597647de81f4cc9e098fc119ba0ac">ForType::Unrolled</a> = 3
+ }<tr class="memdesc:ae35cce8e3f1e8d7366dc0d9b15536736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additional annotation of for loop.  <a href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:ae35cce8e3f1e8d7366dc0d9b15536736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed067b57db2923a07913239b2165e019"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#aed067b57db2923a07913239b2165e019">DeviceAPI</a> : int { <a class="el" href="namespacetvm_1_1tir.html#aed067b57db2923a07913239b2165e019a6adf97f83acf6453d4a6a4b1070f3754">DeviceAPI::None</a> = 0
+ }</td></tr>
+<tr class="separator:aed067b57db2923a07913239b2165e019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add7d0a6b1dd91f0c3c5dd2f4cf64358e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358e">IterVarType</a> : int { <br />
 &#160;&#160;<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358ea943fcb20375772edb59ea948f6cc9422">kDataPar</a> = 0, 
 <a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358ea2758d2f7912af847eff77105023a25d0">kThreadIndex</a> = 1, 
@@ -380,30 +396,18 @@ Enumerations</h2></td></tr>
  }<tr class="memdesc:add7d0a6b1dd91f0c3c5dd2f4cf64358e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of iteration variable. Each IterVar have a specific type.  <a href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358e">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:add7d0a6b1dd91f0c3c5dd2f4cf64358e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69f0089a367b98e377b652186fa7dc66"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a69f0089a367b98e377b652186fa7dc66">LoweredFuncType</a> : int { <a class="el" href="namespacetvm_1_1tir.html#a69f0089a367b98e377b652186fa7dc66accd368fda1b61f733343349a79cf2ca9">kMixedFunc</a> = 0, 
-<a class="el" href="namespacetvm_1_1tir.html#a69f0089a367b98e377b652186fa7dc66acf71d9235254aaaf4856732d6f743858">kHostFunc</a> = 1, 
-<a class="el" href="namespacetvm_1_1tir.html#a69f0089a367b98e377b652186fa7dc66a6280765ba977e1b1b059d48dd508a628">kDeviceFunc</a> = 2
- }<tr class="memdesc:a69f0089a367b98e377b652186fa7dc66"><td class="mdescLeft">&#160;</td><td class="mdescRight">specific type of lowered function  <a href="namespacetvm_1_1tir.html#a69f0089a367b98e377b652186fa7dc66">More...</a><br /></td></tr>
-</td></tr>
-<tr class="separator:a69f0089a367b98e377b652186fa7dc66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae35cce8e3f1e8d7366dc0d9b15536736"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736">ForType</a> : int { <a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736a5255d3daaa0a6276b844d61401e6f493">ForType::Serial</a> = 0, 
-<a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736a98402eecfbcefc336954458a01752131">ForType::Parallel</a> = 1, 
-<a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736a138bc087eaaaf426b54f9a466f0cc725">ForType::Vectorized</a> = 2, 
-<a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736ae53597647de81f4cc9e098fc119ba0ac">ForType::Unrolled</a> = 3
- }<tr class="memdesc:ae35cce8e3f1e8d7366dc0d9b15536736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additional annotation of for loop.  <a href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736">More...</a><br /></td></tr>
-</td></tr>
-<tr class="separator:ae35cce8e3f1e8d7366dc0d9b15536736"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed067b57db2923a07913239b2165e019"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#aed067b57db2923a07913239b2165e019">DeviceAPI</a> : int { <a class="el" href="namespacetvm_1_1tir.html#aed067b57db2923a07913239b2165e019a6adf97f83acf6453d4a6a4b1070f3754">DeviceAPI::None</a> = 0
- }</td></tr>
-<tr class="separator:aed067b57db2923a07913239b2165e019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ae110e02855d8bc12eb8b6f92ed391844"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1Var.html">Var</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ae110e02855d8bc12eb8b6f92ed391844">UndefinedVars</a> (const <a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> &amp;stmt, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1Var.html">Var</a> &gt; &amp;defs)</td></tr>
+<tr class="memdesc:ae110e02855d8bc12eb8b6f92ed391844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find undefined vars in the statment.  <a href="#ae110e02855d8bc12eb8b6f92ed391844">More...</a><br /></td></tr>
+<tr class="separator:ae110e02855d8bc12eb8b6f92ed391844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8744c43849adf1e8b4d76f2b6a43367c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a8744c43849adf1e8b4d76f2b6a43367c">VerifyMemory</a> (const <a class="el" href="classtvm_1_1IRModule.html">IRModule</a> &amp;mod)</td></tr>
+<tr class="memdesc:a8744c43849adf1e8b4d76f2b6a43367c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify if memory accesses are legal for a specific target device type.  <a href="#a8744c43849adf1e8b4d76f2b6a43367c">More...</a><br /></td></tr>
+<tr class="separator:a8744c43849adf1e8b4d76f2b6a43367c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b3692f3f081d3b5b84a24cf8082141e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1Buffer.html">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a9b3692f3f081d3b5b84a24cf8082141e">decl_buffer</a> (<a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; shape, <a class="el" href="namespacetvm.html#a41918af1a1dc386388639a9d3ad06c5d">DataType</a> dtype=<a class="el" href="classtvm_1_1runtime_1_1DataType.html#a237a714a6a16e14aa01fa4ac52426551">DataType::Float</a>(32), std::string name=&quot;buffer&quot;)</td></tr>
 <tr class="memdesc:a9b3692f3f081d3b5b84a24cf8082141e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new buffer given shape, and dtype.  <a href="#a9b3692f3f081d3b5b84a24cf8082141e">More...</a><br /></td></tr>
 <tr class="separator:a9b3692f3f081d3b5b84a24cf8082141e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc0fdee9fc81462318d59dbe64c8df26"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#afc0fdee9fc81462318d59dbe64c8df26">IterVarType2String</a> (<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358e">IterVarType</a> t)</td></tr>
-<tr class="separator:afc0fdee9fc81462318d59dbe64c8df26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb777c4f4d61883c0cbdf9116458b70d"><td class="memTemplParams" colspan="2">template&lt;typename K , typename V &gt; </td></tr>
 <tr class="memitem:abb777c4f4d61883c0cbdf9116458b70d"><td class="memTemplItemLeft" align="right" valign="top">std::unordered_map&lt; K, V &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#abb777c4f4d61883c0cbdf9116458b70d">as_unordered_map</a> (const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; K, V &gt; &amp;dmap)</td></tr>
 <tr class="separator:abb777c4f4d61883c0cbdf9116458b70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -419,15 +423,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a6a22160396635ce8b681f3aaed32df5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a6a22160396635ce8b681f3aaed32df5b">CanonicalSimplify</a> (<a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> expr, <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1tir_1_1Var.html">Var</a>, <a class="el" href="classtvm_1_1Range.html">Range</a> &gt; vrange=<a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1tir_1_1Var.html">Var</a>, <a class="el" href="classtvm_1_1Range.html">Range</a> &gt;())</td></tr>
 <tr class="memdesc:a6a22160396635ce8b681f3aaed32df5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplify by applying canonical form.  <a href="#a6a22160396635ce8b681f3aaed32df5b">More...</a><br /></td></tr>
 <tr class="separator:a6a22160396635ce8b681f3aaed32df5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9b75fe00e0f29e2cc8e2b3ffe541ff4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ae9b75fe00e0f29e2cc8e2b3ffe541ff4">Equal</a> (const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;lhs, const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;rhs)</td></tr>
-<tr class="memdesc:ae9b75fe00e0f29e2cc8e2b3ffe541ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deep compare lhs and rhs.  <a href="#ae9b75fe00e0f29e2cc8e2b3ffe541ff4">More...</a><br /></td></tr>
-<tr class="separator:ae9b75fe00e0f29e2cc8e2b3ffe541ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7135e786c567aacc96fa95bac4dae4b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#af7135e786c567aacc96fa95bac4dae4b">Equal</a> (const <a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> &amp;lhs, const <a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> &amp;rhs)</td></tr>
-<tr class="memdesc:af7135e786c567aacc96fa95bac4dae4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deep compare lhs and rhs.  <a href="#af7135e786c567aacc96fa95bac4dae4b">More...</a><br /></td></tr>
-<tr class="separator:af7135e786c567aacc96fa95bac4dae4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a388b768f462e6699d061b5ea3ca87616"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a388b768f462e6699d061b5ea3ca87616">Compare</a> (const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;lhs, const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;rhs)</td></tr>
-<tr class="memdesc:a388b768f462e6699d061b5ea3ca87616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deep compare lhs and rhs.  <a href="#a388b768f462e6699d061b5ea3ca87616">More...</a><br /></td></tr>
-<tr class="separator:a388b768f462e6699d061b5ea3ca87616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4506ebe76b8f44653dafdf0aef263f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ae4506ebe76b8f44653dafdf0aef263f1">VerifySSA</a> (const <a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> &amp;ir)</td></tr>
 <tr class="memdesc:ae4506ebe76b8f44653dafdf0aef263f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">verifies whether the IR stmt or Expr is in SSA form. That is: each VarExpr is defined and assigned once(in Let/For)  <a href="#ae4506ebe76b8f44653dafdf0aef263f1">More...</a><br /></td></tr>
 <tr class="separator:ae4506ebe76b8f44653dafdf0aef263f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -518,60 +513,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a803eaac5980c445a9ff8e38fb2c595fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a803eaac5980c445a9ff8e38fb2c595fa">HoistIfThenElse</a> (<a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> stmt)</td></tr>
 <tr class="memdesc:a803eaac5980c445a9ff8e38fb2c595fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loop invariant code motion which locates and hoists if statements.  <a href="#a803eaac5980c445a9ff8e38fb2c595fa">More...</a><br /></td></tr>
 <tr class="separator:a803eaac5980c445a9ff8e38fb2c595fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2d44994c14f11c500586a007c782c84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ab2d44994c14f11c500586a007c782c84">MakeAPI</a> (<a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> body, std::string name, <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; ObjectRef &gt; api_args, int num_unpacked_args, bool is_restricted)</td></tr>
-<tr class="memdesc:ab2d44994c14f11c500586a007c782c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make an user callable API <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html" title="LoweredFunc represents function after lowering. This is the final IR representation before codegen...">LoweredFunc</a>.  <a href="#ab2d44994c14f11c500586a007c782c84">More...</a><br /></td></tr>
-<tr class="separator:ab2d44994c14f11c500586a007c782c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ac3af6813bf02262470992a3980a25a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a1ac3af6813bf02262470992a3980a25a">BindDeviceType</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> func, int device_type)</td></tr>
-<tr class="memdesc:a1ac3af6813bf02262470992a3980a25a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind the device type of host function to be device_type.  <a href="#a1ac3af6813bf02262470992a3980a25a">More...</a><br /></td></tr>
-<tr class="separator:a1ac3af6813bf02262470992a3980a25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae110e02855d8bc12eb8b6f92ed391844"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1Var.html">Var</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ae110e02855d8bc12eb8b6f92ed391844">UndefinedVars</a> (const <a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> &amp;stmt, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1Var.html">Var</a> &gt; &amp;defs)</td></tr>
-<tr class="memdesc:ae110e02855d8bc12eb8b6f92ed391844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find undefined vars in the statment.  <a href="#ae110e02855d8bc12eb8b6f92ed391844">More...</a><br /></td></tr>
-<tr class="separator:ae110e02855d8bc12eb8b6f92ed391844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7f5e04aea66d87ad42baf957768c451"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ac7f5e04aea66d87ad42baf957768c451">SplitHostDevice</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> func)</td></tr>
-<tr class="memdesc:ac7f5e04aea66d87ad42baf957768c451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split the function into a host function and device functions.  <a href="#ac7f5e04aea66d87ad42baf957768c451">More...</a><br /></td></tr>
-<tr class="separator:ac7f5e04aea66d87ad42baf957768c451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0df6d882d69f4ec8e1b146a0d8728f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ab0df6d882d69f4ec8e1b146a0d8728f9">ThreadSync</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> stmt, std::string storage_scope)</td></tr>
-<tr class="memdesc:ab0df6d882d69f4ec8e1b146a0d8728f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert sync between parallel read/write of shared buffers.  <a href="#ab0df6d882d69f4ec8e1b146a0d8728f9">More...</a><br /></td></tr>
-<tr class="separator:ab0df6d882d69f4ec8e1b146a0d8728f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a438729b72b0e38a28289d763b48995b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a438729b72b0e38a28289d763b48995b1">LowerThreadAllreduce</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> f, int warp_size)</td></tr>
-<tr class="memdesc:a438729b72b0e38a28289d763b48995b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower cross thread alleduce in the stmt.  <a href="#a438729b72b0e38a28289d763b48995b1">More...</a><br /></td></tr>
-<tr class="separator:a438729b72b0e38a28289d763b48995b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5111eb3e9b9d2f52998c5db4b4e3ae9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#af5111eb3e9b9d2f52998c5db4b4e3ae9">LowerWarpMemory</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> f, int warp_size)</td></tr>
-<tr class="memdesc:af5111eb3e9b9d2f52998c5db4b4e3ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower warp memory in stmt.  <a href="#af5111eb3e9b9d2f52998c5db4b4e3ae9">More...</a><br /></td></tr>
-<tr class="separator:af5111eb3e9b9d2f52998c5db4b4e3ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad55f17f026155f1424b3d0fdd3f86435"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ad55f17f026155f1424b3d0fdd3f86435">RemapThreadAxis</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> f, <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a>, <a class="el" href="classtvm_1_1tir_1_1IterVar.html">IterVar</a> &gt; axis_map)</td></tr>
-<tr class="memdesc:ad55f17f026155f1424b3d0fdd3f86435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remap the thread axis.  <a href="#ad55f17f026155f1424b3d0fdd3f86435">More...</a><br /></td></tr>
-<tr class="separator:ad55f17f026155f1424b3d0fdd3f86435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d59ba0cb48da1661593b7eeb2e96821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a9d59ba0cb48da1661593b7eeb2e96821">LowerTVMBuiltin</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> f)</td></tr>
-<tr class="memdesc:a9d59ba0cb48da1661593b7eeb2e96821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower packed function call.  <a href="#a9d59ba0cb48da1661593b7eeb2e96821">More...</a><br /></td></tr>
-<tr class="separator:a9d59ba0cb48da1661593b7eeb2e96821"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c2b224ff5bb292b1b7e677d50576b38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a5c2b224ff5bb292b1b7e677d50576b38">CombineContextCall</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> f)</td></tr>
-<tr class="memdesc:a5c2b224ff5bb292b1b7e677d50576b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine context function calls.  <a href="#a5c2b224ff5bb292b1b7e677d50576b38">More...</a><br /></td></tr>
-<tr class="separator:a5c2b224ff5bb292b1b7e677d50576b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2814a5568d2e1329a5c5aab2e35091e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ad2814a5568d2e1329a5c5aab2e35091e">PointerValueTypeRewrite</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> f)</td></tr>
-<tr class="memdesc:ad2814a5568d2e1329a5c5aab2e35091e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrite the pointer content type of arguments, as well as Alloc internal to the function to use the most frequently accessed type for load/store to avoid pointer casting in backend when possible.  <a href="#ad2814a5568d2e1329a5c5aab2e35091e">More...</a><br /></td></tr>
-<tr class="separator:ad2814a5568d2e1329a5c5aab2e35091e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6750ae524235092f44241921f7a17e0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a6750ae524235092f44241921f7a17e0f">NarrowDataType</a> (<a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> stmt, int target_bits)</td></tr>
+<tr class="memdesc:a6750ae524235092f44241921f7a17e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Narrow down <a class="el" href="classtvm_1_1PrimExpr.html" title="Reference to PrimExprNode. ">PrimExpr</a> datatype in stmt to target_bits.  <a href="#a6750ae524235092f44241921f7a17e0f">More...</a><br /></td></tr>
+<tr class="separator:a6750ae524235092f44241921f7a17e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbf2681c6850628b3c9b213298f056b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1PrimFunc.html">PrimFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#abbf2681c6850628b3c9b213298f056b3">PointerValueTypeRewrite</a> (<a class="el" href="classtvm_1_1tir_1_1PrimFunc.html">PrimFunc</a> f)</td></tr>
 <tr class="memdesc:abbf2681c6850628b3c9b213298f056b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrite the pointer content type of arguments, as well as Alloc internal to the function to use the most frequently accessed type for load/store to avoid pointer casting in backend when possible.  <a href="#abbf2681c6850628b3c9b213298f056b3">More...</a><br /></td></tr>
 <tr class="separator:abbf2681c6850628b3c9b213298f056b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcbd367b40fe2cd31d101c88a63a0b25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#afcbd367b40fe2cd31d101c88a63a0b25">LowerDeviceStorageAccessInfo</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> func)</td></tr>
-<tr class="memdesc:afcbd367b40fe2cd31d101c88a63a0b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower attached storage access information on device. Do this pass after all storage access analysis finish.  <a href="#afcbd367b40fe2cd31d101c88a63a0b25">More...</a><br /></td></tr>
-<tr class="separator:afcbd367b40fe2cd31d101c88a63a0b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb8b5d13c11411299808c564adda2713"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#adb8b5d13c11411299808c564adda2713">LowerIntrin</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> f, const std::string &amp;target)</td></tr>
-<tr class="memdesc:adb8b5d13c11411299808c564adda2713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower intrinsic function calls.  <a href="#adb8b5d13c11411299808c564adda2713">More...</a><br /></td></tr>
-<tr class="separator:adb8b5d13c11411299808c564adda2713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8725d2ad12962353ec11b6285cc6b3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ac8725d2ad12962353ec11b6285cc6b3d">LowerCustomDatatypes</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> f, const std::string &amp;target)</td></tr>
-<tr class="memdesc:ac8725d2ad12962353ec11b6285cc6b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower custom datatypes.  <a href="#ac8725d2ad12962353ec11b6285cc6b3d">More...</a><br /></td></tr>
-<tr class="separator:ac8725d2ad12962353ec11b6285cc6b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd928ded601486ae3a3b787df3f09688"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#acd928ded601486ae3a3b787df3f09688">InferFragment</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> f)</td></tr>
-<tr class="memdesc:acd928ded601486ae3a3b787df3f09688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infer the TensorCore fragment infomation using tensor intrinsics.  <a href="#acd928ded601486ae3a3b787df3f09688">More...</a><br /></td></tr>
-<tr class="separator:acd928ded601486ae3a3b787df3f09688"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9968b6563c42117a9a1cd4576054400f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a9968b6563c42117a9a1cd4576054400f">SkipAssert</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> f)</td></tr>
-<tr class="memdesc:a9968b6563c42117a9a1cd4576054400f"><td class="mdescLeft">&#160;</td><td class="mdescRight">skip assert stmt generation  <a href="#a9968b6563c42117a9a1cd4576054400f">More...</a><br /></td></tr>
-<tr class="separator:a9968b6563c42117a9a1cd4576054400f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa649448c69d8324ba1fd7ec5e3e54731"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#aa649448c69d8324ba1fd7ec5e3e54731">VerifyMemory</a> (<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> func, int device_type)</td></tr>
-<tr class="memdesc:aa649448c69d8324ba1fd7ec5e3e54731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify if memory accesses are legal for a specific target device type.  <a href="#aa649448c69d8324ba1fd7ec5e3e54731">More...</a><br /></td></tr>
-<tr class="separator:aa649448c69d8324ba1fd7ec5e3e54731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a705b3e58180a12eba5297cb2442fd1a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a705b3e58180a12eba5297cb2442fd1a2">VerifyGPUCode</a> (<a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> stmt, <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; std::string, <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; constraints)</td></tr>
 <tr class="memdesc:a705b3e58180a12eba5297cb2442fd1a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify the correctness of a GPU code It will check the whether the amount of memory usage or the number of threads in a block exceeds the limit.  <a href="#a705b3e58180a12eba5297cb2442fd1a2">More...</a><br /></td></tr>
 <tr class="separator:a705b3e58180a12eba5297cb2442fd1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -621,12 +568,14 @@ Functions</h2></td></tr>
 <tr class="separator:afb1743e78389c4beaf0b788c631d424e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12a98cd1a8440b18d6bac0ad3eaa42ed"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a12a98cd1a8440b18d6bac0ad3eaa42ed">operator&lt;&lt;</a> (std::ostream &amp;os, <a class="el" href="namespacetvm_1_1tir.html#ae35cce8e3f1e8d7366dc0d9b15536736">ForType</a> for_type)</td></tr>
 <tr class="separator:a12a98cd1a8440b18d6bac0ad3eaa42ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1217dd1b57e84b5901cf755251b9e164"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a1217dd1b57e84b5901cf755251b9e164">IRTransform</a> (<a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> node, const <a class="el" href="classtvm_1_1runtime_1_1PackedFunc.html">runtime::PackedFunc</a> &amp;preorder, const <a class="el" href="classtvm_1_1runtime_1_1PackedFunc.html">runtime::PackedFunc</a> &amp;postorder, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; &amp;only_enable={})</td></tr>
-<tr class="memdesc:a1217dd1b57e84b5901cf755251b9e164"><td class="mdescLeft">&#160;</td><td class="mdescRight">recursively visit the ir in post DFS order node, and transform it  <a href="#a1217dd1b57e84b5901cf755251b9e164">More...</a><br /></td></tr>
-<tr class="separator:a1217dd1b57e84b5901cf755251b9e164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08758d0900a2f4df3a99007df262858"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ae08758d0900a2f4df3a99007df262858">IRTransform</a> (<a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> node, const <a class="el" href="classtvm_1_1runtime_1_1PackedFunc.html">runtime::PackedFunc</a> &amp;preorder, const <a class="el" href="classtvm_1_1runtime_1_1PackedFunc.html">runtime::PackedFunc</a> &amp;postorder, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1runtime_1_1String.html">runtime::String</a> &gt; &amp;only_enable={})</td></tr>
+<tr class="memdesc:ae08758d0900a2f4df3a99007df262858"><td class="mdescLeft">&#160;</td><td class="mdescRight">recursively visit the ir in post DFS order node, and transform it  <a href="#ae08758d0900a2f4df3a99007df262858">More...</a><br /></td></tr>
+<tr class="separator:ae08758d0900a2f4df3a99007df262858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b5067fa233d111c9db9cc402ed599c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a4b5067fa233d111c9db9cc402ed599c3">PostOrderVisit</a> (const ObjectRef &amp;node, std::function&lt; void(const ObjectRef &amp;)&gt; fvisit)</td></tr>
 <tr class="memdesc:a4b5067fa233d111c9db9cc402ed599c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">recursively visit the ir in post DFS order node, apply fvisit Each node is guaranteed to be visited only once.  <a href="#a4b5067fa233d111c9db9cc402ed599c3">More...</a><br /></td></tr>
 <tr class="separator:a4b5067fa233d111c9db9cc402ed599c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc0fdee9fc81462318d59dbe64c8df26"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#afc0fdee9fc81462318d59dbe64c8df26">IterVarType2String</a> (<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358e">IterVarType</a> t)</td></tr>
+<tr class="separator:afc0fdee9fc81462318d59dbe64c8df26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="aa177c432dd27540d34b22c05559324ab"></a>
@@ -808,31 +757,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a69f0089a367b98e377b652186fa7dc66"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespacetvm_1_1tir.html#a69f0089a367b98e377b652186fa7dc66">tvm::tir::LoweredFuncType</a> : int</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>specific type of lowered function </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a69f0089a367b98e377b652186fa7dc66accd368fda1b61f733343349a79cf2ca9"></a>kMixedFunc&#160;</td><td class="fielddoc">
-<p>Function that can mix device and host calls. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a69f0089a367b98e377b652186fa7dc66acf71d9235254aaaf4856732d6f743858"></a>kHostFunc&#160;</td><td class="fielddoc">
-<p>Only contains host code. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a69f0089a367b98e377b652186fa7dc66a6280765ba977e1b1b059d48dd508a628"></a>kDeviceFunc&#160;</td><td class="fielddoc">
-<p>Only contains device code. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="acbe8f225faaf34c540194921a7ee6a66"></a>
 <div class="memitem">
@@ -890,42 +814,6 @@ template&lt;typename K , typename V &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1ac3af6813bf02262470992a3980a25a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::BindDeviceType </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>func</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>device_type</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bind the device type of host function to be device_type. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">func</td><td>The function to be binded. </td></tr>
-    <tr><td class="paramname">device_type</td><td>The device type to be binded. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The binded function. </dd></dl>
 
 </div>
 </div>
@@ -998,68 +886,6 @@ template&lt;typename K , typename V &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Canonicalized expression. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a5c2b224ff5bb292b1b7e677d50576b38"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::CombineContextCall </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Combine context function calls. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The host function to be lowered. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a388b768f462e6699d061b5ea3ca87616"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tvm::tir::Compare </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deep compare lhs and rhs. </p>
-<p>If you only want equality comparison, use Equal which will also tie definitions. The compare mode will give order of expression in total order.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>The left operand </td></tr>
-    <tr><td class="paramname">rhs</td><td>The right operand </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The comparison result. </dd></dl>
 
 </div>
 </div>
@@ -1248,78 +1074,6 @@ template&lt;typename K , typename V &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae9b75fe00e0f29e2cc8e2b3ffe541ff4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tvm::tir::Equal </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deep compare lhs and rhs. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>The left operand </td></tr>
-    <tr><td class="paramname">rhs</td><td>The right operand </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The comparison result. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="af7135e786c567aacc96fa95bac4dae4b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tvm::tir::Equal </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deep compare lhs and rhs. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>The left operand </td></tr>
-    <tr><td class="paramname">rhs</td><td>The right operand </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The comparison result. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a2a95f59679b6acbb47ab488a1e2c6b09"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1433,31 +1187,6 @@ template&lt;typename K , typename V &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Transformed stmt. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="acd928ded601486ae3a3b787df3f09688"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::InferFragment </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Infer the TensorCore fragment infomation using tensor intrinsics. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The device function to be lowered. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
 
 </div>
 </div>
@@ -1666,7 +1395,7 @@ template&lt;typename K , typename V &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a1217dd1b57e84b5901cf755251b9e164"></a>
+<a class="anchor" id="ae08758d0900a2f4df3a99007df262858"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1691,7 +1420,7 @@ template&lt;typename K , typename V &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1runtime_1_1String.html">runtime::String</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>only_enable</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>
@@ -1708,7 +1437,7 @@ template&lt;typename K , typename V &gt; </div>
     <tr><td class="paramname">node</td><td>The ir to be transformed. </td></tr>
     <tr><td class="paramname">preorder</td><td>The function called in before recursive mutation If preorder returns None, then the transform will proceed to recursive call. If preorder returns a not None Stmt/Expr, the transformer will simply return it and won't do further recursion. </td></tr>
     <tr><td class="paramname">postorder</td><td>The function called after recursive mutation. The recursive mutation result is passed to postorder for further mutation. </td></tr>
-    <tr><td class="paramname">only_enable</td><td>List of <a class="el" href="classtvm_1_1tir_1_1StringImm.html">StringImm</a>. If it is empty, all IRNode will call preorder/postorder If it is not empty, preorder/postorder will only be called when the IRNode's type key is in the list. </td></tr>
+    <tr><td class="paramname">only_enable</td><td>List of <a class="el" href="classtvm_1_1runtime_1_1String.html" title="Reference to string objects. ">runtime::String</a>. If it is empty, all IRNode will call preorder/postorder If it is not empty, preorder/postorder will only be called when the IRNode's type key is in the list. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2068,104 +1797,6 @@ template&lt;typename K , typename V &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ac8725d2ad12962353ec11b6285cc6b3d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::LowerCustomDatatypes </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>target</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Lower custom datatypes. </p>
-<p>See tvm::datatypes::Registry for more information on adding custom datatypes.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The device function to be lowered. </td></tr>
-    <tr><td class="paramname">target</td><td>The target device. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="afcbd367b40fe2cd31d101c88a63a0b25"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::LowerDeviceStorageAccessInfo </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>func</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Lower attached storage access information on device. Do this pass after all storage access analysis finish. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">func</td><td>The device function to be lowered. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="adb8b5d13c11411299808c564adda2713"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::LowerIntrin </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>target</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Lower intrinsic function calls. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The device function to be lowered. </td></tr>
-    <tr><td class="paramname">target</td><td>The target device. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a3b6c7e53cce5184e897b0bd24adb06b6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2188,103 +1819,6 @@ template&lt;typename K , typename V &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Transformed stmt. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a438729b72b0e38a28289d763b48995b1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::LowerThreadAllreduce </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>warp_size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Lower cross thread alleduce in the stmt. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The device function to be lowered. </td></tr>
-    <tr><td class="paramname">warp_size</td><td>the size of warp where no sync is needed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a9d59ba0cb48da1661593b7eeb2e96821"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::LowerTVMBuiltin </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Lower packed function call. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The function to be lowered. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="af5111eb3e9b9d2f52998c5db4b4e3ae9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::LowerWarpMemory </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>warp_size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Lower warp memory in stmt. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The device function to be lowered. </td></tr>
-    <tr><td class="paramname">warp_size</td><td>the size of warp where no sync is needed. this function will only take in effect if warp_size is bigger than one. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
 
 </div>
 </div>
@@ -2373,73 +1907,6 @@ template&lt;typename ValueType , typename  = typename std::enable_if&lt;std::is_
 
 </div>
 </div>
-<a class="anchor" id="ab2d44994c14f11c500586a007c782c84"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::MakeAPI </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td>
-          <td class="paramname"><em>body</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; ObjectRef &gt;&#160;</td>
-          <td class="paramname"><em>api_args</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>num_unpacked_args</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>is_restricted</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Make an user callable API <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html" title="LoweredFunc represents function after lowering. This is the final IR representation before codegen...">LoweredFunc</a>. </p>
-<p>The main task of this function is to create code to :</p><ul>
-<li><a class="el" href="classtvm_1_1Map.html" title="Map container of NodeRef-&gt;NodeRef in DSL graph. Map implements copy on write semantics, which means map is mutable but copy will happen when array is referenced in more than two places. ">Map</a> the values in the api_args to <a class="el" href="classtvm_1_1tir_1_1Var.html" title="a named variable in TVM ">Var</a> that is required by body.</li>
-<li>Insert assertions to check type/value of the passed arguments.</li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">body</td><td>The body of the function. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the function. </td></tr>
-    <tr><td class="paramname">api_args</td><td>Arguments to the function, can be either <a class="el" href="classtvm_1_1tir_1_1Var.html" title="a named variable in TVM ">Var</a>, or <a class="el" href="classtvm_1_1tir_1_1Buffer.html" title="Buffer is a symbolic n-darray structure. It is a composition of primitive symbolic types...">Buffer</a> </td></tr>
-    <tr><td class="paramname">num_unpacked_args</td><td>Number of arguments that are processed in plain form instead of packed form. </td></tr>
-    <tr><td class="paramname">is_restricted</td><td>Whether the caller can guarantee that each buffer argument do not overlap. It is recommended to set to true for optimized code if such invariant holds.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html" title="LoweredFunc represents function after lowering. This is the final IR representation before codegen...">LoweredFunc</a> with the specified signiture.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The function signature have two cases</dd></dl>
-<p>let num_packed_args = len(api_args) - num_unpacked_args;</p>
-<p>if num_packed_args is zero: f(api_arg_0, api_arg_1, .., api_arg_n) where n == len(api_args)</p>
-<p>if num_packed_args is not zero: f(TVMArg* packed_args, int* packed_arg_type_ids, int num_packed_args, api_arg_k, api_arg_k+1, ... api_arg_n, TVMValue* out_ret_val, int* out_ret_tcode)</p>
-<p>where n == len(api_args), k == num_packed_args</p>
-<p>There is no thread_axis in generated function. </p>
-
-</div>
-</div>
 <a class="anchor" id="af2ca71170aca9d397c2125eb4f55c197"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2476,6 +1943,43 @@ template&lt;typename ValueType &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a6750ae524235092f44241921f7a17e0f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> tvm::tir::NarrowDataType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td>
+          <td class="paramname"><em>stmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>target_bits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Narrow down <a class="el" href="classtvm_1_1PrimExpr.html" title="Reference to PrimExprNode. ">PrimExpr</a> datatype in stmt to target_bits. </p>
+<dl class="section note"><dt>Note</dt><dd>Run this pass after StorageFlatten. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stmt</td><td>The stmt to do datatype rewrite </td></tr>
+    <tr><td class="paramname">target_bits</td><td>the bit of target datatype </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transformed stmt. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a12a98cd1a8440b18d6bac0ad3eaa42ed"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2499,32 +2003,6 @@ template&lt;typename ValueType &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad2814a5568d2e1329a5c5aab2e35091e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::PointerValueTypeRewrite </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Rewrite the pointer content type of arguments, as well as Alloc internal to the function to use the most frequently accessed type for load/store to avoid pointer casting in backend when possible. </p>
-<dl class="section note"><dt>Note</dt><dd>implemeneted in storage_rewrite.cc </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The function to be trasnformed </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
 
 </div>
 </div>
@@ -2586,43 +2064,6 @@ template&lt;typename ValueType &gt; </div>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="ad55f17f026155f1424b3d0fdd3f86435"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::RemapThreadAxis </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a>, <a class="el" href="classtvm_1_1tir_1_1IterVar.html">IterVar</a> &gt;&#160;</td>
-          <td class="paramname"><em>axis_map</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Remap the thread axis. </p>
-<p>This can be used to get equivalent program which uses threadIdx.y in place of threadIdx.x by passing {"threadIdx.x": thread_axis("threadIdx.y")}</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The device function to be lowered. </td></tr>
-    <tr><td class="paramname">axis_map</td><td>The map from <a class="el" href="classtvm_1_1tir_1_1StringImm.html">StringImm</a> -&gt; ItrVar </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
 
 </div>
 </div>
@@ -2791,31 +2232,6 @@ template&lt;typename ValueType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9968b6563c42117a9a1cd4576054400f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::SkipAssert </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>skip assert stmt generation </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>The function to be transformed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transformed function. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a2f8fc7370ebc9a6b0de19ae9e597576f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2838,31 +2254,6 @@ template&lt;typename ValueType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Transformed stmt. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ac7f5e04aea66d87ad42baf957768c451"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt;<a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&gt; tvm::tir::SplitHostDevice </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>func</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Split the function into a host function and device functions. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">func</td><td>The function to be splitted.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtvm_1_1Array.html" title="Array container of NodeRef in DSL graph. Array implements copy on write semantics, which means array is mutable but copy will happen when array is referenced in more than two places. ">Array</a> of functions, the first one is host function, the others are device functions. </dd></dl>
 
 </div>
 </div>
@@ -3085,41 +2476,6 @@ template&lt;typename ValueType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ab0df6d882d69f4ec8e1b146a0d8728f9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a> tvm::tir::ThreadSync </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>stmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>storage_scope</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Insert sync between parallel read/write of shared buffers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stmt</td><td>The stmt to be trasnformed. </td></tr>
-    <tr><td class="paramname">storage_scope</td><td>The storage scope considered. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="afb1743e78389c4beaf0b788c631d424e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3333,26 +2689,16 @@ template&lt;typename ValueType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aa649448c69d8324ba1fd7ec5e3e54731"></a>
+<a class="anchor" id="a8744c43849adf1e8b4d76f2b6a43367c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool tvm::tir::VerifyMemory </td>
+          <td class="memname">void tvm::tir::VerifyMemory </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1LoweredFunc.html">LoweredFunc</a>&#160;</td>
-          <td class="paramname"><em>func</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1IRModule.html">IRModule</a> &amp;&#160;</td>
+          <td class="paramname"><em>mod</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>device_type</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3361,8 +2707,7 @@ template&lt;typename ValueType &gt; </div>
 <p>In the case that tgt is cuda, if not all workload is bound with threads, CPU code is generated that tries to access GPU memory, which is illegal. This pass performs verification for this case.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">func</td><td>The function to be verified. </td></tr>
-    <tr><td class="paramname">device_type</td><td>The target device type. </td></tr>
+    <tr><td class="paramname">mod</td><td>The module to be verified. </td></tr>
   </table>
   </dd>
 </dl>

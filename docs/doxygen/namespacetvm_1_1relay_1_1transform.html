@@ -112,8 +112,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aba687537c5fd54db0012c745bba74a85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#afa666ade112e9955059095d695238a9a">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#aba687537c5fd54db0012c745bba74a85">CreateFunctionPass</a> (const <a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc.html">runtime::TypedPackedFunc</a>&lt; <a class="el" href="classtvm_1_1relay_1_1Function.html">Function</a>(<a class="el" href="classtvm_1_1relay_1_1Function.html">Function</a>, <a class="el" href="classtvm_1_1IRModule.html">IRModule</a>, <a class="el" href="namespacetvm_1_1relay_1_1transform.html#a744a05f8bba3c2ac238ba4569d926184">PassContext</a>)&gt; &amp;pass_func, int opt_level, const std::string &amp;name, const <a class="el" href="classtvm_1_1Array.html">tvm::Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">tvm::PrimExpr</a> &gt; &amp;required)</td></tr>
-<tr class="separator:aba687537c5fd54db0012c745bba74a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c71bacaf62a251f06eb390bf0473d10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#afa666ade112e9955059095d695238a9a">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#a9c71bacaf62a251f06eb390bf0473d10">CreateFunctionPass</a> (const <a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc.html">runtime::TypedPackedFunc</a>&lt; <a class="el" href="classtvm_1_1relay_1_1Function.html">Function</a>(<a class="el" href="classtvm_1_1relay_1_1Function.html">Function</a>, <a class="el" href="classtvm_1_1IRModule.html">IRModule</a>, <a class="el" href="namespacetvm_1_1relay_1_1transform.html#a744a05f8bba3c2ac238ba4569d926184">PassContext</a>)&gt; &amp;pass_func, int opt_level, const std::string &amp;name, const <a class="el" href="classtvm_1_1Array.html">tvm::Array</a>&lt; <a class="el" href="classtvm_1_1runtime_1_1String.html">runtime::String</a> &gt; &amp;required)</td></tr>
+<tr class="separator:a9c71bacaf62a251f06eb390bf0473d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa08e0ced82fc7efe515d610104b070c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#afa666ade112e9955059095d695238a9a">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#aaa08e0ced82fc7efe515d610104b070c">DeadCodeElimination</a> (bool inline_once=false)</td></tr>
 <tr class="memdesc:aaa08e0ced82fc7efe515d610104b070c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove expressions which does not effect the program result.  <a href="#aaa08e0ced82fc7efe515d610104b070c">More...</a><br /></td></tr>
 <tr class="separator:aaa08e0ced82fc7efe515d610104b070c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,9 +195,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aba5e588279a3b19a119c9aa28c364bbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#afa666ade112e9955059095d695238a9a">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#aba5e588279a3b19a119c9aa28c364bbe">Inline</a> ()</td></tr>
 <tr class="memdesc:aba5e588279a3b19a119c9aa28c364bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline the global functions marked as <code>inline</code> in a given Relay <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>.  <a href="#aba5e588279a3b19a119c9aa28c364bbe">More...</a><br /></td></tr>
 <tr class="separator:aba5e588279a3b19a119c9aa28c364bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdccee126a74a602e3669bdfaf0f259c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#afa666ade112e9955059095d695238a9a">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#abdccee126a74a602e3669bdfaf0f259c">RemoveUnusedFunctions</a> (<a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">tvm::PrimExpr</a> &gt; entry_functions)</td></tr>
-<tr class="memdesc:abdccee126a74a602e3669bdfaf0f259c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the unused functions in the Relay <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>.  <a href="#abdccee126a74a602e3669bdfaf0f259c">More...</a><br /></td></tr>
-<tr class="separator:abdccee126a74a602e3669bdfaf0f259c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbbf5f3e5ffb775fafb9c48473dbfa24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#afa666ade112e9955059095d695238a9a">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#afbbf5f3e5ffb775fafb9c48473dbfa24">RemoveUnusedFunctions</a> (<a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1runtime_1_1String.html">runtime::String</a> &gt; entry_functions)</td></tr>
+<tr class="memdesc:afbbf5f3e5ffb775fafb9c48473dbfa24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the unused functions in the Relay <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>.  <a href="#afbbf5f3e5ffb775fafb9c48473dbfa24">More...</a><br /></td></tr>
+<tr class="separator:afbbf5f3e5ffb775fafb9c48473dbfa24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="afa666ade112e9955059095d695238a9a"></a>
@@ -435,7 +435,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aba687537c5fd54db0012c745bba74a85"></a>
+<a class="anchor" id="a9c71bacaf62a251f06eb390bf0473d10"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -460,7 +460,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1Array.html">tvm::Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">tvm::PrimExpr</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1Array.html">tvm::Array</a>&lt; <a class="el" href="classtvm_1_1runtime_1_1String.html">runtime::String</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>required</em>&#160;</td>
         </tr>
         <tr>
@@ -804,14 +804,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abdccee126a74a602e3669bdfaf0f259c"></a>
+<a class="anchor" id="afbbf5f3e5ffb775fafb9c48473dbfa24"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#afa666ade112e9955059095d695238a9a">Pass</a> tvm::relay::transform::RemoveUnusedFunctions </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">tvm::PrimExpr</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1runtime_1_1String.html">runtime::String</a> &gt;&#160;</td>
           <td class="paramname"><em>entry_functions</em></td><td>)</td>
           <td></td>
         </tr>

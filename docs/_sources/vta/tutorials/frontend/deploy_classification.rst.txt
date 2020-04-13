@@ -243,8 +243,8 @@ The compilation steps are:
 
  .. code-block:: none
 
-    ...12%, 0.01 MB, 33 KB/s, 0 seconds passed    ...25%, 0.02 MB, 65 KB/s, 0 seconds passed    ...38%, 0.02 MB, 98 KB/s, 0 seconds passed    ...51%, 0.03 MB, 128 KB/s, 0 seconds passed    ...64%, 0.04 MB, 160 KB/s, 0 seconds passed    ...77%, 0.05 MB, 191 KB/s, 0 seconds passed    ...90%, 0.05 MB, 222 KB/s, 0 seconds passed    ...100%, 0.06 MB, 254 KB/s, 0 seconds passed
-    resnet18_v1 inference graph built in 5.68s!
+    ...12%, 0.01 MB, 48 KB/s, 0 seconds passed    ...25%, 0.02 MB, 92 KB/s, 0 seconds passed    ...38%, 0.02 MB, 138 KB/s, 0 seconds passed    ...51%, 0.03 MB, 176 KB/s, 0 seconds passed    ...64%, 0.04 MB, 220 KB/s, 0 seconds passed    ...77%, 0.05 MB, 264 KB/s, 0 seconds passed    ...90%, 0.05 MB, 308 KB/s, 0 seconds passed    ...100%, 0.06 MB, 352 KB/s, 0 seconds passed
+    resnet18_v1 inference graph built in 4.58s!
 
 
 
@@ -360,11 +360,6 @@ and an input test image.
             #5: weasel
 
 
-
-
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  25.108 seconds)
 
 
 .. _sphx_glr_download_vta_tutorials_frontend_deploy_classification.py:

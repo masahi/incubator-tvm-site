@@ -110,13 +110,14 @@
 <li class="toctree-l2"><a class="reference internal" href="target.html">tvm.target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tir.html">tvm.tir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tir.html#module-tvm.tir.transform">tvm.tir.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tir.html#module-tvm.tir.analysis">tvm.tir.analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="te.html">tvm.te</a></li>
+<li class="toctree-l2"><a class="reference internal" href="te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="driver.html">tvm.driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hybrid.html">tvm.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relay/index.html">tvm.relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vta/index.html">vta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topi.html">topi</a></li>
@@ -203,7 +204,7 @@
 <p>Runtime NDArray API</p>
 <dl class="class">
 <dt id="tvm.nd.NDArray">
-<em class="property">class </em><code class="sig-prename descclassname">tvm.nd.</code><code class="sig-name descname">NDArray</code><span class="sig-paren">(</span><em class="sig-param">handle</em>, <em class="sig-param">is_view=False</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.nd.NDArray" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">tvm.nd.</code><code class="sig-name descname">NDArray</code><a class="headerlink" href="#tvm.nd.NDArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lightweight NDArray class of TVM runtime.</p>
 <p>Strictly this is only an Array Container (a buffer object)
 No arthimetic operations are defined.
@@ -288,9 +289,9 @@ how can we use TVM in existing project which might have their own array containe
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="attribute">
 <dt id="tvm.nd.NDArray.shape">
-<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#tvm.nd.NDArray.shape" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">shape</code><a class="headerlink" href="#tvm.nd.NDArray.shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shape of this array</p>
 </dd></dl>
 

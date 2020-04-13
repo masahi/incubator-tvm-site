@@ -131,9 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ca636501d4d64d760b6762fa606f019"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1Buffer.html">Buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1Buffer.html#a4ca636501d4d64d760b6762fa606f019">MakeSlice</a> (<a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; begins, <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; extents) const </td></tr>
 <tr class="memdesc:a4ca636501d4d64d760b6762fa606f019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a new symbolic buffer representing a slice of the buffer.  <a href="#a4ca636501d4d64d760b6762fa606f019">More...</a><br /></td></tr>
 <tr class="separator:a4ca636501d4d64d760b6762fa606f019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a746b074c21acb1782fa1079be5337128"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1Buffer.html#a746b074c21acb1782fa1079be5337128">access_ptr</a> (int access_mask, <a class="el" href="namespacetvm.html#a41918af1a1dc386388639a9d3ad06c5d">DataType</a> ptr_type=<a class="el" href="classtvm_1_1runtime_1_1DataType.html#aebad9f7235dd20af649fb5c2113797b8">DataType::Handle</a>(), int content_lanes=1, <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> offset=<a class="el" href="namespacetvm_1_1tir.html#a4ea566597880d04bd62fbec687e338b5">make_const</a>(<a class="el" href="classtvm_1_1runtime_1_1DataType.html#ab45f13dd70d982d9f977c79b6f7fac98">DataType::Int</a>(32), 0)) const </td></tr>
-<tr class="memdesc:a746b074c21acb1782fa1079be5337128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get access ptr to the entire buffer.  <a href="#a746b074c21acb1782fa1079be5337128">More...</a><br /></td></tr>
-<tr class="separator:a746b074c21acb1782fa1079be5337128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42b4c0f53f23ac4d3d63499711466606"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1Buffer.html#a42b4c0f53f23ac4d3d63499711466606">access_ptr</a> (int access_mask, <a class="el" href="namespacetvm.html#a41918af1a1dc386388639a9d3ad06c5d">DataType</a> ptr_type=<a class="el" href="classtvm_1_1runtime_1_1DataType.html#aebad9f7235dd20af649fb5c2113797b8">DataType::Handle</a>(), int content_lanes=1, <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> offset=<a class="el" href="classtvm_1_1IntImm.html">IntImm</a>(<a class="el" href="classtvm_1_1runtime_1_1DataType.html#ab45f13dd70d982d9f977c79b6f7fac98">DataType::Int</a>(32), 0)) const </td></tr>
+<tr class="memdesc:a42b4c0f53f23ac4d3d63499711466606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get access ptr to the entire buffer.  <a href="#a42b4c0f53f23ac4d3d63499711466606">More...</a><br /></td></tr>
+<tr class="separator:a42b4c0f53f23ac4d3d63499711466606"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fb4f8f83e61b8c8a6c2d21331dcdd8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1Buffer.html#a0fb4f8f83e61b8c8a6c2d21331dcdd8f">vload</a> (<a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; begin, <a class="el" href="namespacetvm.html#a41918af1a1dc386388639a9d3ad06c5d">DataType</a> dtype) const </td></tr>
 <tr class="memdesc:a0fb4f8f83e61b8c8a6c2d21331dcdd8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an Expr that does a vector load at begin index.  <a href="#a0fb4f8f83e61b8c8a6c2d21331dcdd8f">More...</a><br /></td></tr>
 <tr class="separator:a0fb4f8f83e61b8c8a6c2d21331dcdd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,7 +210,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a746b074c21acb1782fa1079be5337128"></a>
+<a class="anchor" id="a42b4c0f53f23ac4d3d63499711466606"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -236,7 +236,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a>&#160;</td>
-          <td class="paramname"><em>offset</em> = <code><a class="el" href="namespacetvm_1_1tir.html#a4ea566597880d04bd62fbec687e338b5">make_const</a>(<a class="el" href="classtvm_1_1runtime_1_1DataType.html#ab45f13dd70d982d9f977c79b6f7fac98">DataType::Int</a>(32),&#160;0)</code>&#160;</td>
+          <td class="paramname"><em>offset</em> = <code><a class="el" href="classtvm_1_1IntImm.html">IntImm</a>(<a class="el" href="classtvm_1_1runtime_1_1DataType.html#ab45f13dd70d982d9f977c79b6f7fac98">DataType::Int</a>(32),&#160;0)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

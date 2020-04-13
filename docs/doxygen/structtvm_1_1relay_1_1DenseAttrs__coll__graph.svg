@@ -85,24 +85,23 @@
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
 <g id="a_node5"><a xlink:href="classtvm_1_1PrimExpr.html" target="_top" xlink:title="Reference to PrimExprNode. ">
-<polygon fill="white" stroke="black" points="218,-166 218,-278 368,-278 368,-166 218,-166"/>
-<text text-anchor="middle" x="293" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::PrimExpr</text>
-<polyline fill="none" stroke="black" points="218,-259 368,-259 "/>
-<text text-anchor="middle" x="293" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="218,-240 368,-240 "/>
-<text text-anchor="start" x="226" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrimExpr()</text>
-<text text-anchor="start" x="226" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrimExpr()</text>
-<text text-anchor="start" x="226" y="-206" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrimExpr()</text>
-<text text-anchor="start" x="226" y="-195" font-family="Helvetica,sans-Serif" font-size="10.00">+ dtype()</text>
-<text text-anchor="start" x="226" y="-184" font-family="Helvetica,sans-Serif" font-size="10.00">+ TVM_DEFINE_OBJECT_REF</text>
-<text text-anchor="start" x="226" y="-173" font-family="Helvetica,sans-Serif" font-size="10.00">_METHODS()</text>
+<polygon fill="white" stroke="black" points="218,-171.5 218,-272.5 368,-272.5 368,-171.5 218,-171.5"/>
+<text text-anchor="middle" x="293" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::PrimExpr</text>
+<polyline fill="none" stroke="black" points="218,-253.5 368,-253.5 "/>
+<text text-anchor="middle" x="293" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="218,-234.5 368,-234.5 "/>
+<text text-anchor="start" x="226" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrimExpr()</text>
+<text text-anchor="start" x="226" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrimExpr()</text>
+<text text-anchor="start" x="226" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ dtype()</text>
+<text text-anchor="start" x="226" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TVM_DEFINE_OBJECT_REF</text>
+<text text-anchor="start" x="226" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">_METHODS()</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node1 -->
 <g id="edge4" class="edge"><title>Node5&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M293,-165.755C293,-134.99 293,-97.4036 293,-69.5868"/>
-<polygon fill="none" stroke="#404040" points="293,-69.5531 289,-63.5532 293,-57.5531 297,-63.5531 293,-69.5531"/>
+<path fill="none" stroke="#404040" d="M293,-171.316C293,-139.735 293,-99.3931 293,-69.9035"/>
+<polygon fill="none" stroke="#404040" points="293,-69.5882 289,-63.5882 293,-57.5882 297,-63.5881 293,-69.5882"/>
 <text text-anchor="middle" x="310.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"> +units</text>
 </g>
 <!-- Node6 -->
@@ -120,7 +119,7 @@
 </g>
 <!-- Node6&#45;&gt;Node5 -->
 <g id="edge5" class="edge"><title>Node6&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M296.283,-421.211C295.621,-381.258 294.635,-321.728 293.917,-278.338"/>
+<path fill="none" stroke="midnightblue" d="M296.285,-421.319C295.595,-379.655 294.551,-316.627 293.826,-272.85"/>
 <polygon fill="none" stroke="midnightblue" points="292.787,-421.486 296.452,-431.427 299.786,-421.37 292.787,-421.486"/>
 </g>
 <!-- Node7 -->

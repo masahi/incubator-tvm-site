@@ -110,13 +110,14 @@
 <li class="toctree-l2"><a class="reference internal" href="target.html">tvm.target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tir.html">tvm.tir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tir.html#module-tvm.tir.transform">tvm.tir.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tir.html#module-tvm.tir.analysis">tvm.tir.analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="te.html">tvm.te</a></li>
+<li class="toctree-l2"><a class="reference internal" href="te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="driver.html">tvm.driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hybrid.html">tvm.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relay/index.html">tvm.relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vta/index.html">vta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topi.html">topi</a></li>
@@ -220,85 +221,88 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.BaseFunc" title="tvm.ir.BaseFunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseFunc</span></code></a></p></td>
 <td><p>Base class of all functions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.Constructor" title="tvm.ir.Constructor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Constructor</span></code></a>(name_hint, inputs, belong_to)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.CallingConv" title="tvm.ir.CallingConv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CallingConv</span></code></a></p></td>
+<td><p>Possible kinds of calling conventions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.Constructor" title="tvm.ir.Constructor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Constructor</span></code></a>(name_hint, inputs, belong_to)</p></td>
 <td><p>Relay ADT constructor.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.DictAttrs" title="tvm.ir.DictAttrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DictAttrs</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.DictAttrs" title="tvm.ir.DictAttrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DictAttrs</span></code></a></p></td>
 <td><p>Dictionary attributes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.EnvFunc" title="tvm.ir.EnvFunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnvFunc</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.EnvFunc" title="tvm.ir.EnvFunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnvFunc</span></code></a></p></td>
 <td><p>Environment function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.FuncType" title="tvm.ir.FuncType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FuncType</span></code></a>(arg_types, ret_type[, type_params, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.FuncType" title="tvm.ir.FuncType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FuncType</span></code></a>(arg_types, ret_type[, type_params, …])</p></td>
 <td><p>Function type.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.GlobalTypeVar" title="tvm.ir.GlobalTypeVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GlobalTypeVar</span></code></a>(name_hint[, kind])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.GlobalTypeVar" title="tvm.ir.GlobalTypeVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GlobalTypeVar</span></code></a>(name_hint[, kind])</p></td>
 <td><p>A global type variable that is used for defining new types or type aliases.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.GlobalVar" title="tvm.ir.GlobalVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GlobalVar</span></code></a>(name_hint)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.GlobalVar" title="tvm.ir.GlobalVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GlobalVar</span></code></a>(name_hint)</p></td>
 <td><p>A global variable in the IR.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.IRModule" title="tvm.ir.IRModule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRModule</span></code></a>([functions, type_definitions])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.IRModule" title="tvm.ir.IRModule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRModule</span></code></a>([functions, type_definitions])</p></td>
 <td><p>IRModule that holds functions and type definitions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.IncompleteType" title="tvm.ir.IncompleteType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IncompleteType</span></code></a>([kind])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.IncompleteType" title="tvm.ir.IncompleteType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IncompleteType</span></code></a>([kind])</p></td>
 <td><p>Incomplete type during type inference.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.Map" title="tvm.ir.Map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.Map" title="tvm.ir.Map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map</span></code></a></p></td>
 <td><p>Map container of TVM.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.Node" title="tvm.ir.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Node</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.Node" title="tvm.ir.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Node</span></code></a></p></td>
 <td><p>Base class of all IR Nodes, implements astext function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.PointerType" title="tvm.ir.PointerType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PointerType</span></code></a>(element_type)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.PointerType" title="tvm.ir.PointerType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PointerType</span></code></a>(element_type)</p></td>
 <td><p>PointerType used in the low-level TIR.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PrimExpr</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PrimExpr</span></code></a></p></td>
 <td><p>Base class of all primitive expressions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.PrimType" title="tvm.ir.PrimType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PrimType</span></code></a>(dtype)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.PrimType" title="tvm.ir.PrimType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PrimType</span></code></a>(dtype)</p></td>
 <td><p>Primitive data type in the low level IR</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.Range" title="tvm.ir.Range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Range</span></code></a>(begin[, end])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.Range" title="tvm.ir.Range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Range</span></code></a>(begin[, end])</p></td>
 <td><p>Represent a range in TVM.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.RelayExpr" title="tvm.ir.RelayExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelayExpr</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.RelayExpr" title="tvm.ir.RelayExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelayExpr</span></code></a></p></td>
 <td><p>Base class of all non-primitive expressions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.RelayRefType" title="tvm.ir.RelayRefType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelayRefType</span></code></a>(value)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.RelayRefType" title="tvm.ir.RelayRefType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelayRefType</span></code></a>(value)</p></td>
 <td><p>Reference Type in relay.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.SourceName" title="tvm.ir.SourceName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SourceName</span></code></a>(name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.SourceName" title="tvm.ir.SourceName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SourceName</span></code></a>(name)</p></td>
 <td><p>A identifier for a source location.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.Span" title="tvm.ir.Span"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Span</span></code></a>(source, lineno, col_offset)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.Span" title="tvm.ir.Span"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Span</span></code></a>(source, lineno, col_offset)</p></td>
 <td><p>Specifies a location in a source program.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.TensorType" title="tvm.ir.TensorType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TensorType</span></code></a>(shape[, dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.TensorType" title="tvm.ir.TensorType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TensorType</span></code></a>(shape[, dtype])</p></td>
 <td><p>A concrete TensorType in Relay.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.TupleType" title="tvm.ir.TupleType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TupleType</span></code></a>(fields)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.TupleType" title="tvm.ir.TupleType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TupleType</span></code></a>(fields)</p></td>
 <td><p>The type of tuple values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.Type" title="tvm.ir.Type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Type</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.Type" title="tvm.ir.Type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Type</span></code></a></p></td>
 <td><p>The base class of all types.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.TypeCall" title="tvm.ir.TypeCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeCall</span></code></a>(func, args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.TypeCall" title="tvm.ir.TypeCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeCall</span></code></a>(func, args)</p></td>
 <td><p>Type function application.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.TypeConstraint" title="tvm.ir.TypeConstraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeConstraint</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.TypeConstraint" title="tvm.ir.TypeConstraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeConstraint</span></code></a></p></td>
 <td><p>Abstract class representing a type constraint.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.TypeData" title="tvm.ir.TypeData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeData</span></code></a>(header, type_vars, constructors)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.TypeData" title="tvm.ir.TypeData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeData</span></code></a>(header, type_vars, constructors)</p></td>
 <td><p>Stores the definition for an Algebraic Data Type (ADT) in Relay.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.TypeKind" title="tvm.ir.TypeKind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeKind</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.TypeKind" title="tvm.ir.TypeKind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeKind</span></code></a></p></td>
 <td><p>Possible kinds of TypeVars.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.TypeRelation" title="tvm.ir.TypeRelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeRelation</span></code></a>(func, args, num_inputs, attrs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.TypeRelation" title="tvm.ir.TypeRelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeRelation</span></code></a>(func, args, num_inputs, attrs)</p></td>
 <td><p>User defined type relation, it is an input-output relation on types.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.TypeVar" title="tvm.ir.TypeVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(name_hint[, kind])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.ir.TypeVar" title="tvm.ir.TypeVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(name_hint[, kind])</p></td>
 <td><p>Type parameter in functions.</p></td>
 </tr>
 </tbody>
@@ -919,6 +923,12 @@ if the end argument is not None. Otherwise, it creates <cite>[0, begin)</cite>.<
 </dl>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="class">
+<dt id="tvm.ir.CallingConv">
+<em class="property">class </em><code class="sig-prename descclassname">tvm.ir.</code><code class="sig-name descname">CallingConv</code><a class="headerlink" href="#tvm.ir.CallingConv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Possible kinds of calling conventions.</p>
 </dd></dl>
 
 <dl class="class">

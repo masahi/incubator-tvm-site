@@ -197,9 +197,9 @@ Results:
 
     ANTLR runtime and generated code versions disagree: 4.8!=4.7.2
     ANTLR runtime and generated code versions disagree: 4.8!=4.7.2
-    /workspace/docs/../python/tvm/relay/frontend/tensorflow.py:2552: UserWarning: Ignore the passed shape. Shape in graphdef will be used for operator DecodeJpeg/contents.
+    /workspace/docs/../python/tvm/relay/frontend/tensorflow.py:2818: UserWarning: Ignore the passed shape. Shape in graphdef will be used for operator DecodeJpeg/contents.
       "will be used for operator %s." % node.name)
-    /workspace/docs/../python/tvm/relay/frontend/tensorflow.py:621: UserWarning: DecodeJpeg: It's a pass through, please handle preprocessing before input
+    /workspace/docs/../python/tvm/relay/frontend/tensorflow.py:620: UserWarning: DecodeJpeg: It's a pass through, please handle preprocessing before input
       warnings.warn("DecodeJpeg: It's a pass through, please handle preprocessing before input")
     Tensorflow protobuf imported to relay frontend.
 
@@ -369,11 +369,6 @@ Run the corresponding model on tensorflow
     desk (score = 0.00019)
 
 
-
-
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  26.943 seconds)
 
 
 .. _sphx_glr_download_tutorials_frontend_from_tensorflow.py:

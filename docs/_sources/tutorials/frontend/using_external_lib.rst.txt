@@ -614,11 +614,6 @@ TVM and Relay aim to achieve the best performance on a variety of hardwares, wit
 To achieve this goal, we should continue developing better optimizations for TVM and Relay, while using external libraries as a nice way to fall back to existing implementation when necessary.
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  2.995 seconds)
-
-
 .. _sphx_glr_download_tutorials_frontend_using_external_lib.py:
 
 

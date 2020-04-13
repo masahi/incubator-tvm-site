@@ -249,7 +249,7 @@ In the following example, we use <a class="reference internal" href="../../api/p
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>extern &quot;C&quot; __global__ void myexp_kernel0(void** __restrict__ B, void** __restrict__ A, int n, int stride, int stride1) {
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>extern &quot;C&quot; __global__ void myexp_kernel0(void* __restrict__ B, void* __restrict__ A, int n, int stride, int stride1) {
   if (((int)blockIdx.x) &lt; (n &gt;&gt; 6)) {
     (( float*)B)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride1))] = __expf((( float*)A)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride))]);
   } else {
@@ -284,7 +284,7 @@ The following code use te.exp instead, which create an intrinsic call
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>extern &quot;C&quot; __global__ void myexp_kernel0(void** __restrict__ B, void** __restrict__ A, int n, int stride, int stride1) {
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>extern &quot;C&quot; __global__ void myexp_kernel0(void* __restrict__ B, void* __restrict__ A, int n, int stride, int stride1) {
   if (((int)blockIdx.x) &lt; (n &gt;&gt; 6)) {
     (( float*)B)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride1))] = __expf((( float*)A)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride))]);
   } else {
@@ -302,7 +302,7 @@ The same te.exp can also be used for float64 data types.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>__kernel void myexp_kernel0(__global void** restrict B, __global void** restrict A, int n, int stride, int stride1) {
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>__kernel void myexp_kernel0(__global void* restrict B, __global void* restrict A, int n, int stride, int stride1) {
   if (((int)get_group_id(0)) &lt; (n &gt;&gt; 6)) {
     ((__global float*)B)[((((((int)get_group_id(0)) * 64) + ((int)get_local_id(0))) * stride1))] = exp(((__global float*)A)[((((((int)get_group_id(0)) * 64) + ((int)get_local_id(0))) * stride))]);
   } else {
@@ -347,7 +347,7 @@ fast math version <code class="code docutils literal notranslate"><span class="p
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>extern &quot;C&quot; __global__ void myexp_kernel0(void** __restrict__ B, void** __restrict__ A, int n, int stride, int stride1) {
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>extern &quot;C&quot; __global__ void myexp_kernel0(void* __restrict__ B, void* __restrict__ A, int n, int stride, int stride1) {
   if (((int)blockIdx.x) &lt; (n &gt;&gt; 6)) {
     (( float*)B)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride1))] = expf((( float*)A)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride))]);
   } else {
@@ -394,7 +394,7 @@ The following example add an intrinsic <code class="code docutils literal notran
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>extern &quot;C&quot; __global__ void mylog_kernel0(void** __restrict__ B, void** __restrict__ A, int n, int stride, int stride1) {
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>extern &quot;C&quot; __global__ void mylog_kernel0(void* __restrict__ B, void* __restrict__ A, int n, int stride, int stride1) {
   if (((int)blockIdx.x) &lt; (n &gt;&gt; 6)) {
     (( float*)B)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride1))] = logf((( float*)A)[((((((int)blockIdx.x) * 64) + ((int)threadIdx.x)) * stride))]);
   } else {
@@ -414,7 +414,6 @@ The following example add an intrinsic <code class="code docutils literal notran
 <li><p>For more intrinsics available in tvm, take a look at <a class="reference internal" href="../../api/python/tir.html#module-tvm.tir" title="tvm.tir"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">tvm.tir</span></code></a></p></li>
 <li><p>You can customize the intrinsic behavior by defining your own rules.</p></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.336 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-language-intrin-math-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/fb810a10b128e7d81f5eec1c5908e0f5/intrin_math.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">intrin_math.py</span></code></a></p>

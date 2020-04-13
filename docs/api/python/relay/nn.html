@@ -110,13 +110,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../target.html">tvm.target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html">tvm.tir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.transform">tvm.tir.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.analysis">tvm.tir.analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../te.html">tvm.te</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../driver.html">tvm.driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hybrid.html">tvm.hybrid</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">tvm.relay</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
@@ -272,6 +273,27 @@ as an argument to an FFI function.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="tvm.relay.op.nn.nn.get_pad_tuple3d">
+<code class="sig-prename descclassname">tvm.relay.op.nn.nn.</code><code class="sig-name descname">get_pad_tuple3d</code><span class="sig-paren">(</span><em class="sig-param">padding</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.op.nn.nn.get_pad_tuple3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Common code to get the pad option
+:param padding: Padding size
+:type padding: Union[int, Tuple[int, …]]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>pad_front</strong> (<em>int</em>) – Padding size on front</p></li>
+<li><p><strong>pad_top</strong> (<em>int</em>) – Padding size on top</p></li>
+<li><p><strong>pad_left</strong> (<em>int</em>) – Padding size on left</p></li>
+<li><p><strong>pad_back</strong> (<em>int</em>) – Padding size on back</p></li>
+<li><p><strong>pad_down</strong> (<em>int</em>) – Padding size on down.</p></li>
+<li><p><strong>pad_right</strong> (<em>int</em>) – Padding size on right.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="tvm.relay.op.nn.nn.conv1d">
 <code class="sig-prename descclassname">tvm.relay.op.nn.nn.</code><code class="sig-name descname">conv1d</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">weight</em>, <em class="sig-param">strides=1</em>, <em class="sig-param">padding=0</em>, <em class="sig-param">dilation=1</em>, <em class="sig-param">groups=1</em>, <em class="sig-param">channels=None</em>, <em class="sig-param">kernel_size=None</em>, <em class="sig-param">data_layout='NCW'</em>, <em class="sig-param">kernel_layout='OIW'</em>, <em class="sig-param">out_layout=''</em>, <em class="sig-param">out_dtype=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.op.nn.nn.conv1d" title="Permalink to this definition">¶</a></dt>
 <dd><p>1D convolution.</p>
@@ -410,6 +432,39 @@ then convert to the out_layout.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="tvm.relay.op.nn.nn.contrib_conv3d_winograd_without_weight_transform">
+<code class="sig-prename descclassname">tvm.relay.op.nn.nn.</code><code class="sig-name descname">contrib_conv3d_winograd_without_weight_transform</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">weight</em>, <em class="sig-param">tile_size</em>, <em class="sig-param">strides=(1</em>, <em class="sig-param">1</em>, <em class="sig-param">1)</em>, <em class="sig-param">padding=(0</em>, <em class="sig-param">0</em>, <em class="sig-param">0)</em>, <em class="sig-param">dilation=(1</em>, <em class="sig-param">1</em>, <em class="sig-param">1)</em>, <em class="sig-param">groups=1</em>, <em class="sig-param">channels=None</em>, <em class="sig-param">kernel_size=None</em>, <em class="sig-param">data_layout='NCDHW'</em>, <em class="sig-param">kernel_layout='OIDHW'</em>, <em class="sig-param">out_layout=''</em>, <em class="sig-param">out_dtype=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.op.nn.nn.contrib_conv3d_winograd_without_weight_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>3D convolution with winograd algorithm.</p>
+<p>The basic parameters are the same as the ones in vanilla conv3d.
+It assumes the weight is pre-transformed by nn.contrib_conv3d_winograd_weight_transform</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input data to the operator.</p></li>
+<li><p><strong>weight</strong> (<em>tvm.relay.Expr</em>) – The weight expressions.</p></li>
+<li><p><strong>tile_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The Tile size of winograd. E.g. 2 for F(2x2x2, 3x3x3) and 4 for F(4x4x4, 3x3x3)</p></li>
+<li><p><strong>strides</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The strides of convolution.</p></li>
+<li><p><strong>padding</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The padding of convolution on both sides of inputs before convolution.</p></li>
+<li><p><strong>dilation</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – Specifies the dilation rate to be used for dilated convolution.</p></li>
+<li><p><strong>groups</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – Number of groups for grouped convolution.</p></li>
+<li><p><strong>channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – Number of output channels of this convolution.</p></li>
+<li><p><strong>kernel_size</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The spatial of the convolution kernel.</p></li>
+<li><p><strong>data_layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
+<li><p><strong>kernel_layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the weight.</p></li>
+<li><p><strong>out_layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the output, by default, out_layout is the same as data_layout</p></li>
+<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Specifies the output data type for mixed precision conv2d.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – The computed result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tvm.relay.Expr</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="tvm.relay.op.nn.nn.conv2d_transpose">
 <code class="sig-prename descclassname">tvm.relay.op.nn.nn.</code><code class="sig-name descname">conv2d_transpose</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">weight</em>, <em class="sig-param">strides=(1</em>, <em class="sig-param">1)</em>, <em class="sig-param">padding=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">dilation=(1</em>, <em class="sig-param">1)</em>, <em class="sig-param">groups=1</em>, <em class="sig-param">channels=None</em>, <em class="sig-param">kernel_size=None</em>, <em class="sig-param">data_layout='NCHW'</em>, <em class="sig-param">kernel_layout='OIHW'</em>, <em class="sig-param">out_layout=''</em>, <em class="sig-param">output_padding=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">out_dtype=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.op.nn.nn.conv2d_transpose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Two dimensional transposed convolution operator.</p>
@@ -511,7 +566,7 @@ then convert to the out_layout.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input data to the operator.</p></li>
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The axis to sum over when computing softmax</p></li>
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – The axis to sum over when computing log softmax</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -539,6 +594,7 @@ This operator accepts data layout specification.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input data to the operator.</p></li>
+<li><p><strong>pool_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The size of window for pooling.</p></li>
 <li><p><strong>strides</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The strides of pooling.</p></li>
 <li><p><strong>padding</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The padding for pooling.</p></li>
 <li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
@@ -574,6 +630,7 @@ This operator accepts data layout specification.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input data to the operator.</p></li>
+<li><p><strong>pool_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The size of window for pooling.</p></li>
 <li><p><strong>strides</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The strides of pooling.</p></li>
 <li><p><strong>padding</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The padding for pooling.</p></li>
 <li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
@@ -605,6 +662,7 @@ This operator accepts data layout specification.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input data to the operator.</p></li>
+<li><p><strong>pool_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The size of window for pooling.</p></li>
 <li><p><strong>strides</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The strides of pooling.</p></li>
 <li><p><strong>padding</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The padding for pooling.</p></li>
 <li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
@@ -636,6 +694,7 @@ This operator accepts data layout specification.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input data to the operator.</p></li>
+<li><p><strong>pool_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The size of window for pooling.</p></li>
 <li><p><strong>strides</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The strides of pooling.</p></li>
 <li><p><strong>padding</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The padding for pooling.</p></li>
 <li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
@@ -673,6 +732,7 @@ This operator accepts data layout specification.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input data to the operator.</p></li>
+<li><p><strong>pool_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The size of window for pooling.</p></li>
 <li><p><strong>strides</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The strides of pooling.</p></li>
 <li><p><strong>padding</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The padding for pooling.</p></li>
 <li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
@@ -705,6 +765,7 @@ This operator accepts data layout specification.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input data to the operator.</p></li>
+<li><p><strong>pool_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The size of window for pooling.</p></li>
 <li><p><strong>strides</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The strides of pooling.</p></li>
 <li><p><strong>padding</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The padding for pooling.</p></li>
 <li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
@@ -731,6 +792,7 @@ This operator accepts data layout specification.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>out_grad</strong> (<em>tvm.relay.Expr</em>) – The output gradient</p></li>
 <li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input data to the operator.</p></li>
+<li><p><strong>pool_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The size of window for pooling.</p></li>
 <li><p><strong>strides</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The strides of pooling.</p></li>
 <li><p><strong>padding</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The padding for pooling.</p></li>
 <li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
@@ -756,6 +818,7 @@ This operator accepts data layout specification.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>out_grad</strong> (<em>tvm.relay.Expr</em>) – The output gradient</p></li>
 <li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input data to the operator.</p></li>
+<li><p><strong>pool_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><em>tuple of int</em><em>, </em><em>optional</em>) – The size of window for pooling.</p></li>
 <li><p><strong>strides</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The strides of pooling.</p></li>
 <li><p><strong>padding</strong> (<em>tuple of int</em><em>, </em><em>optional</em>) – The padding for pooling.</p></li>
 <li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
@@ -1543,6 +1606,28 @@ Use this together with nn.contrib_conv2d_winograd_without_weight_transform</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>weight</strong> (<em>tvm.relay.Expr</em>) – The weight expressions.</p></li>
 <li><p><strong>tile_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The Tile size of winograd. E.g. 2 for F(2x2, 3x3) and 4 for F(4x4, 3x3)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – The computed result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tvm.relay.Expr</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.relay.op.nn.nn.contrib_conv3d_winograd_weight_transform">
+<code class="sig-prename descclassname">tvm.relay.op.nn.nn.</code><code class="sig-name descname">contrib_conv3d_winograd_weight_transform</code><span class="sig-paren">(</span><em class="sig-param">weight</em>, <em class="sig-param">tile_size</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.op.nn.nn.contrib_conv3d_winograd_weight_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Weight Transformation part for 3D convolution with winograd algorithm.</p>
+<p>We separate this as a single op to enable pre-compute for inference.
+Use this together with nn.contrib_conv3d_winograd_without_weight_transform</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>weight</strong> (<em>tvm.relay.Expr</em>) – The weight expressions.</p></li>
+<li><p><strong>tile_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The Tile size of winograd. E.g. 2 for F(2x2x2, 3x3x3) and 4 for F(4x4x4, 3x3x3)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

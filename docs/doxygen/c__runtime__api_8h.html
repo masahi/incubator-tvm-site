@@ -107,7 +107,7 @@ Include dependency graph for c_runtime_api.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="c__runtime__api_8h__dep__incl.svg" width="2726" height="1394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="c__runtime__api_8h__dep__incl.svg" width="2962" height="1528"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -167,10 +167,14 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a57cbccb14c35a0e62dbc1b911188fcef"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__runtime__api_8h.html#a57cbccb14c35a0e62dbc1b911188fcef">TVMDeviceExtType</a> { <a class="el" href="c__runtime__api_8h.html#a57cbccb14c35a0e62dbc1b911188fcefad77aa5af5411ed9f3719f48af1f04b02">kDLAOCL</a> = 5, 
+<tr class="memitem:a57cbccb14c35a0e62dbc1b911188fcef"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__runtime__api_8h.html#a57cbccb14c35a0e62dbc1b911188fcef">TVMDeviceExtType</a> { <br />
+&#160;&#160;<a class="el" href="c__runtime__api_8h.html#a57cbccb14c35a0e62dbc1b911188fcefad77aa5af5411ed9f3719f48af1f04b02">kDLAOCL</a> = 5, 
 <a class="el" href="c__runtime__api_8h.html#a57cbccb14c35a0e62dbc1b911188fcefacdc33f5efa9ddabe89e886c28d1ff65b">kDLSDAccel</a> = 6, 
 <a class="el" href="c__runtime__api_8h.html#a57cbccb14c35a0e62dbc1b911188fcefa72361be679c1aca1c1be5f9b500a3315">kOpenGL</a> = 11, 
-<a class="el" href="c__runtime__api_8h.html#a57cbccb14c35a0e62dbc1b911188fcefa3357ff71d095bc9bdbe5116599bade5f">kDLMicroDev</a> = 13
+<a class="el" href="c__runtime__api_8h.html#a57cbccb14c35a0e62dbc1b911188fcefa3357ff71d095bc9bdbe5116599bade5f">kDLMicroDev</a> = 13, 
+<br />
+&#160;&#160;<a class="el" href="c__runtime__api_8h.html#a57cbccb14c35a0e62dbc1b911188fcefaad7f2a6159af2f349840446d850f1402">kDLHexagon</a> = 14
+<br />
  }<tr class="memdesc:a57cbccb14c35a0e62dbc1b911188fcef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extension device types in TVM.  <a href="c__runtime__api_8h.html#a57cbccb14c35a0e62dbc1b911188fcef">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:a57cbccb14c35a0e62dbc1b911188fcef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,14 +192,15 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33af2b95de1a09ed39055edfe8ef5ea484d">kTVMStr</a> = 11U, 
 <a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33a4b2f3688d719f6e7c20ab00659e2383e">kTVMBytes</a> = 12U, 
 <a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33a3bab8c80e57b1ab2d7ab95962be4d2ec">kTVMNDArrayHandle</a> = 13U, 
-<a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33a2bea0a5b50b0e24384610059bf1cbdc9">kTVMExtBegin</a> = 15U, 
+<a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33ad742641b52cb5098f576373021a1399d">kTVMObjectRValueRefArg</a> = 14U, 
 <br />
-&#160;&#160;<a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33a6aa6b0afb212bea097b2c71eb366214c">kTVMNNVMFirst</a> = 16U, 
+&#160;&#160;<a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33a2bea0a5b50b0e24384610059bf1cbdc9">kTVMExtBegin</a> = 15U, 
+<a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33a6aa6b0afb212bea097b2c71eb366214c">kTVMNNVMFirst</a> = 16U, 
 <a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33a3b2e1234b4f579630a5a936e042912b6">kTVMNNVMLast</a> = 20U, 
 <a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33a2a80307d3075829e12d14ba6ec52a6ee">kTVMExtReserveEnd</a> = 64U, 
-<a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33a463445886242b0357db59f74241ce028">kTVMExtEnd</a> = 128U, 
 <br />
-&#160;&#160;<a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33ab568bfefd0ad6b172868caeb964b038a">kTVMCustomBegin</a> = 129U
+&#160;&#160;<a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33a463445886242b0357db59f74241ce028">kTVMExtEnd</a> = 128U, 
+<a class="el" href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33ab568bfefd0ad6b172868caeb964b038a">kTVMCustomBegin</a> = 129U
 <br />
  }<tr class="memdesc:ad3cce90e23260e30424e9878d9798d33"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type code in used in the TVM FFI.  <a href="c__runtime__api_8h.html#ad3cce90e23260e30424e9878d9798d33">More...</a><br /></td></tr>
 </td></tr>
@@ -230,9 +235,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad0c98ff469bd844546a71f61d2e164f3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__runtime__api_8h.html#ad0c98ff469bd844546a71f61d2e164f3">TVMCFuncSetReturn</a> (<a class="el" href="c__runtime__api_8h.html#a6cd1076476117e74454f67931c2da1d4">TVMRetValueHandle</a> ret, <a class="el" href="unionTVMValue.html">TVMValue</a> *value, int *type_code, int num_ret)</td></tr>
 <tr class="memdesc:ad0c98ff469bd844546a71f61d2e164f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the return value of TVMPackedCFunc.  <a href="#ad0c98ff469bd844546a71f61d2e164f3">More...</a><br /></td></tr>
 <tr class="separator:ad0c98ff469bd844546a71f61d2e164f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ed74b4237a8cb8438bd621d028250e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__runtime__api_8h.html#a9ed74b4237a8cb8438bd621d028250e2">TVMCbArgToReturn</a> (<a class="el" href="unionTVMValue.html">TVMValue</a> *value, int code)</td></tr>
-<tr class="memdesc:a9ed74b4237a8cb8438bd621d028250e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inplace translate callback argument value to return value. This is only needed for non-POD arguments.  <a href="#a9ed74b4237a8cb8438bd621d028250e2">More...</a><br /></td></tr>
-<tr class="separator:a9ed74b4237a8cb8438bd621d028250e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fee438ab81fbf4235375d9f17f36d6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__runtime__api_8h.html#a6fee438ab81fbf4235375d9f17f36d6f">TVMCbArgToReturn</a> (<a class="el" href="unionTVMValue.html">TVMValue</a> *value, int *code)</td></tr>
+<tr class="memdesc:a6fee438ab81fbf4235375d9f17f36d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inplace translate callback argument value to return value. This is only needed for non-POD arguments.  <a href="#a6fee438ab81fbf4235375d9f17f36d6f">More...</a><br /></td></tr>
+<tr class="separator:a6fee438ab81fbf4235375d9f17f36d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfd8d1f9e7229625d4acd7da3b10287c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__runtime__api_8h.html#adfd8d1f9e7229625d4acd7da3b10287c">TVMFuncCreateFromCFunc</a> (<a class="el" href="c__runtime__api_8h.html#a07954203342f2787acf988c4c351d9c3">TVMPackedCFunc</a> func, void *resource_handle, <a class="el" href="c__runtime__api_8h.html#ac035a1354f2e5d7f8613af73cc735742">TVMPackedCFuncFinalizer</a> fin, <a class="el" href="c__runtime__api_8h.html#acf57d257a6e0841d84ebbd2a339d183e">TVMFunctionHandle</a> *out)</td></tr>
 <tr class="memdesc:adfd8d1f9e7229625d4acd7da3b10287c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap a TVMPackedCFunc to become a FunctionHandle.  <a href="#adfd8d1f9e7229625d4acd7da3b10287c">More...</a><br /></td></tr>
 <tr class="separator:adfd8d1f9e7229625d4acd7da3b10287c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -521,6 +526,8 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a57cbccb14c35a0e62dbc1b911188fcefa3357ff71d095bc9bdbe5116599bade5f"></a>kDLMicroDev&#160;</td><td class="fielddoc">
 </td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a57cbccb14c35a0e62dbc1b911188fcefaad7f2a6159af2f349840446d850f1402"></a>kDLHexagon&#160;</td><td class="fielddoc">
+</td></tr>
 </table>
 
 </div>
@@ -558,6 +565,8 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ad3cce90e23260e30424e9878d9798d33a4b2f3688d719f6e7c20ab00659e2383e"></a>kTVMBytes&#160;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ad3cce90e23260e30424e9878d9798d33a3bab8c80e57b1ab2d7ab95962be4d2ec"></a>kTVMNDArrayHandle&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ad3cce90e23260e30424e9878d9798d33ad742641b52cb5098f576373021a1399d"></a>kTVMObjectRValueRefArg&#160;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ad3cce90e23260e30424e9878d9798d33a2bea0a5b50b0e24384610059bf1cbdc9"></a>kTVMExtBegin&#160;</td><td class="fielddoc">
 </td></tr>
@@ -904,7 +913,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9ed74b4237a8cb8438bd621d028250e2"></a>
+<a class="anchor" id="a6fee438ab81fbf4235375d9f17f36d6f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -917,7 +926,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>code</em>&#160;</td>
         </tr>
         <tr>

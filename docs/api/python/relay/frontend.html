@@ -110,13 +110,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../target.html">tvm.target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html">tvm.tir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.transform">tvm.tir.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.analysis">tvm.tir.analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../te.html">tvm.te</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../driver.html">tvm.driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hybrid.html">tvm.hybrid</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">tvm.relay</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
@@ -394,8 +395,9 @@ The companion parameters will be handled automatically.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>script_module</strong> (<em>TopLevelTracedModule object</em>) – TorchScripted PyTorch graph
 Note: We currently only support traces (ie: torch.jit.trace(model, input))</p></li>
-<li><p><strong>input_shapes</strong> (<em>Dictionary of input dimensions</em>) – Graph level input shape dictionary
-The keys should be the same one returned by get_graph_input_names(…) above</p></li>
+<li><p><strong>input_shapes</strong> (<em>List of tuples of input name and input dimensions</em>) – Graph level input shape list
+The same input names need to be used for deployment, so choose easy to
+remember names (such as: input0, input1)</p></li>
 <li><p><strong>custom_convert_map</strong> (<em>Dictionary of str to Relay op</em>) – A custom op conversion map in the same format as _convert_map above</p></li>
 </ul>
 </dd>

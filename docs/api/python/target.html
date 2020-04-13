@@ -110,13 +110,14 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">tvm.target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tir.html">tvm.tir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tir.html#module-tvm.tir.transform">tvm.tir.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tir.html#module-tvm.tir.analysis">tvm.tir.analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="te.html">tvm.te</a></li>
+<li class="toctree-l2"><a class="reference internal" href="te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="driver.html">tvm.driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hybrid.html">tvm.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relay/index.html">tvm.relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vta/index.html">vta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topi.html">topi</a></li>
@@ -290,25 +291,28 @@ We can also use other specific function in this module to create specific target
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.target.get_native_generic_func" title="tvm.target.get_native_generic_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_native_generic_func</span></code></a>(name)</p></td>
 <td><p>Get a generic function from the global registry.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.target.intel_graphics" title="tvm.target.intel_graphics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intel_graphics</span></code></a>([model, options])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.target.hexagon" title="tvm.target.hexagon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hexagon</span></code></a>([cpu_ver, sim_args, hvx])</p></td>
+<td><p>Returns a Hexagon target.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.target.intel_graphics" title="tvm.target.intel_graphics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intel_graphics</span></code></a>([model, options])</p></td>
 <td><p>Returns an Intel Graphics target.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.target.mali" title="tvm.target.mali"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mali</span></code></a>([model, options])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.target.mali" title="tvm.target.mali"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mali</span></code></a>([model, options])</p></td>
 <td><p>Returns a ARM Mali GPU target.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.target.opengl" title="tvm.target.opengl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">opengl</span></code></a>([model, options])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.target.opengl" title="tvm.target.opengl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">opengl</span></code></a>([model, options])</p></td>
 <td><p>Returns a OpenGL target.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.target.override_native_generic_func" title="tvm.target.override_native_generic_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">override_native_generic_func</span></code></a>(func_name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.target.override_native_generic_func" title="tvm.target.override_native_generic_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">override_native_generic_func</span></code></a>(func_name)</p></td>
 <td><p>Override a generic function defined in C++</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.target.rasp" title="tvm.target.rasp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rasp</span></code></a>([options])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.target.rasp" title="tvm.target.rasp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rasp</span></code></a>([options])</p></td>
 <td><p>Return a Raspberry 3b target.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.target.register_intrin_rule" title="tvm.target.register_intrin_rule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_intrin_rule</span></code></a>(target, intrin[, f, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.target.register_intrin_rule" title="tvm.target.register_intrin_rule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_intrin_rule</span></code></a>(target, intrin[, f, …])</p></td>
 <td><p>Register an intrinsic function generation rule.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.target.rocm" title="tvm.target.rocm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rocm</span></code></a>([model, options])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.target.rocm" title="tvm.target.rocm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rocm</span></code></a>([model, options])</p></td>
 <td><p>Returns a ROCM target.</p></td>
 </tr>
 </tbody>
@@ -496,6 +500,25 @@ This function will also download pre-tuned op parameters when there is none.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.target.hexagon">
+<code class="sig-prename descclassname">tvm.target.</code><code class="sig-name descname">hexagon</code><span class="sig-paren">(</span><em class="sig-param">cpu_ver='v66'</em>, <em class="sig-param">sim_args=None</em>, <em class="sig-param">hvx=128</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.target.hexagon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a Hexagon target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cpu_ver</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – CPU version used for code generation. Not all allowed cpu str
+will be valid, LLVM will throw an error.</p></li>
+<li><p><strong>sim_args</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><em>list of str</em>) – User defined sim arguments. CPU version defaults to cpu_ver.
+Otherwise, separate versions are used for codegen and sim. Not
+all allowed cpu strings will be valid, simulator will throw an
+error if invalid. Does not affect codegen.</p></li>
+<li><p><strong>hvx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Size of hvx register. Value of 0 indicates disabled hvx.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

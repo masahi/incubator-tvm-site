@@ -235,7 +235,7 @@ device and returns the measured cost. Network overhead is excluded.
 
  .. code-block:: none
 
-    1.229e-07 secs/op
+    1.22e-07 secs/op
 
 
 
@@ -310,11 +310,6 @@ features in TVM.
 - Set up the target device configuration to cross compile the kernels on the
   local machine.
 - Upload and run the kernels remotely via the RPC API.
-
-
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.127 seconds)
 
 
 .. _sphx_glr_download_tutorials_cross_compilation_and_rpc.py:

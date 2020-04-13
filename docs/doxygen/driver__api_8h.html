@@ -98,8 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &lt;<a class="el" href="packed__func_8h_source.html">tvm/runtime/packed_func.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="target_8h_source.html">tvm/target/target.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="with_8h_source.html">tvm/support/with.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ir_2module_8h_source.html">tvm/ir/module.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="schedule__pass_8h_source.html">tvm/te/schedule_pass.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="lowered__func_8h_source.html">tvm/tir/lowered_func.h</a>&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for driver_api.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="driver__api_8h__incl.svg" width="4238" height="1590"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="driver__api_8h__incl.svg" width="4664" height="1515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -121,21 +121,18 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9284f30c0e1daf1649838578fed1baa1"><td class="memItemLeft" align="right" valign="top">Array&lt; tir::LoweredFunc &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a9284f30c0e1daf1649838578fed1baa1">tvm::lower</a> (te::Schedule sch, const Array&lt; te::Tensor &gt; &amp;args, const std::string &amp;name, const std::unordered_map&lt; te::Tensor, tir::Buffer &gt; &amp;binds, const BuildConfig &amp;config)</td></tr>
-<tr class="memdesc:a9284f30c0e1daf1649838578fed1baa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a LoweredFunc given a schedule, args and binds.  <a href="namespacetvm.html#a9284f30c0e1daf1649838578fed1baa1">More...</a><br /></td></tr>
-<tr class="separator:a9284f30c0e1daf1649838578fed1baa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66b6a4702f9c98e4e4c6c385da231903"><td class="memItemLeft" align="right" valign="top">Array&lt; Array&lt; tir::LoweredFunc &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a66b6a4702f9c98e4e4c6c385da231903">tvm::split_dev_host_funcs</a> (const Array&lt; tir::LoweredFunc &gt; &amp;funcs, const Target &amp;target, const Target &amp;target_host, const BuildConfig &amp;config)</td></tr>
-<tr class="memdesc:a66b6a4702f9c98e4e4c6c385da231903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split host/device function and running necessary pass before build.  <a href="namespacetvm.html#a66b6a4702f9c98e4e4c6c385da231903">More...</a><br /></td></tr>
-<tr class="separator:a66b6a4702f9c98e4e4c6c385da231903"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50a9a7e42c754dc31caf6d74e4423ddc"><td class="memItemLeft" align="right" valign="top">runtime::Module&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a50a9a7e42c754dc31caf6d74e4423ddc">tvm::build</a> (const Array&lt; tir::LoweredFunc &gt; &amp;funcs, const Target &amp;target, const Target &amp;target_host, const BuildConfig &amp;config)</td></tr>
-<tr class="memdesc:a50a9a7e42c754dc31caf6d74e4423ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from an array of lowered functions.  <a href="namespacetvm.html#a50a9a7e42c754dc31caf6d74e4423ddc">More...</a><br /></td></tr>
-<tr class="separator:a50a9a7e42c754dc31caf6d74e4423ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab60e7a2ecb2573f5380a476d8c5aca6d"><td class="memItemLeft" align="right" valign="top">runtime::Module&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#ab60e7a2ecb2573f5380a476d8c5aca6d">tvm::build</a> (const Map&lt; Target, Array&lt; tir::LoweredFunc &gt;&gt; &amp;input, const Target &amp;target_host, const BuildConfig &amp;config)</td></tr>
-<tr class="memdesc:ab60e7a2ecb2573f5380a476d8c5aca6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from a map contains target to a list of lowered functions pairs. This function is used for heterogeneous build.  <a href="namespacetvm.html#ab60e7a2ecb2573f5380a476d8c5aca6d">More...</a><br /></td></tr>
-<tr class="separator:ab60e7a2ecb2573f5380a476d8c5aca6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a879a810167b7f65cbfe7975da151c06d"><td class="memItemLeft" align="right" valign="top">runtime::Module&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a879a810167b7f65cbfe7975da151c06d">tvm::build</a> (const Map&lt; std::string, Array&lt; tir::LoweredFunc &gt;&gt; &amp;input, const Target &amp;target_host, const BuildConfig &amp;config)</td></tr>
-<tr class="memdesc:a879a810167b7f65cbfe7975da151c06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from a map contains target to a list of lowered functions pairs. This function is used for heterogeneous build.  <a href="namespacetvm.html#a879a810167b7f65cbfe7975da151c06d">More...</a><br /></td></tr>
-<tr class="separator:a879a810167b7f65cbfe7975da151c06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32321779cd7a6ecbfed207d610dbdf1"><td class="memItemLeft" align="right" valign="top">IRModule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#af32321779cd7a6ecbfed207d610dbdf1">tvm::lower</a> (te::Schedule sch, const Array&lt; te::Tensor &gt; &amp;args, const std::string &amp;name, const std::unordered_map&lt; te::Tensor, tir::Buffer &gt; &amp;binds, const BuildConfig &amp;config)</td></tr>
+<tr class="memdesc:af32321779cd7a6ecbfed207d610dbdf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a> given a schedule, args and binds.  <a href="namespacetvm.html#af32321779cd7a6ecbfed207d610dbdf1">More...</a><br /></td></tr>
+<tr class="separator:af32321779cd7a6ecbfed207d610dbdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1ed8b9bb177bf976290ec7275f0e6d"><td class="memItemLeft" align="right" valign="top">runtime::Module&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a8f1ed8b9bb177bf976290ec7275f0e6d">tvm::build</a> (const IRModule &amp;funcs, const Target &amp;target, const Target &amp;target_host, const BuildConfig &amp;config)</td></tr>
+<tr class="memdesc:a8f1ed8b9bb177bf976290ec7275f0e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from an <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>.  <a href="namespacetvm.html#a8f1ed8b9bb177bf976290ec7275f0e6d">More...</a><br /></td></tr>
+<tr class="separator:a8f1ed8b9bb177bf976290ec7275f0e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6430484248acb549a8be622d60dd32d"><td class="memItemLeft" align="right" valign="top">runtime::Module&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#ad6430484248acb549a8be622d60dd32d">tvm::build</a> (const Map&lt; Target, IRModule &gt; &amp;input, const Target &amp;target_host, const BuildConfig &amp;config)</td></tr>
+<tr class="memdesc:ad6430484248acb549a8be622d60dd32d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from a map contains target to <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>. This function is used for heterogeneous build.  <a href="namespacetvm.html#ad6430484248acb549a8be622d60dd32d">More...</a><br /></td></tr>
+<tr class="separator:ad6430484248acb549a8be622d60dd32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c0f6aefe6bce8d6621bb3ee6ea3e00f"><td class="memItemLeft" align="right" valign="top">runtime::Module&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm.html#a7c0f6aefe6bce8d6621bb3ee6ea3e00f">tvm::build</a> (const Map&lt; std::string, IRModule &gt; &amp;input, const Target &amp;target_host, const BuildConfig &amp;config)</td></tr>
+<tr class="memdesc:a7c0f6aefe6bce8d6621bb3ee6ea3e00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a device and host module for a specific target from a map contains target to <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>. This function is used for heterogeneous build.  <a href="namespacetvm.html#a7c0f6aefe6bce8d6621bb3ee6ea3e00f">More...</a><br /></td></tr>
+<tr class="separator:a7c0f6aefe6bce8d6621bb3ee6ea3e00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Compiler driver APIs to drive the compilation. </p>

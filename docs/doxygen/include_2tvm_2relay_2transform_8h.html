@@ -96,7 +96,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Relay specific transformation passes.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="include_2tvm_2relay_2attrs_2transform_8h_source.html">tvm/relay/attrs/transform.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="runtime_2container_8h_source.html">tvm/runtime/container.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="include_2tvm_2relay_2attrs_2transform_8h_source.html">tvm/relay/attrs/transform.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="include_2tvm_2ir_2transform_8h_source.html">tvm/ir/transform.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="relay_2expr_8h_source.html">tvm/relay/expr.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="relay_2function_8h_source.html">tvm/relay/function.h</a>&gt;</code><br />
@@ -106,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for transform.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="include_2tvm_2relay_2transform_8h__incl.svg" width="4664" height="1276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="include_2tvm_2relay_2transform_8h__incl.svg" width="5067" height="1291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -147,8 +148,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aba687537c5fd54db0012c745bba74a85"><td class="memItemLeft" align="right" valign="top">Pass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#aba687537c5fd54db0012c745bba74a85">tvm::relay::transform::CreateFunctionPass</a> (const runtime::TypedPackedFunc&lt; Function(Function, IRModule, PassContext)&gt; &amp;pass_func, int opt_level, const std::string &amp;name, const <a class="el" href="classtvm_1_1Array.html">tvm::Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">tvm::PrimExpr</a> &gt; &amp;required)</td></tr>
-<tr class="separator:aba687537c5fd54db0012c745bba74a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c71bacaf62a251f06eb390bf0473d10"><td class="memItemLeft" align="right" valign="top">Pass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#a9c71bacaf62a251f06eb390bf0473d10">tvm::relay::transform::CreateFunctionPass</a> (const runtime::TypedPackedFunc&lt; Function(Function, IRModule, PassContext)&gt; &amp;pass_func, int opt_level, const std::string &amp;name, const <a class="el" href="classtvm_1_1Array.html">tvm::Array</a>&lt; runtime::String &gt; &amp;required)</td></tr>
+<tr class="separator:a9c71bacaf62a251f06eb390bf0473d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa08e0ced82fc7efe515d610104b070c"><td class="memItemLeft" align="right" valign="top">Pass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#aaa08e0ced82fc7efe515d610104b070c">tvm::relay::transform::DeadCodeElimination</a> (bool inline_once=false)</td></tr>
 <tr class="memdesc:aaa08e0ced82fc7efe515d610104b070c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove expressions which does not effect the program result.  <a href="namespacetvm_1_1relay_1_1transform.html#aaa08e0ced82fc7efe515d610104b070c">More...</a><br /></td></tr>
 <tr class="separator:aaa08e0ced82fc7efe515d610104b070c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,9 +231,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aba5e588279a3b19a119c9aa28c364bbe"><td class="memItemLeft" align="right" valign="top">Pass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#aba5e588279a3b19a119c9aa28c364bbe">tvm::relay::transform::Inline</a> ()</td></tr>
 <tr class="memdesc:aba5e588279a3b19a119c9aa28c364bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inline the global functions marked as <code>inline</code> in a given Relay <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>.  <a href="namespacetvm_1_1relay_1_1transform.html#aba5e588279a3b19a119c9aa28c364bbe">More...</a><br /></td></tr>
 <tr class="separator:aba5e588279a3b19a119c9aa28c364bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdccee126a74a602e3669bdfaf0f259c"><td class="memItemLeft" align="right" valign="top">Pass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#abdccee126a74a602e3669bdfaf0f259c">tvm::relay::transform::RemoveUnusedFunctions</a> (Array&lt; <a class="el" href="classtvm_1_1PrimExpr.html">tvm::PrimExpr</a> &gt; entry_functions)</td></tr>
-<tr class="memdesc:abdccee126a74a602e3669bdfaf0f259c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the unused functions in the Relay <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>.  <a href="namespacetvm_1_1relay_1_1transform.html#abdccee126a74a602e3669bdfaf0f259c">More...</a><br /></td></tr>
-<tr class="separator:abdccee126a74a602e3669bdfaf0f259c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbbf5f3e5ffb775fafb9c48473dbfa24"><td class="memItemLeft" align="right" valign="top">Pass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay_1_1transform.html#afbbf5f3e5ffb775fafb9c48473dbfa24">tvm::relay::transform::RemoveUnusedFunctions</a> (Array&lt; runtime::String &gt; entry_functions)</td></tr>
+<tr class="memdesc:afbbf5f3e5ffb775fafb9c48473dbfa24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the unused functions in the Relay <a class="el" href="classtvm_1_1IRModule.html" title="Managed reference class to IRModuleNode. ">IRModule</a>.  <a href="namespacetvm_1_1relay_1_1transform.html#afbbf5f3e5ffb775fafb9c48473dbfa24">More...</a><br /></td></tr>
+<tr class="separator:afbbf5f3e5ffb775fafb9c48473dbfa24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7cfa0b6a4537989b886d47767526726"><td class="memItemLeft" align="right" valign="top">Expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay.html#ad7cfa0b6a4537989b886d47767526726">tvm::relay::Bind</a> (const Expr &amp;expr, const <a class="el" href="classtvm_1_1Map.html">tvm::Map</a>&lt; Var, Expr &gt; &amp;binds)</td></tr>
 <tr class="memdesc:ad7cfa0b6a4537989b886d47767526726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind the free variables to a Relay expression. This is a helper function usually called by other pass functions to help optimizations.  <a href="namespacetvm_1_1relay.html#ad7cfa0b6a4537989b886d47767526726">More...</a><br /></td></tr>
 <tr class="separator:ad7cfa0b6a4537989b886d47767526726"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -105,6 +105,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;<a class="el" href="c__runtime__api_8h_source.html">tvm/runtime/c_runtime_api.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="data__type_8h_source.html">tvm/runtime/data_type.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="ir_2expr_8h_source.html">tvm/ir/expr.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="var_8h_source.html">tvm/tir/var.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="buffer_8h_source.html">tvm/tir/buffer.h</a>&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
@@ -114,13 +116,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for expr.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="tir_2expr_8h__incl.svg" width="3108" height="1052"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="tir_2expr_8h__incl.svg" width="3536" height="1276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="tir_2expr_8h__dep__incl.svg" width="3498" height="827"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="tir_2expr_8h__dep__incl.svg" width="3180" height="827"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -128,24 +130,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1VarNode.html">tvm::tir::VarNode</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A variable node in the IR.  <a href="classtvm_1_1tir_1_1VarNode.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1Var.html">tvm::tir::Var</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">a named variable in TVM  <a href="classtvm_1_1tir_1_1Var.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1SizeVarNode.html">tvm::tir::SizeVarNode</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A variable node represent a tensor index size, whose value must be non-negative.  <a href="classtvm_1_1tir_1_1SizeVarNode.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1SizeVar.html">tvm::tir::SizeVar</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">a named variable represents a tensor index size  <a href="classtvm_1_1tir_1_1SizeVar.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1IterVar.html">tvm::tir::IterVar</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iteration Variable, represents an iteration over an integer interval.  <a href="classtvm_1_1tir_1_1IterVar.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1IterVarNode.html">tvm::tir::IterVarNode</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iteration variable representing an iteration over a one dimensional interval.  <a href="classtvm_1_1tir_1_1IterVarNode.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1StringImmNode.html">tvm::tir::StringImmNode</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">String constants, only used in asserts.  <a href="classtvm_1_1tir_1_1StringImmNode.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,6 +201,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1SelectNode.html">tvm::tir::SelectNode</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">return true_value if condition is true, otherwise return false_value.  <a href="classtvm_1_1tir_1_1SelectNode.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1BufferLoadNode.html">tvm::tir::BufferLoadNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load value from the high dimension buffer.  <a href="classtvm_1_1tir_1_1BufferLoadNode.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1BufferLoad.html">tvm::tir::BufferLoad</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1LoadNode.html">tvm::tir::LoadNode</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the value from buffer_var.  <a href="classtvm_1_1tir_1_1LoadNode.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,6 +241,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1tir_1_1AnyNode.html">tvm::tir::AnyNode</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Any shape.  <a href="classtvm_1_1tir_1_1AnyNode.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1runtime_1_1PackedFuncValueConverter_3_01tvm_1_1Integer_01_4.html">tvm::runtime::PackedFuncValueConverter&lt; tvm::Integer &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -267,10 +258,6 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a8277e2a3d81a80a4776705673df51e0a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#a8277e2a3d81a80a4776705673df51e0a">tvm::tir::Region</a> = Array&lt; Range &gt;</td></tr>
-<tr class="separator:a8277e2a3d81a80a4776705673df51e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa177c432dd27540d34b22c05559324ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#aa177c432dd27540d34b22c05559324ab">tvm::tir::Domain</a> = Array&lt; Range &gt;</td></tr>
-<tr class="separator:aa177c432dd27540d34b22c05559324ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8c7db788e840dc1c2ed1f365d5ea829"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#ae8c7db788e840dc1c2ed1f365d5ea829">tvm::tir::IntImmNode</a> = <a class="el" href="classtvm_1_1IntImmNode.html">tvm::IntImmNode</a></td></tr>
 <tr class="separator:ae8c7db788e840dc1c2ed1f365d5ea829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb123be81447d2871f4c716ce2d1dc00"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#adb123be81447d2871f4c716ce2d1dc00">tvm::tir::FloatImmNode</a> = <a class="el" href="classtvm_1_1FloatImmNode.html">tvm::FloatImmNode</a></td></tr>
@@ -278,22 +265,6 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:add7d0a6b1dd91f0c3c5dd2f4cf64358e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358e">tvm::tir::IterVarType</a> : int { <br />
-&#160;&#160;<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358ea943fcb20375772edb59ea948f6cc9422">tvm::tir::kDataPar</a> = 0, 
-<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358ea2758d2f7912af847eff77105023a25d0">tvm::tir::kThreadIndex</a> = 1, 
-<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358eac78682fe1cb0a6de8511f2fc5144c0b4">tvm::tir::kCommReduce</a> = 2, 
-<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358eaba48cf32065b1bf9086138313912f64b">tvm::tir::kOrdered</a> = 3, 
-<br />
-&#160;&#160;<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358eaf324873e6195114a186db7f910559b2c">tvm::tir::kOpaque</a> = 4, 
-<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358ea37ab325f4c3ab1d2a905cbfe546bc403">tvm::tir::kUnrolled</a> = 5, 
-<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358ea1d03c8fa5be7edb0032b8155736239bd">tvm::tir::kVectorized</a> = 6, 
-<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358eae12eb286fbc36da6dd2e4775a1306652">tvm::tir::kParallelized</a> = 7, 
-<br />
-&#160;&#160;<a class="el" href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358ea772fdb24758cfac34cb164be343abb47">tvm::tir::kTensorized</a> = 8
-<br />
- }<tr class="memdesc:add7d0a6b1dd91f0c3c5dd2f4cf64358e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of iteration variable. Each IterVar have a specific type.  <a href="namespacetvm_1_1tir.html#add7d0a6b1dd91f0c3c5dd2f4cf64358e">More...</a><br /></td></tr>
-</td></tr>
-<tr class="separator:add7d0a6b1dd91f0c3c5dd2f4cf64358e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7aee573af86b33b88d123fc26a40cdd9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1intrinsic.html#a7aee573af86b33b88d123fc26a40cdd9">tvm::tir::intrinsic::TVMStructFieldKind</a> : int { <br />
 &#160;&#160;<a class="el" href="namespacetvm_1_1tir_1_1intrinsic.html#a7aee573af86b33b88d123fc26a40cdd9a4db7d8a5cd05d94fe63484b1a6a5f41e">tvm::tir::intrinsic::kArrAddr</a>, 
 <a class="el" href="namespacetvm_1_1tir_1_1intrinsic.html#a7aee573af86b33b88d123fc26a40cdd9ac4fd2e6f182e390a5f12bc0b86a7bdde">tvm::tir::intrinsic::kArrData</a>, 
@@ -319,8 +290,6 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afc0fdee9fc81462318d59dbe64c8df26"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#afc0fdee9fc81462318d59dbe64c8df26">tvm::tir::IterVarType2String</a> (IterVarType t)</td></tr>
-<tr class="separator:afc0fdee9fc81462318d59dbe64c8df26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb777c4f4d61883c0cbdf9116458b70d"><td class="memTemplParams" colspan="2">template&lt;typename K , typename V &gt; </td></tr>
 <tr class="memitem:abb777c4f4d61883c0cbdf9116458b70d"><td class="memTemplItemLeft" align="right" valign="top">std::unordered_map&lt; K, V &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir.html#abb777c4f4d61883c0cbdf9116458b70d">tvm::tir::as_unordered_map</a> (const Map&lt; K, V &gt; &amp;dmap)</td></tr>
 <tr class="separator:abb777c4f4d61883c0cbdf9116458b70d"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Collaboration diagram for tvm::arith::Analyzer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1arith_1_1Analyzer__coll__graph.svg" width="1111" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1arith_1_1Analyzer__coll__graph.svg" width="1111" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -122,6 +122,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae24b097cad6d18e00eafa6a2a36d9712"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1Analyzer.html#ae24b097cad6d18e00eafa6a2a36d9712">Bind</a> (const Var &amp;var, const <a class="el" href="classtvm_1_1Range.html">Range</a> &amp;range)</td></tr>
 <tr class="memdesc:ae24b097cad6d18e00eafa6a2a36d9712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify all the sub-analyzers that var is created and binded to a range.  <a href="#ae24b097cad6d18e00eafa6a2a36d9712">More...</a><br /></td></tr>
 <tr class="separator:ae24b097cad6d18e00eafa6a2a36d9712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd957d19017c5951efea059221012af3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1Analyzer.html#acd957d19017c5951efea059221012af3">Bind</a> (const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; Var, <a class="el" href="classtvm_1_1Range.html">Range</a> &gt; &amp;variables)</td></tr>
+<tr class="memdesc:acd957d19017c5951efea059221012af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind all the vars in the <a class="el" href="classtvm_1_1Map.html" title="Map container of NodeRef-&gt;NodeRef in DSL graph. Map implements copy on write semantics, which means map is mutable but copy will happen when array is referenced in more than two places. ">Map</a>.  <a href="#acd957d19017c5951efea059221012af3">More...</a><br /></td></tr>
+<tr class="separator:acd957d19017c5951efea059221012af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e97e3abc176f85a5b8e5d0d1cb9f5e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1Analyzer.html#a5e97e3abc176f85a5b8e5d0d1cb9f5e1">CanProveGreaterEqual</a> (const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;expr, int64_t lower_bound)</td></tr>
 <tr class="memdesc:a5e97e3abc176f85a5b8e5d0d1cb9f5e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether can we prove expr &gt;= val.  <a href="#a5e97e3abc176f85a5b8e5d0d1cb9f5e1">More...</a><br /></td></tr>
 <tr class="separator:a5e97e3abc176f85a5b8e5d0d1cb9f5e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -263,6 +266,30 @@ Public Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">var</td><td>The variable. </td></tr>
     <tr><td class="paramname">range</td><td>The range we bind to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acd957d19017c5951efea059221012af3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tvm::arith::Analyzer::Bind </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; Var, <a class="el" href="classtvm_1_1Range.html">Range</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>variables</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bind all the vars in the <a class="el" href="classtvm_1_1Map.html" title="Map container of NodeRef-&gt;NodeRef in DSL graph. Map implements copy on write semantics, which means map is mutable but copy will happen when array is referenced in more than two places. ">Map</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variables</td><td>The {variable -&gt; range} map. </td></tr>
   </table>
   </dd>
 </dl>

@@ -208,7 +208,7 @@
 <span id="id1"></span><h1>TVM Runtime System<a class="headerlink" href="#tvm-runtime-system" title="Permalink to this headline">¶</a></h1>
 <p>TVM supports multiple programming languages for the compiler stack development and deployment.
 In this note, we explain the key elements of the TVM runtime.</p>
-<img alt="http://www.tvm.ai/images/release/tvm_flexible.png" src="http://www.tvm.ai/images/release/tvm_flexible.png" />
+<img alt="https://tvm.apache.org/images/release/tvm_flexible.png" src="https://tvm.apache.org/images/release/tvm_flexible.png" />
 <p>We need to satisfy quite a few interesting requirements:</p>
 <ul class="simple">
 <li><p>Deployment: invoke the compiled function from python/javascript/c++ language.</p></li>
@@ -326,7 +326,7 @@ of new device easy, and we do not need to redo the host code generation for each
 <h2>Remote Deployment<a class="headerlink" href="#remote-deployment" title="Permalink to this headline">¶</a></h2>
 <p>The PackedFunc and Module system also makes it easy to ship the function into remote devices directly.
 Under the hood, we have an RPCModule that serializes the arguments to do the data movement and launches the computation on the remote.</p>
-<img alt="http://www.tvm.ai/images/release/tvm_rpc.png" src="http://www.tvm.ai/images/release/tvm_rpc.png" />
+<img alt="https://tvm.apache.org/images/release/tvm_rpc.png" src="https://tvm.apache.org/images/release/tvm_rpc.png" />
 <p>The RPC server itself is minimum and can be bundled into the runtime. We can start a minimum TVM
 RPC server on iPhone/android/raspberry pi or even the browser. The cross compilation on server and shipping of the module for testing can be done in the same script. Checkout
 <a class="reference internal" href="../tutorials/cross_compilation_and_rpc.html#tutorial-cross-compilation-and-rpc"><span class="std std-ref">Cross Compilation and RPC</span></a> for more details.</p>

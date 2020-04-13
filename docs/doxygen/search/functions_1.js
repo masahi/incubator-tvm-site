@@ -1,7 +1,7 @@
 var searchData=
 [
   ['abs',['abs',['../namespacetvm.html#a84d274191adb24d2acb39064c1fbec52',1,'tvm::abs()'],['../namespacetopi.html#a2784fda0b30c6fdf925e92e246b10508',1,'topi::abs()']]],
-  ['access_5fptr',['access_ptr',['../classtvm_1_1tir_1_1Buffer.html#a746b074c21acb1782fa1079be5337128',1,'tvm::tir::Buffer']]],
+  ['access_5fptr',['access_ptr',['../classtvm_1_1tir_1_1Buffer.html#a42b4c0f53f23ac4d3d63499711466606',1,'tvm::tir::Buffer']]],
   ['adaptive_5fpool',['adaptive_pool',['../namespacetopi_1_1nn.html#af721a019c13f1f99dc43d5d49cc71388',1,'topi::nn']]],
   ['adaptive_5fpool3d',['adaptive_pool3d',['../namespacetopi_1_1nn.html#ad48c57c26ce6bb02576555a4cb11bcd3',1,'topi::nn']]],
   ['adaptive_5fpool_5fimpl',['adaptive_pool_impl',['../namespacetopi_1_1nn.html#ad4f34df5cfa8dc75843116bc39f06066',1,'topi::nn']]],
@@ -31,6 +31,7 @@ var searchData=
   ['argmax',['argmax',['../namespacetopi.html#a94f412c82e4225050328fae33a3342f2',1,'topi']]],
   ['argmin',['argmin',['../namespacetopi.html#a9a022c65050aa8fdab162cfb6775b865',1,'topi']]],
   ['array',['Array',['../classtvm_1_1Array.html#aab72ecf006512069d8f791e3cae3eee0',1,'tvm::Array::Array()'],['../classtvm_1_1Array.html#a42ad68bcaefafa48967fa815cdb1e9fe',1,'tvm::Array::Array(Array&lt; T &gt; &amp;&amp;other)'],['../classtvm_1_1Array.html#a48ecf47f2a0bc8dfaddc8da83300deed',1,'tvm::Array::Array(const Array&lt; T &gt; &amp;other)'],['../classtvm_1_1Array.html#abda937076918f8123b1fc62303a940a4',1,'tvm::Array::Array(ObjectPtr&lt; Object &gt; n)'],['../classtvm_1_1Array.html#a8e465f5428bc1189dfd6eaf7075bb96f',1,'tvm::Array::Array(IterType begin, IterType end)'],['../classtvm_1_1Array.html#a9cd4b1d4c96884994152797a15df7343',1,'tvm::Array::Array(std::initializer_list&lt; T &gt; init)'],['../classtvm_1_1Array.html#a92ba9f4611201b6bad1fb46f5944922e',1,'tvm::Array::Array(const std::vector&lt; T &gt; &amp;init)'],['../classtvm_1_1Array.html#ae409fb0a54ed7fb8c34b7b0445f88802',1,'tvm::Array::Array(size_t n, const T &amp;val)']]],
+  ['arrayorint',['ArrayOrInt',['../namespacetopi.html#a6522c6021a7346306b7b98460e116365',1,'topi']]],
   ['as',['as',['../classtvm_1_1runtime_1_1ObjectRef.html#ab51c99a3607ca95884d9efd978998ce8',1,'tvm::runtime::ObjectRef']]],
   ['as_5fconst_5fint',['as_const_int',['../namespacetvm_1_1tir.html#acbe8f225faaf34c540194921a7ee6a66',1,'tvm::tir']]],
   ['as_5funordered_5fmap',['as_unordered_map',['../namespacetvm_1_1tir.html#abb777c4f4d61883c0cbdf9116458b70d',1,'tvm::tir']]],

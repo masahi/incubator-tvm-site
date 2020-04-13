@@ -118,6 +118,18 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1ConstraintContext.html">ConstraintContext</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constraint context.  <a href="classtvm_1_1arith_1_1ConstraintContext.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1IntConstraints.html">IntConstraints</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Managed reference to <a class="el" href="classtvm_1_1arith_1_1IntConstraintsNode.html" title="Represent integer constrains including (integer) variables, their ranges and the relations between th...">IntConstraintsNode</a>.  <a href="classtvm_1_1arith_1_1IntConstraints.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1IntConstraintsNode.html">IntConstraintsNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent integer constrains including (integer) variables, their ranges and the relations between them (either equations or inequalities).  <a href="classtvm_1_1arith_1_1IntConstraintsNode.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1IntConstraintsTransform.html">IntConstraintsTransform</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Managed reference to <a class="el" href="classtvm_1_1arith_1_1IntConstraintsTransformNode.html" title="We can have different set of variables to represent the same constraints. For example, the following two systems are equivalent, {a + b = 0 | a &gt;= 0, b &gt;= 0} and {m - n = 0 | m &gt;= 0, n &lt;= 0} This data structure represents the transformation between two equivalent linear systems. In the above example, src : {a + b = 0 | a &gt;= 0, b &gt;= 0} dst : {m - n = 0 | m &gt;= 0, n &lt;= 0} src_to_dst : {a -&gt; m, b -&gt; -n} dst_to_src : {m -&gt; a, n -&gt; -b}. ">IntConstraintsTransformNode</a>.  <a href="classtvm_1_1arith_1_1IntConstraintsTransform.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1IntConstraintsTransformNode.html">IntConstraintsTransformNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">We can have different set of variables to represent the same constraints. For example, the following two systems are equivalent, {a + b = 0 | a &gt;= 0, b &gt;= 0} and {m - n = 0 | m &gt;= 0, n &lt;= 0} This data structure represents the transformation between two equivalent linear systems. In the above example, src : {a + b = 0 | a &gt;= 0, b &gt;= 0} dst : {m - n = 0 | m &gt;= 0, n &lt;= 0} src_to_dst : {a -&gt; m, b -&gt; -n} dst_to_src : {m -&gt; a, n -&gt; -b}.  <a href="classtvm_1_1arith_1_1IntConstraintsTransformNode.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1IntSet.html">IntSet</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Managed reference to <a class="el" href="classtvm_1_1arith_1_1IntSetNode.html" title="Base class of all Integer set containers. represent a set of integers in one dimension. ">IntSetNode</a>.  <a href="classtvm_1_1arith_1_1IntSet.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,12 +203,21 @@ Functions</h2></td></tr>
 <tr class="memitem:ad66a987ddb3d8aee69f9175bf412eb8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1arith_1_1IntSet.html">IntSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1arith.html#ad66a987ddb3d8aee69f9175bf412eb8a">Intersect</a> (const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1arith_1_1IntSet.html">IntSet</a> &gt; &amp;sets)</td></tr>
 <tr class="memdesc:ad66a987ddb3d8aee69f9175bf412eb8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an union set of all sets.  <a href="#ad66a987ddb3d8aee69f9175bf412eb8a">More...</a><br /></td></tr>
 <tr class="separator:ad66a987ddb3d8aee69f9175bf412eb8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f821e7f25de9769c5733cfacbe132d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1arith.html#a5f821e7f25de9769c5733cfacbe132d6">SmithNormalFormDiag</a> (std::vector&lt; std::vector&lt; int64_t &gt;&gt; *S, std::vector&lt; std::vector&lt; int64_t &gt;&gt; *V, std::vector&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; *x, std::vector&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; *y)</td></tr>
+<tr class="memdesc:a5f821e7f25de9769c5733cfacbe132d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain Smith Normal Form of linear equation A x = y. Smith Normal Form of matrix A_{mxn} is S_{mxn} = U_{mxm} A_{mxn} V_{nxn}, in which S_{mxn} is diag(s1, s2, ..., sr, 0, ..., 0) and r is the rank of A. NOTE: Although in standard Smith Normal Form the diagonal elements satisfy s_i | s_{i+1} (| means divides), the implement here does not guarantee it. TODO(yzhliu): From sergei-grechanik: computing the proper Smith normal form may improve stability of automatic differentiation (generating the same gradient code for slightly different but equivalent input code U_{mxm} and V_{nxn} are invertible matrices. This function modifies <code>S</code> to be S_{mxn}, <code>V</code> to be V_{nxn}, <code>y</code> to be U_{mxm} y_{mx1} and <code>x</code> to be V^{-1} x.  <a href="#a5f821e7f25de9769c5733cfacbe132d6">More...</a><br /></td></tr>
+<tr class="separator:a5f821e7f25de9769c5733cfacbe132d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0290f04432523ab8e5f76edde80071a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1arith_1_1IntConstraintsTransform.html">IntConstraintsTransform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1arith.html#ae0290f04432523ab8e5f76edde80071a">SolveLinearEquations</a> (const <a class="el" href="classtvm_1_1arith_1_1IntConstraints.html">IntConstraints</a> &amp;system_to_solve)</td></tr>
+<tr class="memdesc:ae0290f04432523ab8e5f76edde80071a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve linear equations.  <a href="#ae0290f04432523ab8e5f76edde80071a">More...</a><br /></td></tr>
+<tr class="separator:ae0290f04432523ab8e5f76edde80071a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87a12ee0854469b04329a961ef261559"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1arith.html#a87a12ee0854469b04329a961ef261559">DetectLinearEquation</a> (const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;e, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1Var.html">tir::Var</a> &gt; &amp;vars)</td></tr>
 <tr class="memdesc:a87a12ee0854469b04329a961ef261559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect if e can be rewritten as e = sum_{i=0}^{n-1} var[i] * coeff[i] + coeff[n] Where coeff[i] and base are invariant of var[j] for all i and j.  <a href="#a87a12ee0854469b04329a961ef261559">More...</a><br /></td></tr>
 <tr class="separator:a87a12ee0854469b04329a961ef261559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a739616342876c2633b87ed16c649bc91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1arith.html#a739616342876c2633b87ed16c649bc91">DetectClipBound</a> (const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;e, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1tir_1_1Var.html">tir::Var</a> &gt; &amp;vars)</td></tr>
 <tr class="memdesc:a739616342876c2633b87ed16c649bc91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect if expression corresponds to clip bound of the vars.  <a href="#a739616342876c2633b87ed16c649bc91">More...</a><br /></td></tr>
 <tr class="separator:a739616342876c2633b87ed16c649bc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7bf53fab2c6a476fbbe881be27e53c0"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; int64_t, int64_t, int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1arith.html#af7bf53fab2c6a476fbbe881be27e53c0">xgcd</a> (int64_t a, int64_t b)</td></tr>
+<tr class="memdesc:af7bf53fab2c6a476fbbe881be27e53c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the extended greatest common divisor for two values. See <a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm">https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</a>.  <a href="#af7bf53fab2c6a476fbbe881be27e53c0">More...</a><br /></td></tr>
+<tr class="separator:af7bf53fab2c6a476fbbe881be27e53c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>namespace of arithmetic analysis. </p>
@@ -705,6 +726,80 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5f821e7f25de9769c5733cfacbe132d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tvm::arith::SmithNormalFormDiag </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; int64_t &gt;&gt; *&#160;</td>
+          <td class="paramname"><em>S</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; int64_t &gt;&gt; *&#160;</td>
+          <td class="paramname"><em>V</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &gt; *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtain Smith Normal Form of linear equation A x = y. Smith Normal Form of matrix A_{mxn} is S_{mxn} = U_{mxm} A_{mxn} V_{nxn}, in which S_{mxn} is diag(s1, s2, ..., sr, 0, ..., 0) and r is the rank of A. NOTE: Although in standard Smith Normal Form the diagonal elements satisfy s_i | s_{i+1} (| means divides), the implement here does not guarantee it. TODO(yzhliu): From sergei-grechanik: computing the proper Smith normal form may improve stability of automatic differentiation (generating the same gradient code for slightly different but equivalent input code U_{mxm} and V_{nxn} are invertible matrices. This function modifies <code>S</code> to be S_{mxn}, <code>V</code> to be V_{nxn}, <code>y</code> to be U_{mxm} y_{mx1} and <code>x</code> to be V^{-1} x. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S</td><td>the original A_{mxn}, it will be modified to S_{mxn} </td></tr>
+    <tr><td class="paramname">V</td><td>an identity matrix, it will be modified to V_{nxn} </td></tr>
+    <tr><td class="paramname">x</td><td>the x in A x = y. it will be modified to V^{-1}_{nxn} x_{nx1} </td></tr>
+    <tr><td class="paramname">y</td><td>the y in A x = y. it will be modified to U_{mxm} y_{mx1} </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae0290f04432523ab8e5f76edde80071a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1arith_1_1IntConstraintsTransform.html">IntConstraintsTransform</a> tvm::arith::SolveLinearEquations </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1arith_1_1IntConstraints.html">IntConstraints</a> &amp;&#160;</td>
+          <td class="paramname"><em>system_to_solve</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Solve linear equations. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system_to_solve</td><td>the variables to solve, their ranges, and a list of equations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new linear system, with less variables (if <code>system_to_solve</code> is NOT of full rank), or no variable (if <code>system_to_solve</code> is of full rank), or an empty linear system (if <code>system_to_solve</code> is unsolvable). It also provides the ranges of the variables in the new system, as well as inequalities inferred from the <code>system_to_solve</code>. You can get the mapping from the original variables to the solution via ret-&gt;src_to_dst. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a68a0523bf0384e492ab222d30be9160e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -727,6 +822,42 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the set after union </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af7bf53fab2c6a476fbbe881be27e53c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt;int64_t, int64_t, int64_t&gt; tvm::arith::xgcd </td>
+          <td>(</td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the extended greatest common divisor for two values. See <a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm">https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>an integer number </td></tr>
+    <tr><td class="paramname">b</td><td>an integer number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>3 integers (div, m, n) where div = gcd(a, b) and a*m + b*n = div </dd></dl>
 
 </div>
 </div>

@@ -687,11 +687,6 @@ hardware accelerator resources.
 
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.448 seconds)
-
-
 .. _sphx_glr_download_vta_tutorials_optimize_matrix_multiply_opt.py:
 
 

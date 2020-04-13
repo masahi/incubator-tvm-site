@@ -118,8 +118,8 @@ Then we write a baseline implementation, the simplest way to write a matrix mult
 
  .. code-block:: none
 
-    Numpy running time: 0.011041
-    Baseline: 3.404642
+    Numpy running time: 0.010819
+    Baseline: 3.314082
 
 
 
@@ -200,7 +200,7 @@ fill 32 * 32 * sizeof(float) which is 4KB in the cache whose total size is 32KB 
 
  .. code-block:: none
 
-    Opt1: 0.288281
+    Opt1: 0.288940
 
 
 
@@ -288,7 +288,7 @@ In this tutorial, we chose to vectorize the inner loop row data since it is cach
 
  .. code-block:: none
 
-    Opt2: 0.321037
+    Opt2: 0.320343
 
 
 
@@ -371,7 +371,7 @@ the access pattern for A matrix is more cache friendly.
 
  .. code-block:: none
 
-    Opt3: 0.111675
+    Opt3: 0.111966
 
 
 
@@ -473,7 +473,7 @@ the corresponding value from the packed array.
 
  .. code-block:: none
 
-    Opt4: 0.104570
+    Opt4: 0.105252
 
 
 
@@ -578,7 +578,7 @@ write to C when all the block results are ready.
 
  .. code-block:: none
 
-    Opt5: 0.099314
+    Opt5: 0.099655
 
 
 
@@ -691,7 +691,7 @@ Futhermore, we can also utilize multi-core processors to do the thread-level par
 
  .. code-block:: none
 
-    Opt6: 0.032255
+    Opt6: 0.032349
 
 
 
@@ -759,11 +759,6 @@ our generated code can achieve 60% of the `numpy` performance with MKL.
 Note that the outputs on the web page reflect the running times on a non-exclusive
 Docker container, thereby they are *unreliable*. It is highly encouraged to run the
 tutorial by yourself to observe the performance gain acheived by TVM.
-
-
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  25.108 seconds)
 
 
 .. _sphx_glr_download_tutorials_optimize_opt_gemm.py:

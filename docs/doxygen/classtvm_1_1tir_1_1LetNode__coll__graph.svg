@@ -134,31 +134,30 @@
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
 <g id="a_node7"><a xlink:href="classtvm_1_1PrimExpr.html" target="_top" xlink:title="Reference to PrimExprNode. ">
-<polygon fill="white" stroke="black" points="399,-370 399,-482 549,-482 549,-370 399,-370"/>
-<text text-anchor="middle" x="474" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::PrimExpr</text>
-<polyline fill="none" stroke="black" points="399,-463 549,-463 "/>
-<text text-anchor="middle" x="474" y="-451" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="399,-444 549,-444 "/>
-<text text-anchor="start" x="407" y="-432" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrimExpr()</text>
-<text text-anchor="start" x="407" y="-421" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrimExpr()</text>
-<text text-anchor="start" x="407" y="-410" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrimExpr()</text>
-<text text-anchor="start" x="407" y="-399" font-family="Helvetica,sans-Serif" font-size="10.00">+ dtype()</text>
-<text text-anchor="start" x="407" y="-388" font-family="Helvetica,sans-Serif" font-size="10.00">+ TVM_DEFINE_OBJECT_REF</text>
-<text text-anchor="start" x="407" y="-377" font-family="Helvetica,sans-Serif" font-size="10.00">_METHODS()</text>
+<polygon fill="white" stroke="black" points="399,-375.5 399,-476.5 549,-476.5 549,-375.5 399,-375.5"/>
+<text text-anchor="middle" x="474" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::PrimExpr</text>
+<polyline fill="none" stroke="black" points="399,-457.5 549,-457.5 "/>
+<text text-anchor="middle" x="474" y="-445.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="399,-438.5 549,-438.5 "/>
+<text text-anchor="start" x="407" y="-426.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrimExpr()</text>
+<text text-anchor="start" x="407" y="-415.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrimExpr()</text>
+<text text-anchor="start" x="407" y="-404.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ dtype()</text>
+<text text-anchor="start" x="407" y="-393.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TVM_DEFINE_OBJECT_REF</text>
+<text text-anchor="start" x="407" y="-382.5" font-family="Helvetica,sans-Serif" font-size="10.00">_METHODS()</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node1 -->
 <g id="edge9" class="edge"><title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M447.054,-369.842C433.309,-338.913 417.866,-299.179 410,-262 399.62,-212.934 397.791,-156.027 398.323,-113.838"/>
+<path fill="none" stroke="#404040" d="M449.508,-375.312C435.189,-343.69 418.338,-301.41 410,-262 399.62,-212.934 397.791,-156.027 398.323,-113.838"/>
 <polygon fill="none" stroke="#404040" points="398.324,-113.795 394.435,-107.722 398.544,-101.797 402.433,-107.869 398.324,-113.795"/>
 <text text-anchor="middle" x="428.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +value</text>
 <text text-anchor="middle" x="428.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">+body</text>
 </g>
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge6" class="edge"><title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M485.318,-359.922C490.761,-328.622 497.217,-291.505 502.414,-261.619"/>
-<polygon fill="none" stroke="midnightblue" points="481.854,-359.411 483.589,-369.863 488.751,-360.611 481.854,-359.411"/>
+<path fill="none" stroke="midnightblue" d="M484.4,-365.2C490.022,-332.872 496.918,-293.223 502.41,-261.643"/>
+<polygon fill="none" stroke="midnightblue" points="480.888,-364.967 482.623,-375.419 487.785,-366.167 480.888,-364.967"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
@@ -175,7 +174,7 @@
 </g>
 <!-- Node8&#45;&gt;Node7 -->
 <g id="edge7" class="edge"><title>Node8&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M474,-569.816C474,-543.71 474,-510.297 474,-482.355"/>
+<path fill="none" stroke="midnightblue" d="M474,-569.889C474,-541.938 474,-505.589 474,-476.548"/>
 <polygon fill="none" stroke="midnightblue" points="470.5,-570.158 474,-580.158 477.5,-570.158 470.5,-570.158"/>
 </g>
 <!-- Node9 -->

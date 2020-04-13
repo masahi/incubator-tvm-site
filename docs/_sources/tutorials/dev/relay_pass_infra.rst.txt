@@ -447,13 +447,13 @@ customized pass.
             obj = self
 
             class ReplaceConstant(tvm.relay.ExprMutator):
-                def visit_const(self, c):
+                def visit_constant(self, c):
                     return relay.multiply(obj.multiplier, c)
             return ReplaceConstant().visit(func)
 
     f = example()
     mod = tvm.IRModule.from_expr(f)
-    custom_pass = CustomPipeline(multiplier=relay.const(3, "float"))
+    custom_pass = CustomPipeline(multiplier=relay.const(3, "float32"))
     assert custom_pass.info.name == "CustomPipeline"
     mod3 = custom_pass(mod)
     print(mod3)
@@ -470,12 +470,14 @@ customized pass.
 
     def @main(%x: Tensor[(1, 64, 56, 56), float32], %weight: Tensor[(64, 64, 3, 3), float32]) -> Tensor[(1, 64, 54, 54), float32] {
       %0 = nn.conv2d(%x, %weight, padding=[0, 0, 0, 0]) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-      %1 = add(meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */ /* ty=Tensor[(1, 64, 54, 54), float32] */, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */ /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-      %2 = multiply(%1, 2f /* ty=float32 */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-      %3 = add(%0, %2) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-      %4 = add(%3, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */ /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-      %5 = add(%3, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */ /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
-      add(%4, %5) /* ty=Tensor[(1, 64, 54, 54), float32] */
+      %1 = multiply(3f /* ty=float32 */, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */ /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+      %2 = add(%1, %1) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+      %3 = multiply(3f /* ty=float32 */, 2f /* ty=float32 */) /* ty=float32 */;
+      %4 = multiply(%2, %3) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+      %5 = add(%0, %4) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+      %6 = add(%5, %1) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+      %7 = add(%5, %1) /* ty=Tensor[(1, 64, 54, 54), float32] */;
+      add(%6, %7) /* ty=Tensor[(1, 64, 54, 54), float32] */
     }
 
     // meta data omitted. you can use show_meta_data=True to include meta data
@@ -517,11 +519,6 @@ them.
     done
 
 
-
-
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.361 seconds)
 
 
 .. _sphx_glr_download_tutorials_dev_relay_pass_infra.py:

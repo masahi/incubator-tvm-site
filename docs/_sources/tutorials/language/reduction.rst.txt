@@ -304,7 +304,7 @@ columns by threadIdx.x and finally do a cross thread reduction over threadIdx.x
 
  .. code-block:: none
 
-    extern "C" __global__ void default_function_kernel0(void** __restrict__ A, void** __restrict__ B, int m, int n, int stride, int stride1, int stride2) {
+    extern "C" __global__ void default_function_kernel0(void* __restrict__ A, void* __restrict__ B, int m, int n, int stride, int stride1, int stride2) {
        float B_rf[1];
       __shared__ float red_buf0[512];
       B_rf[(0)] = 0.000000e+00f;
@@ -448,11 +448,6 @@ This tutorial provides a walk through of reduction schedule.
 - Describe reduction with reduce_axis.
 - Use rfactor to factor out axis if we need parallelism.
 - Define new reduction operation by :any:`te.comm_reducer`
-
-
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.473 seconds)
 
 
 .. _sphx_glr_download_tutorials_language_reduction.py:

@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="tvm.relay.analysis" href="analysis.html" />
-    <link rel="prev" title="tvm.hybrid" href="../hybrid.html" /> 
+    <link rel="prev" title="tvm.contrib.graph_runtime" href="../graph_runtime.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -110,13 +110,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../target.html">tvm.target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html">tvm.tir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.transform">tvm.tir.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.analysis">tvm.tir.analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../te.html">tvm.te</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../driver.html">tvm.driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hybrid.html">tvm.hybrid</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">tvm.relay</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
@@ -1290,7 +1291,13 @@ and reconstructs the AST.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.Prelude.get_name" title="tvm.relay.Prelude.get_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_name</span></code></a>(canonical, dtype)</p></td>
 <td><p>Get name corresponding to the canonical name</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.Prelude.get_var" title="tvm.relay.Prelude.get_var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_var</span></code></a>(canonical, dtype)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.Prelude.get_name_static" title="tvm.relay.Prelude.get_name_static"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_name_static</span></code></a>(canonical, dtype, shape)</p></td>
+<td><p>Get name corresponding to the canonical name</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.Prelude.get_var" title="tvm.relay.Prelude.get_var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_var</span></code></a>(canonical, dtype)</p></td>
+<td><p>Get var corresponding to the canonical name</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.Prelude.get_var_static" title="tvm.relay.Prelude.get_var_static"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_var_static</span></code></a>(canonical, dtype, shape)</p></td>
 <td><p>Get var corresponding to the canonical name</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.Prelude.load_prelude" title="tvm.relay.Prelude.load_prelude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_prelude</span></code></a>()</p></td>
@@ -1307,6 +1314,18 @@ and reconstructs the AST.</p>
 <dl class="method">
 <dt id="tvm.relay.Prelude.get_var">
 <code class="sig-name descname">get_var</code><span class="sig-paren">(</span><em class="sig-param">canonical</em>, <em class="sig-param">dtype</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.Prelude.get_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get var corresponding to the canonical name</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tvm.relay.Prelude.get_name_static">
+<code class="sig-name descname">get_name_static</code><span class="sig-paren">(</span><em class="sig-param">canonical</em>, <em class="sig-param">dtype</em>, <em class="sig-param">shape</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.Prelude.get_name_static" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get name corresponding to the canonical name</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tvm.relay.Prelude.get_var_static">
+<code class="sig-name descname">get_var_static</code><span class="sig-paren">(</span><em class="sig-param">canonical</em>, <em class="sig-param">dtype</em>, <em class="sig-param">shape</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.Prelude.get_var_static" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get var corresponding to the canonical name</p>
 </dd></dl>
 
@@ -3865,7 +3884,7 @@ element from <cite>x</cite> will be picked.</p></li>
         <a href="analysis.html" class="btn btn-neutral float-right" title="tvm.relay.analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../hybrid.html" class="btn btn-neutral float-left" title="tvm.hybrid" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../graph_runtime.html" class="btn btn-neutral float-left" title="tvm.contrib.graph_runtime" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

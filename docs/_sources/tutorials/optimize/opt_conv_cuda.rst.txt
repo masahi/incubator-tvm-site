@@ -293,14 +293,9 @@ latency of convolution.
 
  .. code-block:: none
 
-    Convolution: 36.016536 ms
+    Convolution: 53.222976 ms
 
 
-
-
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.886 seconds)
 
 
 .. _sphx_glr_download_tutorials_optimize_opt_conv_cuda.py:

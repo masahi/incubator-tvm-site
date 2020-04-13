@@ -29,7 +29,11 @@ var searchData=
   ['bitpackattrs',['BitPackAttrs',['../structtvm_1_1relay_1_1BitPackAttrs.html',1,'tvm::relay']]],
   ['broadcastnode',['BroadcastNode',['../classtvm_1_1tir_1_1BroadcastNode.html',1,'tvm::tir']]],
   ['buffer',['Buffer',['../classtvm_1_1tir_1_1Buffer.html',1,'tvm::tir']]],
+  ['bufferload',['BufferLoad',['../classtvm_1_1tir_1_1BufferLoad.html',1,'tvm::tir']]],
+  ['bufferloadnode',['BufferLoadNode',['../classtvm_1_1tir_1_1BufferLoadNode.html',1,'tvm::tir']]],
   ['buffernode',['BufferNode',['../classtvm_1_1tir_1_1BufferNode.html',1,'tvm::tir']]],
+  ['bufferstore',['BufferStore',['../classtvm_1_1tir_1_1BufferStore.html',1,'tvm::tir']]],
+  ['bufferstorenode',['BufferStoreNode',['../classtvm_1_1tir_1_1BufferStoreNode.html',1,'tvm::tir']]],
   ['buildconfig',['BuildConfig',['../classtvm_1_1BuildConfig.html',1,'tvm']]],
   ['buildconfignode',['BuildConfigNode',['../classtvm_1_1BuildConfigNode.html',1,'tvm']]]
 ];

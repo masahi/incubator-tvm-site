@@ -110,13 +110,14 @@
 <li class="toctree-l2"><a class="reference internal" href="target.html">tvm.target</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">tvm.tir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-tvm.tir.transform">tvm.tir.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tvm.tir.analysis">tvm.tir.analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="te.html">tvm.te</a></li>
+<li class="toctree-l2"><a class="reference internal" href="te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="driver.html">tvm.driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hybrid.html">tvm.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relay/index.html">tvm.relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vta/index.html">vta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topi.html">topi</a></li>
@@ -235,6 +236,12 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Buffer" title="tvm.tir.Buffer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Buffer</span></code></a></p></td>
 <td><p>Symbolic data buffer in TVM.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.BufferLoad" title="tvm.tir.BufferLoad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BufferLoad</span></code></a>(buffer, indices)</p></td>
+<td><p>Buffer load node.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.BufferStore" title="tvm.tir.BufferStore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BufferStore</span></code></a>(buffer, value, indices)</p></td>
+<td><p>Buffer store node.</p></td>
+</tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Call" title="tvm.tir.Call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Call</span></code></a>(dtype, name, args, call_type, func, …)</p></td>
 <td><p>Call node.</p></td>
 </tr>
@@ -298,76 +305,73 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Load" title="tvm.tir.Load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Load</span></code></a>(dtype, buffer_var, index[, predicate])</p></td>
 <td><p>Load node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.LoweredFunc" title="tvm.tir.LoweredFunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LoweredFunc</span></code></a></p></td>
-<td><p>Represent a LoweredFunc in TVM.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Max" title="tvm.tir.Max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Max</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Max" title="tvm.tir.Max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Max</span></code></a>(a, b)</p></td>
 <td><p>Max node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Min" title="tvm.tir.Min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Min</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Min" title="tvm.tir.Min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Min</span></code></a>(a, b)</p></td>
 <td><p>Min node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Mod" title="tvm.tir.Mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mod</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Mod" title="tvm.tir.Mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mod</span></code></a>(a, b)</p></td>
 <td><p>Mod node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Mul" title="tvm.tir.Mul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mul</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Mul" title="tvm.tir.Mul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mul</span></code></a>(a, b)</p></td>
 <td><p>Mul node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.NE" title="tvm.tir.NE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NE</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.NE" title="tvm.tir.NE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NE</span></code></a>(a, b)</p></td>
 <td><p>NE node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Not" title="tvm.tir.Not"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Not</span></code></a>(a)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Not" title="tvm.tir.Not"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Not</span></code></a>(a)</p></td>
 <td><p>Not node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Or" title="tvm.tir.Or"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Or</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Or" title="tvm.tir.Or"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Or</span></code></a>(a, b)</p></td>
 <td><p>Or node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Prefetch" title="tvm.tir.Prefetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Prefetch</span></code></a>(func, value_index, dtype, bounds)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Prefetch" title="tvm.tir.Prefetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Prefetch</span></code></a>(func, value_index, dtype, bounds)</p></td>
 <td><p>Prefetch node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.PrimFunc" title="tvm.tir.PrimFunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PrimFunc</span></code></a>(params, body[, ret_type, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.PrimFunc" title="tvm.tir.PrimFunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PrimFunc</span></code></a>(params, body[, ret_type, …])</p></td>
 <td><p>A function declaration expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.ProducerConsumer" title="tvm.tir.ProducerConsumer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProducerConsumer</span></code></a>(func, is_producer, body)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.ProducerConsumer" title="tvm.tir.ProducerConsumer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProducerConsumer</span></code></a>(func, is_producer, body)</p></td>
 <td><p>ProducerConsumer node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Provide" title="tvm.tir.Provide"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Provide</span></code></a>(func, value_index, value, args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Provide" title="tvm.tir.Provide"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Provide</span></code></a>(func, value_index, value, args)</p></td>
 <td><p>Provide node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Ramp" title="tvm.tir.Ramp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ramp</span></code></a>(base, stride, lanes)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Ramp" title="tvm.tir.Ramp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ramp</span></code></a>(base, stride, lanes)</p></td>
 <td><p>Ramp node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Realize" title="tvm.tir.Realize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Realize</span></code></a>(func, value_index, dtype, bounds, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Realize" title="tvm.tir.Realize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Realize</span></code></a>(func, value_index, dtype, bounds, …)</p></td>
 <td><p>Realize node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Reduce" title="tvm.tir.Reduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Reduce</span></code></a>(combiner, src, rdom, condition, …)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Reduce" title="tvm.tir.Reduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Reduce</span></code></a>(combiner, src, rdom, condition, …)</p></td>
 <td><p>Reduce node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Select" title="tvm.tir.Select"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Select</span></code></a>(condition, true_value, false_value)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Select" title="tvm.tir.Select"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Select</span></code></a>(condition, true_value, false_value)</p></td>
 <td><p>Select node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.SeqStmt" title="tvm.tir.SeqStmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeqStmt</span></code></a>(seq)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.SeqStmt" title="tvm.tir.SeqStmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeqStmt</span></code></a>(seq)</p></td>
 <td><p>Sequence of statements.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Shuffle" title="tvm.tir.Shuffle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Shuffle</span></code></a>(vectors, indices)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Shuffle" title="tvm.tir.Shuffle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Shuffle</span></code></a>(vectors, indices)</p></td>
 <td><p>Shuffle node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.SizeVar" title="tvm.tir.SizeVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SizeVar</span></code></a>(name, dtype)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.SizeVar" title="tvm.tir.SizeVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SizeVar</span></code></a>(name, dtype)</p></td>
 <td><p>Symbolic variable to represent a tensor index size    which is greater or equal to zero.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Stmt" title="tvm.tir.Stmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Stmt</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Stmt" title="tvm.tir.Stmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Stmt</span></code></a></p></td>
 <td><p>Base class of all the statements.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Store" title="tvm.tir.Store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Store</span></code></a>(buffer_var, value, index[, predicate])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Store" title="tvm.tir.Store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Store</span></code></a>(buffer_var, value, index[, predicate])</p></td>
 <td><p>Store node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.StringImm" title="tvm.tir.StringImm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringImm</span></code></a>(value)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.StringImm" title="tvm.tir.StringImm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringImm</span></code></a>(value)</p></td>
 <td><p>String constant.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Sub" title="tvm.tir.Sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sub</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Sub" title="tvm.tir.Sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sub</span></code></a>(a, b)</p></td>
 <td><p>Sub node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Var" title="tvm.tir.Var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Var</span></code></a>(name, dtype)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Var" title="tvm.tir.Var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Var</span></code></a>(name, dtype)</p></td>
 <td><p>Symbolic variable.</p></td>
 </tr>
 </tbody>
@@ -391,32 +395,38 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.atan" title="tvm.tir.atan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atan</span></code></a>(x)</p></td>
 <td><p>Take atan of input x.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.bijective_layout" title="tvm.tir.bijective_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bijective_layout</span></code></a>(src_layout, dst_layout)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.atan2" title="tvm.tir.atan2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atan2</span></code></a>(x1, x2)</p></td>
+<td><p>Take arctan2(x1, x2).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.bijective_layout" title="tvm.tir.bijective_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bijective_layout</span></code></a>(src_layout, dst_layout)</p></td>
 <td><p>Create a bijective layout mapping.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.call_extern" title="tvm.tir.call_extern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_extern</span></code></a>(dtype, func_name, *args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.call_extern" title="tvm.tir.call_extern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_extern</span></code></a>(dtype, func_name, *args)</p></td>
 <td><p>Build expression by calling a extern function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.call_intrin" title="tvm.tir.call_intrin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_intrin</span></code></a>(dtype, func_name, *args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.call_intrin" title="tvm.tir.call_intrin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_intrin</span></code></a>(dtype, func_name, *args)</p></td>
 <td><p>Build expression by calling an intrinsic function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.call_llvm_intrin" title="tvm.tir.call_llvm_intrin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_llvm_intrin</span></code></a>(dtype, name, *args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.call_llvm_intrin" title="tvm.tir.call_llvm_intrin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_llvm_intrin</span></code></a>(dtype, name, *args)</p></td>
 <td><p>Build expression by calling an llvm intrinsic function</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.call_packed" title="tvm.tir.call_packed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_packed</span></code></a>(*args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.call_packed" title="tvm.tir.call_packed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_packed</span></code></a>(*args)</p></td>
 <td><p>Build expression by call an external packed function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.call_pure_extern" title="tvm.tir.call_pure_extern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_pure_extern</span></code></a>(dtype, func_name, *args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.call_pure_extern" title="tvm.tir.call_pure_extern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_pure_extern</span></code></a>(dtype, func_name, *args)</p></td>
 <td><p>Build expression by calling a pure extern function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.call_pure_intrin" title="tvm.tir.call_pure_intrin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_pure_intrin</span></code></a>(dtype, func_name, *args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.call_pure_intrin" title="tvm.tir.call_pure_intrin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_pure_intrin</span></code></a>(dtype, func_name, *args)</p></td>
 <td><p>Build expression by calling a pure intrinsic function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.ceil" title="tvm.tir.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ceil</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.ceil" title="tvm.tir.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ceil</span></code></a>(x)</p></td>
 <td><p>Take ceil of float input x.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.comm_reducer" title="tvm.tir.comm_reducer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">comm_reducer</span></code></a>(fcombine, fidentity[, name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.comm_reducer" title="tvm.tir.comm_reducer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">comm_reducer</span></code></a>(fcombine, fidentity[, name])</p></td>
 <td><p>Create a commutative reducer for reduction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.copysign" title="tvm.tir.copysign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copysign</span></code></a>(x1, x2)</p></td>
+<td><p>Change the sign of x1 to that of x2, element-wise.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.cos" title="tvm.tir.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a>(x)</p></td>
 <td><p>Take cos of input x.</p></td>
@@ -454,26 +464,32 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.fmod" title="tvm.tir.fmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fmod</span></code></a>(x, y)</p></td>
 <td><p>Return the remainder of x divided by y with the same sign as x.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.if_then_else" title="tvm.tir.if_then_else"><code class="xref py py-obj docutils literal notranslate"><span class="pre">if_then_else</span></code></a>(cond, t, f)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.hypot" title="tvm.tir.hypot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hypot</span></code></a>(x1, x2)</p></td>
+<td><p>Equivalent to sqrt(x1**2 + x2**2), element-wise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.if_then_else" title="tvm.tir.if_then_else"><code class="xref py py-obj docutils literal notranslate"><span class="pre">if_then_else</span></code></a>(cond, t, f)</p></td>
 <td><p>Conditional selection expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.indexdiv" title="tvm.tir.indexdiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexdiv</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.indexdiv" title="tvm.tir.indexdiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexdiv</span></code></a>(a, b)</p></td>
 <td><p>Compute floor(a / b) where a and b are non-negative.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.indexmod" title="tvm.tir.indexmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexmod</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.indexmod" title="tvm.tir.indexmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexmod</span></code></a>(a, b)</p></td>
 <td><p>Compute the remainder of indexdiv.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.isfinite" title="tvm.tir.isfinite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isfinite</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.isfinite" title="tvm.tir.isfinite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isfinite</span></code></a>(x)</p></td>
 <td><p>Check if input value is finite.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.isinf" title="tvm.tir.isinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isinf</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.isinf" title="tvm.tir.isinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isinf</span></code></a>(x)</p></td>
 <td><p>Check if input value is infinite.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.isnan" title="tvm.tir.isnan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnan</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.isnan" title="tvm.tir.isnan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnan</span></code></a>(x)</p></td>
 <td><p>Check if input value is Nan.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.layout" title="tvm.tir.layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layout</span></code></a>(layout_str)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.layout" title="tvm.tir.layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layout</span></code></a>(layout_str)</p></td>
 <td><p>Create a layout node from a string.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.ldexp" title="tvm.tir.ldexp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ldexp</span></code></a>(x1, x2)</p></td>
+<td><p>Returns x1 * (2 ** x2).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.log" title="tvm.tir.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(x)</p></td>
 <td><p>Take log of input x.</p></td>
@@ -481,23 +497,29 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.log10" title="tvm.tir.log10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log10</span></code></a>(x)</p></td>
 <td><p>Take log10 of input x.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.log2" title="tvm.tir.log2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log2</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.log1p" title="tvm.tir.log1p"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log1p</span></code></a>(x)</p></td>
+<td><p>Take log(x + 1) with respect to input x.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.log2" title="tvm.tir.log2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log2</span></code></a>(x)</p></td>
 <td><p>Take log2 of input x.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.max" title="tvm.tir.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(expr, axis[, where])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.max" title="tvm.tir.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(expr, axis[, where])</p></td>
 <td><p>Create a max expression over axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.max_value" title="tvm.tir.max_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_value</span></code></a>(dtype)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.max_value" title="tvm.tir.max_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_value</span></code></a>(dtype)</p></td>
 <td><p>maximum value of dtype</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.min" title="tvm.tir.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(expr, axis[, where])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.min" title="tvm.tir.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(expr, axis[, where])</p></td>
 <td><p>Create a min expression over axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.min_value" title="tvm.tir.min_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_value</span></code></a>(dtype)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.min_value" title="tvm.tir.min_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_value</span></code></a>(dtype)</p></td>
 <td><p>minimum value of dtype</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.nearbyint" title="tvm.tir.nearbyint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nearbyint</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.nearbyint" title="tvm.tir.nearbyint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nearbyint</span></code></a>(x)</p></td>
 <td><p>Round elements of the array to the nearest integer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.nextafter" title="tvm.tir.nextafter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nextafter</span></code></a>(x1, x2)</p></td>
+<td><p>Return the next floating-point value after x1 towards x2.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.popcount" title="tvm.tir.popcount"><code class="xref py py-obj docutils literal notranslate"><span class="pre">popcount</span></code></a>(x)</p></td>
 <td><p>Count the number of set bits in input x.</p></td>
@@ -1330,6 +1352,20 @@ the correct branch.</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="tvm.tir.BufferLoad">
+<em class="property">class </em><code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">BufferLoad</code><span class="sig-paren">(</span><em class="sig-param">buffer</em>, <em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.BufferLoad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buffer load node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buffer</strong> (<a class="reference internal" href="#tvm.tir.Buffer" title="tvm.tir.Buffer"><em>Buffer</em></a>) – The buffer to be loaded.</p></li>
+<li><p><strong>indices</strong> (<em>List</em><em>[</em><a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a><em>]</em>) – The buffer indices.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
 <dt id="tvm.tir.Load">
 <em class="property">class </em><code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">Load</code><span class="sig-paren">(</span><em class="sig-param">dtype</em>, <em class="sig-param">buffer_var</em>, <em class="sig-param">index</em>, <em class="sig-param">predicate=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.Load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load node.</p>
@@ -1523,6 +1559,21 @@ the correct branch.</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="tvm.tir.BufferStore">
+<em class="property">class </em><code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">BufferStore</code><span class="sig-paren">(</span><em class="sig-param">buffer</em>, <em class="sig-param">value</em>, <em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.BufferStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buffer store node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buffer</strong> (<a class="reference internal" href="#tvm.tir.Buffer" title="tvm.tir.Buffer"><em>Buffer</em></a>) – The buffer.</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – The value we to be stored.</p></li>
+<li><p><strong>indices</strong> (<em>List</em><em>[</em><a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a><em>]</em>) – The indices location to be stored.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
 <dt id="tvm.tir.Store">
 <em class="property">class </em><code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">Store</code><span class="sig-paren">(</span><em class="sig-param">buffer_var</em>, <em class="sig-param">value</em>, <em class="sig-param">index</em>, <em class="sig-param">predicate=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.Store" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store node.</p>
@@ -1667,12 +1718,6 @@ the correct branch.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="class">
-<dt id="tvm.tir.LoweredFunc">
-<em class="property">class </em><code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">LoweredFunc</code><a class="headerlink" href="#tvm.tir.LoweredFunc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Represent a LoweredFunc in TVM.</p>
 </dd></dl>
 
 <dl class="function">
@@ -2101,6 +2146,43 @@ tvm.default_trace_action is used.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="tvm.tir.log1p">
+<code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">log1p</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.log1p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take log(x + 1) with respect to input x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>y</strong> – The result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr">PrimExpr</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.ldexp">
+<code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">ldexp</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">x2</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.ldexp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns x1 * (2 ** x2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p></li>
+<li><p><strong>x2</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>y</strong> – The result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr">PrimExpr</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="tvm.tir.cos">
 <code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">cos</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.cos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Take cos of input x.</p>
@@ -2220,6 +2302,26 @@ tvm.default_trace_action is used.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="tvm.tir.atan2">
+<code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">atan2</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">x2</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.atan2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take arctan2(x1, x2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p></li>
+<li><p><strong>x2</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>y</strong> – The result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr">PrimExpr</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="tvm.tir.erf">
 <code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">erf</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.erf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Take gauss error function of the input x.</p>
@@ -2322,6 +2424,26 @@ tvm.default_trace_action is used.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="tvm.tir.hypot">
+<code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">hypot</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">x2</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.hypot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to sqrt(x1**2 + x2**2), element-wise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p></li>
+<li><p><strong>x2</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>y</strong> – The result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr">PrimExpr</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="tvm.tir.trunc">
 <code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">trunc</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.trunc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get truncated value of the input.</p>
@@ -2364,6 +2486,26 @@ nearest integer i which is closer to zero than x is.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>y</strong> – The result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr">PrimExpr</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.nextafter">
+<code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">nextafter</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">x2</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.nextafter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the next floating-point value after x1 towards x2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p></li>
+<li><p><strong>x2</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>y</strong> – The result.</p>
@@ -2525,6 +2667,26 @@ if some lanes in the vector have different conditions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>y</strong> – The result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr">PrimExpr</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.copysign">
+<code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">copysign</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">x2</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.copysign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the sign of x1 to that of x2, element-wise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p></li>
+<li><p><strong>x2</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – Input argument.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>y</strong> – The result.</p>
@@ -2855,17 +3017,53 @@ specified axis;</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.transform.Apply" title="tvm.tir.transform.Apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Apply</span></code></a>(ftransform)</p></td>
+<td><p>Apply ftransform to each function in the Module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.transform.BindDeviceType" title="tvm.tir.transform.BindDeviceType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BindDeviceType</span></code></a>()</p></td>
+<td><p>Bind the device type of the function to be    the device_type specified in the target attribute.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.transform.CombineContextCall" title="tvm.tir.transform.CombineContextCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CombineContextCall</span></code></a>()</p></td>
 <td><p>Combine context calls in the host function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.transform.LowerDeviceStorageAccessInfo" title="tvm.tir.transform.LowerDeviceStorageAccessInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LowerDeviceStorageAccessInfo</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.transform.Filter" title="tvm.tir.transform.Filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Filter</span></code></a>(fcond)</p></td>
+<td><p>Filter functions by the calling convention attribute.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.transform.InferFragment" title="tvm.tir.transform.InferFragment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InferFragment</span></code></a>()</p></td>
+<td><p>Infer the TensorCore fragment infomation using tensor intrinsics.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.transform.LowerCustomDatatypes" title="tvm.tir.transform.LowerCustomDatatypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LowerCustomDatatypes</span></code></a>()</p></td>
+<td><p>Lower custom datatypes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.transform.LowerDeviceStorageAccessInfo" title="tvm.tir.transform.LowerDeviceStorageAccessInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LowerDeviceStorageAccessInfo</span></code></a>()</p></td>
 <td><p>Lower attached storage access information on device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.transform.LowerIntrin" title="tvm.tir.transform.LowerIntrin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LowerIntrin</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.transform.LowerIntrin" title="tvm.tir.transform.LowerIntrin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LowerIntrin</span></code></a>()</p></td>
 <td><p>Lower target specific intrinsic calls.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.transform.LowerWarpMemory" title="tvm.tir.transform.LowerWarpMemory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LowerWarpMemory</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.transform.LowerTVMBuiltin" title="tvm.tir.transform.LowerTVMBuiltin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LowerTVMBuiltin</span></code></a>()</p></td>
+<td><p>Lower tvm builtin intrinsics.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.transform.LowerThreadAllreduce" title="tvm.tir.transform.LowerThreadAllreduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LowerThreadAllreduce</span></code></a>()</p></td>
+<td><p>Lower cross thread alleduce.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.transform.LowerWarpMemory" title="tvm.tir.transform.LowerWarpMemory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LowerWarpMemory</span></code></a>()</p></td>
 <td><p>Lower warp memory access to low-level device related function calls.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.transform.MakePackedAPI" title="tvm.tir.transform.MakePackedAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MakePackedAPI</span></code></a>([num_unpacked_params])</p></td>
+<td><p>Transform the PrimFuncs in the module to a packed func API.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.transform.NarrowDataType" title="tvm.tir.transform.NarrowDataType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NarrowDataType</span></code></a>(target_bits)</p></td>
+<td><p>Narrow down PrimExpr datatype in stmt to target_bits.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.transform.SkipAssert" title="tvm.tir.transform.SkipAssert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkipAssert</span></code></a>()</p></td>
+<td><p>Skip assert stmt.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.transform.SplitHostDevice" title="tvm.tir.transform.SplitHostDevice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SplitHostDevice</span></code></a>()</p></td>
+<td><p>Split the function into a host function and device functions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.transform.ThreadSync" title="tvm.tir.transform.ThreadSync"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ThreadSync</span></code></a>(storage_scope)</p></td>
+<td><p>Insert sync between parallel read/write of shared buffers.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.transform.prim_func_pass" title="tvm.tir.transform.prim_func_pass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prim_func_pass</span></code></a>([pass_func, opt_level, name, …])</p></td>
 <td><p>Decorate a function pass.</p></td>
@@ -2952,9 +3150,90 @@ pass class should be created through py:func:<cite>tvm.tir.transform.function_pa
 </dd></dl>
 
 <dl class="function">
+<dt id="tvm.tir.transform.Apply">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">Apply</code><span class="sig-paren">(</span><em class="sig-param">ftransform</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.Apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply ftransform to each function in the Module.</p>
+<p>This function is a thin wrapper around tvm.tir.transform.prim_func_pass</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ftransform</strong> (<em>tvm.tir.PrimFunc -&gt; tvm.tir.PrimFunc</em>) – The transformation pass.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.transform.BindDeviceType">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">BindDeviceType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.BindDeviceType" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Bind the device type of the function to be</dt><dd><p>the device_type specified in the target attribute.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="tvm.tir.transform.CombineContextCall">
 <code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">CombineContextCall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.CombineContextCall" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combine context calls in the host function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.transform.Filter">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">Filter</code><span class="sig-paren">(</span><em class="sig-param">fcond</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.Filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter functions by the calling convention attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fcond</strong> (<em>tvm.tir.PrimFunc -&gt; bool</em>) – The condition of the filtering.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.transform.InferFragment">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">InferFragment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.InferFragment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infer the TensorCore fragment infomation using tensor intrinsics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.transform.LowerCustomDatatypes">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">LowerCustomDatatypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.LowerCustomDatatypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lower custom datatypes.</p>
+<p>See tvm::datatypes::Registry for more information on adding custom datatypes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><strong>fpass</strong> – The result pass</p>
@@ -2998,6 +3277,34 @@ pass class should be created through py:func:<cite>tvm.tir.transform.function_pa
 </dd></dl>
 
 <dl class="function">
+<dt id="tvm.tir.transform.LowerTVMBuiltin">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">LowerTVMBuiltin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.LowerTVMBuiltin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lower tvm builtin intrinsics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.transform.LowerThreadAllreduce">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">LowerThreadAllreduce</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.LowerThreadAllreduce" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lower cross thread alleduce.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="tvm.tir.transform.LowerWarpMemory">
 <code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">LowerWarpMemory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.LowerWarpMemory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lower warp memory access to low-level device related function calls.</p>
@@ -3007,6 +3314,155 @@ pass class should be created through py:func:<cite>tvm.tir.transform.function_pa
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.transform.MakePackedAPI">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">MakePackedAPI</code><span class="sig-paren">(</span><em class="sig-param">num_unpacked_params=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.MakePackedAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the PrimFuncs in the module to a packed func API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num_unpacked_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Number of parameters that we hope to directly pass via normal arguments
+following the PackedFunc input signature.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.transform.NarrowDataType">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">NarrowDataType</code><span class="sig-paren">(</span><em class="sig-param">target_bits</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.NarrowDataType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Narrow down PrimExpr datatype in stmt to target_bits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>target_bits</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The target bit configuration.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Run this pass after StorageFlatten.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.transform.SkipAssert">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">SkipAssert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.SkipAssert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skip assert stmt.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.transform.SplitHostDevice">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">SplitHostDevice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.SplitHostDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split the function into a host function and device functions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.transform.ThreadSync">
+<code class="sig-prename descclassname">tvm.tir.transform.</code><code class="sig-name descname">ThreadSync</code><span class="sig-paren">(</span><em class="sig-param">storage_scope</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.transform.ThreadSync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert sync between parallel read/write of shared buffers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>storage_scope</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The target storage scope.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>fpass</strong> – The result pass</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tvm.ir.transform.Pass</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tvm.tir.analysis">
+<span id="tvm-tir-analysis"></span><h1>tvm.tir.analysis<a class="headerlink" href="#module-tvm.tir.analysis" title="Permalink to this headline">¶</a></h1>
+<p>Namespace of all TIR analysis utils.</p>
+<p><strong>Functions</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.analysis.expr_deep_equal" title="tvm.tir.analysis.expr_deep_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expr_deep_equal</span></code></a>(lhs, rhs)</p></td>
+<td><p>Deeply compare two nested expressions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.analysis.verify_memory" title="tvm.tir.analysis.verify_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verify_memory</span></code></a>(mod)</p></td>
+<td><p>Verify if module contains illegal host side direct memory access.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="tvm.tir.analysis.expr_deep_equal">
+<code class="sig-prename descclassname">tvm.tir.analysis.</code><code class="sig-name descname">expr_deep_equal</code><span class="sig-paren">(</span><em class="sig-param">lhs</em>, <em class="sig-param">rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.analysis.expr_deep_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deeply compare two nested expressions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lhs</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – The left operand.</p></li>
+<li><p><strong>rhs</strong> (<a class="reference internal" href="ir.html#tvm.ir.PrimExpr" title="tvm.ir.PrimExpr"><em>PrimExpr</em></a>) – The right operand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – The comparison result</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function does not remap variable bindings, it will not
+return true for (let x = 1 in x + 1) vs (let y = 1 in y + 1), unless x.same_as(y).
+Use py:func:<cite>tvm.ir.structural_equal</cite> to handle structural variable remapping.</p>
+<p>Due to the restriction of not remapping variables, this function can run
+faster than StructuralEqual and can be used as a utility function during arithmetic
+simplifications.</p>
+<p>Always consider py:func:<cite>tvm.ir.structural_equal</cite> first, which handles
+the structural remapping.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="ir.html#tvm.ir.structural_equal" title="tvm.ir.structural_equal"><code class="xref py py-func docutils literal notranslate"><span class="pre">tvm.ir.structural_equal()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.tir.analysis.verify_memory">
+<code class="sig-prename descclassname">tvm.tir.analysis.</code><code class="sig-name descname">verify_memory</code><span class="sig-paren">(</span><em class="sig-param">mod</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.analysis.verify_memory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if module contains illegal host side direct memory access.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mod</strong> (<em>tvm.IRModule</em>) – The module to be verified.</p>
 </dd>
 </dl>
 </dd></dl>

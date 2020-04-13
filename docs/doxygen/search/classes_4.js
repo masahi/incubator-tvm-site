@@ -9,6 +9,7 @@ var searchData=
   ['evaluatenode',['EvaluateNode',['../classtvm_1_1tir_1_1EvaluateNode.html',1,'tvm::tir']]],
   ['executable',['Executable',['../classtvm_1_1runtime_1_1vm_1_1Executable.html',1,'tvm::runtime::vm']]],
   ['expanddimsattrs',['ExpandDimsAttrs',['../structtvm_1_1relay_1_1ExpandDimsAttrs.html',1,'tvm::relay']]],
+  ['exprdeepequal',['ExprDeepEqual',['../structtvm_1_1tir_1_1ExprDeepEqual.html',1,'tvm::tir']]],
   ['exprfunctor',['ExprFunctor',['../classtvm_1_1relay_1_1ExprFunctor.html',1,'tvm::relay']]],
   ['exprfunctor',['ExprFunctor',['../classtvm_1_1tir_1_1ExprFunctor.html',1,'tvm::tir']]],
   ['exprfunctor_3c_20expr_28const_20expr_20_26_29_3e',['ExprFunctor&lt; Expr(const Expr &amp;)&gt;',['../classtvm_1_1relay_1_1ExprFunctor.html',1,'tvm::relay']]],
@@ -19,6 +20,7 @@ var searchData=
   ['exprfunctor_3c_20void_28const_20primexpr_20_26_29_3e',['ExprFunctor&lt; void(const PrimExpr &amp;)&gt;',['../classtvm_1_1tir_1_1ExprFunctor.html',1,'tvm::tir']]],
   ['exprmutator',['ExprMutator',['../classtvm_1_1tir_1_1ExprMutator.html',1,'tvm::tir']]],
   ['exprmutator',['ExprMutator',['../classtvm_1_1relay_1_1ExprMutator.html',1,'tvm::relay']]],
+  ['exprrewriter',['ExprRewriter',['../classtvm_1_1relay_1_1ExprRewriter.html',1,'tvm::relay']]],
   ['exprvisitor',['ExprVisitor',['../classtvm_1_1relay_1_1ExprVisitor.html',1,'tvm::relay']]],
   ['exprvisitor',['ExprVisitor',['../classtvm_1_1tir_1_1ExprVisitor.html',1,'tvm::tir']]],
   ['externopnode',['ExternOpNode',['../classtvm_1_1te_1_1ExternOpNode.html',1,'tvm::te']]]

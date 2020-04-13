@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Collaboration diagram for tvm::arith::ConstIntBoundAnalyzer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1arith_1_1ConstIntBoundAnalyzer__coll__graph.svg" width="198" height="132"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1arith_1_1ConstIntBoundAnalyzer__coll__graph.svg" width="198" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -112,6 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb334cb2c9f408a907405f776b773043"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1arith_1_1ConstIntBound.html">ConstIntBound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1ConstIntBoundAnalyzer.html#abb334cb2c9f408a907405f776b773043">operator()</a> (const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;expr)</td></tr>
 <tr class="memdesc:abb334cb2c9f408a907405f776b773043"><td class="mdescLeft">&#160;</td><td class="mdescRight">analyze the expr  <a href="#abb334cb2c9f408a907405f776b773043">More...</a><br /></td></tr>
 <tr class="separator:abb334cb2c9f408a907405f776b773043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bfc47d5e27082ab838792e2855f7c44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1arith_1_1ConstIntBound.html">ConstIntBound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1ConstIntBoundAnalyzer.html#a8bfc47d5e27082ab838792e2855f7c44">operator()</a> (const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;expr, std::unordered_map&lt; const <a class="el" href="classtvm_1_1PrimExprNode.html">PrimExprNode</a> *, <a class="el" href="classtvm_1_1arith_1_1ConstIntBound.html">ConstIntBound</a> &gt; *bound)</td></tr>
+<tr class="memdesc:a8bfc47d5e27082ab838792e2855f7c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">analyze the expr with the intermediate memorized to avoid redundant computation  <a href="#a8bfc47d5e27082ab838792e2855f7c44">More...</a><br /></td></tr>
+<tr class="separator:a8bfc47d5e27082ab838792e2855f7c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acde4cce7c61cd17625b5482d9c3dd422"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1arith_1_1ConstIntBoundAnalyzer.html#acde4cce7c61cd17625b5482d9c3dd422">Update</a> (const Var &amp;var, const <a class="el" href="classtvm_1_1arith_1_1ConstIntBound.html">ConstIntBound</a> &amp;info, bool override=false)</td></tr>
 <tr class="memdesc:acde4cce7c61cd17625b5482d9c3dd422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update constant int bound information of var.  <a href="#acde4cce7c61cd17625b5482d9c3dd422">More...</a><br /></td></tr>
 <tr class="separator:acde4cce7c61cd17625b5482d9c3dd422"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,6 +185,42 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">expr</td><td>The expression of interest. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the result of the analysis. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8bfc47d5e27082ab838792e2855f7c44"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1arith_1_1ConstIntBound.html">ConstIntBound</a> tvm::arith::ConstIntBoundAnalyzer::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unordered_map&lt; const <a class="el" href="classtvm_1_1PrimExprNode.html">PrimExprNode</a> *, <a class="el" href="classtvm_1_1arith_1_1ConstIntBound.html">ConstIntBound</a> &gt; *&#160;</td>
+          <td class="paramname"><em>bound</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>analyze the expr with the intermediate memorized to avoid redundant computation </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>The expression of interest. </td></tr>
+    <tr><td class="paramname">bound</td><td>The lookup table to store the intermediate results </td></tr>
   </table>
   </dd>
 </dl>

@@ -222,7 +222,7 @@ attributes of IR nodes are defined.</p></li>
 <li><p>Visitor design pattern. Otherwise, check the
 <a class="reference external" href="https://docs.python.org/3/library/ast.html">Python AST module</a> to see how an AST
 visitor is implemented.</p></li>
-<li><p>How a HalideIR/Schedule is lowered to either a LoweredFunc class or a LLVM module. Otherwise,
+<li><p>How a Schedule is lowered to either an IRModule class or a LLVM module. Otherwise,
 take a look at <code class="docutils literal notranslate"><span class="pre">python/tvm/build_module.py</span></code> to get some basics.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
@@ -375,7 +375,6 @@ called after each phase is done.</p>
 - Use <code class="docutils literal notranslate"><span class="pre">tvm.tir.ir_pass.IRTransform</span></code> to transform IR nodes.
 - Wrap up two above to write an IR-transformation function.
 - Use <code class="docutils literal notranslate"><span class="pre">tvm.target.build_config</span></code> to put this function to TVM lowering pass</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.153 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-dev-low-level-custom-pass-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9cf0213876be0a9cc4aaa52a1ebd9586/low_level_custom_pass.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">low_level_custom_pass.py</span></code></a></p>
