@@ -701,7 +701,7 @@ using <code class="docutils literal notranslate"><span class="pre">Sequential</s
 <span class="n">func</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">Function</span><span class="p">([</span><span class="n">x</span><span class="p">],</span> <span class="n">z2</span><span class="p">)</span>
 
 <span class="c1"># Customize the optimization pipeline.</span>
-<span class="n">seq</span> <span class="o">=</span> <span class="n">_transform</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
     <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">InferType</span><span class="p">(),</span>
     <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">FoldConstant</span><span class="p">(),</span>
     <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">EliminateCommonSubexpr</span><span class="p">(),</span>
@@ -727,7 +727,7 @@ using <code class="docutils literal notranslate"><span class="pre">Sequential</s
 whole module after applying a certain pass. A slightly modified version of the
 sequential pass example could be like the following to enable IR dumping for
 <code class="docutils literal notranslate"><span class="pre">FoldConstant</span></code> optimization.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="n">_transform</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
     <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">InferType</span><span class="p">(),</span>
     <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">FoldConstant</span><span class="p">(),</span>
     <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">PrintIR</span><span class="p">(),</span>

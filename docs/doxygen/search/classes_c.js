@@ -25,5 +25,6 @@ var searchData=
   ['opspecializationnode',['OpSpecializationNode',['../classtvm_1_1relay_1_1OpSpecializationNode.html',1,'tvm::relay']]],
   ['opstrategy',['OpStrategy',['../classtvm_1_1relay_1_1OpStrategy.html',1,'tvm::relay']]],
   ['opstrategynode',['OpStrategyNode',['../classtvm_1_1relay_1_1OpStrategyNode.html',1,'tvm::relay']]],
+  ['optional',['Optional',['../classtvm_1_1runtime_1_1Optional.html',1,'tvm::runtime']]],
   ['ornode',['OrNode',['../classtvm_1_1tir_1_1OrNode.html',1,'tvm::tir']]]
 ];

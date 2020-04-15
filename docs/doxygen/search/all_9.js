@@ -2,9 +2,9 @@ var searchData=
 [
   ['halide',['Halide',['../classtvm_1_1tir_1_1CallNode.html#a13e1f0f48f488fd085ca2684738fa97aa57993161c871dc15a052154594845514',1,'tvm::tir::CallNode']]],
   ['handle',['Handle',['../classtvm_1_1runtime_1_1DataType.html#aebad9f7235dd20af649fb5c2113797b8',1,'tvm::runtime::DataType']]],
-  ['handler',['Handler',['../classtvm_1_1runtime_1_1SimpleObjAllocator_1_1Handler.html',1,'tvm::runtime::SimpleObjAllocator']]],
-  ['handler',['Handler',['../classtvm_1_1SHashReducer_1_1Handler.html',1,'tvm::SHashReducer']]],
   ['handler',['Handler',['../classtvm_1_1SEqualReducer_1_1Handler.html',1,'tvm::SEqualReducer']]],
+  ['handler',['Handler',['../classtvm_1_1SHashReducer_1_1Handler.html',1,'tvm::SHashReducer']]],
+  ['handler',['Handler',['../classtvm_1_1runtime_1_1SimpleObjAllocator_1_1Handler.html',1,'tvm::runtime::SimpleObjAllocator']]],
   ['handler_3c_20dlcontext_20_3e',['Handler&lt; DLContext &gt;',['../structdmlc_1_1serializer_1_1Handler_3_01DLContext_01_4.html',1,'dmlc::serializer']]],
   ['handler_3c_20dldatatype_20_3e',['Handler&lt; DLDataType &gt;',['../structdmlc_1_1serializer_1_1Handler_3_01DLDataType_01_4.html',1,'dmlc::serializer']]],
   ['hasattr',['HasAttr',['../classtvm_1_1Op.html#a51002130d653fea8a25d4080a84037f6',1,'tvm::Op']]],

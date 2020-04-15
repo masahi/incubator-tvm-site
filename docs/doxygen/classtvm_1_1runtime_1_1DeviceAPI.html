@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Collaboration diagram for tvm::runtime::DeviceAPI:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1runtime_1_1DeviceAPI__coll__graph.svg" width="187" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1runtime_1_1DeviceAPI__coll__graph.svg" width="207" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -154,6 +154,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a50365326f6a7cd2f975f72d6503933d8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtvm_1_1runtime_1_1DeviceAPI.html">DeviceAPI</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1DeviceAPI.html#a50365326f6a7cd2f975f72d6503933d8">Get</a> (<a class="el" href="c__runtime__api_8h.html#a9363bb701f16ce5bbb381f2a013d25b4">TVMContext</a> ctx, bool allow_missing=false)</td></tr>
 <tr class="memdesc:a50365326f6a7cd2f975f72d6503933d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device API base don context.  <a href="#a50365326f6a7cd2f975f72d6503933d8">More...</a><br /></td></tr>
 <tr class="separator:a50365326f6a7cd2f975f72d6503933d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab35f07aacd4717465f8912aeded7001c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1DeviceAPI.html#ab35f07aacd4717465f8912aeded7001c">NeedSetDeviceContext</a> (int device_type)</td></tr>
+<tr class="memdesc:ab35f07aacd4717465f8912aeded7001c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a certian device type requires set device context before launching the kernel function.  <a href="#ab35f07aacd4717465f8912aeded7001c">More...</a><br /></td></tr>
+<tr class="separator:ab35f07aacd4717465f8912aeded7001c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>TVM Runtime Device API, abstracts the device specific interface for memory management. </p>
@@ -384,7 +387,7 @@ Static Public Member Functions</h2></td></tr>
     <tr><td class="paramname">ctx_from</td><td>The source context </td></tr>
     <tr><td class="paramname">ctx_to</td><td>The target context </td></tr>
     <tr><td class="paramname">type_hint</td><td>The type of elements, only neded by certain backends. can be useful for cross device endian converison. </td></tr>
-    <tr><td class="paramname">stream</td><td>Optional stream object. </td></tr>
+    <tr><td class="paramname">stream</td><td><a class="el" href="classtvm_1_1runtime_1_1Optional.html" title="Optional container that to represent to a Nullable variant of T. ">Optional</a> stream object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -644,6 +647,38 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacetvm_1_1runtime.html#a46fef1ca0ccc05473e9bb0a8c6b66619" title="the query type into GetAttr ">DeviceAttrKind</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab35f07aacd4717465f8912aeded7001c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool tvm::runtime::DeviceAPI::NeedSetDeviceContext </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>device_type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a certian device type requires set device context before launching the kernel function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_type</td><td>The device type. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

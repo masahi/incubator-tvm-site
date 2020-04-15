@@ -104,22 +104,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for tvm::BaseFuncNode:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1BaseFuncNode__inherit__graph.svg" width="582" height="868"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1BaseFuncNode__inherit__graph.svg" width="582" height="883"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for tvm::BaseFuncNode:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1BaseFuncNode__coll__graph.svg" width="955" height="642"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtvm_1_1BaseFuncNode__coll__graph.svg" width="955" height="656"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6f177158609cf9da9a4e0a9d3187e3d2"><td class="memTemplParams" colspan="2">template&lt;typename TObjectRef &gt; </td></tr>
-<tr class="memitem:a6f177158609cf9da9a4e0a9d3187e3d2"><td class="memTemplItemLeft" align="right" valign="top">TObjectRef&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtvm_1_1BaseFuncNode.html#a6f177158609cf9da9a4e0a9d3187e3d2">GetAttr</a> (const std::string &amp;attr_key, TObjectRef default_value=<a class="el" href="namespacetvm.html#ab6c242e8ac09beb463fba306948b7f15">NullValue</a>&lt; TObjectRef &gt;()) const </td></tr>
-<tr class="memdesc:a6f177158609cf9da9a4e0a9d3187e3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a function attribute.  <a href="#a6f177158609cf9da9a4e0a9d3187e3d2">More...</a><br /></td></tr>
-<tr class="separator:a6f177158609cf9da9a4e0a9d3187e3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48c2541f7824bcbdf24e63a891f20e19"><td class="memTemplParams" colspan="2">template&lt;typename TObjectRef &gt; </td></tr>
+<tr class="memitem:a48c2541f7824bcbdf24e63a891f20e19"><td class="memTemplItemLeft" align="right" valign="top">Optional&lt; TObjectRef &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtvm_1_1BaseFuncNode.html#a48c2541f7824bcbdf24e63a891f20e19">GetAttr</a> (const std::string &amp;attr_key, Optional&lt; TObjectRef &gt; default_value=Optional&lt; TObjectRef &gt;(nullptr)) const </td></tr>
+<tr class="memdesc:a48c2541f7824bcbdf24e63a891f20e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a function attribute.  <a href="#a48c2541f7824bcbdf24e63a891f20e19">More...</a><br /></td></tr>
+<tr class="separator:a48c2541f7824bcbdf24e63a891f20e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6b5ca0e4f080893e6295653e90f41a6"><td class="memTemplParams" colspan="2">template&lt;typename TObjectRef &gt; </td></tr>
+<tr class="memitem:ab6b5ca0e4f080893e6295653e90f41a6"><td class="memTemplItemLeft" align="right" valign="top">Optional&lt; TObjectRef &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtvm_1_1BaseFuncNode.html#ab6b5ca0e4f080893e6295653e90f41a6">GetAttr</a> (const std::string &amp;attr_key, TObjectRef default_value) const </td></tr>
+<tr class="separator:ab6b5ca0e4f080893e6295653e90f41a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11694119d77e8d04a9fffd5e9a8b0766"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1BaseFuncNode.html#a11694119d77e8d04a9fffd5e9a8b0766">HasNonzeroAttr</a> (const std::string &amp;attr_key) const </td></tr>
 <tr class="memdesc:a11694119d77e8d04a9fffd5e9a8b0766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the function has an non-zero integer attr.  <a href="#a11694119d77e8d04a9fffd5e9a8b0766">More...</a><br /></td></tr>
 <tr class="separator:a11694119d77e8d04a9fffd5e9a8b0766"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,7 +174,7 @@ Static Public Attributes</h2></td></tr>
 <p>We support several variants of functions throughout the stack. All of the functions share the same type system(via checked_type) to support cross variant calls.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classtvm_1_1BaseFunc.html" title="Managed reference to BaseFuncNode. ">BaseFunc</a> </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a6f177158609cf9da9a4e0a9d3187e3d2"></a>
+<a class="anchor" id="a48c2541f7824bcbdf24e63a891f20e19"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -181,7 +184,7 @@ template&lt;typename TObjectRef &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TObjectRef tvm::BaseFuncNode::GetAttr </td>
+          <td class="memname">Optional&lt;TObjectRef&gt; tvm::BaseFuncNode::GetAttr </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>attr_key</em>, </td>
@@ -189,8 +192,8 @@ template&lt;typename TObjectRef &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">TObjectRef&#160;</td>
-          <td class="paramname"><em>default_value</em> = <code><a class="el" href="namespacetvm.html#ab6c242e8ac09beb463fba306948b7f15">NullValue</a>&lt;TObjectRef&gt;()</code>&#160;</td>
+          <td class="paramtype">Optional&lt; TObjectRef &gt;&#160;</td>
+          <td class="paramname"><em>default_value</em> = <code>Optional&lt;TObjectRef&gt;(nullptr)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -226,7 +229,43 @@ template&lt;typename TObjectRef &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> GetAttrExample(<span class="keyword">const</span> <a class="code" href="namespacetvm_1_1relay.html#acbaff2ae7feec23fea55e025a9cc1b76">BaseFunc</a>&amp; f) {</div><div class="line">  Integer value = f-&gt;GetAttr&lt;Integer&gt;(<span class="stringliteral">&quot;AttrKey&quot;</span>, 0);</div><div class="line">}</div></div><!-- fragment --> 
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> GetAttrExample(<span class="keyword">const</span> <a class="code" href="namespacetvm_1_1relay.html#acbaff2ae7feec23fea55e025a9cc1b76">BaseFunc</a>&amp; f) {</div><div class="line">  <span class="keyword">auto</span> value = f-&gt;GetAttr&lt;Integer&gt;(<span class="stringliteral">&quot;AttrKey&quot;</span>, 0);</div><div class="line">}</div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="ab6b5ca0e4f080893e6295653e90f41a6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TObjectRef &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Optional&lt;TObjectRef&gt; tvm::BaseFuncNode::GetAttr </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>attr_key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TObjectRef&#160;</td>
+          <td class="paramname"><em>default_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a class="anchor" id="a11694119d77e8d04a9fffd5e9a8b0766"></a>

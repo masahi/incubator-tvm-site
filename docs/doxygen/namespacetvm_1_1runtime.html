@@ -159,11 +159,16 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>ObjectTypeChecker&lt; Map&lt; std::string, V &gt; &gt;</b></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1Optional.html">Optional</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtvm_1_1runtime_1_1Optional.html" title="Optional container that to represent to a Nullable variant of T. ">Optional</a> container that to represent to a Nullable variant of T.  <a href="classtvm_1_1runtime_1_1Optional.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtvm_1_1runtime_1_1PackedFunc.html">PackedFunc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packed function is a type-erased function. The arguments are passed by packed format.  <a href="classtvm_1_1runtime_1_1PackedFunc.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1runtime_1_1PackedFuncValueConverter.html">PackedFuncValueConverter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtvm_1_1Type.html" title="Managed reference to TypeNode. ">Type</a> trait to specify special value conversion rules from <a class="el" href="classtvm_1_1runtime_1_1TVMArgValue.html" title="A single argument value to PackedFunc. Containing both type_code and TVMValue. ">TVMArgValue</a> and <a class="el" href="classtvm_1_1runtime_1_1TVMRetValue.html" title="Return Value container, Unlike TVMArgValue, which only holds reference and do not delete the underlyi...">TVMRetValue</a>.  <a href="structtvm_1_1runtime_1_1PackedFuncValueConverter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1runtime_1_1PackedFuncValueConverter_3_01Optional_3_01T_01_4_01_4.html">PackedFuncValueConverter&lt; Optional&lt; T &gt; &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1runtime_1_1PackedFuncValueConverter_3_01PrimExpr_01_4.html">PackedFuncValueConverter&lt; PrimExpr &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -311,9 +316,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a46bcf7948293194c5b9c7db91da96381"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1runtime_1_1ObjectPtr.html">ObjectPtr</a>&lt; BaseType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a46bcf7948293194c5b9c7db91da96381">GetObjectPtr</a> (ObjectType *ptr)</td></tr>
 <tr class="memdesc:a46bcf7948293194c5b9c7db91da96381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an object ptr type from a raw object ptr.  <a href="#a46bcf7948293194c5b9c7db91da96381">More...</a><br /></td></tr>
 <tr class="separator:a46bcf7948293194c5b9c7db91da96381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4c790ddcf38a1ef9800466cd0c1a0a2"><td class="memTemplParams" colspan="2">template&lt;typename RelayRefType , typename ObjType &gt; </td></tr>
-<tr class="memitem:ad4c790ddcf38a1ef9800466cd0c1a0a2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1RelayRefType.html">RelayRefType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ad4c790ddcf38a1ef9800466cd0c1a0a2">GetRef</a> (const ObjType *ptr)</td></tr>
-<tr class="separator:ad4c790ddcf38a1ef9800466cd0c1a0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af63300957592e8991c18c54703123ef7"><td class="memTemplParams" colspan="2">template&lt;typename RefType , typename ObjType &gt; </td></tr>
+<tr class="memitem:af63300957592e8991c18c54703123ef7"><td class="memTemplItemLeft" align="right" valign="top">RefType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#af63300957592e8991c18c54703123ef7">GetRef</a> (const ObjType *ptr)</td></tr>
+<tr class="separator:af63300957592e8991c18c54703123ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2d903012aff56c2bd54ff66f48450c3"><td class="memTemplParams" colspan="2">template&lt;typename BaseType , typename ObjType &gt; </td></tr>
 <tr class="memitem:ac2d903012aff56c2bd54ff66f48450c3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1runtime_1_1ObjectPtr.html">ObjectPtr</a>&lt; BaseType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ac2d903012aff56c2bd54ff66f48450c3">GetObjectPtr</a> (ObjType *ptr)</td></tr>
 <tr class="separator:ac2d903012aff56c2bd54ff66f48450c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -558,7 +563,7 @@ template&lt;typename SubRef , typename BaseRef &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Bool representing whether type is registered </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtvm_1_1Bool.html" title="Boolean constant. ">Bool</a> representing whether type is registered </dd></dl>
 
 </div>
 </div>
@@ -706,17 +711,17 @@ template&lt;typename RelayRefType , typename ObjectType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ad4c790ddcf38a1ef9800466cd0c1a0a2"></a>
+<a class="anchor" id="af63300957592e8991c18c54703123ef7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename RelayRefType , typename ObjType &gt; </div>
+template&lt;typename RefType , typename ObjType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1RelayRefType.html">RelayRefType</a> tvm::runtime::GetRef </td>
+          <td class="memname">RefType tvm::runtime::GetRef </td>
           <td>(</td>
           <td class="paramtype">const ObjType *&#160;</td>
           <td class="paramname"><em>ptr</em></td><td>)</td>

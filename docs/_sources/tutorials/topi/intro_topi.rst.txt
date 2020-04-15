@@ -218,7 +218,7 @@ As you can see, scheduled stages of computation have been accumulated and we can
 
  .. code-block:: none
 
-    [stage(a, 0xf8572560), stage(b, 0x1047a1f70), stage(T_add, 0x1047a2a50), stage(T_multiply, 0x105375760), stage(T_elemwise_sum, 0x1051a1b80), stage(T_divide, 0x102a7ffa0), stage(T_divide_red.rf, 0x11809e130), stage(T_divide_red, 0x10514fc50)]
+    [stage(a, 0xeee0bd10), stage(b, 0x1020aa6b0), stage(T_add, 0x66ac0fb0), stage(T_multiply, 0x101f8e9c0), stage(T_elemwise_sum, 0x113a344d0), stage(T_divide, 0x101f89a50), stage(T_divide_red.rf, 0x102442390), stage(T_divide_red, 0x1020b1460)]
 
 
 

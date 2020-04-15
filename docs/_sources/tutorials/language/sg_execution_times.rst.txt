@@ -5,13 +5,13 @@
 
 Computation times
 =================
-**00:03.615** total execution time for **tutorials_language** files:
+**00:03.451** total execution time for **tutorials_language** files:
 
-- **00:01.282**: :ref:`sphx_glr_tutorials_language_intrin_math.py` (``intrin_math.py``)
-- **00:00.598**: :ref:`sphx_glr_tutorials_language_tensorize.py` (``tensorize.py``)
-- **00:00.481**: :ref:`sphx_glr_tutorials_language_scan.py` (``scan.py``)
-- **00:00.448**: :ref:`sphx_glr_tutorials_language_reduction.py` (``reduction.py``)
-- **00:00.252**: :ref:`sphx_glr_tutorials_language_extern_op.py` (``extern_op.py``)
-- **00:00.196**: :ref:`sphx_glr_tutorials_language_schedule_primitives.py` (``schedule_primitives.py``)
-- **00:00.193**: :ref:`sphx_glr_tutorials_language_tedd.py` (``tedd.py``)
-- **00:00.166**: :ref:`sphx_glr_tutorials_language_tuple_inputs.py` (``tuple_inputs.py``)
+- **00:01.193**: :ref:`sphx_glr_tutorials_language_intrin_math.py` (``intrin_math.py``)
+- **00:00.652**: :ref:`sphx_glr_tutorials_language_tensorize.py` (``tensorize.py``)
+- **00:00.437**: :ref:`sphx_glr_tutorials_language_reduction.py` (``reduction.py``)
+- **00:00.430**: :ref:`sphx_glr_tutorials_language_scan.py` (``scan.py``)
+- **00:00.272**: :ref:`sphx_glr_tutorials_language_extern_op.py` (``extern_op.py``)
+- **00:00.169**: :ref:`sphx_glr_tutorials_language_tedd.py` (``tedd.py``)
+- **00:00.158**: :ref:`sphx_glr_tutorials_language_schedule_primitives.py` (``schedule_primitives.py``)
+- **00:00.140**: :ref:`sphx_glr_tutorials_language_tuple_inputs.py` (``tuple_inputs.py``)

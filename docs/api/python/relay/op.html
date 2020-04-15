@@ -107,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../ndarray.html">tvm.runtime.ndarray</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../error.html">tvm.error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ir.html">tvm.ir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ir.html#module-tvm.transform">tvm.transform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../target.html">tvm.target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html">tvm.tir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tir.html#module-tvm.tir.transform">tvm.tir.transform</a></li>
@@ -369,208 +370,211 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.isinf" title="tvm.relay.op.isinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isinf</span></code></a>(data)</p></td>
 <td><p>Compute element-wise infiniteness of data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.layout_transform" title="tvm.relay.op.layout_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layout_transform</span></code></a>(data, src_layout, dst_layout)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.isnan" title="tvm.relay.op.isnan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnan</span></code></a>(data)</p></td>
+<td><p>Check nan in input data element-wise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.layout_transform" title="tvm.relay.op.layout_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layout_transform</span></code></a>(data, src_layout, dst_layout)</p></td>
 <td><p>Transform the layout of a tensor</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.left_shift" title="tvm.relay.op.left_shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">left_shift</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.left_shift" title="tvm.relay.op.left_shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">left_shift</span></code></a>(lhs, rhs)</p></td>
 <td><p>Left shift with numpy-style broadcasting.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.less" title="tvm.relay.op.less"><code class="xref py py-obj docutils literal notranslate"><span class="pre">less</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.less" title="tvm.relay.op.less"><code class="xref py py-obj docutils literal notranslate"><span class="pre">less</span></code></a>(lhs, rhs)</p></td>
 <td><p>Broadcasted elementwise test for (lhs &lt; rhs).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.less_equal" title="tvm.relay.op.less_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">less_equal</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.less_equal" title="tvm.relay.op.less_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">less_equal</span></code></a>(lhs, rhs)</p></td>
 <td><p>Broadcasted elementwise test for (lhs &lt;= rhs).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.log" title="tvm.relay.op.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.log" title="tvm.relay.op.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(data)</p></td>
 <td><p>Compute elementwise log of data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.logical_and" title="tvm.relay.op.logical_and"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_and</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.logical_and" title="tvm.relay.op.logical_and"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_and</span></code></a>(lhs, rhs)</p></td>
 <td><p>logical AND with numpy-style broadcasting.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.logical_not" title="tvm.relay.op.logical_not"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_not</span></code></a>(data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.logical_not" title="tvm.relay.op.logical_not"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_not</span></code></a>(data)</p></td>
 <td><p>Compute element-wise logical not of data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.logical_or" title="tvm.relay.op.logical_or"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_or</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.logical_or" title="tvm.relay.op.logical_or"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_or</span></code></a>(lhs, rhs)</p></td>
 <td><p>logical OR with numpy-style broadcasting.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.max" title="tvm.relay.op.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(data[, axis, keepdims, exclude])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.max" title="tvm.relay.op.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(data[, axis, keepdims, exclude])</p></td>
 <td><p>Computes the max of array elements over given axes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.maximum" title="tvm.relay.op.maximum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximum</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.maximum" title="tvm.relay.op.maximum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximum</span></code></a>(lhs, rhs)</p></td>
 <td><p>Maximum with numpy-style broadcasting.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.mean" title="tvm.relay.op.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(data[, axis, keepdims, exclude])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.mean" title="tvm.relay.op.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(data[, axis, keepdims, exclude])</p></td>
 <td><p>Computes the mean of array elements over given axes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.mean_std" title="tvm.relay.op.mean_std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_std</span></code></a>(data[, axis, keepdims, exclude])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.mean_std" title="tvm.relay.op.mean_std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_std</span></code></a>(data[, axis, keepdims, exclude])</p></td>
 <td><p>Computes the mean and standard deviation of data over given axes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.mean_variance" title="tvm.relay.op.mean_variance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_variance</span></code></a>(data[, axis, keepdims, exclude])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.mean_variance" title="tvm.relay.op.mean_variance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_variance</span></code></a>(data[, axis, keepdims, exclude])</p></td>
 <td><p>Computes the mean and variance of data over given axes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.min" title="tvm.relay.op.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(data[, axis, keepdims, exclude])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.min" title="tvm.relay.op.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(data[, axis, keepdims, exclude])</p></td>
 <td><p>Computes the min of array elements over given axes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.minimum" title="tvm.relay.op.minimum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.minimum" title="tvm.relay.op.minimum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum</span></code></a>(lhs, rhs)</p></td>
 <td><p>Minimum with numpy-style broadcasting.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.mod" title="tvm.relay.op.mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.mod" title="tvm.relay.op.mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod</span></code></a>(lhs, rhs)</p></td>
 <td><p>Mod with numpy-style broadcasting.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.multiply" title="tvm.relay.op.multiply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multiply</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.multiply" title="tvm.relay.op.multiply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multiply</span></code></a>(lhs, rhs)</p></td>
 <td><p>Multiplication with numpy-style broadcasting.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.ndarray_size" title="tvm.relay.op.ndarray_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray_size</span></code></a>(data[, dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.ndarray_size" title="tvm.relay.op.ndarray_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray_size</span></code></a>(data[, dtype])</p></td>
 <td><p>Get number of elements of input tensor.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.negative" title="tvm.relay.op.negative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">negative</span></code></a>(data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.negative" title="tvm.relay.op.negative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">negative</span></code></a>(data)</p></td>
 <td><p>Compute element-wise negative of data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.not_equal" title="tvm.relay.op.not_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">not_equal</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.not_equal" title="tvm.relay.op.not_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">not_equal</span></code></a>(lhs, rhs)</p></td>
 <td><p>Broadcasted elementwise test for (lhs != rhs).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.one_hot" title="tvm.relay.op.one_hot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one_hot</span></code></a>(indices, on_value, off_value, depth, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.one_hot" title="tvm.relay.op.one_hot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one_hot</span></code></a>(indices, on_value, off_value, depth, …)</p></td>
 <td><p>Returns a one-hot tensor where the locations repsented by indices take value on_value, other locations take value off_value.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.ones" title="tvm.relay.op.ones"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones</span></code></a>(shape, dtype)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.ones" title="tvm.relay.op.ones"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones</span></code></a>(shape, dtype)</p></td>
 <td><p>Fill array with ones.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.ones_like" title="tvm.relay.op.ones_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones_like</span></code></a>(data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.ones_like" title="tvm.relay.op.ones_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones_like</span></code></a>(data)</p></td>
 <td><p>Returns an array of ones, with same type and shape as the input.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.power" title="tvm.relay.op.power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.power" title="tvm.relay.op.power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power</span></code></a>(lhs, rhs)</p></td>
 <td><p>Power with numpy-style broadcasting.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.prod" title="tvm.relay.op.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a>(data[, axis, keepdims, exclude])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.prod" title="tvm.relay.op.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a>(data[, axis, keepdims, exclude])</p></td>
 <td><p>Computes the products of array elements over given axes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.register" title="tvm.relay.op.register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register</span></code></a>(op_name, attr_key[, value, level])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.register" title="tvm.relay.op.register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register</span></code></a>(op_name, attr_key[, value, level])</p></td>
 <td><p>Register an operator property of an operator.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.register_alter_op_layout" title="tvm.relay.op.register_alter_op_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_alter_op_layout</span></code></a>(op_name[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.register_alter_op_layout" title="tvm.relay.op.register_alter_op_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_alter_op_layout</span></code></a>(op_name[, …])</p></td>
 <td><p>Register alter op layout function for an op</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.register_compute" title="tvm.relay.op.register_compute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_compute</span></code></a>(op_name[, compute, level])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.register_compute" title="tvm.relay.op.register_compute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_compute</span></code></a>(op_name[, compute, level])</p></td>
 <td><p>Register compute function for an op.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.register_external_compiler" title="tvm.relay.op.register_external_compiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_external_compiler</span></code></a>(op_name[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.register_external_compiler" title="tvm.relay.op.register_external_compiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_external_compiler</span></code></a>(op_name[, …])</p></td>
 <td><p>Register the external compiler for an op.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.register_gradient" title="tvm.relay.op.register_gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_gradient</span></code></a>(op_name[, fgradient, level])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.register_gradient" title="tvm.relay.op.register_gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_gradient</span></code></a>(op_name[, fgradient, level])</p></td>
 <td><p>Register operator pattern for an op.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.register_legalize" title="tvm.relay.op.register_legalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_legalize</span></code></a>(op_name[, legal_op, level])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.register_legalize" title="tvm.relay.op.register_legalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_legalize</span></code></a>(op_name[, legal_op, level])</p></td>
 <td><p>Register legal transformation function for an op</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.register_pattern" title="tvm.relay.op.register_pattern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_pattern</span></code></a>(op_name, pattern[, level])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.register_pattern" title="tvm.relay.op.register_pattern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_pattern</span></code></a>(op_name, pattern[, level])</p></td>
 <td><p>Register operator pattern for an op.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.reinterpret" title="tvm.relay.op.reinterpret"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reinterpret</span></code></a>(data, dtype)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.reinterpret" title="tvm.relay.op.reinterpret"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reinterpret</span></code></a>(data, dtype)</p></td>
 <td><p>Reinterpret input tensor to data type.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.repeat" title="tvm.relay.op.repeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code></a>(data, repeats, axis)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.repeat" title="tvm.relay.op.repeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code></a>(data, repeats, axis)</p></td>
 <td><p>Repeats elements of an array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.reshape" title="tvm.relay.op.reshape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape</span></code></a>(data, newshape)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.reshape" title="tvm.relay.op.reshape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape</span></code></a>(data, newshape)</p></td>
 <td><p>Reshape the input array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.reshape_like" title="tvm.relay.op.reshape_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape_like</span></code></a>(data, shape_like)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.reshape_like" title="tvm.relay.op.reshape_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape_like</span></code></a>(data, shape_like)</p></td>
 <td><p>Reshapes the input array by the size of another array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.reverse" title="tvm.relay.op.reverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse</span></code></a>(data, axis)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.reverse" title="tvm.relay.op.reverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse</span></code></a>(data, axis)</p></td>
 <td><p>Reverses the order of elements along given axis while preserving array shape.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.reverse_reshape" title="tvm.relay.op.reverse_reshape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse_reshape</span></code></a>(data, newshape)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.reverse_reshape" title="tvm.relay.op.reverse_reshape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse_reshape</span></code></a>(data, newshape)</p></td>
 <td><p>Reshapes the input array where the special values are inferred from right to left.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.right_shift" title="tvm.relay.op.right_shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">right_shift</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.right_shift" title="tvm.relay.op.right_shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">right_shift</span></code></a>(lhs, rhs)</p></td>
 <td><p>Right shift with numpy-style broadcasting.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.round" title="tvm.relay.op.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(data)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.round" title="tvm.relay.op.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(data)</p></td>
 <td><p>Compute element-wise round of data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.rsqrt" title="tvm.relay.op.rsqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsqrt</span></code></a>(data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.rsqrt" title="tvm.relay.op.rsqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsqrt</span></code></a>(data)</p></td>
 <td><p>Compute elementwise rsqrt of data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.sequence_mask" title="tvm.relay.op.sequence_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sequence_mask</span></code></a>(data, valid_length[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.sequence_mask" title="tvm.relay.op.sequence_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sequence_mask</span></code></a>(data, valid_length[, …])</p></td>
 <td><p>Sets all elements outside the expected length of the sequence to a constant value.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.shape_of" title="tvm.relay.op.shape_of"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape_of</span></code></a>(data[, dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.shape_of" title="tvm.relay.op.shape_of"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape_of</span></code></a>(data[, dtype])</p></td>
 <td><p>Get shape of a tensor.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.sigmoid" title="tvm.relay.op.sigmoid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigmoid</span></code></a>(data)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.sigmoid" title="tvm.relay.op.sigmoid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigmoid</span></code></a>(data)</p></td>
 <td><p>Compute elementwise sigmoid of data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.sign" title="tvm.relay.op.sign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sign</span></code></a>(data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.sign" title="tvm.relay.op.sign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sign</span></code></a>(data)</p></td>
 <td><p>Compute element-wise absolute of data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.sin" title="tvm.relay.op.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a>(data)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.sin" title="tvm.relay.op.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a>(data)</p></td>
 <td><p>Compute elementwise sin of data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.slice_like" title="tvm.relay.op.slice_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_like</span></code></a>(data, shape_like[, axes])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.slice_like" title="tvm.relay.op.slice_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_like</span></code></a>(data, shape_like[, axes])</p></td>
 <td><p>Slice the first input with respect to the second input.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.split" title="tvm.relay.op.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split</span></code></a>(data, indices_or_sections[, axis])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.split" title="tvm.relay.op.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split</span></code></a>(data, indices_or_sections[, axis])</p></td>
 <td><p>Split input tensor along axis by sections or indices.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.sqrt" title="tvm.relay.op.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a>(data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.sqrt" title="tvm.relay.op.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a>(data)</p></td>
 <td><p>Compute elementwise sqrt of data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.squeeze" title="tvm.relay.op.squeeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">squeeze</span></code></a>(data[, axis])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.squeeze" title="tvm.relay.op.squeeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">squeeze</span></code></a>(data[, axis])</p></td>
 <td><p>Squeeze axes in the array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.stack" title="tvm.relay.op.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a>(data, axis)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.stack" title="tvm.relay.op.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a>(data, axis)</p></td>
 <td><p>Join a sequence of arrays along a new axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.std" title="tvm.relay.op.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>(data[, axis, keepdims, exclude])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.std" title="tvm.relay.op.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>(data[, axis, keepdims, exclude])</p></td>
 <td><p>Computes the standard deviation of data over given axes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.strided_set" title="tvm.relay.op.strided_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strided_set</span></code></a>(data, v, begin, end[, strides])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.strided_set" title="tvm.relay.op.strided_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strided_set</span></code></a>(data, v, begin, end[, strides])</p></td>
 <td><p>Strided set of an array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.strided_slice" title="tvm.relay.op.strided_slice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strided_slice</span></code></a>(data, begin, end[, strides])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.strided_slice" title="tvm.relay.op.strided_slice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strided_slice</span></code></a>(data, begin, end[, strides])</p></td>
 <td><p>Strided slice of an array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.subtract" title="tvm.relay.op.subtract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subtract</span></code></a>(lhs, rhs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.subtract" title="tvm.relay.op.subtract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subtract</span></code></a>(lhs, rhs)</p></td>
 <td><p>Subtraction with numpy-style broadcasting.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.sum" title="tvm.relay.op.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(data[, axis, keepdims, exclude])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.sum" title="tvm.relay.op.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(data[, axis, keepdims, exclude])</p></td>
 <td><p>Computes the sum of array elements over given axes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.take" title="tvm.relay.op.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(data, indices[, axis, mode])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.take" title="tvm.relay.op.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(data, indices[, axis, mode])</p></td>
 <td><p>Take elements from an array along an axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.tan" title="tvm.relay.op.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a>(data)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.tan" title="tvm.relay.op.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a>(data)</p></td>
 <td><p>Compute elementwise tan of data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.tanh" title="tvm.relay.op.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a>(data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.tanh" title="tvm.relay.op.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a>(data)</p></td>
 <td><p>Compute element-wise tanh of data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.tile" title="tvm.relay.op.tile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tile</span></code></a>(data, reps)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.tile" title="tvm.relay.op.tile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tile</span></code></a>(data, reps)</p></td>
 <td><p>Repeats the whole array multiple times.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.topk" title="tvm.relay.op.topk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topk</span></code></a>(data[, k, axis, ret_type, is_ascend, dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.topk" title="tvm.relay.op.topk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topk</span></code></a>(data[, k, axis, ret_type, is_ascend, dtype])</p></td>
 <td><p>Get the top k elements in an input tensor along the given axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.transpose" title="tvm.relay.op.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(data[, axes])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.transpose" title="tvm.relay.op.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(data[, axes])</p></td>
 <td><p>Permutes the dimensions of an array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.trunc" title="tvm.relay.op.trunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trunc</span></code></a>(data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.trunc" title="tvm.relay.op.trunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trunc</span></code></a>(data)</p></td>
 <td><p>Compute element-wise trunc of data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.unravel_index" title="tvm.relay.op.unravel_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unravel_index</span></code></a>(indices, shape)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.unravel_index" title="tvm.relay.op.unravel_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unravel_index</span></code></a>(indices, shape)</p></td>
 <td><p>Convert a flat index or array of flat indices into a tuple of coordinate arrays.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.variance" title="tvm.relay.op.variance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance</span></code></a>(data[, axis, keepdims, exclude])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.variance" title="tvm.relay.op.variance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance</span></code></a>(data[, axis, keepdims, exclude])</p></td>
 <td><p>Computes the variance of data over given axes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.where" title="tvm.relay.op.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a>(condition, x, y)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.where" title="tvm.relay.op.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a>(condition, x, y)</p></td>
 <td><p>Selecting elements from either x or y depending on the value of the condition.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.zeros" title="tvm.relay.op.zeros"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros</span></code></a>(shape, dtype)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.zeros" title="tvm.relay.op.zeros"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros</span></code></a>(shape, dtype)</p></td>
 <td><p>Fill array with zeros.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.op.zeros_like" title="tvm.relay.op.zeros_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros_like</span></code></a>(data)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.op.zeros_like" title="tvm.relay.op.zeros_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros_like</span></code></a>(data)</p></td>
 <td><p>Returns an array of zeros, with same type and shape as the input.</p></td>
 </tr>
 </tbody>
@@ -1725,6 +1729,23 @@ defined by indices.</p>
 <dt id="tvm.relay.op.isinf">
 <code class="sig-prename descclassname">tvm.relay.op.</code><code class="sig-name descname">isinf</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.op.isinf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute element-wise infiniteness of data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>relay.Expr</em>) – The input data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – The computed result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>relay.Expr</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.relay.op.isnan">
+<code class="sig-prename descclassname">tvm.relay.op.</code><code class="sig-name descname">isnan</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.op.isnan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check nan in input data element-wise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>data</strong> (<em>relay.Expr</em>) – The input data</p>

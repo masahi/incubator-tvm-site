@@ -113,7 +113,7 @@ Include dependency graph for object.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="object_8h__dep__incl.svg" width="3054" height="1603"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="object_8h__dep__incl.svg" width="3071" height="1603"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -167,8 +167,12 @@ Macros</h2></td></tr>
 <tr class="memitem:ae1029068e5e7608770038906ca30db09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#ae1029068e5e7608770038906ca30db09">TVM_REGISTER_OBJECT_TYPE</a>(TypeName)</td></tr>
 <tr class="memdesc:ae1029068e5e7608770038906ca30db09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper macro to register the object type to runtime. Makes sure that the runtime type table is correctly populated.  <a href="#ae1029068e5e7608770038906ca30db09">More...</a><br /></td></tr>
 <tr class="separator:ae1029068e5e7608770038906ca30db09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06b57185e07e0065383528eb655fe4d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a06b57185e07e0065383528eb655fe4d8">TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN</a>(TypeName)</td></tr>
+<tr class="separator:a06b57185e07e0065383528eb655fe4d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6e7295a4999e2c8e4a2c990beca887a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#ac6e7295a4999e2c8e4a2c990beca887a">TVM_DEFINE_OBJECT_REF_METHODS</a>(TypeName,  ParentType,  ObjectName)</td></tr>
 <tr class="separator:ac6e7295a4999e2c8e4a2c990beca887a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782d0de62fbf75736e29c1e79c22c7f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a782d0de62fbf75736e29c1e79c22c7f1">TVM_DEFINE_NOTNULLABLE_OBJECT_REF_METHODS</a>(TypeName,  ParentType,  ObjectName)</td></tr>
+<tr class="separator:a782d0de62fbf75736e29c1e79c22c7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaa3dc5b6dc33f84b2d28f9a81267212"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#aaaa3dc5b6dc33f84b2d28f9a81267212">TVM_DEFINE_MUTABLE_OBJECT_REF_METHODS</a>(TypeName,  ParentType,  ObjectName)</td></tr>
 <tr class="separator:aaaa3dc5b6dc33f84b2d28f9a81267212"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8330e3864503fb7c4133ae4d48fe4a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#af8330e3864503fb7c4133ae4d48fe4a2">TVM_DEFINE_OBJECT_REF_COW_METHOD</a>(ObjectName)</td></tr>
@@ -204,9 +208,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a46bcf7948293194c5b9c7db91da96381"><td class="memTemplItemLeft" align="right" valign="top">ObjectPtr&lt; BaseType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#a46bcf7948293194c5b9c7db91da96381">tvm::runtime::GetObjectPtr</a> (ObjectType *ptr)</td></tr>
 <tr class="memdesc:a46bcf7948293194c5b9c7db91da96381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an object ptr type from a raw object ptr.  <a href="namespacetvm_1_1runtime.html#a46bcf7948293194c5b9c7db91da96381">More...</a><br /></td></tr>
 <tr class="separator:a46bcf7948293194c5b9c7db91da96381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4c790ddcf38a1ef9800466cd0c1a0a2"><td class="memTemplParams" colspan="2">template&lt;typename RelayRefType , typename ObjType &gt; </td></tr>
-<tr class="memitem:ad4c790ddcf38a1ef9800466cd0c1a0a2"><td class="memTemplItemLeft" align="right" valign="top">RelayRefType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ad4c790ddcf38a1ef9800466cd0c1a0a2">tvm::runtime::GetRef</a> (const ObjType *ptr)</td></tr>
-<tr class="separator:ad4c790ddcf38a1ef9800466cd0c1a0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af63300957592e8991c18c54703123ef7"><td class="memTemplParams" colspan="2">template&lt;typename RefType , typename ObjType &gt; </td></tr>
+<tr class="memitem:af63300957592e8991c18c54703123ef7"><td class="memTemplItemLeft" align="right" valign="top">RefType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#af63300957592e8991c18c54703123ef7">tvm::runtime::GetRef</a> (const ObjType *ptr)</td></tr>
+<tr class="separator:af63300957592e8991c18c54703123ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2d903012aff56c2bd54ff66f48450c3"><td class="memTemplParams" colspan="2">template&lt;typename BaseType , typename ObjType &gt; </td></tr>
 <tr class="memitem:ac2d903012aff56c2bd54ff66f48450c3"><td class="memTemplItemLeft" align="right" valign="top">ObjectPtr&lt; BaseType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1runtime.html#ac2d903012aff56c2bd54ff66f48450c3">tvm::runtime::GetObjectPtr</a> (ObjType *ptr)</td></tr>
 <tr class="separator:ac2d903012aff56c2bd54ff66f48450c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -287,7 +291,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> constexpr <span class="keywordtype">bool</span> _type_final = <span class="keyword">true</span>;                       \</div><div class="line">  static <span class="keyword">const</span> constexpr <span class="keywordtype">int</span> _type_child_slots = 0;                     <a class="code" href="object_8h.html#ac2b7418e9549512b5db0126cf2a716f1">\</a></div><div class="line"><a class="code" href="object_8h.html#ac2b7418e9549512b5db0126cf2a716f1">  TVM_DECLARE_BASE_OBJECT_INFO</a>(TypeName, ParentType)                    \</div><div class="ttc" id="object_8h_html_ac2b7418e9549512b5db0126cf2a716f1"><div class="ttname"><a href="object_8h.html#ac2b7418e9549512b5db0126cf2a716f1">TVM_DECLARE_BASE_OBJECT_INFO</a></div><div class="ttdeci">#define TVM_DECLARE_BASE_OBJECT_INFO(TypeName, ParentType)</div><div class="ttdoc">helper macro to declare a base object type that can be inheritated. </div><div class="ttdef"><b>Definition:</b> object.h:671</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> constexpr <span class="keywordtype">bool</span> _type_final = <span class="keyword">true</span>;                       \</div><div class="line">  static <span class="keyword">const</span> constexpr <span class="keywordtype">int</span> _type_child_slots = 0;                     <a class="code" href="object_8h.html#ac2b7418e9549512b5db0126cf2a716f1">\</a></div><div class="line"><a class="code" href="object_8h.html#ac2b7418e9549512b5db0126cf2a716f1">  TVM_DECLARE_BASE_OBJECT_INFO</a>(TypeName, ParentType)                    \</div><div class="ttc" id="object_8h_html_ac2b7418e9549512b5db0126cf2a716f1"><div class="ttname"><a href="object_8h.html#ac2b7418e9549512b5db0126cf2a716f1">TVM_DECLARE_BASE_OBJECT_INFO</a></div><div class="ttdeci">#define TVM_DECLARE_BASE_OBJECT_INFO(TypeName, ParentType)</div><div class="ttdoc">helper macro to declare a base object type that can be inheritated. </div><div class="ttdef"><b>Definition:</b> object.h:675</div></div>
 </div><!-- fragment -->
 <p>helper macro to declare type information in a final class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -298,6 +302,22 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
+</div>
+</div>
+<a class="anchor" id="a06b57185e07e0065383528eb655fe4d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TypeName</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">TypeName(<span class="keyword">const</span> TypeName&amp; other) = <span class="keywordflow">default</span>;                            \</div><div class="line">  TypeName(TypeName&amp;&amp; other) = <span class="keywordflow">default</span>;                                 \</div><div class="line">  TypeName&amp; operator=(<span class="keyword">const</span> TypeName&amp; other) = <span class="keywordflow">default</span>;                 \</div><div class="line">  TypeName&amp; operator=(TypeName&amp;&amp; other) = <span class="keywordflow">default</span>;                      \</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aaaa3dc5b6dc33f84b2d28f9a81267212"></a>
@@ -329,7 +349,42 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">TypeName() {}                                                         \</div><div class="line">  explicit TypeName(                                                    \</div><div class="line">      ::<a class="code" href="classtvm_1_1runtime_1_1ObjectPtr.html">tvm::runtime::ObjectPtr&lt;::tvm::runtime::Object&gt;</a> n)              \</div><div class="line">      : ParentType(n) {}                                                \</div><div class="line">  ObjectName* operator-&gt;()<span class="keyword"> const </span>{                                      \</div><div class="line">    return <span class="keyword">static_cast&lt;</span>ObjectName*<span class="keyword">&gt;</span>(data_.get());                       \</div><div class="line">  }                                                                     \</div><div class="line">  using ContainerType = ObjectName;</div><div class="ttc" id="classtvm_1_1runtime_1_1ObjectPtr_html"><div class="ttname"><a href="classtvm_1_1runtime_1_1ObjectPtr.html">tvm::runtime::ObjectPtr</a></div><div class="ttdoc">A custom smart pointer for Object. </div><div class="ttdef"><b>Definition:</b> object.h:345</div></div>
+<b>Value:</b><div class="fragment"><div class="line">TypeName() = <span class="keywordflow">default</span>;                                                 <a class="code" href="object_8h.html#a06b57185e07e0065383528eb655fe4d8">\</a></div><div class="line"><a class="code" href="object_8h.html#a06b57185e07e0065383528eb655fe4d8">  TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN</a>(TypeName);                    \</div><div class="line">  explicit TypeName(                                                    \</div><div class="line">      ::<a class="code" href="classtvm_1_1runtime_1_1ObjectPtr.html">tvm::runtime::ObjectPtr&lt;::tvm::runtime::Object&gt;</a> n)              \</div><div class="line">      : ParentType(n) {}                                                \</div><div class="line">  ObjectName* operator-&gt;()<span class="keyword"> const </span>{                                      \</div><div class="line">    return <span class="keyword">static_cast&lt;</span>ObjectName*<span class="keyword">&gt;</span>(data_.get());                       \</div><div class="line">  }                                                                     \</div><div class="line">  using ContainerType = ObjectName;</div><div class="ttc" id="classtvm_1_1runtime_1_1ObjectPtr_html"><div class="ttname"><a href="classtvm_1_1runtime_1_1ObjectPtr.html">tvm::runtime::ObjectPtr</a></div><div class="ttdoc">A custom smart pointer for Object. </div><div class="ttdef"><b>Definition:</b> object.h:345</div></div>
+<div class="ttc" id="object_8h_html_a06b57185e07e0065383528eb655fe4d8"><div class="ttname"><a href="object_8h.html#a06b57185e07e0065383528eb655fe4d8">TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN</a></div><div class="ttdeci">#define TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN(TypeName)</div><div class="ttdef"><b>Definition:</b> object.h:732</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a782d0de62fbf75736e29c1e79c22c7f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TVM_DEFINE_NOTNULLABLE_OBJECT_REF_METHODS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TypeName, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ParentType, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ObjectName&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">explicit</span> TypeName(                                                    \</div><div class="line">      ::<a class="code" href="classtvm_1_1runtime_1_1ObjectPtr.html">tvm::runtime::ObjectPtr&lt;::tvm::runtime::Object&gt;</a> n)              \</div><div class="line">      : ParentType(n) {}                                                <a class="code" href="object_8h.html#a06b57185e07e0065383528eb655fe4d8">\</a></div><div class="line"><a class="code" href="object_8h.html#a06b57185e07e0065383528eb655fe4d8">  TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN</a>(TypeName);                    \</div><div class="line">  const ObjectName* operator-&gt;()<span class="keyword"> const </span>{                                \</div><div class="line">    return <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ObjectName*<span class="keyword">&gt;</span>(data_.get());                 \</div><div class="line">  }                                                                     \</div><div class="line">  static constexpr <span class="keywordtype">bool</span> _type_is_nullable = <span class="keyword">false</span>;                      \</div><div class="line">  using ContainerType = ObjectName;</div><div class="ttc" id="classtvm_1_1runtime_1_1ObjectPtr_html"><div class="ttname"><a href="classtvm_1_1runtime_1_1ObjectPtr.html">tvm::runtime::ObjectPtr</a></div><div class="ttdoc">A custom smart pointer for Object. </div><div class="ttdef"><b>Definition:</b> object.h:345</div></div>
+<div class="ttc" id="object_8h_html_a06b57185e07e0065383528eb655fe4d8"><div class="ttname"><a href="object_8h.html#a06b57185e07e0065383528eb655fe4d8">TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN</a></div><div class="ttdeci">#define TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN(TypeName)</div><div class="ttdef"><b>Definition:</b> object.h:732</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -387,7 +442,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">TypeName() {}                                                         \</div><div class="line">  explicit TypeName(                                                    \</div><div class="line">      ::<a class="code" href="classtvm_1_1runtime_1_1ObjectPtr.html">tvm::runtime::ObjectPtr&lt;::tvm::runtime::Object&gt;</a> n)              \</div><div class="line">      : ParentType(n) {}                                                \</div><div class="line">  const ObjectName* operator-&gt;()<span class="keyword"> const </span>{                                \</div><div class="line">    return <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ObjectName*<span class="keyword">&gt;</span>(data_.get());                 \</div><div class="line">  }                                                                     \</div><div class="line">  using ContainerType = ObjectName;</div><div class="ttc" id="classtvm_1_1runtime_1_1ObjectPtr_html"><div class="ttname"><a href="classtvm_1_1runtime_1_1ObjectPtr.html">tvm::runtime::ObjectPtr</a></div><div class="ttdoc">A custom smart pointer for Object. </div><div class="ttdef"><b>Definition:</b> object.h:345</div></div>
+<b>Value:</b><div class="fragment"><div class="line">TypeName() = <span class="keywordflow">default</span>;                                                 \</div><div class="line">  explicit TypeName(                                                    \</div><div class="line">      ::<a class="code" href="classtvm_1_1runtime_1_1ObjectPtr.html">tvm::runtime::ObjectPtr&lt;::tvm::runtime::Object&gt;</a> n)              \</div><div class="line">      : ParentType(n) {}                                                <a class="code" href="object_8h.html#a06b57185e07e0065383528eb655fe4d8">\</a></div><div class="line"><a class="code" href="object_8h.html#a06b57185e07e0065383528eb655fe4d8">  TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN</a>(TypeName);                    \</div><div class="line">  const ObjectName* operator-&gt;()<span class="keyword"> const </span>{                                \</div><div class="line">    return <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ObjectName*<span class="keyword">&gt;</span>(data_.get());                 \</div><div class="line">  }                                                                     \</div><div class="line">  using ContainerType = ObjectName;</div><div class="ttc" id="classtvm_1_1runtime_1_1ObjectPtr_html"><div class="ttname"><a href="classtvm_1_1runtime_1_1ObjectPtr.html">tvm::runtime::ObjectPtr</a></div><div class="ttdoc">A custom smart pointer for Object. </div><div class="ttdef"><b>Definition:</b> object.h:345</div></div>
+<div class="ttc" id="object_8h_html_a06b57185e07e0065383528eb655fe4d8"><div class="ttname"><a href="object_8h.html#a06b57185e07e0065383528eb655fe4d8">TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN</a></div><div class="ttdeci">#define TVM_DEFINE_DEFAULT_COPY_MOVE_AND_ASSIGN(TypeName)</div><div class="ttdef"><b>Definition:</b> object.h:732</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -430,8 +486,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="object_8h.html#a73bf3e57b9d7a6e0dd55d901321d01ed">TVM_STR_CONCAT</a>(<a class="code" href="object_8h.html#ac63db332fce1a32738566c8880f0d425">TVM_OBJECT_REG_VAR_DEF</a>, __COUNTER__) =                 \</div><div class="line">      TypeName::_GetOrAllocRuntimeTypeIndex()</div><div class="ttc" id="object_8h_html_a73bf3e57b9d7a6e0dd55d901321d01ed"><div class="ttname"><a href="object_8h.html#a73bf3e57b9d7a6e0dd55d901321d01ed">TVM_STR_CONCAT</a></div><div class="ttdeci">#define TVM_STR_CONCAT(__x, __y)</div><div class="ttdef"><b>Definition:</b> object.h:708</div></div>
-<div class="ttc" id="object_8h_html_ac63db332fce1a32738566c8880f0d425"><div class="ttname"><a href="object_8h.html#ac63db332fce1a32738566c8880f0d425">TVM_OBJECT_REG_VAR_DEF</a></div><div class="ttdeci">#define TVM_OBJECT_REG_VAR_DEF</div><div class="ttdef"><b>Definition:</b> object.h:710</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="object_8h.html#a73bf3e57b9d7a6e0dd55d901321d01ed">TVM_STR_CONCAT</a>(<a class="code" href="object_8h.html#ac63db332fce1a32738566c8880f0d425">TVM_OBJECT_REG_VAR_DEF</a>, __COUNTER__) =                 \</div><div class="line">      TypeName::_GetOrAllocRuntimeTypeIndex()</div><div class="ttc" id="object_8h_html_a73bf3e57b9d7a6e0dd55d901321d01ed"><div class="ttname"><a href="object_8h.html#a73bf3e57b9d7a6e0dd55d901321d01ed">TVM_STR_CONCAT</a></div><div class="ttdeci">#define TVM_STR_CONCAT(__x, __y)</div><div class="ttdef"><b>Definition:</b> object.h:712</div></div>
+<div class="ttc" id="object_8h_html_ac63db332fce1a32738566c8880f0d425"><div class="ttname"><a href="object_8h.html#ac63db332fce1a32738566c8880f0d425">TVM_OBJECT_REG_VAR_DEF</a></div><div class="ttdeci">#define TVM_OBJECT_REG_VAR_DEF</div><div class="ttdef"><b>Definition:</b> object.h:714</div></div>
 </div><!-- fragment -->
 <p>Helper macro to register the object type to runtime. Makes sure that the runtime type table is correctly populated. </p>
 <p>Use this macro in the cc file for each terminal class. </p>

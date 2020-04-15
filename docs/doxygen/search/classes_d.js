@@ -2,6 +2,7 @@ var searchData=
 [
   ['packedfunc',['PackedFunc',['../classtvm_1_1runtime_1_1PackedFunc.html',1,'tvm::runtime']]],
   ['packedfuncvalueconverter',['PackedFuncValueConverter',['../structtvm_1_1runtime_1_1PackedFuncValueConverter.html',1,'tvm::runtime']]],
+  ['packedfuncvalueconverter_3c_20optional_3c_20t_20_3e_20_3e',['PackedFuncValueConverter&lt; Optional&lt; T &gt; &gt;',['../structtvm_1_1runtime_1_1PackedFuncValueConverter_3_01Optional_3_01T_01_4_01_4.html',1,'tvm::runtime']]],
   ['packedfuncvalueconverter_3c_20primexpr_20_3e',['PackedFuncValueConverter&lt; PrimExpr &gt;',['../structtvm_1_1runtime_1_1PackedFuncValueConverter_3_01PrimExpr_01_4.html',1,'tvm::runtime']]],
   ['packedfuncvalueconverter_3c_20tvm_3a_3ainteger_20_3e',['PackedFuncValueConverter&lt; tvm::Integer &gt;',['../structtvm_1_1runtime_1_1PackedFuncValueConverter_3_01tvm_1_1Integer_01_4.html',1,'tvm::runtime']]],
   ['packedfuncvalueconverter_3c_3a_3atvm_3a_3aruntime_3a_3astring_20_3e',['PackedFuncValueConverter&lt;::tvm::runtime::String &gt;',['../structtvm_1_1runtime_1_1PackedFuncValueConverter_3_1_1tvm_1_1runtime_1_1String_01_4.html',1,'tvm::runtime']]],

@@ -125,6 +125,9 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a0172d819fdaac9a9b5c7a3301fef2697"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1transform.html#a0172d819fdaac9a9b5c7a3301fef2697">CreateModulePass</a> (const <a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc.html">runtime::TypedPackedFunc</a>&lt; <a class="el" href="classtvm_1_1IRModule.html">IRModule</a>(<a class="el" href="classtvm_1_1IRModule.html">IRModule</a>, <a class="el" href="classtvm_1_1transform_1_1PassContext.html">PassContext</a>)&gt; &amp;pass_func, int opt_level, const std::string &amp;name, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1runtime_1_1String.html">runtime::String</a> &gt; &amp;required)</td></tr>
 <tr class="separator:a0172d819fdaac9a9b5c7a3301fef2697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a88847a3a1f3fdd9e9e11a20149ef06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1transform.html#a4a88847a3a1f3fdd9e9e11a20149ef06">PrintIR</a> (std::string header=&quot;&quot;, bool show_meta_data=false)</td></tr>
+<tr class="memdesc:a4a88847a3a1f3fdd9e9e11a20149ef06"><td class="mdescLeft">&#160;</td><td class="mdescRight">A special trace pass that prints the header and IR to LOG(INFO).  <a href="#a4a88847a3a1f3fdd9e9e11a20149ef06">More...</a><br /></td></tr>
+<tr class="separator:a4a88847a3a1f3fdd9e9e11a20149ef06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="a0904052a95bd90a669cba07770694652"></a>
@@ -177,6 +180,42 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4a88847a3a1f3fdd9e9e11a20149ef06"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::transform::PrintIR </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>header</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show_meta_data</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A special trace pass that prints the header and IR to LOG(INFO). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The header to be attached to the output. </td></tr>
+    <tr><td class="paramname">show_meta_data</td><td>Whether should we show meta data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
 
 </div>
 </div>

@@ -25,21 +25,22 @@
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="classtvm_1_1BaseFuncNode.html" target="_top" xlink:title="Base node of all functions. ">
-<polygon fill="white" stroke="black" points="111.5,-232 111.5,-322 315.5,-322 315.5,-232 111.5,-232"/>
-<text text-anchor="middle" x="213.5" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::BaseFuncNode</text>
-<polyline fill="none" stroke="black" points="111.5,-303 315.5,-303 "/>
-<text text-anchor="start" x="119.5" y="-291" font-family="Helvetica,sans-Serif" font-size="10.00">+ attrs</text>
-<text text-anchor="start" x="119.5" y="-280" font-family="Helvetica,sans-Serif" font-size="10.00">+ _type_key</text>
-<polyline fill="none" stroke="black" points="111.5,-273 315.5,-273 "/>
-<text text-anchor="start" x="119.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAttr()</text>
-<text text-anchor="start" x="119.5" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ HasNonzeroAttr()</text>
-<text text-anchor="start" x="119.5" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ TVM_DECLARE_BASE_OBJECT_INFO()</text>
+<polygon fill="white" stroke="black" points="111.5,-226.5 111.5,-327.5 315.5,-327.5 315.5,-226.5 111.5,-226.5"/>
+<text text-anchor="middle" x="213.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::BaseFuncNode</text>
+<polyline fill="none" stroke="black" points="111.5,-308.5 315.5,-308.5 "/>
+<text text-anchor="start" x="119.5" y="-296.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ attrs</text>
+<text text-anchor="start" x="119.5" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ _type_key</text>
+<polyline fill="none" stroke="black" points="111.5,-278.5 315.5,-278.5 "/>
+<text text-anchor="start" x="119.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAttr()</text>
+<text text-anchor="start" x="119.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAttr()</text>
+<text text-anchor="start" x="119.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ HasNonzeroAttr()</text>
+<text text-anchor="start" x="119.5" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TVM_DECLARE_BASE_OBJECT_INFO()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1772.04,-455.957C1436.4,-449.284 456.793,-425.406 323.5,-372 296.567,-361.209 271.546,-341.021 252.194,-322.112"/>
+<path fill="none" stroke="midnightblue" d="M1772.04,-455.957C1436.4,-449.284 456.793,-425.406 323.5,-372 299.132,-362.237 276.329,-344.781 257.874,-327.54"/>
 <polygon fill="none" stroke="midnightblue" points="1772.2,-459.461 1782.27,-456.159 1772.34,-452.462 1772.2,-459.461"/>
 </g>
 <!-- Node7 -->
@@ -446,8 +447,8 @@
 </g>
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M184.295,-222.853C171.313,-199.226 155.833,-171.056 141.851,-145.612"/>
-<polygon fill="none" stroke="midnightblue" points="181.257,-224.592 189.141,-231.67 187.392,-221.221 181.257,-224.592"/>
+<path fill="none" stroke="midnightblue" d="M181.231,-217.277C168.925,-194.881 154.758,-169.1 141.864,-145.635"/>
+<polygon fill="none" stroke="midnightblue" points="178.321,-219.248 186.204,-226.327 184.456,-215.877 178.321,-219.248"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
@@ -471,8 +472,8 @@
 </g>
 <!-- Node4&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node4&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M242.968,-222.853C256.068,-199.226 271.687,-171.056 285.794,-145.612"/>
-<polygon fill="none" stroke="midnightblue" points="239.867,-221.227 238.079,-231.67 245.989,-224.622 239.867,-221.227"/>
+<path fill="none" stroke="midnightblue" d="M245.894,-217.575C258.35,-195.11 272.713,-169.204 285.781,-145.635"/>
+<polygon fill="none" stroke="midnightblue" points="242.83,-215.884 241.042,-226.327 248.952,-219.278 242.83,-215.884"/>
 </g>
 </g>
 </svg>

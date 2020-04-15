@@ -27,6 +27,7 @@ var searchData=
   ['binaryopnode_3c_20mulnode_20_3e',['BinaryOpNode&lt; MulNode &gt;',['../classtvm_1_1tir_1_1BinaryOpNode.html',1,'tvm::tir']]],
   ['binaryopnode_3c_20subnode_20_3e',['BinaryOpNode&lt; SubNode &gt;',['../classtvm_1_1tir_1_1BinaryOpNode.html',1,'tvm::tir']]],
   ['bitpackattrs',['BitPackAttrs',['../structtvm_1_1relay_1_1BitPackAttrs.html',1,'tvm::relay']]],
+  ['bool',['Bool',['../classtvm_1_1Bool.html',1,'tvm']]],
   ['broadcastnode',['BroadcastNode',['../classtvm_1_1tir_1_1BroadcastNode.html',1,'tvm::tir']]],
   ['buffer',['Buffer',['../classtvm_1_1tir_1_1Buffer.html',1,'tvm::tir']]],
   ['bufferload',['BufferLoad',['../classtvm_1_1tir_1_1BufferLoad.html',1,'tvm::tir']]],

@@ -471,8 +471,6 @@
         <li><a href="api/python/te.html#tvm.te.Stage.bind">(tvm.te.Stage method)</a>
 </li>
       </ul></li>
-      <li><a href="api/python/tir.html#tvm.tir.transform.BindDeviceType">BindDeviceType() (in module tvm.tir.transform)</a>
-</li>
       <li><a href="api/python/relay/nn.html#tvm.relay.op.nn.nn.bitpack">bitpack() (in module tvm.relay.op.nn.nn)</a>
 </li>
       <li><a href="api/python/relay/nn.html#tvm.relay.op.nn.nn.bitserial_conv2d">bitserial_conv2d() (in module tvm.relay.op.nn.nn)</a>
@@ -875,14 +873,14 @@
 </li>
       <li><a href="api/python/target.html#tvm.target.cuda">cuda() (in module tvm.target)</a>
 </li>
-      <li><a href="api/python/relay/transform.html#tvm.relay.transform.PassContext.current">current() (tvm.relay.transform.PassContext static method)</a>
+      <li><a href="api/python/target.html#tvm.target.BuildConfig.current">current() (tvm.target.BuildConfig static method)</a>
 
       <ul>
-        <li><a href="api/python/target.html#tvm.target.BuildConfig.current">(tvm.target.BuildConfig static method)</a>
-</li>
         <li><a href="api/python/target.html#tvm.target.Target.current">(tvm.target.Target static method)</a>
 </li>
         <li><a href="api/python/te.html#tvm.te.SpecializedCondition.current">(tvm.te.SpecializedCondition static method)</a>
+</li>
+        <li><a href="api/python/ir.html#tvm.transform.PassContext.current">(tvm.transform.PassContext static method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1523,7 +1521,7 @@
 </li>
       <li><a href="api/python/relay/transform.html#tvm.relay.transform.InferType">InferType() (in module tvm.relay.transform)</a>
 </li>
-      <li><a href="api/python/relay/transform.html#tvm.relay.transform.Pass.info">info() (tvm.relay.transform.Pass property)</a>
+      <li><a href="api/python/ir.html#tvm.transform.Pass.info">info() (tvm.transform.Pass property)</a>
 </li>
       <li><a href="api/python/relay/transform.html#tvm.relay.transform.Inline">Inline() (in module tvm.relay.transform)</a>
 </li>
@@ -1535,10 +1533,10 @@
 </li>
       <li><a href="api/python/target.html#tvm.target.intel_graphics">intel_graphics() (in module tvm.target)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/python/error.html#tvm.error.InternalError">InternalError</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/python/relay/backend.html#tvm.relay.backend.interpreter.Interpreter">Interpreter (class in tvm.relay.backend.interpreter)</a>
 </li>
       <li><a href="api/python/tir.html#tvm.tir.IntImm">IntImm (class in tvm.tir)</a>
@@ -1578,6 +1576,10 @@
       <li><a href="api/python/topi.html#topi.isnan">isnan() (in module topi)</a>
 
       <ul>
+        <li><a href="api/python/relay/index.html#tvm.relay.isnan">(in module tvm.relay)</a>
+</li>
+        <li><a href="api/python/relay/op.html#tvm.relay.op.isnan">(in module tvm.relay.op)</a>
+</li>
         <li><a href="api/python/te.html#tvm.te.isnan">(in module tvm.te)</a>
 </li>
         <li><a href="api/python/tir.html#tvm.tir.isnan">(in module tvm.tir)</a>
@@ -1975,9 +1977,9 @@
 </li>
       <li><a href="api/python/relay/analysis.html#tvm.relay.analysis.CallGraph.module">module() (tvm.relay.analysis.CallGraph property)</a>
 </li>
-      <li><a href="api/python/relay/transform.html#tvm.relay.transform.module_pass">module_pass() (in module tvm.relay.transform)</a>
+      <li><a href="api/python/ir.html#tvm.transform.module_pass">module_pass() (in module tvm.transform)</a>
 </li>
-      <li><a href="api/python/relay/transform.html#tvm.relay.transform.ModulePass">ModulePass (class in tvm.relay.transform)</a>
+      <li><a href="api/python/ir.html#tvm.transform.ModulePass">ModulePass (class in tvm.transform)</a>
 </li>
       <li><a href="api/python/autotvm.html#tvm.autotvm.tuner.callback.Monitor">Monitor (class in tvm.autotvm.tuner.callback)</a>
 </li>
@@ -2169,11 +2171,11 @@
 </li>
       <li><a href="api/python/relay/transform.html#tvm.relay.transform.PartitionGraph">PartitionGraph() (in module tvm.relay.transform)</a>
 </li>
-      <li><a href="api/python/relay/transform.html#tvm.relay.transform.Pass">Pass (class in tvm.relay.transform)</a>
+      <li><a href="api/python/ir.html#tvm.transform.Pass">Pass (class in tvm.transform)</a>
 </li>
-      <li><a href="api/python/relay/transform.html#tvm.relay.transform.PassContext">PassContext (class in tvm.relay.transform)</a>
+      <li><a href="api/python/ir.html#tvm.transform.PassContext">PassContext (class in tvm.transform)</a>
 </li>
-      <li><a href="api/python/relay/transform.html#tvm.relay.transform.PassInfo">PassInfo (class in tvm.relay.transform)</a>
+      <li><a href="api/python/ir.html#tvm.transform.PassInfo">PassInfo (class in tvm.transform)</a>
 </li>
       <li><a href="api/python/relay/index.html#tvm.relay.Pattern">Pattern (class in tvm.relay)</a>
 </li>
@@ -2245,7 +2247,7 @@
 </li>
       <li><a href="api/python/relay/analysis.html#tvm.relay.analysis.CallGraph.print_var">print_var() (tvm.relay.analysis.CallGraph method)</a>
 </li>
-      <li><a href="api/python/relay/transform.html#tvm.relay.transform.PrintIR">PrintIR() (in module tvm.relay.transform)</a>
+      <li><a href="api/python/ir.html#tvm.transform.PrintIR">PrintIR() (in module tvm.transform)</a>
 </li>
       <li><a href="api/python/topi.html#topi.prod">prod() (in module topi)</a>
 
@@ -2555,7 +2557,7 @@
         <li><a href="api/python/relay/op.html#tvm.relay.op.sequence_mask">(in module tvm.relay.op)</a>
 </li>
       </ul></li>
-      <li><a href="api/python/relay/transform.html#tvm.relay.transform.Sequential">Sequential (class in tvm.relay.transform)</a>
+      <li><a href="api/python/ir.html#tvm.transform.Sequential">Sequential (class in tvm.transform)</a>
 </li>
       <li><a href="api/python/autotvm.html#tvm.autotvm.task.task.serialize_args">serialize_args() (in module tvm.autotvm.task.task)</a>
 </li>
@@ -3086,6 +3088,8 @@
       <li><a href="api/python/tir.html#module-tvm.tir.analysis">tvm.tir.analysis (module)</a>
 </li>
       <li><a href="api/python/tir.html#module-tvm.tir.transform">tvm.tir.transform (module)</a>
+</li>
+      <li><a href="api/python/ir.html#module-tvm.transform">tvm.transform (module)</a>
 </li>
       <li><a href="api/python/runtime.html#tvm.runtime.TVMContext">TVMContext (class in tvm.runtime)</a>
 </li>

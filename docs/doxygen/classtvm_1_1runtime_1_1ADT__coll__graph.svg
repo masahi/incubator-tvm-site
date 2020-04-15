@@ -32,7 +32,7 @@
 <polygon fill="white" stroke="black" points="10,-183.5 10,-405.5 140,-405.5 140,-183.5 10,-183.5"/>
 <text text-anchor="middle" x="75" y="-393.5" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::runtime::ObjectRef</text>
 <polyline fill="none" stroke="black" points="10,-386.5 140,-386.5 "/>
-<text text-anchor="middle" x="75" y="-374.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<text text-anchor="start" x="18" y="-374.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ _type_is_nullable</text>
 <polyline fill="none" stroke="black" points="10,-367.5 140,-367.5 "/>
 <text text-anchor="start" x="18" y="-355.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ObjectRef()</text>
 <text text-anchor="start" x="18" y="-344.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ObjectRef()</text>

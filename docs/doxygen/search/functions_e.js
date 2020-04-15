@@ -8,6 +8,7 @@ var searchData=
   ['ndim',['ndim',['../classtvm_1_1te_1_1Tensor.html#abe7e5dcf5965fa514ba2a78b2f71a871',1,'tvm::te::Tensor::ndim()'],['../classtvm_1_1tir_1_1Layout.html#a4bca97ce52386c053a442ff960581f92',1,'tvm::tir::Layout::ndim()']]],
   ['ndim_5fprimal',['ndim_primal',['../classtvm_1_1tir_1_1Layout.html#a2f983c2de370c89a9f0b12ebcf9fec0c',1,'tvm::tir::Layout']]],
   ['nearbyint',['nearbyint',['../namespacetvm.html#a8472b5c842e840063564d4280428ce23',1,'tvm']]],
+  ['needsetdevicecontext',['NeedSetDeviceContext',['../classtvm_1_1runtime_1_1DeviceAPI.html#ab35f07aacd4717465f8912aeded7001c',1,'tvm::runtime::DeviceAPI']]],
   ['negative',['negative',['../namespacetopi.html#a9953d63728137b5bba2ef2832963e411',1,'topi']]],
   ['new',['New',['../classtvm_1_1runtime_1_1SimpleObjAllocator_1_1Handler.html#af605b9c8534aa0731632f8dd9d32327d',1,'tvm::runtime::SimpleObjAllocator::Handler::New()'],['../classtvm_1_1runtime_1_1SimpleObjAllocator_1_1ArrayHandler.html#a025fadf9131cce88df531f00c8180d39',1,'tvm::runtime::SimpleObjAllocator::ArrayHandler::New()']]],
   ['no',['No',['../classtvm_1_1relay_1_1FeatureSet.html#a68c408c752ef58b2c27802491165adbb',1,'tvm::relay::FeatureSet']]],

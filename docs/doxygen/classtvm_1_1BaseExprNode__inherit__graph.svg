@@ -896,21 +896,22 @@
 <!-- Node40 -->
 <g id="node40" class="node"><title>Node40</title>
 <g id="a_node40"><a xlink:href="classtvm_1_1BaseFuncNode.html" target="_top" xlink:title="Base node of all functions. ">
-<polygon fill="white" stroke="red" points="7803.5,-105 7803.5,-195 8007.5,-195 8007.5,-105 7803.5,-105"/>
-<text text-anchor="middle" x="7905.5" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::BaseFuncNode</text>
-<polyline fill="none" stroke="red" points="7803.5,-176 8007.5,-176 "/>
-<text text-anchor="start" x="7811.5" y="-164" font-family="Helvetica,sans-Serif" font-size="10.00">+ attrs</text>
-<text text-anchor="start" x="7811.5" y="-153" font-family="Helvetica,sans-Serif" font-size="10.00">+ _type_key</text>
-<polyline fill="none" stroke="red" points="7803.5,-146 8007.5,-146 "/>
-<text text-anchor="start" x="7811.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAttr()</text>
-<text text-anchor="start" x="7811.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ HasNonzeroAttr()</text>
-<text text-anchor="start" x="7811.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ TVM_DECLARE_BASE_OBJECT_INFO()</text>
+<polygon fill="white" stroke="red" points="7803.5,-99.5 7803.5,-200.5 8007.5,-200.5 8007.5,-99.5 7803.5,-99.5"/>
+<text text-anchor="middle" x="7905.5" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::BaseFuncNode</text>
+<polyline fill="none" stroke="red" points="7803.5,-181.5 8007.5,-181.5 "/>
+<text text-anchor="start" x="7811.5" y="-169.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ attrs</text>
+<text text-anchor="start" x="7811.5" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ _type_key</text>
+<polyline fill="none" stroke="red" points="7803.5,-151.5 8007.5,-151.5 "/>
+<text text-anchor="start" x="7811.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAttr()</text>
+<text text-anchor="start" x="7811.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAttr()</text>
+<text text-anchor="start" x="7811.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ HasNonzeroAttr()</text>
+<text text-anchor="start" x="7811.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TVM_DECLARE_BASE_OBJECT_INFO()</text>
 </a>
 </g>
 </g>
 <!-- Node39&#45;&gt;Node40 -->
 <g id="edge39" class="edge"><title>Node39&#45;&gt;Node40</title>
-<path fill="none" stroke="midnightblue" d="M8684.28,-384.496C8496.35,-380.202 8127.65,-363.664 8016.5,-300 7974.93,-276.192 7944.24,-229.868 7925.79,-195.161"/>
+<path fill="none" stroke="midnightblue" d="M8684.28,-384.496C8496.35,-380.202 8127.65,-363.664 8016.5,-300 7977.03,-277.394 7947.37,-234.489 7928.68,-200.504"/>
 <polygon fill="none" stroke="midnightblue" points="8684.39,-387.999 8694.46,-384.72 8684.54,-381.001 8684.39,-387.999"/>
 </g>
 <!-- Node41 -->

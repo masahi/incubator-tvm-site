@@ -185,7 +185,7 @@
 <polygon fill="white" stroke="black" points="4,-1009.5 4,-1231.5 134,-1231.5 134,-1009.5 4,-1009.5"/>
 <text text-anchor="middle" x="69" y="-1219.5" font-family="Helvetica,sans-Serif" font-size="10.00">tvm::runtime::ObjectRef</text>
 <polyline fill="none" stroke="black" points="4,-1212.5 134,-1212.5 "/>
-<text text-anchor="middle" x="69" y="-1200.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<text text-anchor="start" x="12" y="-1200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ _type_is_nullable</text>
 <polyline fill="none" stroke="black" points="4,-1193.5 134,-1193.5 "/>
 <text text-anchor="start" x="12" y="-1181.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ObjectRef()</text>
 <text text-anchor="start" x="12" y="-1170.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ObjectRef()</text>

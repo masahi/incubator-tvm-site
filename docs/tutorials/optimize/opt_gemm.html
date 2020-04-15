@@ -304,8 +304,8 @@ Then we write a baseline implementation, the simplest way to write a matrix mult
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Numpy running time: 0.010819
-Baseline: 3.314082
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Numpy running time: 0.007138
+Baseline: 5.849220
 </pre></div>
 </div>
 <p>In TVM, we can always inspect lower level IR to debug or optimize our schedule.
@@ -358,7 +358,7 @@ fill 32 * 32 * sizeof(float) which is 4KB in the cache whose total size is 32KB 
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt1: 0.288940
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt1: 0.110809
 </pre></div>
 </div>
 <p>Here is the generated IR after blocking.</p>
@@ -417,7 +417,7 @@ we can use <cite>vectorize</cite> interface to hint the compiler this pattern, s
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt2: 0.320343
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt2: 0.118893
 </pre></div>
 </div>
 <p>Here is the generated IR after vectorization.</p>
@@ -472,7 +472,7 @@ the access pattern for A matrix is more cache friendly.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt3: 0.111966
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt3: 0.059414
 </pre></div>
 </div>
 <p>Here is the generated IR after loop permutation.</p>
@@ -541,7 +541,7 @@ the corresponding value from the packed array.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt4: 0.105252
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt4: 0.064715
 </pre></div>
 </div>
 <p>Here is the generated IR after array packing.</p>
@@ -617,7 +617,7 @@ write to C when all the block results are ready.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt5: 0.099655
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt5: 0.089912
 </pre></div>
 </div>
 <p>Here is the generated IR after blocking.</p>
@@ -702,7 +702,7 @@ produce C {
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt6: 0.032349
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt6: 0.016163
 </pre></div>
 </div>
 <p>Here is the generated IR after parallelization.</p>
