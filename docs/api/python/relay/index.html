@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../../../_static/css/tvm_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="tvm.relay.analysis" href="analysis.html" />
-    <link rel="prev" title="tvm.contrib.graph_runtime" href="../graph_runtime.html" /> 
+    <link rel="next" title="tvm.relay.frontend" href="frontend.html" />
+    <link rel="prev" title="tvm.driver" href="../driver.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -115,22 +115,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../te.html">tvm.te</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../driver.html">tvm.driver</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tvm.relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend.html">tvm.relay.frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nn.html">tvm.relay.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vision.html">tvm.relay.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image.html">tvm.relay.image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">tvm.relay.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">tvm.relay.testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">tvm.relay</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontend.html">tvm.relay.frontend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="image.html">tvm.relay.image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="transform.html">tvm.relay.transform</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nn.html">tvm.relay.nn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="op.html">tvm.relay.op</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vision.html">tvm.relay.vision</a></li>
-<li class="toctree-l3"><a class="reference internal" href="testing.html">tvm.relay.testing</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../vta/index.html">vta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topi.html">topi</a></li>
 </ul>
@@ -211,26 +208,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tvm-relay">
-<h1>tvm.relay<a class="headerlink" href="#tvm-relay" title="Permalink to this headline">¶</a></h1>
-<p>This document contains the Python API for the Relay frontend, optimizer, and
-compiler toolchain.</p>
-<p>Relay is the second-generation, high-level intermediate representation (IR) for the TVM
-compiler stack.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="frontend.html">tvm.relay.frontend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="image.html">tvm.relay.image</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transform.html">tvm.relay.transform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nn.html">tvm.relay.nn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="op.html">tvm.relay.op</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vision.html">tvm.relay.vision</a></li>
-<li class="toctree-l1"><a class="reference internal" href="testing.html">tvm.relay.testing</a></li>
-</ul>
-</div>
-<span class="target" id="module-tvm.relay"></span><p>The Relay IR namespace containing the IR definition and compiler.</p>
+  <div class="section" id="module-tvm.relay">
+<span id="tvm-relay"></span><h1>tvm.relay<a class="headerlink" href="#module-tvm.relay" title="Permalink to this headline">¶</a></h1>
+<p>The Relay IR namespace containing the IR definition and compiler.</p>
 <p><strong>Classes</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -934,38 +914,6 @@ used in advanced usecase of template functions.</p></li>
 </ul>
 </dd>
 </dl>
-<p><strong>Methods</strong></p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.Function.with_attr" title="tvm.relay.Function.with_attr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_attr</span></code></a>(attr_key, attr_value)</p></td>
-<td><p>Create a new copy of the function and update the attribute</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="tvm.relay.Function.with_attr">
-<code class="sig-name descname">with_attr</code><span class="sig-paren">(</span><em class="sig-param">attr_key</em>, <em class="sig-param">attr_value</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.Function.with_attr" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new copy of the function and update the attribute</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>attr_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The attribute key to use.</p></li>
-<li><p><strong>attr_value</strong> (<a class="reference internal" href="../runtime.html#tvm.runtime.Object" title="tvm.runtime.Object"><em>Object</em></a>) – The new attribute value.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>func</strong> – A new copy of the function</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#tvm.relay.Function" title="tvm.relay.Function">Function</a></p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="class">
@@ -3902,10 +3850,10 @@ GraphModule with API “load_params”.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="analysis.html" class="btn btn-neutral float-right" title="tvm.relay.analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="frontend.html" class="btn btn-neutral float-right" title="tvm.relay.frontend" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../graph_runtime.html" class="btn btn-neutral float-left" title="tvm.contrib.graph_runtime" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../driver.html" class="btn btn-neutral float-left" title="tvm.driver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

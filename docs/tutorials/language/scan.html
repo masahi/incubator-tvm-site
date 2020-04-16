@@ -266,18 +266,16 @@ To split on the time iteration, user can schedule on scan_op.scan_axis instead.<
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>produce scan {
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>// attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = floordiv((n + 255), 256)
+// attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 256
+if (likely((((blockIdx.x*256) + threadIdx.x) &lt; n))) {
+  scan[(((blockIdx.x*256) + threadIdx.x)*stride)] = X[(((blockIdx.x*256) + threadIdx.x)*stride)]
+}
+for (scan.idx, 0, (m - 1)) {
   // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = floordiv((n + 255), 256)
   // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 256
   if (likely((((blockIdx.x*256) + threadIdx.x) &lt; n))) {
-    scan[(((blockIdx.x*256) + threadIdx.x)*stride)] = X[(((blockIdx.x*256) + threadIdx.x)*stride)]
-  }
-  for (scan.idx, 0, (m - 1)) {
-    // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = floordiv((n + 255), 256)
-    // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 256
-    if (likely((((blockIdx.x*256) + threadIdx.x) &lt; n))) {
-      scan[(((scan.idx + 1)*stride) + (((blockIdx.x*256) + threadIdx.x)*stride))] = (scan[((scan.idx*stride) + (((blockIdx.x*256) + threadIdx.x)*stride))] + X[(((scan.idx + 1)*stride) + (((blockIdx.x*256) + threadIdx.x)*stride))])
-    }
+    scan[(((scan.idx + 1)*stride) + (((blockIdx.x*256) + threadIdx.x)*stride))] = (scan[((scan.idx*stride) + (((blockIdx.x*256) + threadIdx.x)*stride))] + X[(((scan.idx + 1)*stride) + (((blockIdx.x*256) + threadIdx.x)*stride))])
   }
 }
 </pre></div>
@@ -328,23 +326,19 @@ the body of scan to be compute_at locations outside the scan loop.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>// attr [s1] storage_scope = &quot;global&quot;
 allocate s1[float32 * 32]
-produce scan {
-  for (i, 0, n) {
-    scan[(i*stride)] = X[(i*stride)]
-  }
-  for (scan.idx, 0, (m - 1)) {
-    for (i.outer, 0, floordiv((n + 31), 32)) {
-      produce s1 {
-        for (i, 0, 32) {
-          if (likely((((i.outer*32) + i) &lt; n))) {
-            s1[i] = (scan[((scan.idx*stride) + (((i.outer*32) + i)*stride))]*2f)
-          }
-        }
+for (i, 0, n) {
+  scan[(i*stride)] = X[(i*stride)]
+}
+for (scan.idx, 0, (m - 1)) {
+  for (i.outer, 0, floordiv((n + 31), 32)) {
+    for (i, 0, 32) {
+      if (likely((((i.outer*32) + i) &lt; n))) {
+        s1[i] = (scan[((scan.idx*stride) + (((i.outer*32) + i)*stride))]*2f)
       }
-      for (i.inner, 0, 32) {
-        if (likely((((i.outer*32) + i.inner) &lt; n))) {
-          scan[(((scan.idx + 1)*stride) + (((i.outer*32) + i.inner)*stride))] = (s1[i.inner] + X[(((scan.idx + 1)*stride) + (((i.outer*32) + i.inner)*stride))])
-        }
+    }
+    for (i.inner, 0, 32) {
+      if (likely((((i.outer*32) + i.inner) &lt; n))) {
+        scan[(((scan.idx + 1)*stride) + (((i.outer*32) + i.inner)*stride))] = (s1[i.inner] + X[(((scan.idx + 1)*stride) + (((i.outer*32) + i.inner)*stride))])
       }
     }
   }
@@ -375,20 +369,18 @@ The following example demonstrates how we can build recurrence with two states.<
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>produce scan {
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i, 0, n) {
+  scan.v0[(i*stride)] = X[(i*stride)]
+}
+for (i, 0, l) {
+  scan.v1[(i*stride)] = 0f
+}
+for (scan.idx, 0, (m - 1)) {
   for (i, 0, n) {
-    scan.v0[(i*stride)] = X[(i*stride)]
+    scan.v0[(((scan.idx + 1)*stride) + (i*stride))] = (scan.v0[((scan.idx*stride) + (i*stride))] + X[(((scan.idx + 1)*stride) + (i*stride))])
   }
   for (i, 0, l) {
-    scan.v1[(i*stride)] = 0f
-  }
-  for (scan.idx, 0, (m - 1)) {
-    for (i, 0, n) {
-      scan.v0[(((scan.idx + 1)*stride) + (i*stride))] = (scan.v0[((scan.idx*stride) + (i*stride))] + X[(((scan.idx + 1)*stride) + (i*stride))])
-    }
-    for (i, 0, l) {
-      scan.v1[(((scan.idx + 1)*stride) + (i*stride))] = (scan.v1[((scan.idx*stride) + (i*stride))] + scan.v0[(scan.idx*stride)])
-    }
+    scan.v1[(((scan.idx + 1)*stride) + (i*stride))] = (scan.v1[((scan.idx*stride) + (i*stride))] + scan.v0[(scan.idx*stride)])
   }
 }
 </pre></div>

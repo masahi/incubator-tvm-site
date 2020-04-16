@@ -27,7 +27,6 @@ var searchData=
   ['is_5finput',['is_input',['../structtvm_1_1relay_1_1ShapeFuncAttrs.html#a1697a5a1b9e17876dd1a3db8a31264a5',1,'tvm::relay::ShapeFuncAttrs']]],
   ['is_5fopengl',['is_opengl',['../classtvm_1_1te_1_1StageNode.html#a1c4533e83d0b9ae647f5f4dcd15e4208',1,'tvm::te::StageNode']]],
   ['is_5foutput',['is_output',['../classtvm_1_1te_1_1StageNode.html#af5cc9e6c2276cf8abde8f437f8bdbda4',1,'tvm::te::StageNode']]],
-  ['is_5fproducer',['is_producer',['../classtvm_1_1tir_1_1ProducerConsumerNode.html#a98b5bfa381b562072ccce2e5c8e68f47',1,'tvm::tir::ProducerConsumerNode']]],
   ['isfinite',['isfinite',['../classtvm_1_1tir_1_1CallNode.html#ababe5c5ec515672f90018263dd186cd1',1,'tvm::tir::CallNode']]],
   ['isinf',['isinf',['../classtvm_1_1tir_1_1CallNode.html#ac302718e33b936c727233696982cc52d',1,'tvm::tir::CallNode']]],
   ['isnan',['isnan',['../classtvm_1_1tir_1_1CallNode.html#af9579b5cc850ea3d2b5d0e5cd88c4c9a',1,'tvm::tir::CallNode']]],

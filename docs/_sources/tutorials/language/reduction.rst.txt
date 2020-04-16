@@ -92,12 +92,10 @@ Before doing anything, let us print out the IR code of default schedule.
 
  .. code-block:: none
 
-    produce B {
-      for (i, 0, n) {
-        B[(i*stride)] = 0f
-        for (k, 0, m) {
-          B[(i*stride)] = (B[(i*stride)] + A[((i*stride) + (k*stride))])
-        }
+    for (i, 0, n) {
+      B[(i*stride)] = 0f
+      for (k, 0, m) {
+        B[(i*stride)] = (B[(i*stride)] + A[((i*stride) + (k*stride))])
       }
     }
 
@@ -128,18 +126,16 @@ axis by different factors. The result is a nested reduction.
 
  .. code-block:: none
 
-    produce B {
-      for (i.outer, 0, floordiv((n + 31), 32)) {
-        for (i.inner, 0, 32) {
-          if (likely((((i.outer*32) + i.inner) < n))) {
-            B[(((i.outer*32) + i.inner)*stride)] = 0f
-          }
-          for (k.outer, 0, floordiv((m + 15), 16)) {
-            for (k.inner, 0, 16) {
-              if (likely((((i.outer*32) + i.inner) < n))) {
-                if (likely((((k.outer*16) + k.inner) < m))) {
-                  B[(((i.outer*32) + i.inner)*stride)] = (B[(((i.outer*32) + i.inner)*stride)] + A[((((i.outer*32) + i.inner)*stride) + (((k.outer*16) + k.inner)*stride))])
-                }
+    for (i.outer, 0, floordiv((n + 31), 32)) {
+      for (i.inner, 0, 32) {
+        if (likely((((i.outer*32) + i.inner) < n))) {
+          B[(((i.outer*32) + i.inner)*stride)] = 0f
+        }
+        for (k.outer, 0, floordiv((m + 15), 16)) {
+          for (k.inner, 0, 16) {
+            if (likely((((i.outer*32) + i.inner) < n))) {
+              if (likely((((k.outer*16) + k.inner) < m))) {
+                B[(((i.outer*32) + i.inner)*stride)] = (B[(((i.outer*32) + i.inner)*stride)] + A[((((i.outer*32) + i.inner)*stride) + (((k.outer*16) + k.inner)*stride))])
               }
             }
           }
@@ -169,18 +165,16 @@ If we are building a GPU kernel, we can bind the rows of B to GPU threads.
 
  .. code-block:: none
 
-    produce B {
-      // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = floordiv((n + 31), 32)
-      // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 32
-      if (likely((((blockIdx.x*32) + threadIdx.x) < n))) {
-        B[(((blockIdx.x*32) + threadIdx.x)*stride)] = 0f
-      }
-      for (k.outer, 0, floordiv((m + 15), 16)) {
-        for (k.inner, 0, 16) {
-          if (likely((((blockIdx.x*32) + threadIdx.x) < n))) {
-            if (likely((((k.outer*16) + k.inner) < m))) {
-              B[(((blockIdx.x*32) + threadIdx.x)*stride)] = (B[(((blockIdx.x*32) + threadIdx.x)*stride)] + A[((((blockIdx.x*32) + threadIdx.x)*stride) + (((k.outer*16) + k.inner)*stride))])
-            }
+    // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = floordiv((n + 31), 32)
+    // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 32
+    if (likely((((blockIdx.x*32) + threadIdx.x) < n))) {
+      B[(((blockIdx.x*32) + threadIdx.x)*stride)] = 0f
+    }
+    for (k.outer, 0, floordiv((m + 15), 16)) {
+      for (k.inner, 0, 16) {
+        if (likely((((blockIdx.x*32) + threadIdx.x) < n))) {
+          if (likely((((k.outer*16) + k.inner) < m))) {
+            B[(((blockIdx.x*32) + threadIdx.x)*stride)] = (B[(((blockIdx.x*32) + threadIdx.x)*stride)] + A[((((blockIdx.x*32) + threadIdx.x)*stride) + (((k.outer*16) + k.inner)*stride))])
           }
         }
       }
@@ -221,24 +215,20 @@ result B.rf. The factored dimension becomes the first dimension of B.rf.
 
     // attr [B.rf] storage_scope = "global"
     allocate B.rf[float32 * (n*16)]
-    produce B.rf {
-      for (k.inner, 0, 16) {
-        for (i, 0, n) {
-          B.rf[((k.inner*n) + i)] = 0f
-          for (k.outer, 0, floordiv((m + 15), 16)) {
-            if (likely((((k.outer*16) + k.inner) < m))) {
-              B.rf[((k.inner*n) + i)] = (B.rf[((k.inner*n) + i)] + A[((i*stride) + (((k.outer*16) + k.inner)*stride))])
-            }
+    for (k.inner, 0, 16) {
+      for (i, 0, n) {
+        B.rf[((k.inner*n) + i)] = 0f
+        for (k.outer, 0, floordiv((m + 15), 16)) {
+          if (likely((((k.outer*16) + k.inner) < m))) {
+            B.rf[((k.inner*n) + i)] = (B.rf[((k.inner*n) + i)] + A[((i*stride) + (((k.outer*16) + k.inner)*stride))])
           }
         }
       }
     }
-    produce B {
-      for (ax0, 0, n) {
-        B[(ax0*stride)] = 0f
-        for (k.inner.v, 0, 16) {
-          B[(ax0*stride)] = (B[(ax0*stride)] + B.rf[((k.inner.v*n) + ax0)])
-        }
+    for (ax0, 0, n) {
+      B[(ax0*stride)] = 0f
+      for (k.inner.v, 0, 16) {
+        B[(ax0*stride)] = (B[(ax0*stride)] + B.rf[((k.inner.v*n) + ax0)])
       }
     }
 
@@ -392,14 +382,12 @@ Here is an example for 2D convolution with filter size = [3, 3] and strides = [1
 
  .. code-block:: none
 
-    produce Output {
-      for (i, 0, (n - 2)) {
-        for (j, 0, (n - 2)) {
-          Output[((i*(n - 2)) + j)] = 0f
-          for (di, 0, 3) {
-            for (dj, 0, 3) {
-              Output[((i*(n - 2)) + j)] = (Output[((i*(n - 2)) + j)] + (Input[(((i + di)*stride) + ((j + dj)*stride))]*Filter[((di*3) + dj)]))
-            }
+    for (i, 0, (n - 2)) {
+      for (j, 0, (n - 2)) {
+        Output[((i*(n - 2)) + j)] = 0f
+        for (di, 0, 3) {
+          for (dj, 0, 3) {
+            Output[((i*(n - 2)) + j)] = (Output[((i*(n - 2)) + j)] + (Input[(((i + di)*stride) + ((j + dj)*stride))]*Filter[((di*3) + dj)]))
           }
         }
       }

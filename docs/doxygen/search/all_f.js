@@ -16,7 +16,6 @@ var searchData=
   ['negative',['negative',['../namespacetopi.html#a9953d63728137b5bba2ef2832963e411',1,'topi']]],
   ['nenode',['NENode',['../classtvm_1_1tir_1_1NENode.html',1,'tvm::tir']]],
   ['new',['New',['../classtvm_1_1runtime_1_1SimpleObjAllocator_1_1Handler.html#af605b9c8534aa0731632f8dd9d32327d',1,'tvm::runtime::SimpleObjAllocator::Handler::New()'],['../classtvm_1_1runtime_1_1SimpleObjAllocator_1_1ArrayHandler.html#a025fadf9131cce88df531f00c8180d39',1,'tvm::runtime::SimpleObjAllocator::ArrayHandler::New()']]],
-  ['new_5fexpr',['new_expr',['../classtvm_1_1tir_1_1AllocateNode.html#a52b31635e23aeb6e18e83aa3cc9f8d00',1,'tvm::tir::AllocateNode']]],
   ['newshape',['newshape',['../structtvm_1_1relay_1_1ReshapeAttrs.html#a9bca32c3acff2ed8fd6bc63a50f82051',1,'tvm::relay::ReshapeAttrs']]],
   ['nn_2eh',['nn.h',['../include_2tvm_2relay_2attrs_2nn_8h.html',1,'']]],
   ['nn_2eh',['nn.h',['../topi_2include_2topi_2nn_8h.html',1,'']]],

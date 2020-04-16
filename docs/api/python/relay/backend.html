@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../../../_static/css/tvm_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="tvm.relay.frontend" href="frontend.html" />
+    <link rel="next" title="tvm.relay.testing" href="testing.html" />
     <link rel="prev" title="tvm.relay.analysis" href="analysis.html" /> 
 </head>
 
@@ -115,22 +115,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../te.html">tvm.te</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../driver.html">tvm.driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">tvm.relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend.html">tvm.relay.frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nn.html">tvm.relay.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vision.html">tvm.relay.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image.html">tvm.relay.image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">tvm.relay.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tvm.relay.backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">tvm.relay.testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">tvm.relay</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">tvm.relay.backend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontend.html">tvm.relay.frontend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="image.html">tvm.relay.image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="transform.html">tvm.relay.transform</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nn.html">tvm.relay.nn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="op.html">tvm.relay.op</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vision.html">tvm.relay.vision</a></li>
-<li class="toctree-l3"><a class="reference internal" href="testing.html">tvm.relay.testing</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../vta/index.html">vta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topi.html">topi</a></li>
 </ul>
@@ -191,8 +188,6 @@
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../index.html">Python API</a> &raquo;</li>
-        
-          <li><a href="index.html">tvm.relay</a> &raquo;</li>
         
       <li>tvm.relay.backend</li>
     
@@ -323,7 +318,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>op</strong> (<a class="reference internal" href="op.html#tvm.relay.op.Op" title="tvm.relay.op.Op"><em>relay.op.Op</em></a>) – Relay operator.</p></li>
+<li><p><strong>op</strong> (<em>relay.op.Op</em>) – Relay operator.</p></li>
 <li><p><strong>attrs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><em>object</em></a>) – The op attribute.</p></li>
 <li><p><strong>inputs</strong> (<em>List</em><em>[</em><a class="reference internal" href="../te.html#tvm.te.Tensor" title="tvm.te.Tensor"><em>tvm.te.Tensor</em></a><em>]</em>) – Input tensors to the op.</p></li>
 <li><p><strong>out_type</strong> (<em>relay.Type</em>) – The output type.</p></li>
@@ -352,7 +347,7 @@ highest plevel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>op</strong> (<a class="reference internal" href="op.html#tvm.relay.op.Op" title="tvm.relay.op.Op"><em>relay.op.Op</em></a>) – Relay operator.</p></li>
+<li><p><strong>op</strong> (<em>relay.op.Op</em>) – Relay operator.</p></li>
 <li><p><strong>attrs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><em>object</em></a>) – The op attribute.</p></li>
 <li><p><strong>inputs</strong> (<em>List</em><em>[</em><a class="reference internal" href="../te.html#tvm.te.Tensor" title="tvm.te.Tensor"><em>tvm.te.Tensor</em></a><em>]</em>) – Input tensors to the op.</p></li>
 <li><p><strong>out_type</strong> (<em>relay.Type</em>) – The output type.</p></li>
@@ -653,7 +648,7 @@ supported by <cite>tvm.runtime.vm</cite>.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="frontend.html" class="btn btn-neutral float-right" title="tvm.relay.frontend" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="testing.html" class="btn btn-neutral float-right" title="tvm.relay.testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="analysis.html" class="btn btn-neutral float-left" title="tvm.relay.analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

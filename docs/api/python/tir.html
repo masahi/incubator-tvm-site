@@ -115,11 +115,19 @@
 <li class="toctree-l2"><a class="reference internal" href="te.html">tvm.te</a></li>
 <li class="toctree-l2"><a class="reference internal" href="te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="driver.html">tvm.driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/index.html">tvm.relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/frontend.html">tvm.relay.frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/nn.html">tvm.relay.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/vision.html">tvm.relay.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/image.html">tvm.relay.image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/transform.html">tvm.relay.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/analysis.html">tvm.relay.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/backend.html">tvm.relay.backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/testing.html">tvm.relay.testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay/index.html">tvm.relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vta/index.html">vta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topi.html">topi</a></li>
 </ul>
@@ -333,46 +341,43 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.PrimFunc" title="tvm.tir.PrimFunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PrimFunc</span></code></a>(params, body[, ret_type, …])</p></td>
 <td><p>A function declaration expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.ProducerConsumer" title="tvm.tir.ProducerConsumer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProducerConsumer</span></code></a>(func, is_producer, body)</p></td>
-<td><p>ProducerConsumer node.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Provide" title="tvm.tir.Provide"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Provide</span></code></a>(func, value_index, value, args)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Provide" title="tvm.tir.Provide"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Provide</span></code></a>(func, value_index, value, args)</p></td>
 <td><p>Provide node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Ramp" title="tvm.tir.Ramp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ramp</span></code></a>(base, stride, lanes)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Ramp" title="tvm.tir.Ramp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ramp</span></code></a>(base, stride, lanes)</p></td>
 <td><p>Ramp node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Realize" title="tvm.tir.Realize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Realize</span></code></a>(func, value_index, dtype, bounds, …)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Realize" title="tvm.tir.Realize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Realize</span></code></a>(func, value_index, dtype, bounds, …)</p></td>
 <td><p>Realize node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Reduce" title="tvm.tir.Reduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Reduce</span></code></a>(combiner, src, rdom, condition, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Reduce" title="tvm.tir.Reduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Reduce</span></code></a>(combiner, src, rdom, condition, …)</p></td>
 <td><p>Reduce node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Select" title="tvm.tir.Select"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Select</span></code></a>(condition, true_value, false_value)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Select" title="tvm.tir.Select"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Select</span></code></a>(condition, true_value, false_value)</p></td>
 <td><p>Select node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.SeqStmt" title="tvm.tir.SeqStmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeqStmt</span></code></a>(seq)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.SeqStmt" title="tvm.tir.SeqStmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeqStmt</span></code></a>(seq)</p></td>
 <td><p>Sequence of statements.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Shuffle" title="tvm.tir.Shuffle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Shuffle</span></code></a>(vectors, indices)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Shuffle" title="tvm.tir.Shuffle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Shuffle</span></code></a>(vectors, indices)</p></td>
 <td><p>Shuffle node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.SizeVar" title="tvm.tir.SizeVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SizeVar</span></code></a>(name, dtype)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.SizeVar" title="tvm.tir.SizeVar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SizeVar</span></code></a>(name, dtype)</p></td>
 <td><p>Symbolic variable to represent a tensor index size    which is greater or equal to zero.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Stmt" title="tvm.tir.Stmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Stmt</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Stmt" title="tvm.tir.Stmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Stmt</span></code></a></p></td>
 <td><p>Base class of all the statements.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Store" title="tvm.tir.Store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Store</span></code></a>(buffer_var, value, index[, predicate])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Store" title="tvm.tir.Store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Store</span></code></a>(buffer_var, value, index[, predicate])</p></td>
 <td><p>Store node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.StringImm" title="tvm.tir.StringImm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringImm</span></code></a>(value)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.StringImm" title="tvm.tir.StringImm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringImm</span></code></a>(value)</p></td>
 <td><p>String constant.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Sub" title="tvm.tir.Sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sub</span></code></a>(a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Sub" title="tvm.tir.Sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sub</span></code></a>(a, b)</p></td>
 <td><p>Sub node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.Var" title="tvm.tir.Var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Var</span></code></a>(name, dtype)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.tir.Var" title="tvm.tir.Var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Var</span></code></a>(name, dtype)</p></td>
 <td><p>Symbolic variable.</p></td>
 </tr>
 </tbody>
@@ -1527,21 +1532,6 @@ the correct branch.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="tvm.tir.ProducerConsumer">
-<em class="property">class </em><code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">ProducerConsumer</code><span class="sig-paren">(</span><em class="sig-param">func</em>, <em class="sig-param">is_producer</em>, <em class="sig-param">body</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.ProducerConsumer" title="Permalink to this definition">¶</a></dt>
-<dd><p>ProducerConsumer node.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>func</strong> (<em>Operation</em>) – The Operation.</p></li>
-<li><p><strong>is_producer</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Whether if the node is producer.</p></li>
-<li><p><strong>body</strong> (<a class="reference internal" href="#tvm.tir.Stmt" title="tvm.tir.Stmt"><em>Stmt</em></a>) – The body statement.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="class">
 <dt id="tvm.tir.For">
 <em class="property">class </em><code class="sig-prename descclassname">tvm.tir.</code><code class="sig-name descname">For</code><span class="sig-paren">(</span><em class="sig-param">loop_var</em>, <em class="sig-param">min_val</em>, <em class="sig-param">extent</em>, <em class="sig-param">for_type</em>, <em class="sig-param">device_api</em>, <em class="sig-param">body</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.For" title="Permalink to this definition">¶</a></dt>
 <dd><p>For node.</p>
@@ -1770,38 +1760,6 @@ the correct branch.</p>
 </ul>
 </dd>
 </dl>
-<p><strong>Methods</strong></p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.tir.PrimFunc.with_attr" title="tvm.tir.PrimFunc.with_attr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_attr</span></code></a>(attr_key, attr_value)</p></td>
-<td><p>Create a new copy of the function and update the attribute</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="tvm.tir.PrimFunc.with_attr">
-<code class="sig-name descname">with_attr</code><span class="sig-paren">(</span><em class="sig-param">attr_key</em>, <em class="sig-param">attr_value</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.tir.PrimFunc.with_attr" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new copy of the function and update the attribute</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>attr_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The attribute key to use.</p></li>
-<li><p><strong>attr_value</strong> (<a class="reference internal" href="runtime.html#tvm.runtime.Object" title="tvm.runtime.Object"><em>Object</em></a>) – The new attribute value.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>func</strong> – A new copy of the function</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="relay/index.html#tvm.relay.Function" title="tvm.relay.Function">Function</a></p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="function">

@@ -5,7 +5,7 @@
 
 Computation times
 =================
-**00:00.450** total execution time for **tutorials_dev** files:
+**00:00.472** total execution time for **tutorials_dev** files:
 
-- **00:00.311**: :ref:`sphx_glr_tutorials_dev_relay_pass_infra.py` (``relay_pass_infra.py``)
-- **00:00.139**: :ref:`sphx_glr_tutorials_dev_low_level_custom_pass.py` (``low_level_custom_pass.py``)
+- **00:00.332**: :ref:`sphx_glr_tutorials_dev_relay_pass_infra.py` (``relay_pass_infra.py``)
+- **00:00.140**: :ref:`sphx_glr_tutorials_dev_low_level_custom_pass.py` (``low_level_custom_pass.py``)

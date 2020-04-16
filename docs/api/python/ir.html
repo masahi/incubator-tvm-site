@@ -115,11 +115,19 @@
 <li class="toctree-l2"><a class="reference internal" href="te.html">tvm.te</a></li>
 <li class="toctree-l2"><a class="reference internal" href="te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="driver.html">tvm.driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/index.html">tvm.relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/frontend.html">tvm.relay.frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/nn.html">tvm.relay.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/vision.html">tvm.relay.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/image.html">tvm.relay.image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/transform.html">tvm.relay.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/analysis.html">tvm.relay.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/backend.html">tvm.relay.backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay/testing.html">tvm.relay.testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay/index.html">tvm.relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vta/index.html">vta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topi.html">topi</a></li>
 </ul>
@@ -948,10 +956,42 @@ if the end argument is not None. Otherwise, it creates <cite>[0, begin)</cite>.<
 </tr>
 </tbody>
 </table>
+<p><strong>Methods</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.ir.BaseFunc.with_attr" title="tvm.ir.BaseFunc.with_attr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_attr</span></code></a>(attr_key_or_dict[, attr_value])</p></td>
+<td><p>Create a new copy of the function and update the attribute.</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="tvm.ir.BaseFunc.attrs">
 <em class="property">property </em><code class="sig-name descname">attrs</code><a class="headerlink" href="#tvm.ir.BaseFunc.attrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the attrs member of the function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tvm.ir.BaseFunc.with_attr">
+<code class="sig-name descname">with_attr</code><span class="sig-paren">(</span><em class="sig-param">attr_key_or_dict</em>, <em class="sig-param">attr_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.ir.BaseFunc.with_attr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new copy of the function and update the attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attr_key_or_dict</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em>]</em>) – The attribute key to use or a dict containing multiple key value pairs.</p></li>
+<li><p><strong>attr_value</strong> (<a class="reference internal" href="runtime.html#tvm.runtime.Object" title="tvm.runtime.Object"><em>Object</em></a>) – The new attribute value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>func</strong> – A new copy of the function</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="relay/index.html#tvm.relay.Function" title="tvm.relay.Function">Function</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

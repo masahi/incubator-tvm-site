@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="tvm.relay.transform" href="transform.html" />
-    <link rel="prev" title="tvm.relay.frontend" href="frontend.html" /> 
+    <link rel="prev" title="tvm.relay.vision" href="vision.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -115,22 +115,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../te.html">tvm.te</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../driver.html">tvm.driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">tvm.relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend.html">tvm.relay.frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nn.html">tvm.relay.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vision.html">tvm.relay.vision</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tvm.relay.image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">tvm.relay.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">tvm.relay.testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">tvm.relay</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontend.html">tvm.relay.frontend</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">tvm.relay.image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="transform.html">tvm.relay.transform</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nn.html">tvm.relay.nn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="op.html">tvm.relay.op</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vision.html">tvm.relay.vision</a></li>
-<li class="toctree-l3"><a class="reference internal" href="testing.html">tvm.relay.testing</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../vta/index.html">vta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topi.html">topi</a></li>
 </ul>
@@ -192,8 +189,6 @@
         
           <li><a href="../index.html">Python API</a> &raquo;</li>
         
-          <li><a href="index.html">tvm.relay</a> &raquo;</li>
-        
       <li>tvm.relay.image</li>
     
     
@@ -213,25 +208,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-tvm.relay.op.image">
-<span id="tvm-relay-image"></span><h1>tvm.relay.image<a class="headerlink" href="#module-tvm.relay.op.image" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-tvm.relay.image">
+<span id="tvm-relay-image"></span><h1>tvm.relay.image<a class="headerlink" href="#module-tvm.relay.image" title="Permalink to this headline">¶</a></h1>
 <p>Image network related operators.</p>
-<dl class="class">
-<dt id="tvm.relay.op.image.OpPattern">
-<em class="property">class </em><code class="sig-prename descclassname">tvm.relay.op.image.</code><code class="sig-name descname">OpPattern</code><a class="headerlink" href="#tvm.relay.op.image.OpPattern" title="Permalink to this definition">¶</a></dt>
-<dd><p>Operator generic patterns</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">top.tag</span></code></dt><dd><p>Contains explanation of the tag type.</p>
-</dd>
-</dl>
-</div>
-</dd></dl>
-
+<p><strong>Functions</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.image.crop_and_resize" title="tvm.relay.image.crop_and_resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crop_and_resize</span></code></a>(data, boxes, box_indices, …)</p></td>
+<td><p>Crop input images and resize them.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.image.dilation2d" title="tvm.relay.image.dilation2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dilation2d</span></code></a>(data, weight[, strides, padding, …])</p></td>
+<td><p>Morphological Dilation 2D.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.image.resize" title="tvm.relay.image.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize</span></code></a>(data, size[, layout, method, …])</p></td>
+<td><p>Image resize operator.</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="function">
-<dt id="tvm.relay.op.image.crop_and_resize">
-<code class="sig-prename descclassname">tvm.relay.op.image.</code><code class="sig-name descname">crop_and_resize</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">boxes</em>, <em class="sig-param">box_indices</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">layout</em>, <em class="sig-param">method='bilinear'</em>, <em class="sig-param">extrapolation_value=0</em>, <em class="sig-param">out_dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.op.image.crop_and_resize" title="Permalink to this definition">¶</a></dt>
+<dt id="tvm.relay.image.crop_and_resize">
+<code class="sig-prename descclassname">tvm.relay.image.</code><code class="sig-name descname">crop_and_resize</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">boxes</em>, <em class="sig-param">box_indices</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">layout</em>, <em class="sig-param">method='bilinear'</em>, <em class="sig-param">extrapolation_value=0</em>, <em class="sig-param">out_dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.image.crop_and_resize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Crop input images and resize them.</p>
 <p>method indicates the algorithm to be used while calculating the out value
 and method can be either “bilinear” or “nearest_neighbor”.</p>
@@ -260,8 +260,8 @@ the i-th box refers to.</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="tvm.relay.op.image.dilation2d">
-<code class="sig-prename descclassname">tvm.relay.op.image.</code><code class="sig-name descname">dilation2d</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">weight</em>, <em class="sig-param">strides=(1</em>, <em class="sig-param">1)</em>, <em class="sig-param">padding=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">dilations=(1</em>, <em class="sig-param">1)</em>, <em class="sig-param">data_layout='NCHW'</em>, <em class="sig-param">kernel_layout='IHW'</em>, <em class="sig-param">out_dtype=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.op.image.dilation2d" title="Permalink to this definition">¶</a></dt>
+<dt id="tvm.relay.image.dilation2d">
+<code class="sig-prename descclassname">tvm.relay.image.</code><code class="sig-name descname">dilation2d</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">weight</em>, <em class="sig-param">strides=(1</em>, <em class="sig-param">1)</em>, <em class="sig-param">padding=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">dilations=(1</em>, <em class="sig-param">1)</em>, <em class="sig-param">data_layout='NCHW'</em>, <em class="sig-param">kernel_layout='IHW'</em>, <em class="sig-param">out_dtype=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.image.dilation2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Morphological Dilation 2D.
 This operator takes the weight as the dilation kernel and dilates it with
 data to produce an output. In the default case, where the data_layout is <cite>NCHW</cite>
@@ -304,8 +304,8 @@ will convert the layout to the canonical layout
 </dd></dl>
 
 <dl class="function">
-<dt id="tvm.relay.op.image.resize">
-<code class="sig-prename descclassname">tvm.relay.op.image.</code><code class="sig-name descname">resize</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">size</em>, <em class="sig-param">layout='NCHW'</em>, <em class="sig-param">method='bilinear'</em>, <em class="sig-param">coordinate_transformation_mode='half_pixel'</em>, <em class="sig-param">out_dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.op.image.resize" title="Permalink to this definition">¶</a></dt>
+<dt id="tvm.relay.image.resize">
+<code class="sig-prename descclassname">tvm.relay.image.</code><code class="sig-name descname">resize</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">size</em>, <em class="sig-param">layout='NCHW'</em>, <em class="sig-param">method='bilinear'</em>, <em class="sig-param">coordinate_transformation_mode='half_pixel'</em>, <em class="sig-param">out_dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.image.resize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Image resize operator.</p>
 <p>This operator takes data as input and does 2D scaling to the given scale factor.
 In the default case, where the data_layout is <cite>NCHW</cite>
@@ -349,7 +349,7 @@ Refer to the ONNX Resize operator specification for details.
         <a href="transform.html" class="btn btn-neutral float-right" title="tvm.relay.transform" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="frontend.html" class="btn btn-neutral float-left" title="tvm.relay.frontend" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vision.html" class="btn btn-neutral float-left" title="tvm.relay.vision" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

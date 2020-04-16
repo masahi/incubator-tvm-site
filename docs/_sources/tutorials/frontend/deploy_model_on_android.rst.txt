@@ -415,7 +415,7 @@ Execute on TVM
 
     TVM prediction top-1: tiger cat
     Evaluate inference time cost...
-    Mean inference time (std dev): 2.73 ms (0.03 ms)
+    Mean inference time (std dev): 2.18 ms (0.29 ms)
 
 
 

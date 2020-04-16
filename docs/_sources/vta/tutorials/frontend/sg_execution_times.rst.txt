@@ -5,7 +5,7 @@
 
 Computation times
 =================
-**00:53.252** total execution time for **vta_tutorials_frontend** files:
+**00:49.135** total execution time for **vta_tutorials_frontend** files:
 
-- **00:31.214**: :ref:`sphx_glr_vta_tutorials_frontend_deploy_detection.py` (``deploy_detection.py``)
-- **00:22.038**: :ref:`sphx_glr_vta_tutorials_frontend_deploy_classification.py` (``deploy_classification.py``)
+- **00:29.567**: :ref:`sphx_glr_vta_tutorials_frontend_deploy_detection.py` (``deploy_detection.py``)
+- **00:19.568**: :ref:`sphx_glr_vta_tutorials_frontend_deploy_classification.py` (``deploy_classification.py``)

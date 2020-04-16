@@ -730,7 +730,7 @@ sequential pass example could be like the following to enable IR dumping for
 <div class="highlight-python notranslate"><div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
     <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">InferType</span><span class="p">(),</span>
     <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">FoldConstant</span><span class="p">(),</span>
-    <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">PrintIR</span><span class="p">(),</span>
+    <span class="n">transform</span><span class="o">.</span><span class="n">PrintIR</span><span class="p">(),</span>
     <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">EliminateCommonSubexpr</span><span class="p">(),</span>
     <span class="n">relay</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">AlterOpLayout</span><span class="p">()</span>
 <span class="p">])</span>

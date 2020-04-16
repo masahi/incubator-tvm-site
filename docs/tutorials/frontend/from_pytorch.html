@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../../_static/css/tvm_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Compile TFLite Models" href="from_tflite.html" />
+    <link rel="next" title="Deploy a Framework-prequantized Model with TVM" href="deploy_prequantized.html" />
     <link rel="prev" title="Deploy the Pretrained Model on Raspberry Pi" href="deploy_model_on_rasp.html" /> 
 </head>
 
@@ -117,6 +117,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#look-up-synset-name">Look up synset name</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="deploy_prequantized.html">Deploy a Framework-prequantized Model with TVM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="from_tflite.html">Compile TFLite Models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="deploy_model_on_android.html">Deploy the Pretrained Model on Android</a></li>
 <li class="toctree-l3"><a class="reference internal" href="from_tensorflow.html">Compile Tensorflow Models</a></li>
@@ -289,8 +290,8 @@ be unstable.</p>
 </div>
 <div class="section" id="import-the-graph-to-relay">
 <h2>Import the graph to Relay<a class="headerlink" href="#import-the-graph-to-relay" title="Permalink to this headline">¶</a></h2>
-<p>Convert PyTorch graph to Relay graph.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="n">input_name</span> <span class="o">=</span> <span class="s1">&#39;input0&#39;</span>  <span class="c1"># only one input, set it to this name</span>
+<p>Convert PyTorch graph to Relay graph. The input name can be arbitrary.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="n">input_name</span> <span class="o">=</span> <span class="s1">&#39;input0&#39;</span>
 <span class="n">shape_list</span> <span class="o">=</span> <span class="p">[(</span><span class="n">input_name</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)]</span>
 <span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <a href="../../api/python/relay/frontend.html#tvm.relay.frontend.from_pytorch" title="View documentation for tvm.relay.frontend.from_pytorch"><span class="n">relay</span><span class="o">.</span><span class="n">frontend</span><span class="o">.</span><span class="n">from_pytorch</span></a><span class="p">(</span><span class="n">scripted_model</span><span class="p">,</span>
                                           <span class="n">shape_list</span><span class="p">)</span>
@@ -401,7 +402,7 @@ Torch top-1 id: 281, class name: tabby, tabby cat
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="from_tflite.html" class="btn btn-neutral float-right" title="Compile TFLite Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="deploy_prequantized.html" class="btn btn-neutral float-right" title="Deploy a Framework-prequantized Model with TVM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="deploy_model_on_rasp.html" class="btn btn-neutral float-left" title="Deploy the Pretrained Model on Raspberry Pi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

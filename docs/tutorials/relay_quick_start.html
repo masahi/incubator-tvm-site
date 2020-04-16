@@ -240,7 +240,7 @@ to show the network structure.</p>
 <span class="n">data_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">batch_size</span><span class="p">,)</span> <span class="o">+</span> <span class="n">image_shape</span>
 <span class="n">out_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">num_class</span><span class="p">)</span>
 
-<span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">resnet</span><span class="o">.</span><span class="n">get_workload</span><span class="p">(</span>
+<span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <a href="../api/python/relay/testing.html#tvm.relay.testing.resnet.get_workload" title="View documentation for tvm.relay.testing.resnet.get_workload"><span class="n">relay</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">resnet</span><span class="o">.</span><span class="n">get_workload</span></a><span class="p">(</span>
     <span class="n">num_layers</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="n">image_shape</span><span class="p">)</span>
 
 <span class="c1"># set show_meta_data=True if you want to show meta data</span>
@@ -371,57 +371,57 @@ in this example. Then the machine code will be generated as the module library.<
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>...1%, 0.01 MB, 48 KB/s, 0 seconds passed
-...3%, 0.02 MB, 97 KB/s, 0 seconds passed
-...5%, 0.02 MB, 145 KB/s, 0 seconds passed
-...7%, 0.03 MB, 192 KB/s, 0 seconds passed
-...9%, 0.04 MB, 240 KB/s, 0 seconds passed
-...11%, 0.05 MB, 288 KB/s, 0 seconds passed
-...13%, 0.05 MB, 335 KB/s, 0 seconds passed
-...15%, 0.06 MB, 381 KB/s, 0 seconds passed
-...17%, 0.07 MB, 429 KB/s, 0 seconds passed
-...19%, 0.08 MB, 474 KB/s, 0 seconds passed
-...21%, 0.09 MB, 521 KB/s, 0 seconds passed
-...23%, 0.09 MB, 568 KB/s, 0 seconds passed
-...25%, 0.10 MB, 615 KB/s, 0 seconds passed
-...27%, 0.11 MB, 659 KB/s, 0 seconds passed
-...29%, 0.12 MB, 705 KB/s, 0 seconds passed
-...31%, 0.12 MB, 751 KB/s, 0 seconds passed
-...33%, 0.13 MB, 798 KB/s, 0 seconds passed
-...35%, 0.14 MB, 842 KB/s, 0 seconds passed
-...37%, 0.15 MB, 889 KB/s, 0 seconds passed
-...39%, 0.16 MB, 932 KB/s, 0 seconds passed
-...41%, 0.16 MB, 978 KB/s, 0 seconds passed
-...43%, 0.17 MB, 1023 KB/s, 0 seconds passed
-...45%, 0.18 MB, 1069 KB/s, 0 seconds passed
-...47%, 0.19 MB, 1112 KB/s, 0 seconds passed
-...49%, 0.20 MB, 1158 KB/s, 0 seconds passed
-...51%, 0.20 MB, 1203 KB/s, 0 seconds passed
-...53%, 0.21 MB, 1248 KB/s, 0 seconds passed
-...55%, 0.22 MB, 1290 KB/s, 0 seconds passed
-...57%, 0.23 MB, 1335 KB/s, 0 seconds passed
-...59%, 0.23 MB, 1379 KB/s, 0 seconds passed
-...61%, 0.24 MB, 1424 KB/s, 0 seconds passed
-...63%, 0.25 MB, 1466 KB/s, 0 seconds passed
-...65%, 0.26 MB, 1511 KB/s, 0 seconds passed
-...67%, 0.27 MB, 1554 KB/s, 0 seconds passed
-...69%, 0.27 MB, 1599 KB/s, 0 seconds passed
-...71%, 0.28 MB, 1640 KB/s, 0 seconds passed
-...73%, 0.29 MB, 1684 KB/s, 0 seconds passed
-...75%, 0.30 MB, 1729 KB/s, 0 seconds passed
-...77%, 0.30 MB, 1773 KB/s, 0 seconds passed
-...79%, 0.31 MB, 1817 KB/s, 0 seconds passed
-...81%, 0.32 MB, 1861 KB/s, 0 seconds passed
-...83%, 0.33 MB, 1902 KB/s, 0 seconds passed
-...85%, 0.34 MB, 1946 KB/s, 0 seconds passed
-...87%, 0.34 MB, 1986 KB/s, 0 seconds passed
-...89%, 0.35 MB, 2030 KB/s, 0 seconds passed
-...91%, 0.36 MB, 2074 KB/s, 0 seconds passed
-...93%, 0.37 MB, 2118 KB/s, 0 seconds passed
-...95%, 0.38 MB, 2160 KB/s, 0 seconds passed
-...97%, 0.38 MB, 2204 KB/s, 0 seconds passed
-...99%, 0.39 MB, 2248 KB/s, 0 seconds passed
-...100%, 0.40 MB, 2291 KB/s, 0 seconds passed
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>...1%, 0.01 MB, 52 KB/s, 0 seconds passed
+...3%, 0.02 MB, 104 KB/s, 0 seconds passed
+...5%, 0.02 MB, 156 KB/s, 0 seconds passed
+...7%, 0.03 MB, 207 KB/s, 0 seconds passed
+...9%, 0.04 MB, 259 KB/s, 0 seconds passed
+...11%, 0.05 MB, 310 KB/s, 0 seconds passed
+...13%, 0.05 MB, 362 KB/s, 0 seconds passed
+...15%, 0.06 MB, 411 KB/s, 0 seconds passed
+...17%, 0.07 MB, 462 KB/s, 0 seconds passed
+...19%, 0.08 MB, 513 KB/s, 0 seconds passed
+...21%, 0.09 MB, 564 KB/s, 0 seconds passed
+...23%, 0.09 MB, 613 KB/s, 0 seconds passed
+...25%, 0.10 MB, 664 KB/s, 0 seconds passed
+...27%, 0.11 MB, 711 KB/s, 0 seconds passed
+...29%, 0.12 MB, 762 KB/s, 0 seconds passed
+...31%, 0.12 MB, 810 KB/s, 0 seconds passed
+...33%, 0.13 MB, 860 KB/s, 0 seconds passed
+...35%, 0.14 MB, 908 KB/s, 0 seconds passed
+...37%, 0.15 MB, 958 KB/s, 0 seconds passed
+...39%, 0.16 MB, 1007 KB/s, 0 seconds passed
+...41%, 0.16 MB, 1056 KB/s, 0 seconds passed
+...43%, 0.17 MB, 1103 KB/s, 0 seconds passed
+...45%, 0.18 MB, 1152 KB/s, 0 seconds passed
+...47%, 0.19 MB, 1200 KB/s, 0 seconds passed
+...49%, 0.20 MB, 1250 KB/s, 0 seconds passed
+...51%, 0.20 MB, 1296 KB/s, 0 seconds passed
+...53%, 0.21 MB, 1345 KB/s, 0 seconds passed
+...55%, 0.22 MB, 1392 KB/s, 0 seconds passed
+...57%, 0.23 MB, 1441 KB/s, 0 seconds passed
+...59%, 0.23 MB, 1487 KB/s, 0 seconds passed
+...61%, 0.24 MB, 1536 KB/s, 0 seconds passed
+...63%, 0.25 MB, 1581 KB/s, 0 seconds passed
+...65%, 0.26 MB, 1630 KB/s, 0 seconds passed
+...67%, 0.27 MB, 1676 KB/s, 0 seconds passed
+...69%, 0.27 MB, 1724 KB/s, 0 seconds passed
+...71%, 0.28 MB, 1768 KB/s, 0 seconds passed
+...73%, 0.29 MB, 1816 KB/s, 0 seconds passed
+...75%, 0.30 MB, 1858 KB/s, 0 seconds passed
+...77%, 0.30 MB, 1906 KB/s, 0 seconds passed
+...79%, 0.31 MB, 1954 KB/s, 0 seconds passed
+...81%, 0.32 MB, 2001 KB/s, 0 seconds passed
+...83%, 0.33 MB, 2049 KB/s, 0 seconds passed
+...85%, 0.34 MB, 2096 KB/s, 0 seconds passed
+...87%, 0.34 MB, 2139 KB/s, 0 seconds passed
+...89%, 0.35 MB, 2187 KB/s, 0 seconds passed
+...91%, 0.36 MB, 2234 KB/s, 0 seconds passed
+...93%, 0.37 MB, 2281 KB/s, 0 seconds passed
+...95%, 0.38 MB, 2326 KB/s, 0 seconds passed
+...97%, 0.38 MB, 2373 KB/s, 0 seconds passed
+...99%, 0.39 MB, 2417 KB/s, 0 seconds passed
+...100%, 0.40 MB, 2463 KB/s, 0 seconds passed
 Cannot find config for target=cuda -model=unknown, workload=(&#39;conv2d_nchw.cuda&#39;, (&#39;TENSOR&#39;, (1, 64, 56, 56), &#39;float32&#39;), (&#39;TENSOR&#39;, (64, 64, 3, 3), &#39;float32&#39;), (1, 1), (1, 1, 1, 1), (1, 1), &#39;float32&#39;). A fallback configuration is used, which may bring great performance regression.
 Cannot find config for target=cuda -model=unknown, workload=(&#39;conv2d_nchw.cuda&#39;, (&#39;TENSOR&#39;, (1, 128, 28, 28), &#39;float32&#39;), (&#39;TENSOR&#39;, (128, 128, 3, 3), &#39;float32&#39;), (1, 1), (1, 1, 1, 1), (1, 1), &#39;float32&#39;). A fallback configuration is used, which may bring great performance regression.
 Cannot find config for target=cuda -model=unknown, workload=(&#39;conv2d_nchw.cuda&#39;, (&#39;TENSOR&#39;, (1, 256, 14, 14), &#39;float32&#39;), (&#39;TENSOR&#39;, (256, 256, 3, 3), &#39;float32&#39;), (1, 1), (1, 1, 1, 1), (1, 1), &#39;float32&#39;). A fallback configuration is used, which may bring great performance regression.

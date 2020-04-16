@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../../../_static/css/tvm_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="tvm.relay.image" href="image.html" />
-    <link rel="prev" title="tvm.relay.backend" href="backend.html" /> 
+    <link rel="next" title="tvm.relay.nn" href="nn.html" />
+    <link rel="prev" title="tvm.relay" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -115,22 +115,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../te.html">tvm.te</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../te.html#module-tvm.te.hybrid">tvm.te.hybrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../driver.html">tvm.driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">tvm.relay</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tvm.relay.frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nn.html">tvm.relay.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vision.html">tvm.relay.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image.html">tvm.relay.image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">tvm.relay.transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">tvm.relay.testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../autotvm.html">tvm.autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rpc.html">tvm.rpc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contrib.html">tvm.contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../graph_runtime.html">tvm.contrib.graph_runtime</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">tvm.relay</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="analysis.html">tvm.relay.analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="backend.html">tvm.relay.backend</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">tvm.relay.frontend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="image.html">tvm.relay.image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="transform.html">tvm.relay.transform</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nn.html">tvm.relay.nn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="op.html">tvm.relay.op</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vision.html">tvm.relay.vision</a></li>
-<li class="toctree-l3"><a class="reference internal" href="testing.html">tvm.relay.testing</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../vta/index.html">vta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topi.html">topi</a></li>
 </ul>
@@ -192,8 +189,6 @@
         
           <li><a href="../index.html">Python API</a> &raquo;</li>
         
-          <li><a href="index.html">tvm.relay</a> &raquo;</li>
-        
       <li>tvm.relay.frontend</li>
     
     
@@ -218,6 +213,54 @@
 <p>Frontends for constructing Relay programs.</p>
 <p>Contains the model importers currently defined
 for Relay.</p>
+<p><strong>Functions</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.dequantize_mxnet_min_max" title="tvm.relay.frontend.dequantize_mxnet_min_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dequantize_mxnet_min_max</span></code></a>(data, min_range, …)</p></td>
+<td><p>Dequantizes the given <cite>data</cite> in {int8 or uint8} and the given min and max ranges.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_caffe2" title="tvm.relay.frontend.from_caffe2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_caffe2</span></code></a>(init_net, predict_net[, shape, …])</p></td>
+<td><p>Load caffe2 graph which contains init_net and predict_net into Relay Function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_coreml" title="tvm.relay.frontend.from_coreml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_coreml</span></code></a>(model[, shape])</p></td>
+<td><p>Convert from coreml model into Relay Function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_darknet" title="tvm.relay.frontend.from_darknet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_darknet</span></code></a>(net[, shape, dtype])</p></td>
+<td><p>Convert from Darknet’s model into compatible relay Function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_keras" title="tvm.relay.frontend.from_keras"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_keras</span></code></a>(model[, shape, layout])</p></td>
+<td><p>Convert keras model to relay Function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_mxnet" title="tvm.relay.frontend.from_mxnet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_mxnet</span></code></a>(symbol[, shape, dtype, …])</p></td>
+<td><p>Convert from MXNet”s model into compatible relay Function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_onnx" title="tvm.relay.frontend.from_onnx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_onnx</span></code></a>(model[, shape, dtype, opset])</p></td>
+<td><p>Convert a ONNX model into an equivalent Relay Function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_pytorch" title="tvm.relay.frontend.from_pytorch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_pytorch</span></code></a>(script_module, input_shapes[, …])</p></td>
+<td><p>Load PyTorch model in the form of a scripted PyTorch model and convert into relay.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_tensorflow" title="tvm.relay.frontend.from_tensorflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_tensorflow</span></code></a>(graph[, layout, shape, outputs])</p></td>
+<td><p>Load tensorflow graph which is a python tensorflow graph object into relay.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_tflite" title="tvm.relay.frontend.from_tflite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_tflite</span></code></a>(model, shape_dict, dtype_dict)</p></td>
+<td><p>Convert from tflite model into compatible relay Function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.get_mkldnn_int8_scale" title="tvm.relay.frontend.get_mkldnn_int8_scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_mkldnn_int8_scale</span></code></a>(range_min, range_max)</p></td>
+<td><p>Computes the quantization scale using MKLDNN specifications with the given range.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.get_mkldnn_uint8_scale" title="tvm.relay.frontend.get_mkldnn_uint8_scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_mkldnn_uint8_scale</span></code></a>(range_min, range_max)</p></td>
+<td><p>Computes the quantization scale using MKLDNN specifications with the given range.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.quantize_mxnet_min_max" title="tvm.relay.frontend.quantize_mxnet_min_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantize_mxnet_min_max</span></code></a>(data, min_range, …)</p></td>
+<td><p>Quantizes the given <cite>data</cite> in float32 and the given min and max ranges and the output data type.</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="function">
 <dt id="tvm.relay.frontend.from_mxnet">
 <code class="sig-prename descclassname">tvm.relay.frontend.</code><code class="sig-name descname">from_mxnet</code><span class="sig-paren">(</span><em class="sig-param">symbol</em>, <em class="sig-param">shape=None</em>, <em class="sig-param">dtype='float32'</em>, <em class="sig-param">arg_params=None</em>, <em class="sig-param">aux_params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_mxnet" title="Permalink to this definition">¶</a></dt>
@@ -238,6 +281,110 @@ for Relay.</p>
 <li><p><strong>params</strong> (<em>dict of str to tvm.nd.NDArray</em>) – The parameter dict to be used by nnvm</p></li>
 </ul>
 </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.relay.frontend.dequantize_mxnet_min_max">
+<code class="sig-prename descclassname">tvm.relay.frontend.</code><code class="sig-name descname">dequantize_mxnet_min_max</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">min_range</em>, <em class="sig-param">max_range</em>, <em class="sig-param">in_dtype='int8'</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.dequantize_mxnet_min_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dequantizes the given <cite>data</cite> in {int8 or uint8} and the given
+min and max ranges. The output data type is float32.
+Only <cite>float32</cite> is supported as output data types.
+The input data type is expected to be {int8 or uint8}.
+Mxnet has two different flavors for dequantization 1) Default 2)MKLDNN.
+To get the second one Mxnet must be built with MKLDNN during compile time.
+Users can choose either of the implementation for TVM runtime.
+The main difference between the two implementation is that MKLDNN is centered
+around 0 and the default implementation for uint8 is not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input tensor to be quantized. Can be of type float32.</p></li>
+<li><p><strong>min_range</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – The minimum to use data elements for the output.</p></li>
+<li><p><strong>max_range</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – The maximum to use for data elements for the output.</p></li>
+<li><p><strong>in_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – The input data type, can be ‘int8’ or ‘uint8’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – The computed result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tvm.relay.Expr</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.relay.frontend.quantize_mxnet_min_max">
+<code class="sig-prename descclassname">tvm.relay.frontend.</code><code class="sig-name descname">quantize_mxnet_min_max</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">min_range</em>, <em class="sig-param">max_range</em>, <em class="sig-param">out_dtype='int8'</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.quantize_mxnet_min_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quantizes the given <cite>data</cite> in float32 and the given
+min and max ranges and the output data type.
+Only <cite>int8</cite> and <cite>uint8</cite> is supported as output data types.
+The input data type is expected to be <cite>float32</cite>.
+Mxnet has two different flavors for quantization 1) Default 2)MKLDNN.
+To get the second one Mxnet must be built with MKLDNN during compile time.
+Users can choose either of the implementation for TVM runtime.
+The main difference between the two implementation is that MKLDNN is centered
+around 0 and the default implementation for uint8 is not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>tvm.relay.Expr</em>) – The input tensor to be quantized. Can be of type float32.</p></li>
+<li><p><strong>min_range</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – The minimum to use data elements.</p></li>
+<li><p><strong>max_range</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – The maximum to use for data elements.</p></li>
+<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – The output data type, can be ‘int8’ or ‘uint8’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – The computed result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tvm.relay.Expr</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.relay.frontend.get_mkldnn_int8_scale">
+<code class="sig-prename descclassname">tvm.relay.frontend.</code><code class="sig-name descname">get_mkldnn_int8_scale</code><span class="sig-paren">(</span><em class="sig-param">range_min</em>, <em class="sig-param">range_max</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.get_mkldnn_int8_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the quantization scale using MKLDNN specifications
+with the given range. The output datatype of tensor to be quantized should be
+int8.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>range_min</strong> (<em>float32</em>) – A number representing the lower end of the tensor to be quantized.</p></li>
+<li><p><strong>range_max</strong> (<em>float32</em>) – A number representing the upper end of the tensor to be quantized.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>scale</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A float32 number which acts as the scale for quantization.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.relay.frontend.get_mkldnn_uint8_scale">
+<code class="sig-prename descclassname">tvm.relay.frontend.</code><code class="sig-name descname">get_mkldnn_uint8_scale</code><span class="sig-paren">(</span><em class="sig-param">range_min</em>, <em class="sig-param">range_max</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.get_mkldnn_uint8_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the quantization scale using MKLDNN specifications
+with the given range. The output datatype of tensor to be quantized should be
+uint8.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>range_min</strong> (<em>float32</em>) – A number representing the lower end of the tensor to be quantized.</p></li>
+<li><p><strong>range_max</strong> (<em>float32</em>) – A number representing the upper end of the tensor to be quantized.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>scale</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A float32 number which acts as the scale for quantization.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -387,6 +534,28 @@ The companion parameters will be handled automatically.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="tvm.relay.frontend.from_darknet">
+<code class="sig-prename descclassname">tvm.relay.frontend.</code><code class="sig-name descname">from_darknet</code><span class="sig-paren">(</span><em class="sig-param">net</em>, <em class="sig-param">shape=None</em>, <em class="sig-param">dtype='float32'</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_darknet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert from Darknet’s model into compatible relay Function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>net</strong> (<em>Darknet net parameter</em>) – Darknet net structure.</p></li>
+<li><p><strong>shape</strong> (<em>dict of str to tuple</em><em>, </em><em>optional</em>) – The input shape to the graph</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – The input types to the graph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>mod</strong> (<em>tvm.IRModule</em>) – The relay module for compilation.</p></li>
+<li><p><strong>params</strong> (<em>dict of str to tvm.nd.NDArray</em>) – The parameter dict to be used by relay</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="tvm.relay.frontend.from_pytorch">
 <code class="sig-prename descclassname">tvm.relay.frontend.</code><code class="sig-name descname">from_pytorch</code><span class="sig-paren">(</span><em class="sig-param">script_module</em>, <em class="sig-param">input_shapes</em>, <em class="sig-param">custom_convert_map=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_pytorch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load PyTorch model in the form of a scripted PyTorch model and convert into relay.
@@ -422,10 +591,10 @@ remember names (such as: input0, input1)</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="image.html" class="btn btn-neutral float-right" title="tvm.relay.image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nn.html" class="btn btn-neutral float-right" title="tvm.relay.nn" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="backend.html" class="btn btn-neutral float-left" title="tvm.relay.backend" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="tvm.relay" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

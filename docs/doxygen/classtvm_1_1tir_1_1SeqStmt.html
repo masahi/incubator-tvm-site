@@ -207,7 +207,6 @@ template&lt;typename... Args&gt; </div>
 <ul>
 <li>When an argument is nullptr, it will be ignored.</li>
 <li>When an argument is an array or a <a class="el" href="classtvm_1_1tir_1_1SeqStmt.html" title="Sequence statement. ">SeqStmt</a>, it will be flattened recursively.</li>
-<li>When an argument is a consumer block in ProducerConsumer, the consumer tag will be dropped as such information is not useful in lowering.</li>
 <li>A normal <a class="el" href="classtvm_1_1tir_1_1Stmt.html" title="Container of all statements. ">Stmt</a> will be appended to the end of the sequence.</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>This function can directly return an element if it is the only element in the sequence.</dd></dl>

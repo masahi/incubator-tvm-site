@@ -40,7 +40,6 @@ var searchData=
   ['primfuncnode',['PrimFuncNode',['../classtvm_1_1tir_1_1PrimFuncNode.html',1,'tvm::tir']]],
   ['primtype',['PrimType',['../classtvm_1_1PrimType.html',1,'tvm']]],
   ['primtypenode',['PrimTypeNode',['../classtvm_1_1PrimTypeNode.html',1,'tvm']]],
-  ['producerconsumernode',['ProducerConsumerNode',['../classtvm_1_1tir_1_1ProducerConsumerNode.html',1,'tvm::tir']]],
   ['proposalattrs',['ProposalAttrs',['../structtvm_1_1relay_1_1ProposalAttrs.html',1,'tvm::relay']]],
   ['providenode',['ProvideNode',['../classtvm_1_1tir_1_1ProvideNode.html',1,'tvm::tir']]]
 ];

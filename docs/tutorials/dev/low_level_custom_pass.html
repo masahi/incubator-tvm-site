@@ -244,10 +244,8 @@ our customized lowering pass to manipulate the IR directly instead of using sche
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>produce c {
-  for (i, 0, 128) {
-    c[i] = (a[i] + b[i])
-  }
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i, 0, 128) {
+  c[i] = (a[i] + b[i])
 }
 </pre></div>
 </div>
@@ -328,11 +326,9 @@ this pass to TVM’s lower pass. We can first call this function directly as a s
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>produce c {
-  for (i.outer, 0, 16) {
-    vectorized (i.inner, 0, 8) {
-      c[((i.outer*8) + i.inner)] = (a[((i.outer*8) + i.inner)] + b[((i.outer*8) + i.inner)])
-    }
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i.outer, 0, 16) {
+  vectorized (i.inner, 0, 8) {
+    c[((i.outer*8) + i.inner)] = (a[((i.outer*8) + i.inner)] + b[((i.outer*8) + i.inner)])
   }
 }
 </pre></div>
@@ -360,10 +356,8 @@ called after each phase is done.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>produce c {
-  for (i.outer, 0, 16) {
-    c[ramp((i.outer*8), 1, 8)] = (a[ramp((i.outer*8), 1, 8)] + b[ramp((i.outer*8), 1, 8)])
-  }
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i.outer, 0, 16) {
+  c[ramp((i.outer*8), 1, 8)] = (a[ramp((i.outer*8), 1, 8)] + b[ramp((i.outer*8), 1, 8)])
 }
 </pre></div>
 </div>

@@ -392,7 +392,7 @@ and dense layer which will both be executed in fp32 on the CPU.</p></li>
     <span class="n">build_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
     <span class="c1"># Start front end compilation</span>
-    <span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">frontend</span><span class="o">.</span><span class="n">from_darknet</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">dshape</span><span class="p">)</span>
+    <span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <a href="../../../api/python/relay/frontend.html#tvm.relay.frontend.from_darknet" title="View documentation for tvm.relay.frontend.from_darknet"><span class="n">relay</span><span class="o">.</span><span class="n">frontend</span><span class="o">.</span><span class="n">from_darknet</span></a><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">dshape</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">target</span><span class="o">.</span><span class="n">device_name</span> <span class="o">==</span> <span class="s2">&quot;vta&quot;</span><span class="p">:</span>
     <span class="c1"># Perform quantization in Relay</span>
@@ -439,7 +439,7 @@ and dense layer which will both be executed in fp32 on the CPU.</p></li>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>yolov3-tiny inference graph built in 4.81s!
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>yolov3-tiny inference graph built in 4.76s!
 </pre></div>
 </div>
 </div>

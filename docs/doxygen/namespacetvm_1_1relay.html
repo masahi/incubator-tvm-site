@@ -117,6 +117,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1AdaptivePool3DAttrs.html">AdaptivePool3DAttrs</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1AllocStorageAttrs.html">AllocStorageAttrs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options for allocating storage.  <a href="structtvm_1_1relay_1_1AllocStorageAttrs.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtvm_1_1relay_1_1AllocTensorAttrs.html">AllocTensorAttrs</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options for allocating tensors.  <a href="structtvm_1_1relay_1_1AllocTensorAttrs.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -761,6 +764,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a2d10acef75390fa6d1a5e64a379c5036"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; const Object *, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay.html#a2d10acef75390fa6d1a5e64a379c5036">GetExprRefCount</a> (const <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &amp;body)</td></tr>
 <tr class="memdesc:a2d10acef75390fa6d1a5e64a379c5036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get reference counter of each internal ExprNode in body.  <a href="#a2d10acef75390fa6d1a5e64a379c5036">More...</a><br /></td></tr>
 <tr class="separator:a2d10acef75390fa6d1a5e64a379c5036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91168c24ecbf1cbf719d2ba28841da5c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacetvm_1_1relay.html#a52c13723bba53f4953dfd10c34d480f8">TensorType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay.html#a91168c24ecbf1cbf719d2ba28841da5c">FlattenTupleType</a> (const <a class="el" href="namespacetvm_1_1relay.html#a661d95f170bca230773914caeef3fe52">Type</a> &amp;type)</td></tr>
+<tr class="separator:a91168c24ecbf1cbf719d2ba28841da5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef91b70db1053b9672eafe401abb7304"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay.html#aef91b70db1053b9672eafe401abb7304">FromTupleType</a> (const <a class="el" href="namespacetvm_1_1relay.html#a661d95f170bca230773914caeef3fe52">Type</a> &amp;type, const <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &amp;expr)</td></tr>
+<tr class="separator:aef91b70db1053b9672eafe401abb7304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad91094ebc9517bed9f7ca3d7986ab49a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay.html#ad91094ebc9517bed9f7ca3d7986ab49a">ToTupleType</a> (const <a class="el" href="namespacetvm_1_1relay.html#a661d95f170bca230773914caeef3fe52">Type</a> &amp;t, const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &gt; &amp;exprs)</td></tr>
+<tr class="separator:ad91094ebc9517bed9f7ca3d7986ab49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9893f416a18eb31c14adece02bf43f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1relay.html#ae9893f416a18eb31c14adece02bf43f8">PostOrderRewrite</a> (const <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &amp;expr, <a class="el" href="classtvm_1_1relay_1_1ExprRewriter.html">ExprRewriter</a> *rewriter)</td></tr>
 <tr class="memdesc:ae9893f416a18eb31c14adece02bf43f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-recursive DFS Graph Traversal for Custom Rewriting Passes.  <a href="#ae9893f416a18eb31c14adece02bf43f8">More...</a><br /></td></tr>
 <tr class="separator:ae9893f416a18eb31c14adece02bf43f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2223,6 +2232,22 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a91168c24ecbf1cbf719d2ba28841da5c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="namespacetvm_1_1relay.html#a52c13723bba53f4953dfd10c34d480f8">TensorType</a>&gt; tvm::relay::FlattenTupleType </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacetvm_1_1relay.html#a661d95f170bca230773914caeef3fe52">Type</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ac36059b06a538598a8f46257c0cb9fe0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2420,6 +2445,32 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>List of free vars, in the PostDFS order in the expression. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aef91b70db1053b9672eafe401abb7304"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a>&gt; tvm::relay::FromTupleType </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacetvm_1_1relay.html#a661d95f170bca230773914caeef3fe52">Type</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -2667,6 +2718,32 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the converted <a class="el" href="classtvm_1_1relay_1_1Function.html" title="Managed reference to FunctionNode. ">Function</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad91094ebc9517bed9f7ca3d7986ab49a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> tvm::relay::ToTupleType </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacetvm_1_1relay.html#a661d95f170bca230773914caeef3fe52">Type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="namespacetvm_1_1relay.html#a5b84e3790f89bb3fad5c7911eeb99531">Expr</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>exprs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

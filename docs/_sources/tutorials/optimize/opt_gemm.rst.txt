@@ -118,8 +118,8 @@ Then we write a baseline implementation, the simplest way to write a matrix mult
 
  .. code-block:: none
 
-    Numpy running time: 0.007138
-    Baseline: 5.849220
+    Numpy running time: 0.005827
+    Baseline: 5.754878
 
 
 
@@ -142,13 +142,11 @@ Here is the generated IR using our baseline schedule.
 
  .. code-block:: none
 
-    produce C {
-      for (x, 0, 1024) {
-        for (y, 0, 1024) {
-          C[((x*1024) + y)] = 0f
-          for (k, 0, 1024) {
-            C[((x*1024) + y)] = (C[((x*1024) + y)] + (A[((x*1024) + k)]*B[((k*1024) + y)]))
-          }
+    for (x, 0, 1024) {
+      for (y, 0, 1024) {
+        C[((x*1024) + y)] = 0f
+        for (k, 0, 1024) {
+          C[((x*1024) + y)] = (C[((x*1024) + y)] + (A[((x*1024) + k)]*B[((k*1024) + y)]))
         }
       }
     }
@@ -200,7 +198,7 @@ fill 32 * 32 * sizeof(float) which is 4KB in the cache whose total size is 32KB 
 
  .. code-block:: none
 
-    Opt1: 0.110809
+    Opt1: 0.107895
 
 
 
@@ -222,20 +220,18 @@ Here is the generated IR after blocking.
 
  .. code-block:: none
 
-    produce C {
-      for (x.outer, 0, 32) {
-        for (y.outer, 0, 32) {
-          for (x.inner.init, 0, 32) {
-            for (y.inner.init, 0, 32) {
-              C[((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)) + y.inner.init)] = 0f
-            }
+    for (x.outer, 0, 32) {
+      for (y.outer, 0, 32) {
+        for (x.inner.init, 0, 32) {
+          for (y.inner.init, 0, 32) {
+            C[((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)) + y.inner.init)] = 0f
           }
-          for (k.outer, 0, 256) {
-            for (k.inner, 0, 4) {
-              for (x.inner, 0, 32) {
-                for (y.inner, 0, 32) {
-                  C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = (C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] + (A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)]*B[((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)) + y.inner)]))
-                }
+        }
+        for (k.outer, 0, 256) {
+          for (k.inner, 0, 4) {
+            for (x.inner, 0, 32) {
+              for (y.inner, 0, 32) {
+                C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = (C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] + (A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)]*B[((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)) + y.inner)]))
               }
             }
           }
@@ -288,7 +284,7 @@ In this tutorial, we chose to vectorize the inner loop row data since it is cach
 
  .. code-block:: none
 
-    Opt2: 0.118893
+    Opt2: 0.111950
 
 
 
@@ -310,17 +306,15 @@ Here is the generated IR after vectorization.
 
  .. code-block:: none
 
-    produce C {
-      for (x.outer, 0, 32) {
-        for (y.outer, 0, 32) {
-          for (x.inner.init, 0, 32) {
-            C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
-          }
-          for (k.outer, 0, 256) {
-            for (k.inner, 0, 4) {
-              for (x.inner, 0, 32) {
-                C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*B[ramp((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)), 1, 32)]))
-              }
+    for (x.outer, 0, 32) {
+      for (y.outer, 0, 32) {
+        for (x.inner.init, 0, 32) {
+          C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
+        }
+        for (k.outer, 0, 256) {
+          for (k.inner, 0, 4) {
+            for (x.inner, 0, 32) {
+              C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*B[ramp((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)), 1, 32)]))
             }
           }
         }
@@ -371,7 +365,7 @@ the access pattern for A matrix is more cache friendly.
 
  .. code-block:: none
 
-    Opt3: 0.059414
+    Opt3: 0.060003
 
 
 
@@ -393,17 +387,15 @@ Here is the generated IR after loop permutation.
 
  .. code-block:: none
 
-    produce C {
-      for (x.outer, 0, 32) {
-        for (y.outer, 0, 32) {
-          for (x.inner.init, 0, 32) {
-            C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
-          }
-          for (k.outer, 0, 256) {
-            for (x.inner, 0, 32) {
-              for (k.inner, 0, 4) {
-                C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*B[ramp((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)), 1, 32)]))
-              }
+    for (x.outer, 0, 32) {
+      for (y.outer, 0, 32) {
+        for (x.inner.init, 0, 32) {
+          C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
+        }
+        for (k.outer, 0, 256) {
+          for (x.inner, 0, 32) {
+            for (k.inner, 0, 4) {
+              C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*B[ramp((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)), 1, 32)]))
             }
           }
         }
@@ -473,7 +465,7 @@ the corresponding value from the packed array.
 
  .. code-block:: none
 
-    Opt4: 0.064715
+    Opt4: 0.060794
 
 
 
@@ -497,24 +489,20 @@ Here is the generated IR after array packing.
 
     // attr [packedB] storage_scope = "global"
     allocate packedB[float32x32 * 32768]
-    produce packedB {
-      parallel (x, 0, 32) {
-        for (y, 0, 1024) {
-          packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
-        }
+    parallel (x, 0, 32) {
+      for (y, 0, 1024) {
+        packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
       }
     }
-    produce C {
-      for (x.outer, 0, 32) {
-        for (y.outer, 0, 32) {
-          for (x.inner.init, 0, 32) {
-            C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
-          }
-          for (k.outer, 0, 256) {
-            for (x.inner, 0, 32) {
-              for (k.inner, 0, 4) {
-                C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + (k.inner*32)), 1, 32)]))
-              }
+    for (x.outer, 0, 32) {
+      for (y.outer, 0, 32) {
+        for (x.inner.init, 0, 32) {
+          C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
+        }
+        for (k.outer, 0, 256) {
+          for (x.inner, 0, 32) {
+            for (k.inner, 0, 4) {
+              C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + (k.inner*32)), 1, 32)]))
             }
           }
         }
@@ -578,7 +566,7 @@ write to C when all the block results are ready.
 
  .. code-block:: none
 
-    Opt5: 0.089912
+    Opt5: 0.060997
 
 
 
@@ -604,33 +592,27 @@ Here is the generated IR after blocking.
     allocate packedB[float32x32 * 32768]
     // attr [C.global] storage_scope = "global"
     allocate C.global[float32 * 1024]
-    produce packedB {
-      parallel (x, 0, 32) {
-        for (y, 0, 1024) {
-          packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
-        }
+    parallel (x, 0, 32) {
+      for (y, 0, 1024) {
+        packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
       }
     }
-    produce C {
-      for (x.outer, 0, 32) {
-        for (y.outer, 0, 32) {
-          produce C.global {
-            for (x.c.init, 0, 32) {
-              C.global[ramp((x.c.init*32), 1, 32)] = x32(0f)
-            }
-            for (k.outer, 0, 256) {
-              for (x.c, 0, 32) {
-                C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[(((x.outer*32768) + (x.c*1024)) + (k.outer*4))])*packedB[ramp(((y.outer*32768) + (k.outer*128)), 1, 32)]))
-                C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 1)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 32), 1, 32)]))
-                C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 2)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 64), 1, 32)]))
-                C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 3)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 96), 1, 32)]))
-              }
-            }
+    for (x.outer, 0, 32) {
+      for (y.outer, 0, 32) {
+        for (x.c.init, 0, 32) {
+          C.global[ramp((x.c.init*32), 1, 32)] = x32(0f)
+        }
+        for (k.outer, 0, 256) {
+          for (x.c, 0, 32) {
+            C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[(((x.outer*32768) + (x.c*1024)) + (k.outer*4))])*packedB[ramp(((y.outer*32768) + (k.outer*128)), 1, 32)]))
+            C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 1)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 32), 1, 32)]))
+            C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 2)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 64), 1, 32)]))
+            C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 3)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 96), 1, 32)]))
           }
-          for (x.inner, 0, 32) {
-            for (y.inner, 0, 32) {
-              C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = C.global[((x.inner*32) + y.inner)]
-            }
+        }
+        for (x.inner, 0, 32) {
+          for (y.inner, 0, 32) {
+            C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = C.global[((x.inner*32) + y.inner)]
           }
         }
       }
@@ -691,7 +673,7 @@ Futhermore, we can also utilize multi-core processors to do the thread-level par
 
  .. code-block:: none
 
-    Opt6: 0.016163
+    Opt6: 0.008228
 
 
 
@@ -715,35 +697,29 @@ Here is the generated IR after parallelization.
 
     // attr [packedB] storage_scope = "global"
     allocate packedB[float32x32 * 32768]
-    produce packedB {
-      parallel (x, 0, 32) {
-        for (y, 0, 1024) {
-          packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
-        }
+    parallel (x, 0, 32) {
+      for (y, 0, 1024) {
+        packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
       }
     }
-    produce C {
-      parallel (x.outer, 0, 32) {
-        // attr [C.global] storage_scope = "global"
-        allocate C.global[float32 * 1024]
-        for (y.outer, 0, 32) {
-          produce C.global {
-            for (x.c.init, 0, 32) {
-              C.global[ramp((x.c.init*32), 1, 32)] = x32(0f)
-            }
-            for (k.outer, 0, 256) {
-              for (x.c, 0, 32) {
-                C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[(((x.outer*32768) + (x.c*1024)) + (k.outer*4))])*packedB[ramp(((y.outer*32768) + (k.outer*128)), 1, 32)]))
-                C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 1)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 32), 1, 32)]))
-                C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 2)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 64), 1, 32)]))
-                C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 3)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 96), 1, 32)]))
-              }
-            }
+    parallel (x.outer, 0, 32) {
+      // attr [C.global] storage_scope = "global"
+      allocate C.global[float32 * 1024]
+      for (y.outer, 0, 32) {
+        for (x.c.init, 0, 32) {
+          C.global[ramp((x.c.init*32), 1, 32)] = x32(0f)
+        }
+        for (k.outer, 0, 256) {
+          for (x.c, 0, 32) {
+            C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[(((x.outer*32768) + (x.c*1024)) + (k.outer*4))])*packedB[ramp(((y.outer*32768) + (k.outer*128)), 1, 32)]))
+            C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 1)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 32), 1, 32)]))
+            C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 2)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 64), 1, 32)]))
+            C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 3)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 96), 1, 32)]))
           }
-          for (x.inner, 0, 32) {
-            for (y.inner, 0, 32) {
-              C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = C.global[((x.inner*32) + y.inner)]
-            }
+        }
+        for (x.inner, 0, 32) {
+          for (y.inner, 0, 32) {
+            C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = C.global[((x.inner*32) + y.inner)]
           }
         }
       }

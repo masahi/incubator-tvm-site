@@ -286,6 +286,26 @@ Compile Deep Learning Models
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This is a tutorial on loading models quantized by deep learning frameworks into TVM. Pre-quanti...">
+
+.. only:: html
+
+    .. figure:: /tutorials/frontend/images/thumb/sphx_glr_deploy_prequantized_thumb.png
+
+        :ref:`sphx_glr_tutorials_frontend_deploy_prequantized.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /tutorials/frontend/deploy_prequantized
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This article is an introductory tutorial to deploy TFLite models with Relay.">
 
 .. only:: html

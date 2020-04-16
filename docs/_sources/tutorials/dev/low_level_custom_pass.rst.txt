@@ -74,10 +74,8 @@ our customized lowering pass to manipulate the IR directly instead of using sche
 
  .. code-block:: none
 
-    produce c {
-      for (i, 0, 128) {
-        c[i] = (a[i] + b[i])
-      }
+    for (i, 0, 128) {
+      c[i] = (a[i] + b[i])
     }
 
 
@@ -195,11 +193,9 @@ this pass to TVM's lower pass. We can first call this function directly as a san
 
  .. code-block:: none
 
-    produce c {
-      for (i.outer, 0, 16) {
-        vectorized (i.inner, 0, 8) {
-          c[((i.outer*8) + i.inner)] = (a[((i.outer*8) + i.inner)] + b[((i.outer*8) + i.inner)])
-        }
+    for (i.outer, 0, 16) {
+      vectorized (i.inner, 0, 8) {
+        c[((i.outer*8) + i.inner)] = (a[((i.outer*8) + i.inner)] + b[((i.outer*8) + i.inner)])
       }
     }
 
@@ -239,10 +235,8 @@ Thus, a good place to put this transformation pass is just after Phase 1.
 
  .. code-block:: none
 
-    produce c {
-      for (i.outer, 0, 16) {
-        c[ramp((i.outer*8), 1, 8)] = (a[ramp((i.outer*8), 1, 8)] + b[ramp((i.outer*8), 1, 8)])
-      }
+    for (i.outer, 0, 16) {
+      c[ramp((i.outer*8), 1, 8)] = (a[ramp((i.outer*8), 1, 8)] + b[ramp((i.outer*8), 1, 8)])
     }
 
 

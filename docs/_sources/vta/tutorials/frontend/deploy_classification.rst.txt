@@ -243,8 +243,8 @@ The compilation steps are:
 
  .. code-block:: none
 
-    ...12%, 0.01 MB, 40 KB/s, 0 seconds passed    ...25%, 0.02 MB, 80 KB/s, 0 seconds passed    ...38%, 0.02 MB, 120 KB/s, 0 seconds passed    ...51%, 0.03 MB, 159 KB/s, 0 seconds passed    ...64%, 0.04 MB, 199 KB/s, 0 seconds passed    ...77%, 0.05 MB, 238 KB/s, 0 seconds passed    ...90%, 0.05 MB, 278 KB/s, 0 seconds passed    ...100%, 0.06 MB, 317 KB/s, 0 seconds passed
-    resnet18_v1 inference graph built in 4.14s!
+    ...12%, 0.01 MB, 56 KB/s, 0 seconds passed    ...25%, 0.02 MB, 112 KB/s, 0 seconds passed    ...38%, 0.02 MB, 167 KB/s, 0 seconds passed    ...51%, 0.03 MB, 222 KB/s, 0 seconds passed    ...64%, 0.04 MB, 277 KB/s, 0 seconds passed    ...77%, 0.05 MB, 332 KB/s, 0 seconds passed    ...90%, 0.05 MB, 387 KB/s, 0 seconds passed    ...100%, 0.06 MB, 441 KB/s, 0 seconds passed
+    resnet18_v1 inference graph built in 3.54s!
 
 
 
