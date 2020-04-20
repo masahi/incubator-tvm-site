@@ -35,8 +35,6 @@ Before reading this tutorial, we assume readers have already known these topics 
 
 .. code-block:: default
 
-
-    from __future__ import absolute_import, print_function
     import tvm
     from tvm import te
     import numpy as np
@@ -61,7 +59,7 @@ our customized lowering pass to manipulate the IR directly instead of using sche
     c = te.compute((n, ), lambda i: a[i] + b[i], name='c')
 
     sch = te.create_schedule(c.op)
-    ir  = tvm.lower(sch, [a, b, c], simple_mode=True)
+    ir  = tvm.lower(sch, [a, b, c])
     print(ir)
 
 
@@ -74,9 +72,12 @@ our customized lowering pass to manipulate the IR directly instead of using sche
 
  .. code-block:: none
 
-    for (i, 0, 128) {
-      c[i] = (a[i] + b[i])
+    PrimFunc([a, b, c]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i, 0, 128) {
+        c[i] = (a[i] + b[i])
+      }
     }
+
 
 
 
@@ -174,33 +175,7 @@ this value.
 Glue to Lowering
 ----------------
 So far, we are done with writing this IR transformation pass. What we need to do next is to glue
-this pass to TVM's lower pass. We can first call this function directly as a sanity check.
-
-
-
-.. code-block:: default
-
-
-    print(vectorize(ir))
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    for (i.outer, 0, 16) {
-      vectorized (i.inner, 0, 8) {
-        c[((i.outer*8) + i.inner)] = (a[((i.outer*8) + i.inner)] + b[((i.outer*8) + i.inner)])
-      }
-    }
-
-
-
+this pass to TVM's lower pass.
 
 In TVM, there is a property called ``BuildConfig``. You can use this property to customize your
 own lowering options. In this case, we inject the pass written above into the TVM standard lowering
@@ -223,7 +198,7 @@ Thus, a good place to put this transformation pass is just after Phase 1.
 
 
     with tvm.target.build_config(add_lower_pass=[(1, vectorize)]) as cfg:
-        print(tvm.lower(sch, [a, b, c], simple_mode=True))
+        print(tvm.lower(sch, [a, b, c]))
 
 
 
@@ -235,9 +210,12 @@ Thus, a good place to put this transformation pass is just after Phase 1.
 
  .. code-block:: none
 
-    for (i.outer, 0, 16) {
-      c[ramp((i.outer*8), 1, 8)] = (a[ramp((i.outer*8), 1, 8)] + b[ramp((i.outer*8), 1, 8)])
+    PrimFunc([a, b, c]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i.outer, 0, 16) {
+        c[ramp((i.outer*8), 1, 8)] = (a[ramp((i.outer*8), 1, 8)] + b[ramp((i.outer*8), 1, 8)])
+      }
     }
+
 
 
 

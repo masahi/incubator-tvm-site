@@ -12,6 +12,7 @@ var searchData=
   ['num_5fclosure_5fargs',['num_closure_args',['../structtvm_1_1runtime_1_1vm_1_1Instruction.html#ad4b0bb0bc9012b8e34c6fd621390532f',1,'tvm::runtime::vm::Instruction']]],
   ['num_5ffields',['num_fields',['../structtvm_1_1runtime_1_1vm_1_1Instruction.html#a45fa340afb68a10e339b9482fda65ba7',1,'tvm::runtime::vm::Instruction']]],
   ['num_5ffreevar',['num_freevar',['../structtvm_1_1runtime_1_1vm_1_1Instruction.html#adbf563aa259f209ad20619c25921cdc1',1,'tvm::runtime::vm::Instruction']]],
+  ['num_5fgroups',['num_groups',['../structtvm_1_1relay_1_1GroupNormAttrs.html#ad4c1ee70dcf42d000be6ebcfa5b4fcc4',1,'tvm::relay::GroupNormAttrs']]],
   ['num_5finputs',['num_inputs',['../classtvm_1_1OpNode.html#aa13505588162bc5448bd03f02f5c545b',1,'tvm::OpNode::num_inputs()'],['../classtvm_1_1TypeRelationNode.html#aacb622dd257962ccb4ddfca4c89e09b4',1,'tvm::TypeRelationNode::num_inputs()']]],
   ['num_5fnewaxis',['num_newaxis',['../structtvm_1_1relay_1_1ExpandDimsAttrs.html#af2885538e2f74029ecad343a9844fc8a',1,'tvm::relay::ExpandDimsAttrs']]],
   ['num_5ftask',['num_task',['../structTVMParallelGroupEnv.html#a6ff807972a918ee61dfc158abce825f6',1,'TVMParallelGroupEnv']]]

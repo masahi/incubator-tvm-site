@@ -355,54 +355,56 @@ Those include:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>// attr [data_buf] storage_scope = &quot;global&quot;
-allocate data_buf[int8 * 1024]
-// attr [weight_buf] storage_scope = &quot;global&quot;
-allocate weight_buf[int8 * 1048576]
-// attr [res_gem] storage_scope = &quot;global&quot;
-allocate res_gem[int32 * 1024]
-for (i1, 0, 64) {
-  for (i3, 0, 16) {
-    data_buf[((i1*16) + i3)] = data[((i1*16) + i3)]
-  }
-}
-for (i0, 0, 64) {
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([data, weight, res]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  // attr [data_buf] storage_scope = &quot;global&quot;
+  allocate data_buf[int8 * 1024]
+  // attr [weight_buf] storage_scope = &quot;global&quot;
+  allocate weight_buf[int8 * 1048576]
+  // attr [res_gem] storage_scope = &quot;global&quot;
+  allocate res_gem[int32 * 1024]
   for (i1, 0, 64) {
-    for (i2, 0, 16) {
-      for (i3, 0, 16) {
-        weight_buf[((((i0*16384) + (i1*256)) + (i2*16)) + i3)] = weight[((((i0*16384) + (i1*256)) + (i2*16)) + i3)]
+    for (i3, 0, 16) {
+      data_buf[((i1*16) + i3)] = data[((i1*16) + i3)]
+    }
+  }
+  for (i0, 0, 64) {
+    for (i1, 0, 64) {
+      for (i2, 0, 16) {
+        for (i3, 0, 16) {
+          weight_buf[((((i0*16384) + (i1*256)) + (i2*16)) + i3)] = weight[((((i0*16384) + (i1*256)) + (i2*16)) + i3)]
+        }
       }
     }
   }
-}
-for (co, 0, 64) {
-  for (ci, 0, 16) {
-    res_gem[((co*16) + ci)] = 0
-    for (ic, 0, 64) {
-      for (ic_tns, 0, 16) {
-        res_gem[((co*16) + ci)] = (res_gem[((co*16) + ci)] + (int32(data_buf[((ic*16) + ic_tns)])*int32(weight_buf[((((co*16384) + (ic*256)) + (ci*16)) + ic_tns)])))
+  for (co, 0, 64) {
+    for (ci, 0, 16) {
+      res_gem[((co*16) + ci)] = 0
+      for (ic, 0, 64) {
+        for (ic_tns, 0, 16) {
+          res_gem[((co*16) + ci)] = (res_gem[((co*16) + ci)] + (int32(data_buf[((ic*16) + ic_tns)])*int32(weight_buf[((((co*16384) + (ic*256)) + (ci*16)) + ic_tns)])))
+        }
       }
     }
   }
-}
-for (i1, 0, 64) {
-  for (i3, 0, 16) {
-    res_gem[((i1*16) + i3)] = shift_right(res_gem[((i1*16) + i3)], 8)
+  for (i1, 0, 64) {
+    for (i3, 0, 16) {
+      res_gem[((i1*16) + i3)] = shift_right(res_gem[((i1*16) + i3)], 8)
+    }
   }
-}
-for (i1, 0, 64) {
-  for (i3, 0, 16) {
-    res_gem[((i1*16) + i3)] = max(res_gem[((i1*16) + i3)], 0)
+  for (i1, 0, 64) {
+    for (i3, 0, 16) {
+      res_gem[((i1*16) + i3)] = max(res_gem[((i1*16) + i3)], 0)
+    }
   }
-}
-for (i1, 0, 64) {
-  for (i3, 0, 16) {
-    res_gem[((i1*16) + i3)] = min(res_gem[((i1*16) + i3)], 127)
+  for (i1, 0, 64) {
+    for (i3, 0, 16) {
+      res_gem[((i1*16) + i3)] = min(res_gem[((i1*16) + i3)], 127)
+    }
   }
-}
-for (i1, 0, 64) {
-  for (i3, 0, 16) {
-    res[((i1*16) + i3)] = int8(res_gem[((i1*16) + i3)])
+  for (i1, 0, 64) {
+    for (i3, 0, 16) {
+      res[((i1*16) + i3)] = int8(res_gem[((i1*16) + i3)])
+    }
   }
 }
 </pre></div>
@@ -488,61 +490,63 @@ inference in this example:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>// attr [data_buf] storage_scope = &quot;global&quot;
-allocate data_buf[int8 * 1024]
-// attr [weight_buf] storage_scope = &quot;global&quot;
-allocate weight_buf[int8 * 1048576]
-// attr [res_gem] storage_scope = &quot;global&quot;
-allocate res_gem[int32 * 256]
-for (i1, 0, 64) {
-  for (i3, 0, 16) {
-    data_buf[((i1*16) + i3)] = data[((i1*16) + i3)]
-  }
-}
-for (i0, 0, 64) {
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([data, weight, res]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  // attr [data_buf] storage_scope = &quot;global&quot;
+  allocate data_buf[int8 * 1024]
+  // attr [weight_buf] storage_scope = &quot;global&quot;
+  allocate weight_buf[int8 * 1048576]
+  // attr [res_gem] storage_scope = &quot;global&quot;
+  allocate res_gem[int32 * 256]
   for (i1, 0, 64) {
-    for (i2, 0, 16) {
-      for (i3, 0, 16) {
-        weight_buf[((((i0*16384) + (i1*256)) + (i2*16)) + i3)] = weight[((((i0*16384) + (i1*256)) + (i2*16)) + i3)]
-      }
+    for (i3, 0, 16) {
+      data_buf[((i1*16) + i3)] = data[((i1*16) + i3)]
     }
   }
-}
-for (i1.outer, 0, 4) {
-  for (co.init, 0, 16) {
-    for (ci.init, 0, 16) {
-      res_gem[((co.init*16) + ci.init)] = 0
-    }
-  }
-  for (ic.outer, 0, 4) {
-    for (co, 0, 16) {
-      for (ic.inner, 0, 16) {
-        for (ci, 0, 16) {
-          for (ic_tns, 0, 16) {
-            res_gem[((co*16) + ci)] = (res_gem[((co*16) + ci)] + (int32(data_buf[(((ic.outer*256) + (ic.inner*16)) + ic_tns)])*int32(weight_buf[((((((i1.outer*262144) + (co*16384)) + (ic.outer*4096)) + (ic.inner*256)) + (ci*16)) + ic_tns)])))
-          }
+  for (i0, 0, 64) {
+    for (i1, 0, 64) {
+      for (i2, 0, 16) {
+        for (i3, 0, 16) {
+          weight_buf[((((i0*16384) + (i1*256)) + (i2*16)) + i3)] = weight[((((i0*16384) + (i1*256)) + (i2*16)) + i3)]
         }
       }
     }
   }
-  for (i1, 0, 16) {
-    for (i3, 0, 16) {
-      res_gem[((i1*16) + i3)] = shift_right(res_gem[((i1*16) + i3)], 8)
+  for (i1.outer, 0, 4) {
+    for (co.init, 0, 16) {
+      for (ci.init, 0, 16) {
+        res_gem[((co.init*16) + ci.init)] = 0
+      }
     }
-  }
-  for (i1, 0, 16) {
-    for (i3, 0, 16) {
-      res_gem[((i1*16) + i3)] = max(res_gem[((i1*16) + i3)], 0)
+    for (ic.outer, 0, 4) {
+      for (co, 0, 16) {
+        for (ic.inner, 0, 16) {
+          for (ci, 0, 16) {
+            for (ic_tns, 0, 16) {
+              res_gem[((co*16) + ci)] = (res_gem[((co*16) + ci)] + (int32(data_buf[(((ic.outer*256) + (ic.inner*16)) + ic_tns)])*int32(weight_buf[((((((i1.outer*262144) + (co*16384)) + (ic.outer*4096)) + (ic.inner*256)) + (ci*16)) + ic_tns)])))
+            }
+          }
+        }
+      }
     }
-  }
-  for (i1, 0, 16) {
-    for (i3, 0, 16) {
-      res_gem[((i1*16) + i3)] = min(res_gem[((i1*16) + i3)], 127)
+    for (i1, 0, 16) {
+      for (i3, 0, 16) {
+        res_gem[((i1*16) + i3)] = shift_right(res_gem[((i1*16) + i3)], 8)
+      }
     }
-  }
-  for (i1.inner, 0, 16) {
-    for (i3, 0, 16) {
-      res[(((i1.outer*256) + (i1.inner*16)) + i3)] = int8(res_gem[((i1.inner*16) + i3)])
+    for (i1, 0, 16) {
+      for (i3, 0, 16) {
+        res_gem[((i1*16) + i3)] = max(res_gem[((i1*16) + i3)], 0)
+      }
+    }
+    for (i1, 0, 16) {
+      for (i3, 0, 16) {
+        res_gem[((i1*16) + i3)] = min(res_gem[((i1*16) + i3)], 127)
+      }
+    }
+    for (i1.inner, 0, 16) {
+      for (i3, 0, 16) {
+        res[(((i1.outer*256) + (i1.inner*16)) + i3)] = int8(res_gem[((i1.inner*16) + i3)])
+      }
     }
   }
 }
@@ -599,58 +603,60 @@ and mapping the shift, and clipping computation to the vector ALU.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>// attr [res_gem] storage_scope = &quot;local.acc_buffer&quot;
-// attr [data_buf] storage_scope = &quot;local.inp_buffer&quot;
-// attr [weight_buf] storage_scope = &quot;local.wgt_buffer&quot;
-vta.coproc_dep_push(3, 2)
-for (i1.outer, 0, 4) {
-  // attr [iter_var(vta, , vta)] coproc_scope = 2
-  vta.coproc_dep_pop(3, 2)
-  // attr [iter_var(vta, , vta)] coproc_uop_scope = &quot;VTAPushGEMMOp&quot;
-  VTAUopLoopBegin(16, 1, 0, 0)
-  VTAUopPush(0, 1, 0, 0, 0, 0, 0, 0)
-  VTAUopLoopEnd()
-  vta.coproc_dep_push(2, 1)
-  for (ic.outer, 0, 4) {
-    // attr [iter_var(vta, , vta)] coproc_scope = 1
-    vta.coproc_dep_pop(2, 1)
-    VTALoadBuffer2D(tvm_thread_context(VTATLSCommandHandle()), data, (ic.outer*16), 16, 1, 16, 0, 0, 0, 0, 0, 2)
-    VTALoadBuffer2D(tvm_thread_context(VTATLSCommandHandle()), weight, ((i1.outer*1024) + (ic.outer*16)), 16, 16, 64, 0, 0, 0, 0, 0, 1)
-    vta.coproc_dep_push(1, 2)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([data, weight, res]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  // attr [res_gem] storage_scope = &quot;local.acc_buffer&quot;
+  // attr [data_buf] storage_scope = &quot;local.inp_buffer&quot;
+  // attr [weight_buf] storage_scope = &quot;local.wgt_buffer&quot;
+  vta.coproc_dep_push(3, 2)
+  for (i1.outer, 0, 4) {
     // attr [iter_var(vta, , vta)] coproc_scope = 2
-    vta.coproc_dep_pop(1, 2)
+    vta.coproc_dep_pop(3, 2)
     // attr [iter_var(vta, , vta)] coproc_uop_scope = &quot;VTAPushGEMMOp&quot;
-    VTAUopLoopBegin(16, 1, 0, 16)
-    VTAUopLoopBegin(16, 0, 1, 1)
-    VTAUopPush(0, 0, 0, 0, 0, 0, 0, 0)
-    VTAUopLoopEnd()
+    VTAUopLoopBegin(16, 1, 0, 0)
+    VTAUopPush(0, 1, 0, 0, 0, 0, 0, 0)
     VTAUopLoopEnd()
     vta.coproc_dep_push(2, 1)
+    for (ic.outer, 0, 4) {
+      // attr [iter_var(vta, , vta)] coproc_scope = 1
+      vta.coproc_dep_pop(2, 1)
+      VTALoadBuffer2D(tvm_thread_context(VTATLSCommandHandle()), data, (ic.outer*16), 16, 1, 16, 0, 0, 0, 0, 0, 2)
+      VTALoadBuffer2D(tvm_thread_context(VTATLSCommandHandle()), weight, ((i1.outer*1024) + (ic.outer*16)), 16, 16, 64, 0, 0, 0, 0, 0, 1)
+      vta.coproc_dep_push(1, 2)
+      // attr [iter_var(vta, , vta)] coproc_scope = 2
+      vta.coproc_dep_pop(1, 2)
+      // attr [iter_var(vta, , vta)] coproc_uop_scope = &quot;VTAPushGEMMOp&quot;
+      VTAUopLoopBegin(16, 1, 0, 16)
+      VTAUopLoopBegin(16, 0, 1, 1)
+      VTAUopPush(0, 0, 0, 0, 0, 0, 0, 0)
+      VTAUopLoopEnd()
+      VTAUopLoopEnd()
+      vta.coproc_dep_push(2, 1)
+    }
+    vta.coproc_dep_pop(2, 1)
+    // attr [iter_var(vta, , vta)] coproc_scope = 2
+    // attr [iter_var(vta, , vta)] coproc_uop_scope = &quot;VTAPushALUOp&quot;
+    VTAUopLoopBegin(16, 1, 1, 0)
+    VTAUopPush(1, 0, 0, 0, 0, 3, 1, 8)
+    VTAUopLoopEnd()
+    // attr [iter_var(vta, , vta)] coproc_uop_scope = &quot;VTAPushALUOp&quot;
+    VTAUopLoopBegin(16, 1, 1, 0)
+    VTAUopPush(1, 0, 0, 0, 0, 1, 1, 0)
+    VTAUopLoopEnd()
+    // attr [iter_var(vta, , vta)] coproc_uop_scope = &quot;VTAPushALUOp&quot;
+    VTAUopLoopBegin(16, 1, 1, 0)
+    VTAUopPush(1, 0, 0, 0, 0, 0, 1, 127)
+    VTAUopLoopEnd()
+    vta.coproc_dep_push(2, 3)
+    // attr [iter_var(vta, , vta)] coproc_scope = 3
+    vta.coproc_dep_pop(2, 3)
+    for (i1.inner, 0, 16) {
+      VTAStoreBuffer2D(tvm_thread_context(VTATLSCommandHandle()), i1.inner, 4, res, ((i1.outer*16) + i1.inner), 1, 1, 1)
+    }
+    vta.coproc_dep_push(3, 2)
   }
-  vta.coproc_dep_pop(2, 1)
-  // attr [iter_var(vta, , vta)] coproc_scope = 2
-  // attr [iter_var(vta, , vta)] coproc_uop_scope = &quot;VTAPushALUOp&quot;
-  VTAUopLoopBegin(16, 1, 1, 0)
-  VTAUopPush(1, 0, 0, 0, 0, 3, 1, 8)
-  VTAUopLoopEnd()
-  // attr [iter_var(vta, , vta)] coproc_uop_scope = &quot;VTAPushALUOp&quot;
-  VTAUopLoopBegin(16, 1, 1, 0)
-  VTAUopPush(1, 0, 0, 0, 0, 1, 1, 0)
-  VTAUopLoopEnd()
-  // attr [iter_var(vta, , vta)] coproc_uop_scope = &quot;VTAPushALUOp&quot;
-  VTAUopLoopBegin(16, 1, 1, 0)
-  VTAUopPush(1, 0, 0, 0, 0, 0, 1, 127)
-  VTAUopLoopEnd()
-  vta.coproc_dep_push(2, 3)
-  // attr [iter_var(vta, , vta)] coproc_scope = 3
-  vta.coproc_dep_pop(2, 3)
-  for (i1.inner, 0, 16) {
-    VTAStoreBuffer2D(tvm_thread_context(VTATLSCommandHandle()), i1.inner, 4, res, ((i1.outer*16) + i1.inner), 1, 1, 1)
-  }
-  vta.coproc_dep_push(3, 2)
+  vta.coproc_sync()
+  vta.coproc_dep_pop(3, 2)
 }
-vta.coproc_sync()
-vta.coproc_dep_pop(3, 2)
 </pre></div>
 </div>
 </div>

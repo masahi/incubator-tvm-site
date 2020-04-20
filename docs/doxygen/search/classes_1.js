@@ -33,6 +33,8 @@ var searchData=
   ['bufferload',['BufferLoad',['../classtvm_1_1tir_1_1BufferLoad.html',1,'tvm::tir']]],
   ['bufferloadnode',['BufferLoadNode',['../classtvm_1_1tir_1_1BufferLoadNode.html',1,'tvm::tir']]],
   ['buffernode',['BufferNode',['../classtvm_1_1tir_1_1BufferNode.html',1,'tvm::tir']]],
+  ['bufferrealize',['BufferRealize',['../classtvm_1_1tir_1_1BufferRealize.html',1,'tvm::tir']]],
+  ['bufferrealizenode',['BufferRealizeNode',['../classtvm_1_1tir_1_1BufferRealizeNode.html',1,'tvm::tir']]],
   ['bufferstore',['BufferStore',['../classtvm_1_1tir_1_1BufferStore.html',1,'tvm::tir']]],
   ['bufferstorenode',['BufferStoreNode',['../classtvm_1_1tir_1_1BufferStoreNode.html',1,'tvm::tir']]],
   ['buildconfig',['BuildConfig',['../classtvm_1_1BuildConfig.html',1,'tvm']]],

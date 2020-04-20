@@ -1579,10 +1579,6 @@ needed.</p>
 <em class="property">class </em><code class="sig-prename descclassname">tvm.transform.</code><code class="sig-name descname">Sequential</code><span class="sig-paren">(</span><em class="sig-param">passes=None</em>, <em class="sig-param">opt_level=2</em>, <em class="sig-param">name='sequential'</em>, <em class="sig-param">required=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.transform.Sequential" title="Permalink to this definition">¶</a></dt>
 <dd><p>A pass that works on a sequence of pass objects. Multiple passes can be
 executed sequentially using this class.</p>
-<p>Some typical usage of the sequential pass are:
-1. Users provide a list of passes for optimization.
-2. Only an optimization level is provided so that the backend system has
-to glob all passes at this level and below to perform the optimizations.</p>
 <p>Note that users can also provide a series of passes that they don’t want to
 apply when running a sequential pass. Pass dependency will be resolved in
 the backend as well.</p>
@@ -1590,7 +1586,10 @@ the backend as well.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>passes</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="#tvm.transform.Pass" title="tvm.transform.Pass"><em>Pass</em></a><em>]</em><em>]</em>) – A sequence of passes candidate for optimization.</p></li>
-<li><p><strong>opt_level</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>]</em>) – The optimization level of this sequential pass.</p></li>
+<li><p><strong>opt_level</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>]</em>) – The optimization level of this sequential pass.
+The opt_level of a default sequential pass is set to 0.
+Note that some of the passes within the Sequantial may still not be executed
+if their opt_level is higher than the provided opt_level.</p></li>
 <li><p><strong>name</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em>) – The name of the sequential pass.</p></li>
 <li><p><strong>required</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>]</em>) – The list of passes that the sequential pass is dependent on.</p></li>
 </ul>

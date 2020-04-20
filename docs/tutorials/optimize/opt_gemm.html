@@ -304,8 +304,8 @@ Then we write a baseline implementation, the simplest way to write a matrix mult
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Numpy running time: 0.005827
-Baseline: 5.754878
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Numpy running time: 0.008158
+Baseline: 5.951094
 </pre></div>
 </div>
 <p>In TVM, we can always inspect lower level IR to debug or optimize our schedule.
@@ -314,11 +314,13 @@ Here is the generated IR using our baseline schedule.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (x, 0, 1024) {
-  for (y, 0, 1024) {
-    C[((x*1024) + y)] = 0f
-    for (k, 0, 1024) {
-      C[((x*1024) + y)] = (C[((x*1024) + y)] + (A[((x*1024) + k)]*B[((k*1024) + y)]))
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (x, 0, 1024) {
+    for (y, 0, 1024) {
+      C[((x*1024) + y)] = 0f
+      for (k, 0, 1024) {
+        C[((x*1024) + y)] = (C[((x*1024) + y)] + (A[((x*1024) + k)]*B[((k*1024) + y)]))
+      }
     }
   }
 }
@@ -356,7 +358,7 @@ fill 32 * 32 * sizeof(float) which is 4KB in the cache whose total size is 32KB 
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt1: 0.107895
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt1: 0.110619
 </pre></div>
 </div>
 <p>Here is the generated IR after blocking.</p>
@@ -364,18 +366,20 @@ fill 32 * 32 * sizeof(float) which is 4KB in the cache whose total size is 32KB 
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (x.outer, 0, 32) {
-  for (y.outer, 0, 32) {
-    for (x.inner.init, 0, 32) {
-      for (y.inner.init, 0, 32) {
-        C[((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)) + y.inner.init)] = 0f
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (x.outer, 0, 32) {
+    for (y.outer, 0, 32) {
+      for (x.inner.init, 0, 32) {
+        for (y.inner.init, 0, 32) {
+          C[((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)) + y.inner.init)] = 0f
+        }
       }
-    }
-    for (k.outer, 0, 256) {
-      for (k.inner, 0, 4) {
-        for (x.inner, 0, 32) {
-          for (y.inner, 0, 32) {
-            C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = (C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] + (A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)]*B[((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)) + y.inner)]))
+      for (k.outer, 0, 256) {
+        for (k.inner, 0, 4) {
+          for (x.inner, 0, 32) {
+            for (y.inner, 0, 32) {
+              C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = (C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] + (A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)]*B[((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)) + y.inner)]))
+            }
           }
         }
       }
@@ -413,7 +417,7 @@ we can use <cite>vectorize</cite> interface to hint the compiler this pattern, s
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt2: 0.111950
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt2: 0.130606
 </pre></div>
 </div>
 <p>Here is the generated IR after vectorization.</p>
@@ -421,15 +425,17 @@ we can use <cite>vectorize</cite> interface to hint the compiler this pattern, s
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (x.outer, 0, 32) {
-  for (y.outer, 0, 32) {
-    for (x.inner.init, 0, 32) {
-      C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
-    }
-    for (k.outer, 0, 256) {
-      for (k.inner, 0, 4) {
-        for (x.inner, 0, 32) {
-          C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*B[ramp((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)), 1, 32)]))
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (x.outer, 0, 32) {
+    for (y.outer, 0, 32) {
+      for (x.inner.init, 0, 32) {
+        C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
+      }
+      for (k.outer, 0, 256) {
+        for (k.inner, 0, 4) {
+          for (x.inner, 0, 32) {
+            C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*B[ramp((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)), 1, 32)]))
+          }
         }
       }
     }
@@ -466,7 +472,7 @@ the access pattern for A matrix is more cache friendly.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt3: 0.060003
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt3: 0.060277
 </pre></div>
 </div>
 <p>Here is the generated IR after loop permutation.</p>
@@ -474,15 +480,17 @@ the access pattern for A matrix is more cache friendly.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (x.outer, 0, 32) {
-  for (y.outer, 0, 32) {
-    for (x.inner.init, 0, 32) {
-      C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
-    }
-    for (k.outer, 0, 256) {
-      for (x.inner, 0, 32) {
-        for (k.inner, 0, 4) {
-          C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*B[ramp((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)), 1, 32)]))
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (x.outer, 0, 32) {
+    for (y.outer, 0, 32) {
+      for (x.inner.init, 0, 32) {
+        C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
+      }
+      for (k.outer, 0, 256) {
+        for (x.inner, 0, 32) {
+          for (k.inner, 0, 4) {
+            C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*B[ramp((((k.outer*4096) + (k.inner*1024)) + (y.outer*32)), 1, 32)]))
+          }
         }
       }
     }
@@ -533,7 +541,7 @@ the corresponding value from the packed array.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt4: 0.060794
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt4: 0.066516
 </pre></div>
 </div>
 <p>Here is the generated IR after array packing.</p>
@@ -541,22 +549,24 @@ the corresponding value from the packed array.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>// attr [packedB] storage_scope = &quot;global&quot;
-allocate packedB[float32x32 * 32768]
-parallel (x, 0, 32) {
-  for (y, 0, 1024) {
-    packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
-  }
-}
-for (x.outer, 0, 32) {
-  for (y.outer, 0, 32) {
-    for (x.inner.init, 0, 32) {
-      C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  // attr [packedB] storage_scope = &quot;global&quot;
+  allocate packedB[float32x32 * 32768]
+  parallel (x, 0, 32) {
+    for (y, 0, 1024) {
+      packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
     }
-    for (k.outer, 0, 256) {
-      for (x.inner, 0, 32) {
-        for (k.inner, 0, 4) {
-          C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + (k.inner*32)), 1, 32)]))
+  }
+  for (x.outer, 0, 32) {
+    for (y.outer, 0, 32) {
+      for (x.inner.init, 0, 32) {
+        C[ramp((((x.outer*32768) + (x.inner.init*1024)) + (y.outer*32)), 1, 32)] = x32(0f)
+      }
+      for (k.outer, 0, 256) {
+        for (x.inner, 0, 32) {
+          for (k.inner, 0, 4) {
+            C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] = (C[ramp((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)), 1, 32)] + (x32(A[((((x.outer*32768) + (x.inner*1024)) + (k.outer*4)) + k.inner)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + (k.inner*32)), 1, 32)]))
+          }
         }
       }
     }
@@ -605,7 +615,7 @@ write to C when all the block results are ready.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt5: 0.060997
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt5: 0.061546
 </pre></div>
 </div>
 <p>Here is the generated IR after blocking.</p>
@@ -613,31 +623,33 @@ write to C when all the block results are ready.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>// attr [packedB] storage_scope = &quot;global&quot;
-allocate packedB[float32x32 * 32768]
-// attr [C.global] storage_scope = &quot;global&quot;
-allocate C.global[float32 * 1024]
-parallel (x, 0, 32) {
-  for (y, 0, 1024) {
-    packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  // attr [packedB] storage_scope = &quot;global&quot;
+  allocate packedB[float32x32 * 32768]
+  // attr [C.global] storage_scope = &quot;global&quot;
+  allocate C.global[float32 * 1024]
+  parallel (x, 0, 32) {
+    for (y, 0, 1024) {
+      packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
+    }
   }
-}
-for (x.outer, 0, 32) {
-  for (y.outer, 0, 32) {
-    for (x.c.init, 0, 32) {
-      C.global[ramp((x.c.init*32), 1, 32)] = x32(0f)
-    }
-    for (k.outer, 0, 256) {
-      for (x.c, 0, 32) {
-        C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[(((x.outer*32768) + (x.c*1024)) + (k.outer*4))])*packedB[ramp(((y.outer*32768) + (k.outer*128)), 1, 32)]))
-        C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 1)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 32), 1, 32)]))
-        C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 2)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 64), 1, 32)]))
-        C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 3)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 96), 1, 32)]))
+  for (x.outer, 0, 32) {
+    for (y.outer, 0, 32) {
+      for (x.c.init, 0, 32) {
+        C.global[ramp((x.c.init*32), 1, 32)] = x32(0f)
       }
-    }
-    for (x.inner, 0, 32) {
-      for (y.inner, 0, 32) {
-        C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = C.global[((x.inner*32) + y.inner)]
+      for (k.outer, 0, 256) {
+        for (x.c, 0, 32) {
+          C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[(((x.outer*32768) + (x.c*1024)) + (k.outer*4))])*packedB[ramp(((y.outer*32768) + (k.outer*128)), 1, 32)]))
+          C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 1)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 32), 1, 32)]))
+          C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 2)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 64), 1, 32)]))
+          C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 3)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 96), 1, 32)]))
+        }
+      }
+      for (x.inner, 0, 32) {
+        for (y.inner, 0, 32) {
+          C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = C.global[((x.inner*32) + y.inner)]
+        }
       }
     }
   }
@@ -684,7 +696,7 @@ for (x.outer, 0, 32) {
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt6: 0.008228
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Opt6: 0.008298
 </pre></div>
 </div>
 <p>Here is the generated IR after parallelization.</p>
@@ -692,31 +704,33 @@ for (x.outer, 0, 32) {
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>// attr [packedB] storage_scope = &quot;global&quot;
-allocate packedB[float32x32 * 32768]
-parallel (x, 0, 32) {
-  for (y, 0, 1024) {
-    packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  // attr [packedB] storage_scope = &quot;global&quot;
+  allocate packedB[float32x32 * 32768]
+  parallel (x, 0, 32) {
+    for (y, 0, 1024) {
+      packedB[ramp(((x*32768) + (y*32)), 1, 32)] = B[ramp(((y*1024) + (x*32)), 1, 32)]
+    }
   }
-}
-parallel (x.outer, 0, 32) {
-  // attr [C.global] storage_scope = &quot;global&quot;
-  allocate C.global[float32 * 1024]
-  for (y.outer, 0, 32) {
-    for (x.c.init, 0, 32) {
-      C.global[ramp((x.c.init*32), 1, 32)] = x32(0f)
-    }
-    for (k.outer, 0, 256) {
-      for (x.c, 0, 32) {
-        C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[(((x.outer*32768) + (x.c*1024)) + (k.outer*4))])*packedB[ramp(((y.outer*32768) + (k.outer*128)), 1, 32)]))
-        C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 1)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 32), 1, 32)]))
-        C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 2)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 64), 1, 32)]))
-        C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 3)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 96), 1, 32)]))
+  parallel (x.outer, 0, 32) {
+    // attr [C.global] storage_scope = &quot;global&quot;
+    allocate C.global[float32 * 1024]
+    for (y.outer, 0, 32) {
+      for (x.c.init, 0, 32) {
+        C.global[ramp((x.c.init*32), 1, 32)] = x32(0f)
       }
-    }
-    for (x.inner, 0, 32) {
-      for (y.inner, 0, 32) {
-        C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = C.global[((x.inner*32) + y.inner)]
+      for (k.outer, 0, 256) {
+        for (x.c, 0, 32) {
+          C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[(((x.outer*32768) + (x.c*1024)) + (k.outer*4))])*packedB[ramp(((y.outer*32768) + (k.outer*128)), 1, 32)]))
+          C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 1)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 32), 1, 32)]))
+          C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 2)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 64), 1, 32)]))
+          C.global[ramp((x.c*32), 1, 32)] = (C.global[ramp((x.c*32), 1, 32)] + (x32(A[((((x.outer*32768) + (x.c*1024)) + (k.outer*4)) + 3)])*packedB[ramp((((y.outer*32768) + (k.outer*128)) + 96), 1, 32)]))
+        }
+      }
+      for (x.inner, 0, 32) {
+        for (y.inner, 0, 32) {
+          C[((((x.outer*32768) + (x.inner*1024)) + (y.outer*32)) + y.inner)] = C.global[((x.inner*32) + y.inner)]
+        }
       }
     }
   }

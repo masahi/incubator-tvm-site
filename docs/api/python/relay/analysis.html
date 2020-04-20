@@ -278,10 +278,13 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.analysis.post_order_visit" title="tvm.relay.analysis.post_order_visit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">post_order_visit</span></code></a>(expr, fvisit)</p></td>
 <td><p>Recursively visit the ir in post DFS order node, apply fvisit.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.analysis.unmatched_cases" title="tvm.relay.analysis.unmatched_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unmatched_cases</span></code></a>(match[, mod])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.analysis.search_fc_transpose" title="tvm.relay.analysis.search_fc_transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_fc_transpose</span></code></a>(expr)</p></td>
+<td><p>Search fc weight name in the patten: y = nn.dense(x, transpose(w, [1, 0]))</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.analysis.unmatched_cases" title="tvm.relay.analysis.unmatched_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unmatched_cases</span></code></a>(match[, mod])</p></td>
 <td><p>Finds cases that the match expression does not catch, if any.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.analysis.well_formed" title="tvm.relay.analysis.well_formed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">well_formed</span></code></a>(expr)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.analysis.well_formed" title="tvm.relay.analysis.well_formed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">well_formed</span></code></a>(expr)</p></td>
 <td><p>Check that each Var is only bound once (well formed).</p></td>
 </tr>
 </tbody>
@@ -746,6 +749,24 @@ only once.</p>
 <li><p><strong>expr</strong> (<em>tvm.relay.Expr</em>) – The input expression.</p></li>
 <li><p><strong>fvisit</strong> (<em>function</em>) – The visitor function to be applied.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.relay.analysis.search_fc_transpose">
+<code class="sig-prename descclassname">tvm.relay.analysis.</code><code class="sig-name descname">search_fc_transpose</code><span class="sig-paren">(</span><em class="sig-param">expr</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.analysis.search_fc_transpose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search fc weight name in the patten: y = nn.dense(x, transpose(w, [1, 0]))</p>
+<p>This function is used in the data_dep_optimization.simplify_fc_transpose method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expr</strong> (<em>tvm.relay.Expr</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>ret</strong> – Array of weight variable name in pattern y = nn.dense(x, transpose(w, [1, 0]))</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../ir.html#tvm.ir.Array" title="tvm.ir.Array">Array</a>[<a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String">String</a>]</p>
 </dd>
 </dl>
 </dd></dl>

@@ -245,59 +245,65 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.DeadCodeElimination" title="tvm.relay.transform.DeadCodeElimination"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DeadCodeElimination</span></code></a>([inline_once])</p></td>
 <td><p>Remove expressions that do not have any users (dead code).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.EliminateCommonSubexpr" title="tvm.relay.transform.EliminateCommonSubexpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EliminateCommonSubexpr</span></code></a>([fskip])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.DenseToSparse" title="tvm.relay.transform.DenseToSparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DenseToSparse</span></code></a>(weight_name, weight_shape)</p></td>
+<td><p>Rewrite qualified <code class="docutils literal notranslate"><span class="pre">`nn.dense</span> <span class="pre">operation`</span></code> to <code class="docutils literal notranslate"><span class="pre">`nn.sparse_dense`</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.EliminateCommonSubexpr" title="tvm.relay.transform.EliminateCommonSubexpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EliminateCommonSubexpr</span></code></a>([fskip])</p></td>
 <td><p>Eliminate common subexpressions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.EtaExpand" title="tvm.relay.transform.EtaExpand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EtaExpand</span></code></a>([expand_constructor, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.EtaExpand" title="tvm.relay.transform.EtaExpand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EtaExpand</span></code></a>([expand_constructor, …])</p></td>
 <td><p>Add abstraction over a constructor or global variable bound to a function</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.FastMath" title="tvm.relay.transform.FastMath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FastMath</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.FastMath" title="tvm.relay.transform.FastMath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FastMath</span></code></a>()</p></td>
 <td><p>Converts the expensive non linear functions to their fast but approximate counterparts.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.FoldConstant" title="tvm.relay.transform.FoldConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FoldConstant</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.FoldConstant" title="tvm.relay.transform.FoldConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FoldConstant</span></code></a>()</p></td>
 <td><p>Fold the constant expressions in a Relay program.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.FoldScaleAxis" title="tvm.relay.transform.FoldScaleAxis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FoldScaleAxis</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.FoldScaleAxis" title="tvm.relay.transform.FoldScaleAxis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FoldScaleAxis</span></code></a>()</p></td>
 <td><p>Fold the scaling of axis into weights of conv2d/dense.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.ForwardFoldScaleAxis" title="tvm.relay.transform.ForwardFoldScaleAxis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForwardFoldScaleAxis</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.ForwardFoldScaleAxis" title="tvm.relay.transform.ForwardFoldScaleAxis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForwardFoldScaleAxis</span></code></a>()</p></td>
 <td><p>Fold the scaling of axis into weights of conv2d/dense.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.FuseOps" title="tvm.relay.transform.FuseOps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FuseOps</span></code></a>([fuse_opt_level])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.FuseOps" title="tvm.relay.transform.FuseOps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FuseOps</span></code></a>([fuse_opt_level])</p></td>
 <td><p>Fuse operators in an expr to a larger operator according to some rules.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.InferType" title="tvm.relay.transform.InferType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InferType</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.InferType" title="tvm.relay.transform.InferType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InferType</span></code></a>()</p></td>
 <td><p>Infer the type of an expr.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.Inline" title="tvm.relay.transform.Inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Inline</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.Inline" title="tvm.relay.transform.Inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Inline</span></code></a>()</p></td>
 <td><p>Perform inlining on the given Relay IR module.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.LambdaLift" title="tvm.relay.transform.LambdaLift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LambdaLift</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.LambdaLift" title="tvm.relay.transform.LambdaLift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LambdaLift</span></code></a>()</p></td>
 <td><p>Lift the closure to global function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.LazyGradientInit" title="tvm.relay.transform.LazyGradientInit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LazyGradientInit</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.LazyGradientInit" title="tvm.relay.transform.LazyGradientInit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LazyGradientInit</span></code></a>()</p></td>
 <td><p>Reduces memory usage of gradient tensors</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.Legalize" title="tvm.relay.transform.Legalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Legalize</span></code></a>([legalize_map_attr_name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.Legalize" title="tvm.relay.transform.Legalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Legalize</span></code></a>([legalize_map_attr_name])</p></td>
 <td><p>Legalizes an expression with another expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.MergeCompilerRegions" title="tvm.relay.transform.MergeCompilerRegions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MergeCompilerRegions</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.MergeCompilerRegions" title="tvm.relay.transform.MergeCompilerRegions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MergeCompilerRegions</span></code></a>()</p></td>
 <td><p>Merge together compiler regions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.MergeComposite" title="tvm.relay.transform.MergeComposite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MergeComposite</span></code></a>(pattern_table)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.MergeComposite" title="tvm.relay.transform.MergeComposite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MergeComposite</span></code></a>(pattern_table)</p></td>
 <td><p>Merge multiple operators into a single composite relay function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.PartialEvaluate" title="tvm.relay.transform.PartialEvaluate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PartialEvaluate</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.PartialEvaluate" title="tvm.relay.transform.PartialEvaluate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PartialEvaluate</span></code></a>()</p></td>
 <td><p>Evaluate the static fragment of the code.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.PartitionGraph" title="tvm.relay.transform.PartitionGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PartitionGraph</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.PartitionGraph" title="tvm.relay.transform.PartitionGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PartitionGraph</span></code></a>()</p></td>
 <td><p>Partition a Relay program into regions that can be executed on different backends.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.RemoveUnusedFunctions" title="tvm.relay.transform.RemoveUnusedFunctions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RemoveUnusedFunctions</span></code></a>([entry_functions])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.RemoveUnusedFunctions" title="tvm.relay.transform.RemoveUnusedFunctions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RemoveUnusedFunctions</span></code></a>([entry_functions])</p></td>
 <td><p>Remove unused global relay functions in a relay module.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.RewriteAnnotatedOps" title="tvm.relay.transform.RewriteAnnotatedOps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RewriteAnnotatedOps</span></code></a>(fallback_device)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.RewriteAnnotatedOps" title="tvm.relay.transform.RewriteAnnotatedOps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RewriteAnnotatedOps</span></code></a>(fallback_device)</p></td>
 <td><p>Rewrite the annotated program where annotation operators, e.g.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.transform.SimplifyFCTranspose" title="tvm.relay.transform.SimplifyFCTranspose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SimplifyFCTranspose</span></code></a>(target_weight_name)</p></td>
+<td><p>Rewrite <code class="docutils literal notranslate"><span class="pre">`y</span> <span class="pre">=</span> <span class="pre">nn.dense(x,</span> <span class="pre">transpose(w,</span> <span class="pre">[1,</span> <span class="pre">0]))`</span></code> to <code class="docutils literal notranslate"><span class="pre">`y</span> <span class="pre">=</span> <span class="pre">nn.dense(x,</span> <span class="pre">wt)`</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.transform.SimplifyInference" title="tvm.relay.transform.SimplifyInference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SimplifyInference</span></code></a>()</p></td>
 <td><p>Simplify the data-flow graph for inference phase.</p></td>
@@ -523,6 +529,28 @@ layout using the InferCorrectLayout infrastructure.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>ret</strong> – The registered pass that eliminates the dead code in a Relay program.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../ir.html#tvm.transform.Pass" title="tvm.transform.Pass">tvm.transform.Pass</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.relay.transform.DenseToSparse">
+<code class="sig-prename descclassname">tvm.relay.transform.</code><code class="sig-name descname">DenseToSparse</code><span class="sig-paren">(</span><em class="sig-param">weight_name</em>, <em class="sig-param">weight_shape</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.transform.DenseToSparse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rewrite qualified <code class="docutils literal notranslate"><span class="pre">`nn.dense</span> <span class="pre">operation`</span></code> to <code class="docutils literal notranslate"><span class="pre">`nn.sparse_dense`</span></code>
+This pass is used in <code class="docutils literal notranslate"><span class="pre">`data_dep_optimization.bsr_dense`</span></code>
+Parameters of this pass is generated by <code class="docutils literal notranslate"><span class="pre">`analysis.sparse_dense.process_params`</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>weight_name</strong> (<a class="reference internal" href="../ir.html#tvm.ir.Array" title="tvm.ir.Array"><em>Array</em></a><em>[</em><a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String"><em>String</em></a><em>]</em>) – Names of weights which qualified sparse contrains</p></li>
+<li><p><strong>weight_shape</strong> (<a class="reference internal" href="../ir.html#tvm.ir.Array" title="tvm.ir.Array"><em>Array</em></a><em>[</em><a class="reference internal" href="../ir.html#tvm.ir.Array" title="tvm.ir.Array"><em>Array</em></a><em>[</em><a class="reference internal" href="../tir.html#tvm.tir.IntImm" title="tvm.tir.IntImm"><em>IntImm</em></a><em>]</em><em>]</em>) – Weights shape in BSR format.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>ret</strong> – The registered DenseToSparse pass.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="../ir.html#tvm.transform.Pass" title="tvm.transform.Pass">tvm.transform.Pass</a></p>
@@ -847,6 +875,25 @@ operators with no annotated device.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>ret</strong> – The registered pass that rewrites an expression with annotated
 <cite>on_device</cite> operators.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../ir.html#tvm.transform.Pass" title="tvm.transform.Pass">tvm.transform.Pass</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tvm.relay.transform.SimplifyFCTranspose">
+<code class="sig-prename descclassname">tvm.relay.transform.</code><code class="sig-name descname">SimplifyFCTranspose</code><span class="sig-paren">(</span><em class="sig-param">target_weight_name</em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.transform.SimplifyFCTranspose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rewrite <code class="docutils literal notranslate"><span class="pre">`y</span> <span class="pre">=</span> <span class="pre">nn.dense(x,</span> <span class="pre">transpose(w,</span> <span class="pre">[1,</span> <span class="pre">0]))`</span></code> to <code class="docutils literal notranslate"><span class="pre">`y</span> <span class="pre">=</span> <span class="pre">nn.dense(x,</span> <span class="pre">wt)`</span></code>
+This pass is used in <code class="docutils literal notranslate"><span class="pre">`data_dep_optimization.simplify_fc_transpose`</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>weight_name</strong> (<a class="reference internal" href="../ir.html#tvm.ir.Array" title="tvm.ir.Array"><em>Array</em></a><em>[</em><a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String"><em>String</em></a><em>]</em>) – Names of weights which qualified <code class="docutils literal notranslate"><span class="pre">`y</span> <span class="pre">=</span> <span class="pre">nn.dense(x,</span> <span class="pre">transpose(w,</span> <span class="pre">[1,</span> <span class="pre">0]))`</span></code>
+This parameter is generated by <code class="docutils literal notranslate"><span class="pre">`analysis.search_fc_transpose`</span></code> function</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>ret</strong> – The registered SimplifyFCTranspose pass.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="../ir.html#tvm.transform.Pass" title="tvm.transform.Pass">tvm.transform.Pass</a></p>

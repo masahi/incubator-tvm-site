@@ -225,8 +225,7 @@ visitor is implemented.</p></li>
 <li><p>How a Schedule is lowered to either an IRModule class or a LLVM module. Otherwise,
 take a look at <code class="docutils literal notranslate"><span class="pre">python/tvm/build_module.py</span></code> to get some basics.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
-<span class="kn">import</span> <span class="nn">tvm</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">te</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
@@ -239,13 +238,15 @@ our customized lowering pass to manipulate the IR directly instead of using sche
 <span class="n">c</span> <span class="o">=</span> <a href="../../api/python/te.html#tvm.te.compute" title="View documentation for tvm.te.compute"><span class="n">te</span><span class="o">.</span><span class="n">compute</span></a><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="p">),</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
 
 <span class="n">sch</span> <span class="o">=</span> <a href="../../api/python/te.html#tvm.te.create_schedule" title="View documentation for tvm.te.create_schedule"><span class="n">te</span><span class="o">.</span><span class="n">create_schedule</span></a><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">op</span><span class="p">)</span>
-<span class="n">ir</span>  <span class="o">=</span> <a href="../../api/python/driver.html#tvm.lower" title="View documentation for tvm.lower"><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span></a><span class="p">(</span><span class="n">sch</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ir</span>  <span class="o">=</span> <a href="../../api/python/driver.html#tvm.lower" title="View documentation for tvm.lower"><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span></a><span class="p">(</span><span class="n">sch</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ir</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i, 0, 128) {
-  c[i] = (a[i] + b[i])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([a, b, c]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i, 0, 128) {
+    c[i] = (a[i] + b[i])
+  }
 }
 </pre></div>
 </div>
@@ -321,18 +322,7 @@ function will be skipped.</p>
 <div class="section" id="glue-to-lowering">
 <h2>Glue to Lowering<a class="headerlink" href="#glue-to-lowering" title="Permalink to this headline">¶</a></h2>
 <p>So far, we are done with writing this IR transformation pass. What we need to do next is to glue
-this pass to TVM’s lower pass. We can first call this function directly as a sanity check.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><span class="n">vectorize</span><span class="p">(</span><span class="n">ir</span><span class="p">))</span>
-</pre></div>
-</div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i.outer, 0, 16) {
-  vectorized (i.inner, 0, 8) {
-    c[((i.outer*8) + i.inner)] = (a[((i.outer*8) + i.inner)] + b[((i.outer*8) + i.inner)])
-  }
-}
-</pre></div>
-</div>
+this pass to TVM’s lower pass.</p>
 <p>In TVM, there is a property called <code class="docutils literal notranslate"><span class="pre">BuildConfig</span></code>. You can use this property to customize your
 own lowering options. In this case, we inject the pass written above into the TVM standard lowering
 pass by feeding <strong>a list of tuple</strong> as argument to <code class="docutils literal notranslate"><span class="pre">add_lower_pass</span></code>. “Tuple” indicates different
@@ -352,12 +342,14 @@ called after each phase is done.</p>
 </div>
 <p>Thus, a good place to put this transformation pass is just after Phase 1.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="k">with</span> <a href="../../api/python/target.html#tvm.target.build_config" title="View documentation for tvm.target.build_config"><span class="n">tvm</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">build_config</span></a><span class="p">(</span><span class="n">add_lower_pass</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">vectorize</span><span class="p">)])</span> <span class="k">as</span> <span class="n">cfg</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><a href="../../api/python/driver.html#tvm.lower" title="View documentation for tvm.lower"><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span></a><span class="p">(</span><span class="n">sch</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><a href="../../api/python/driver.html#tvm.lower" title="View documentation for tvm.lower"><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span></a><span class="p">(</span><span class="n">sch</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">]))</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i.outer, 0, 16) {
-  c[ramp((i.outer*8), 1, 8)] = (a[ramp((i.outer*8), 1, 8)] + b[ramp((i.outer*8), 1, 8)])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([a, b, c]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i.outer, 0, 16) {
+    c[ramp((i.outer*8), 1, 8)] = (a[ramp((i.outer*8), 1, 8)] + b[ramp((i.outer*8), 1, 8)])
+  }
 }
 </pre></div>
 </div>

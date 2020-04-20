@@ -89,7 +89,7 @@
 <!-- Node46 -->
 <g id="node46" class="node"><title>Node46</title>
 <g id="a_node46"><a xlink:href="tir_2function_8h.html" target="_top" xlink:title="TIR Function. ">
-<polygon fill="white" stroke="black" points="220.537,-531 220.537,-550 355.537,-550 355.537,-531 220.537,-531"/>
+<polygon fill="white" stroke="red" points="220.537,-531 220.537,-550 355.537,-550 355.537,-531 220.537,-531"/>
 <text text-anchor="middle" x="288.037" y="-538" font-family="Helvetica,sans-Serif" font-size="10.00">include/tvm/tir/function.h</text>
 </a>
 </g>

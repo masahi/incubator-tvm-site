@@ -670,7 +670,7 @@
 <!-- Node31 -->
 <g id="node31" class="node"><title>Node31</title>
 <g id="a_node31"><a xlink:href="tir_2function_8h.html" target="_top" xlink:title="TIR Function. ">
-<polygon fill="white" stroke="black" points="990.5,-319 990.5,-338 1125.5,-338 1125.5,-319 990.5,-319"/>
+<polygon fill="white" stroke="red" points="990.5,-319 990.5,-338 1125.5,-338 1125.5,-319 990.5,-319"/>
 <text text-anchor="middle" x="1058" y="-326" font-family="Helvetica,sans-Serif" font-size="10.00">include/tvm/tir/function.h</text>
 </a>
 </g>

@@ -34,7 +34,7 @@ var searchData=
   ['divide',['divide',['../namespacetopi.html#ab98c1bef2250b920060a8d92f2db2d93',1,'topi::divide(const tvm::PrimExpr &amp;a, const tvm::PrimExpr &amp;b)'],['../namespacetopi.html#a05b9306831fc8eba0b3796252129430e',1,'topi::divide(const tvm::te::Tensor &amp;A, const tvm::te::Tensor &amp;B, std::string name=&quot;T_&quot;&quot;divide&quot;, std::string tag=kBroadcast)'],['../namespacetopi.html#a5907acb7699792da001c148fc85390f8',1,'topi::divide(const tvm::te::Tensor &amp;A, const tvm::PrimExpr &amp;B, std::string name=&quot;T_&quot;&quot;divide&quot;, std::string tag=kElementWise)'],['../namespacetopi.html#a6f29afd22f13ef5cec1c247c93381199',1,'topi::divide(const tvm::PrimExpr &amp;A, const tvm::te::Tensor &amp;B, std::string name=&quot;T_&quot;&quot;divide&quot;, std::string tag=kElementWise)']]],
   ['dldatatype2string',['DLDataType2String',['../namespacetvm_1_1runtime.html#ac360f2d9815036ab1b4d84d9cfb46b4f',1,'tvm::runtime']]],
   ['docommreduce',['DoCommReduce',['../namespacetopi.html#ab5ae1df78350ee84b7dc49922523365d',1,'topi']]],
-  ['domaintouched',['DomainTouched',['../namespacetvm_1_1arith.html#a7f55bb82049e1b5f3a22fbd7b7ef3570',1,'tvm::arith']]],
+  ['domaintouched',['DomainTouched',['../namespacetvm_1_1arith.html#af183d4d8ee419f3df68d4be1f29edeea',1,'tvm::arith']]],
   ['double_5fbuffer',['double_buffer',['../classtvm_1_1te_1_1Stage.html#a0cdea4d4b25b730c44d86e6c57505000',1,'tvm::te::Stage']]],
   ['downcast',['Downcast',['../namespacetvm_1_1runtime.html#a756a222aed384e208f32d35d3412c918',1,'tvm::runtime']]],
   ['downcastnocheck',['DowncastNoCheck',['../classtvm_1_1runtime_1_1ObjectRef.html#acd04bb22a6861e9952c344ee8547411f',1,'tvm::runtime::ObjectRef']]],

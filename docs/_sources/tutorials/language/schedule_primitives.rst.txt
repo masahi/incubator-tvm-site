@@ -83,11 +83,14 @@ schedule computes tensor in a serial manner in a row-major order.
 
  .. code-block:: none
 
-    for (i, 0, m) {
-      for (j, 0, n) {
-        C[((i*stride) + (j*stride))] = (A[((i*stride) + (j*stride))]*B[((i*stride) + (j*stride))])
+    PrimFunc([A, B, C]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i, 0, m) {
+        for (j, 0, n) {
+          C[((i*stride) + (j*stride))] = (A[((i*stride) + (j*stride))]*B[((i*stride) + (j*stride))])
+        }
       }
     }
+
 
 
 
@@ -121,13 +124,16 @@ split
 
  .. code-block:: none
 
-    for (i.outer, 0, floordiv((m + 31), 32)) {
-      for (i.inner, 0, 32) {
-        if (likely((((i.outer*32) + i.inner) < m))) {
-          B[(((i.outer*32) + i.inner)*stride)] = (A[(((i.outer*32) + i.inner)*stride)]*2f)
+    PrimFunc([A, B]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i.outer, 0, floordiv((m + 31), 32)) {
+        for (i.inner, 0, 32) {
+          if (likely((((i.outer*32) + i.inner) < m))) {
+            B[(((i.outer*32) + i.inner)*stride)] = (A[(((i.outer*32) + i.inner)*stride)]*2f)
+          }
         }
       }
     }
+
 
 
 
@@ -155,13 +161,16 @@ contrary with :code:`factor`.
 
  .. code-block:: none
 
-    for (i.outer, 0, 32) {
-      for (i.inner, 0, floordiv((m + 31), 32)) {
-        if (likely(((i.inner + (i.outer*floordiv((m + 31), 32))) < m))) {
-          B[((i.inner + (i.outer*floordiv((m + 31), 32)))*stride)] = A[((i.inner + (i.outer*floordiv((m + 31), 32)))*stride)]
+    PrimFunc([A, B]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i.outer, 0, 32) {
+        for (i.inner, 0, floordiv((m + 31), 32)) {
+          if (likely(((i.inner + (i.outer*floordiv((m + 31), 32))) < m))) {
+            B[((i.inner + (i.outer*floordiv((m + 31), 32)))*stride)] = A[((i.inner + (i.outer*floordiv((m + 31), 32)))*stride)]
+          }
         }
       }
     }
+
 
 
 
@@ -191,19 +200,22 @@ axises.
 
  .. code-block:: none
 
-    for (i.outer, 0, floordiv((m + 9), 10)) {
-      for (j.outer, 0, floordiv((n + 4), 5)) {
-        for (i.inner, 0, 10) {
-          for (j.inner, 0, 5) {
-            if (likely((((i.outer*10) + i.inner) < m))) {
-              if (likely((((j.outer*5) + j.inner) < n))) {
-                B[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))] = A[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))]
+    PrimFunc([A, B]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i.outer, 0, floordiv((m + 9), 10)) {
+        for (j.outer, 0, floordiv((n + 4), 5)) {
+          for (i.inner, 0, 10) {
+            for (j.inner, 0, 5) {
+              if (likely((((i.outer*10) + i.inner) < m))) {
+                if (likely((((j.outer*5) + j.inner) < n))) {
+                  B[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))] = A[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))]
+                }
               }
             }
           }
         }
       }
     }
+
 
 
 
@@ -235,17 +247,20 @@ fuse
 
  .. code-block:: none
 
-    for (i.outer, 0, floordiv((m + 9), 10)) {
-      for (j.outer, 0, floordiv((n + 4), 5)) {
-        for (i.inner.j.inner.fused, 0, 50) {
-          if (likely((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5)) < m))) {
-            if (likely((((j.outer*5) + floormod(i.inner.j.inner.fused, 5)) < n))) {
-              B[((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5))*stride) + (((j.outer*5) + floormod(i.inner.j.inner.fused, 5))*stride))] = A[((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5))*stride) + (((j.outer*5) + floormod(i.inner.j.inner.fused, 5))*stride))]
+    PrimFunc([A, B]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i.outer, 0, floordiv((m + 9), 10)) {
+        for (j.outer, 0, floordiv((n + 4), 5)) {
+          for (i.inner.j.inner.fused, 0, 50) {
+            if (likely((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5)) < m))) {
+              if (likely((((j.outer*5) + floormod(i.inner.j.inner.fused, 5)) < n))) {
+                B[((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5))*stride) + (((j.outer*5) + floormod(i.inner.j.inner.fused, 5))*stride))] = A[((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5))*stride) + (((j.outer*5) + floormod(i.inner.j.inner.fused, 5))*stride))]
+              }
             }
           }
         }
       }
     }
+
 
 
 
@@ -277,19 +292,22 @@ reorder
 
  .. code-block:: none
 
-    for (i.inner, 0, 10) {
-      for (j.outer, 0, floordiv((n + 4), 5)) {
-        for (i.outer, 0, floordiv((m + 9), 10)) {
-          for (j.inner, 0, 5) {
-            if (likely((((i.outer*10) + i.inner) < m))) {
-              if (likely((((j.outer*5) + j.inner) < n))) {
-                B[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))] = A[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))]
+    PrimFunc([A, B]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i.inner, 0, 10) {
+        for (j.outer, 0, floordiv((n + 4), 5)) {
+          for (i.outer, 0, floordiv((m + 9), 10)) {
+            for (j.inner, 0, 5) {
+              if (likely((((i.outer*10) + i.inner) < m))) {
+                if (likely((((j.outer*5) + j.inner) < n))) {
+                  B[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))] = A[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))]
+                }
               }
             }
           }
         }
       }
     }
+
 
 
 
@@ -321,11 +339,14 @@ in gpu programming.
 
  .. code-block:: none
 
-    // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = floordiv((n + 63), 64)
-    // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 64
-    if (likely((((blockIdx.x*64) + threadIdx.x) < n))) {
-      B[(((blockIdx.x*64) + threadIdx.x)*stride)] = (A[(((blockIdx.x*64) + threadIdx.x)*stride)]*2f)
+    PrimFunc([A, B]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = floordiv((n + 63), 64)
+      // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 64
+      if (likely((((blockIdx.x*64) + threadIdx.x) < n))) {
+        B[(((blockIdx.x*64) + threadIdx.x)*stride)] = (A[(((blockIdx.x*64) + threadIdx.x)*stride)]*2f)
+      }
     }
+
 
 
 
@@ -355,12 +376,15 @@ tensors at the root separately by default.
 
  .. code-block:: none
 
-    for (i, 0, m) {
-      B[(i*stride)] = (A[(i*stride)] + 1f)
+    PrimFunc([A, B, C]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i, 0, m) {
+        B[(i*stride)] = (A[(i*stride)] + 1f)
+      }
+      for (i, 0, m) {
+        C[(i*stride)] = (B[(i*stride)]*2f)
+      }
     }
-    for (i, 0, m) {
-      C[(i*stride)] = (B[(i*stride)]*2f)
-    }
+
 
 
 
@@ -389,10 +413,13 @@ of computation of `C`.
 
  .. code-block:: none
 
-    for (i, 0, m) {
-      B[(i*stride)] = (A[(i*stride)] + 1f)
-      C[(i*stride)] = (B[(i*stride)]*2f)
+    PrimFunc([A, B, C]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i, 0, m) {
+        B[(i*stride)] = (A[(i*stride)] + 1f)
+        C[(i*stride)] = (B[(i*stride)]*2f)
+      }
     }
+
 
 
 
@@ -424,9 +451,12 @@ tensor is required.
 
  .. code-block:: none
 
-    for (i, 0, m) {
-      C[(i*stride)] = ((A[(i*stride)] + 1f)*2f)
+    PrimFunc([A, B, C]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i, 0, m) {
+        C[(i*stride)] = ((A[(i*stride)] + 1f)*2f)
+      }
     }
+
 
 
 
@@ -457,12 +487,15 @@ compute_root
 
  .. code-block:: none
 
-    for (i, 0, m) {
-      B[(i*stride)] = (A[(i*stride)] + 1f)
+    PrimFunc([A, B, C]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i, 0, m) {
+        B[(i*stride)] = (A[(i*stride)] + 1f)
+      }
+      for (i, 0, m) {
+        C[(i*stride)] = (B[(i*stride)]*2f)
+      }
     }
-    for (i, 0, m) {
-      C[(i*stride)] = (B[(i*stride)]*2f)
-    }
+
 
 
 

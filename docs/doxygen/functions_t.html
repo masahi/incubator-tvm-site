@@ -137,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="structtvm_1_1runtime_1_1vm_1_1Instruction.html#a46879dbe84105fb621a6167f8d73b223">tvm::runtime::vm::Instruction</a>
 </li>
 <li>Target()
-: <a class="el" href="classtvm_1_1Target.html#a37092add55b8d783bd4384eae6e37c42">tvm::Target</a>
+: <a class="el" href="classtvm_1_1Target.html#a38e57f96a834847f3c1d3e989c28bde0">tvm::Target</a>
 </li>
 <li>target_name
 : <a class="el" href="classtvm_1_1TargetNode.html#aeafc514163bba21ce3c676edd07dd7cb">tvm::TargetNode</a>
@@ -304,6 +304,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="structtvm_1_1relay_1_1FIFOBufferAttrs.html#ae99c13a1a258f33c862d605e3d594467">tvm::relay::FIFOBufferAttrs</a>
 , <a class="el" href="structtvm_1_1relay_1_1GetValidCountsAttrs.html#aa88b0715787f9214ceae0428dfc56a59">tvm::relay::GetValidCountsAttrs</a>
 , <a class="el" href="structtvm_1_1relay_1_1GlobalPool2DAttrs.html#aaae394b14069baaf0fc368ff7dd478ad">tvm::relay::GlobalPool2DAttrs</a>
+, <a class="el" href="structtvm_1_1relay_1_1GroupNormAttrs.html#aebe81c6629307816a5780e1993e394ca">tvm::relay::GroupNormAttrs</a>
 , <a class="el" href="structtvm_1_1relay_1_1InitOpAttrs.html#a42b2fdeafe5dd5da210743121c7d376b">tvm::relay::InitOpAttrs</a>
 , <a class="el" href="structtvm_1_1relay_1_1InstanceNormAttrs.html#ac544bd1cae7f0be21c013dd64a4637a3">tvm::relay::InstanceNormAttrs</a>
 , <a class="el" href="structtvm_1_1relay_1_1L2NormalizeAttrs.html#a8846fb06eb7489779dc6c663c3189126">tvm::relay::L2NormalizeAttrs</a>
@@ -462,6 +463,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classtvm_1_1tir_1_1BroadcastNode.html#a92870dff9a0739ddb0dbe773f6ba796b">tvm::tir::BroadcastNode</a>
 , <a class="el" href="classtvm_1_1tir_1_1BufferLoadNode.html#a477f569f62672f8cdbf3dafa5654c90d">tvm::tir::BufferLoadNode</a>
 , <a class="el" href="classtvm_1_1tir_1_1BufferNode.html#a9c4a74fd95cc9cd80f87b3f13bcdb8b3">tvm::tir::BufferNode</a>
+, <a class="el" href="classtvm_1_1tir_1_1BufferRealizeNode.html#a8d39e15d23d3f0ffc35d5092619d7ef8">tvm::tir::BufferRealizeNode</a>
 , <a class="el" href="classtvm_1_1tir_1_1BufferStoreNode.html#a5920a49e993b3b2d0e9aae769b6c023a">tvm::tir::BufferStoreNode</a>
 , <a class="el" href="classtvm_1_1tir_1_1CallNode.html#a7fc7aec73f8c704f165d3026fa732e07">tvm::tir::CallNode</a>
 , <a class="el" href="classtvm_1_1tir_1_1CastNode.html#ac25c688b4d081feffbba2feda042a700">tvm::tir::CastNode</a>
@@ -506,6 +508,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>TVM_DEFINE_NOTNULLABLE_OBJECT_REF_METHODS()
 : <a class="el" href="classtvm_1_1Bool.html#a39544ffed214f2c456c727f45ea7e88d">tvm::Bool</a>
 , <a class="el" href="classtvm_1_1runtime_1_1String.html#aeacca6bcd1c5be9fa93f9defcc9fe354">tvm::runtime::String</a>
+, <a class="el" href="classtvm_1_1tir_1_1BufferRealize.html#aff41aa8876a3cdafb2d760ecba8674d2">tvm::tir::BufferRealize</a>
+, <a class="el" href="classtvm_1_1tir_1_1Prefetch.html#ab50b989aeb05d3fd2b70de6267637ce4">tvm::tir::Prefetch</a>
 </li>
 <li>TVM_DEFINE_OBJECT_REF_COW_METHOD()
 : <a class="el" href="classtvm_1_1DictAttrs.html#adcb7e5ecede9d976bda30fb3f762c953">tvm::DictAttrs</a>
@@ -598,7 +602,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>TVMArgValue
 : <a class="el" href="classtvm_1_1runtime_1_1ObjectPtr.html#a7e8b2c6a4fde079ee813c425d2eb6b24">tvm::runtime::ObjectPtr&lt; T &gt;</a>
-, <a class="el" href="classtvm_1_1runtime_1_1TVMArgValue.html#a5fbd71750e5bbba6edc9094178af9276">tvm::runtime::TVMArgValue</a>
+, <a class="el" href="classtvm_1_1runtime_1_1TVMArgValue.html#a987b2fb283cea5484d4655e3f711c046">tvm::runtime::TVMArgValue</a>
 </li>
 <li>TVMMovableArgValue_
 : <a class="el" href="classtvm_1_1runtime_1_1ObjectPtr.html#acd985550cba6cf8509122cbd996c1557">tvm::runtime::ObjectPtr&lt; T &gt;</a>
@@ -681,7 +685,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classtvm_1_1TypedEnvFunc_3_01R_07Args_8_8_8_08_4.html#a41a6b9014d0feeb628ca7edfd0d26f0b">tvm::TypedEnvFunc&lt; R(Args...)&gt;</a>
 </li>
 <li>TypedPackedFunc()
-: <a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc_3_01R_07Args_8_8_8_08_4.html#af45a2ceff92e6f6c394ea766a45027a0">tvm::runtime::TypedPackedFunc&lt; R(Args...)&gt;</a>
+: <a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc_3_01R_07Args_8_8_8_08_4.html#afd8ee9dd9648c19b468bb4b0b00e8e4e">tvm::runtime::TypedPackedFunc&lt; R(Args...)&gt;</a>
 </li>
 <li>TypeIndex2Key()
 : <a class="el" href="classtvm_1_1runtime_1_1Object.html#a817ba6c23b7ee1821c48a75edf255a30">tvm::runtime::Object</a>
@@ -701,7 +705,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classtvm_1_1TypeRelation.html#ac26b1897eab8197ed26606ab81b7403b">tvm::TypeRelation</a>
 </li>
 <li>TypeReporter()
-: <a class="el" href="classtvm_1_1TypeReporter.html#aa3dc38a3c84d324d0b3a9f358460a091">tvm::TypeReporter</a>
+: <a class="el" href="classtvm_1_1TypeReporter.html#a8e7e05a07f9f7ad9bea91f27afac9051">tvm::TypeReporter</a>
 </li>
 <li>TypeVar()
 : <a class="el" href="classtvm_1_1TypeVar.html#acb27d306dde646c3494c49a16e670ba3">tvm::TypeVar</a>

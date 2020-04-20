@@ -241,10 +241,12 @@ together in the next schedule procedure.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i, 0, m) {
-  for (j, 0, n) {
-    B.v0[((i*stride) + (j*stride))] = (A0[((i*stride) + (j*stride))] + 2f)
-    B.v1[((i*stride) + (j*stride))] = (A1[((i*stride) + (j*stride))]*3f)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A0, A1, B.v0, B.v1]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i, 0, m) {
+    for (j, 0, n) {
+      B.v0[((i*stride) + (j*stride))] = (A0[((i*stride) + (j*stride))] + 2f)
+      B.v1[((i*stride) + (j*stride))] = (A1[((i*stride) + (j*stride))]*3f)
+    }
   }
 }
 </pre></div>
@@ -285,12 +287,14 @@ with <code class="xref py py-func docutils literal notranslate"><span class="pre
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i, 0, m) {
-  T.v0[(i*stride)] = -1
-  T.v1[(i*stride)] = -2147483648
-  for (k, 0, n) {
-    T.v0[(i*stride)] = tvm_if_then_else((val[((i*stride) + (k*stride))] &lt;= T.v1[(i*stride)]), T.v0[(i*stride)], idx[((i*stride) + (k*stride))])
-    T.v1[(i*stride)] = tvm_if_then_else((val[((i*stride) + (k*stride))] &lt;= T.v1[(i*stride)]), T.v1[(i*stride)], val[((i*stride) + (k*stride))])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([idx, val, T.v0, T.v1]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i, 0, m) {
+    T.v0[(i*stride)] = -1
+    T.v1[(i*stride)] = -2147483648
+    for (k, 0, n) {
+      T.v0[(i*stride)] = tvm_if_then_else((val[((i*stride) + (k*stride))] &lt;= T.v1[(i*stride)]), T.v0[(i*stride)], idx[((i*stride) + (k*stride))])
+      T.v1[(i*stride)] = tvm_if_then_else((val[((i*stride) + (k*stride))] &lt;= T.v1[(i*stride)]), T.v1[(i*stride)], val[((i*stride) + (k*stride))])
+    }
   }
 }
 </pre></div>
@@ -320,17 +324,19 @@ in terms of operation.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>// attr [B.v0] storage_scope = &quot;global&quot;
-allocate B.v0[float32 * n]
-// attr [B.v1] storage_scope = &quot;global&quot;
-allocate B.v1[float32 * n]
-for (i, 0, m) {
-  for (j, 0, n) {
-    B.v0[j] = (A0[((i*stride) + (j*stride))] + 2f)
-    B.v1[j] = (A0[((i*stride) + (j*stride))]*3f)
-  }
-  for (j, 0, n) {
-    C[((i*stride) + (j*stride))] = (A1[((i*stride) + (j*stride))] + B.v0[j])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A0, A1, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  // attr [B.v0] storage_scope = &quot;global&quot;
+  allocate B.v0[float32 * n]
+  // attr [B.v1] storage_scope = &quot;global&quot;
+  allocate B.v1[float32 * n]
+  for (i, 0, m) {
+    for (j, 0, n) {
+      B.v0[j] = (A0[((i*stride) + (j*stride))] + 2f)
+      B.v1[j] = (A0[((i*stride) + (j*stride))]*3f)
+    }
+    for (j, 0, n) {
+      C[((i*stride) + (j*stride))] = (A1[((i*stride) + (j*stride))] + B.v0[j])
+    }
   }
 }
 </pre></div>

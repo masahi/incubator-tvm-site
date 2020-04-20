@@ -338,17 +338,6 @@ training. Other models require a full post training calibration.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="n">qmodel</span> <span class="o">=</span> <span class="n">qmobilenet</span><span class="o">.</span><span class="n">mobilenet_v2</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Downloading: &quot;https://download.pytorch.org/models/mobilenet_v2-b0353104.pth&quot; to /workspace/.cache/torch/checkpoints/mobilenet_v2-b0353104.pth
-
-  0%|          | 0.00/13.6M [00:00&lt;?, ?B/s]
- 29%|##8       | 3.92M/13.6M [00:00&lt;00:00, 41.1MB/s]
- 47%|####6     | 6.34M/13.6M [00:00&lt;00:00, 34.3MB/s]
- 62%|######1   | 8.40M/13.6M [00:00&lt;00:00, 27.6MB/s]
- 88%|########7 | 11.9M/13.6M [00:00&lt;00:00, 29.8MB/s]
-100%|##########| 13.6M/13.6M [00:00&lt;00:00, 29.9MB/s]
-</pre></div>
-</div>
 </div>
 <div class="section" id="quantize-trace-and-run-the-pytorch-mobilenet-v2-model">
 <h2>Quantize, trace and run the PyTorch Mobilenet v2 model<a class="headerlink" href="#quantize-trace-and-run-the-pytorch-mobilenet-v2-model" title="Permalink to this headline">¶</a></h2>
@@ -438,7 +427,7 @@ output values are identical out of 1000 outputs from mobilenet v2.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Elapsed average ms: 6.2028009299999995
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>Elapsed average ms: 10.429512450000002
 </pre></div>
 </div>
 <div class="admonition note">

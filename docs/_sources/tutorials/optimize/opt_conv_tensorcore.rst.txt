@@ -340,68 +340,70 @@ one time.
 
  .. code-block:: none
 
-    // attr [iter_var(blockIdx.z, , blockIdx.z)] thread_extent = 196
-    // attr [Conv.wmma.accumulator] storage_scope = "wmma.accumulator"
-    allocate Conv.wmma.accumulator[float32 * 2048]
-    // attr [Apad.shared] storage_scope = "shared"
-    allocate Apad.shared[float16 * 12288]
-    // attr [W.shared] storage_scope = "shared"
-    allocate W.shared[float16 * 12288]
-    // attr [Apad.shared.wmma.matrix_a] storage_scope = "wmma.matrix_a"
-    allocate Apad.shared.wmma.matrix_a[float16 * 512]
-    // attr [W.shared.wmma.matrix_b] storage_scope = "wmma.matrix_b"
-    allocate W.shared.wmma.matrix_b[float16 * 1024]
-    // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = 2
-    // attr [iter_var(blockIdx.y, , blockIdx.y)] thread_extent = 4
-    // attr [iter_var(threadIdx.y, , threadIdx.y)] thread_extent = 4
-    // attr [iter_var(threadIdx.z, , threadIdx.z)] thread_extent = 2
-    for (n.c.init, 0, 2) {
-      for (o.c.init, 0, 4) {
-        for (nn.c.init, 0, 16) {
-          for (oo.c.init, 0, 16) {
-            Conv.wmma.accumulator[((((n.c.init*1024) + (o.c.init*256)) + (nn.c.init*16)) + oo.c.init)] = 0f
+    PrimFunc([A, W, Conv]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      // attr [iter_var(blockIdx.z, , blockIdx.z)] thread_extent = 196
+      // attr [Conv.wmma.accumulator] storage_scope = "wmma.accumulator"
+      allocate Conv.wmma.accumulator[float32 * 2048]
+      // attr [Apad.shared] storage_scope = "shared"
+      allocate Apad.shared[float16 * 12288]
+      // attr [W.shared] storage_scope = "shared"
+      allocate W.shared[float16 * 12288]
+      // attr [Apad.shared.wmma.matrix_a] storage_scope = "wmma.matrix_a"
+      allocate Apad.shared.wmma.matrix_a[float16 * 512]
+      // attr [W.shared.wmma.matrix_b] storage_scope = "wmma.matrix_b"
+      allocate W.shared.wmma.matrix_b[float16 * 1024]
+      // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = 2
+      // attr [iter_var(blockIdx.y, , blockIdx.y)] thread_extent = 4
+      // attr [iter_var(threadIdx.y, , threadIdx.y)] thread_extent = 4
+      // attr [iter_var(threadIdx.z, , threadIdx.z)] thread_extent = 2
+      for (n.c.init, 0, 2) {
+        for (o.c.init, 0, 4) {
+          for (nn.c.init, 0, 16) {
+            for (oo.c.init, 0, 16) {
+              Conv.wmma.accumulator[((((n.c.init*1024) + (o.c.init*256)) + (nn.c.init*16)) + oo.c.init)] = 0f
+            }
           }
         }
       }
-    }
-    for (ic.outer, 0, 8) {
-      for (kh, 0, 3) {
-        for (ax2, 0, 3) {
-          for (ax3, 0, 2) {
-            for (ax4.ax5.fused.outer, 0, 8) {
+      for (ic.outer, 0, 8) {
+        for (kh, 0, 3) {
+          for (ax2, 0, 3) {
+            for (ax3, 0, 2) {
+              for (ax4.ax5.fused.outer, 0, 8) {
+                // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 32
+                Apad.shared[((((((threadIdx.y*3072) + (threadIdx.z*1536)) + (ax2*512)) + (ax3*256)) + (ax4.ax5.fused.outer*32)) + threadIdx.x)] = tvm_if_then_else(((((1 <= (floordiv(blockIdx.z, 14) + kh)) && ((floordiv(blockIdx.z, 14) + kh) < 15)) && (1 <= (ax2 + floormod(blockIdx.z, 14)))) && ((ax2 + floormod(blockIdx.z, 14)) < 15)), A[(((((((((((blockIdx.x*6422528) + (threadIdx.y*1605632)) + (threadIdx.z*802816)) + (kh*57344)) + (blockIdx.z*4096)) + (ax2*4096)) + (ic.outer*512)) + (ax3*256)) + (ax4.ax5.fused.outer*32)) + threadIdx.x) - 61440)], 0h)
+              }
+            }
+          }
+          for (ax1, 0, 3) {
+            for (ax2, 0, 2) {
               // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 32
-              Apad.shared[((((((threadIdx.y*3072) + (threadIdx.z*1536)) + (ax2*512)) + (ax3*256)) + (ax4.ax5.fused.outer*32)) + threadIdx.x)] = tvm_if_then_else(((((1 <= (floordiv(blockIdx.z, 14) + kh)) && ((floordiv(blockIdx.z, 14) + kh) < 15)) && (1 <= (ax2 + floormod(blockIdx.z, 14)))) && ((ax2 + floormod(blockIdx.z, 14)) < 15)), A[(((((((((((blockIdx.x*6422528) + (threadIdx.y*1605632)) + (threadIdx.z*802816)) + (kh*57344)) + (blockIdx.z*4096)) + (ax2*4096)) + (ic.outer*512)) + (ax3*256)) + (ax4.ax5.fused.outer*32)) + threadIdx.x) - 61440)], 0h)
+              W.shared[ramp((((((ax1*4096) + (ax2*2048)) + (threadIdx.y*512)) + (threadIdx.z*256)) + (threadIdx.x*8)), 1, 8)] = W[ramp(((((((((kh*393216) + (ax1*131072)) + (ic.outer*16384)) + (ax2*8192)) + (blockIdx.y*2048)) + (threadIdx.y*512)) + (threadIdx.z*256)) + (threadIdx.x*8)), 1, 8)]
             }
           }
-        }
-        for (ax1, 0, 3) {
-          for (ax2, 0, 2) {
-            // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 32
-            W.shared[ramp((((((ax1*4096) + (ax2*2048)) + (threadIdx.y*512)) + (threadIdx.z*256)) + (threadIdx.x*8)), 1, 8)] = W[ramp(((((((((kh*393216) + (ax1*131072)) + (ic.outer*16384)) + (ax2*8192)) + (blockIdx.y*2048)) + (threadIdx.y*512)) + (threadIdx.z*256)) + (threadIdx.x*8)), 1, 8)]
-          }
-        }
-        for (ic.inner, 0, 2) {
-          for (kw, 0, 3) {
-            for (ax0, 0, 2) {
-              for (ax4, 0, 16) {
-                for (ax5, 0, 16) {
-                  Apad.shared.wmma.matrix_a[(((ax0*256) + (ax4*16)) + ax5)] = Apad.shared[((((((threadIdx.y*3072) + (ax0*1536)) + (kw*512)) + (ic.inner*256)) + (ax4*16)) + ax5)]
+          for (ic.inner, 0, 2) {
+            for (kw, 0, 3) {
+              for (ax0, 0, 2) {
+                for (ax4, 0, 16) {
+                  for (ax5, 0, 16) {
+                    Apad.shared.wmma.matrix_a[(((ax0*256) + (ax4*16)) + ax5)] = Apad.shared[((((((threadIdx.y*3072) + (ax0*1536)) + (kw*512)) + (ic.inner*256)) + (ax4*16)) + ax5)]
+                  }
                 }
               }
-            }
-            for (ax3, 0, 4) {
-              for (ax4, 0, 16) {
-                for (ax5, 0, 16) {
-                  W.shared.wmma.matrix_b[(((ax3*256) + (ax4*16)) + ax5)] = W.shared[((((((kw*4096) + (ic.inner*2048)) + (threadIdx.z*1024)) + (ax3*256)) + (ax4*16)) + ax5)]
+              for (ax3, 0, 4) {
+                for (ax4, 0, 16) {
+                  for (ax5, 0, 16) {
+                    W.shared.wmma.matrix_b[(((ax3*256) + (ax4*16)) + ax5)] = W.shared[((((((kw*4096) + (ic.inner*2048)) + (threadIdx.z*1024)) + (ax3*256)) + (ax4*16)) + ax5)]
+                  }
                 }
               }
-            }
-            for (n.c, 0, 2) {
-              for (o.c, 0, 4) {
-                for (nn.c, 0, 16) {
-                  for (oo.c, 0, 16) {
-                    for (ii, 0, 16) {
-                      Conv.wmma.accumulator[((((n.c*1024) + (o.c*256)) + (nn.c*16)) + oo.c)] = (Conv.wmma.accumulator[((((n.c*1024) + (o.c*256)) + (nn.c*16)) + oo.c)] + (float32(Apad.shared.wmma.matrix_a[(((n.c*256) + (nn.c*16)) + ii)])*float32(W.shared.wmma.matrix_b[(((o.c*256) + (ii*16)) + oo.c)])))
+              for (n.c, 0, 2) {
+                for (o.c, 0, 4) {
+                  for (nn.c, 0, 16) {
+                    for (oo.c, 0, 16) {
+                      for (ii, 0, 16) {
+                        Conv.wmma.accumulator[((((n.c*1024) + (o.c*256)) + (nn.c*16)) + oo.c)] = (Conv.wmma.accumulator[((((n.c*1024) + (o.c*256)) + (nn.c*16)) + oo.c)] + (float32(Apad.shared.wmma.matrix_a[(((n.c*256) + (nn.c*16)) + ii)])*float32(W.shared.wmma.matrix_b[(((o.c*256) + (ii*16)) + oo.c)])))
+                      }
                     }
                   }
                 }
@@ -410,16 +412,17 @@ one time.
           }
         }
       }
-    }
-    for (n.inner, 0, 2) {
-      for (o.inner, 0, 4) {
-        for (nn, 0, 16) {
-          for (oo, 0, 16) {
-            Conv[(((((((((blockIdx.x*12845056) + (threadIdx.y*3211264)) + (n.inner*1605632)) + (blockIdx.z*8192)) + (blockIdx.y*2048)) + (threadIdx.z*1024)) + (o.inner*256)) + (nn*16)) + oo)] = Conv.wmma.accumulator[((((n.inner*1024) + (o.inner*256)) + (nn*16)) + oo)]
+      for (n.inner, 0, 2) {
+        for (o.inner, 0, 4) {
+          for (nn, 0, 16) {
+            for (oo, 0, 16) {
+              Conv[(((((((((blockIdx.x*12845056) + (threadIdx.y*3211264)) + (n.inner*1605632)) + (blockIdx.z*8192)) + (blockIdx.y*2048)) + (threadIdx.z*1024)) + (o.inner*256)) + (nn*16)) + oo)] = Conv.wmma.accumulator[((((n.inner*1024) + (o.inner*256)) + (nn*16)) + oo)]
+            }
           }
         }
       }
     }
+
 
 
 
@@ -449,64 +452,67 @@ by mapping the 2D convolution to tensor intrinsics
 
  .. code-block:: none
 
-    // attr [iter_var(blockIdx.z, , blockIdx.z)] thread_extent = 196
-    // attr [Conv.wmma.accumulator] storage_scope = "wmma.accumulator"
-    allocate Conv.wmma.accumulator[float32 * 2048]
-    // attr [Apad.shared] storage_scope = "shared"
-    allocate Apad.shared[float16 * 12288]
-    // attr [W.shared] storage_scope = "shared"
-    allocate W.shared[float16 * 12288]
-    // attr [Apad.shared.wmma.matrix_a] storage_scope = "wmma.matrix_a"
-    allocate Apad.shared.wmma.matrix_a[float16 * 512]
-    // attr [W.shared.wmma.matrix_b] storage_scope = "wmma.matrix_b"
-    allocate W.shared.wmma.matrix_b[float16 * 1024]
-    // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = 2
-    // attr [iter_var(blockIdx.y, , blockIdx.y)] thread_extent = 4
-    // attr [iter_var(threadIdx.y, , threadIdx.y)] thread_extent = 4
-    // attr [iter_var(threadIdx.z, , threadIdx.z)] thread_extent = 2
-    for (n.c.init, 0, 2) {
-      for (o.c.init, 0, 4) {
-        tvm_fill_fragment(Conv.wmma.accumulator, 16, 16, 16, ((n.c.init*4) + o.c.init), 0f)
+    PrimFunc([A, W, Conv]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      // attr [iter_var(blockIdx.z, , blockIdx.z)] thread_extent = 196
+      // attr [Conv.wmma.accumulator] storage_scope = "wmma.accumulator"
+      allocate Conv.wmma.accumulator[float32 * 2048]
+      // attr [Apad.shared] storage_scope = "shared"
+      allocate Apad.shared[float16 * 12288]
+      // attr [W.shared] storage_scope = "shared"
+      allocate W.shared[float16 * 12288]
+      // attr [Apad.shared.wmma.matrix_a] storage_scope = "wmma.matrix_a"
+      allocate Apad.shared.wmma.matrix_a[float16 * 512]
+      // attr [W.shared.wmma.matrix_b] storage_scope = "wmma.matrix_b"
+      allocate W.shared.wmma.matrix_b[float16 * 1024]
+      // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = 2
+      // attr [iter_var(blockIdx.y, , blockIdx.y)] thread_extent = 4
+      // attr [iter_var(threadIdx.y, , threadIdx.y)] thread_extent = 4
+      // attr [iter_var(threadIdx.z, , threadIdx.z)] thread_extent = 2
+      for (n.c.init, 0, 2) {
+        for (o.c.init, 0, 4) {
+          tvm_fill_fragment(Conv.wmma.accumulator, 16, 16, 16, ((n.c.init*4) + o.c.init), 0f)
+        }
       }
-    }
-    for (ic.outer, 0, 8) {
-      for (kh, 0, 3) {
-        for (ax2, 0, 3) {
-          for (ax3, 0, 2) {
-            for (ax4.ax5.fused.outer, 0, 8) {
+      for (ic.outer, 0, 8) {
+        for (kh, 0, 3) {
+          for (ax2, 0, 3) {
+            for (ax3, 0, 2) {
+              for (ax4.ax5.fused.outer, 0, 8) {
+                // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 32
+                Apad.shared[((((((threadIdx.y*3072) + (threadIdx.z*1536)) + (ax2*512)) + (ax3*256)) + (ax4.ax5.fused.outer*32)) + threadIdx.x)] = tvm_if_then_else(((((1 <= (floordiv(blockIdx.z, 14) + kh)) && ((floordiv(blockIdx.z, 14) + kh) < 15)) && (1 <= (ax2 + floormod(blockIdx.z, 14)))) && ((ax2 + floormod(blockIdx.z, 14)) < 15)), A[(((((((((((blockIdx.x*6422528) + (threadIdx.y*1605632)) + (threadIdx.z*802816)) + (kh*57344)) + (blockIdx.z*4096)) + (ax2*4096)) + (ic.outer*512)) + (ax3*256)) + (ax4.ax5.fused.outer*32)) + threadIdx.x) - 61440)], 0h)
+              }
+            }
+          }
+          for (ax1, 0, 3) {
+            for (ax2, 0, 2) {
               // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 32
-              Apad.shared[((((((threadIdx.y*3072) + (threadIdx.z*1536)) + (ax2*512)) + (ax3*256)) + (ax4.ax5.fused.outer*32)) + threadIdx.x)] = tvm_if_then_else(((((1 <= (floordiv(blockIdx.z, 14) + kh)) && ((floordiv(blockIdx.z, 14) + kh) < 15)) && (1 <= (ax2 + floormod(blockIdx.z, 14)))) && ((ax2 + floormod(blockIdx.z, 14)) < 15)), A[(((((((((((blockIdx.x*6422528) + (threadIdx.y*1605632)) + (threadIdx.z*802816)) + (kh*57344)) + (blockIdx.z*4096)) + (ax2*4096)) + (ic.outer*512)) + (ax3*256)) + (ax4.ax5.fused.outer*32)) + threadIdx.x) - 61440)], 0h)
+              W.shared[ramp((((((ax1*4096) + (ax2*2048)) + (threadIdx.y*512)) + (threadIdx.z*256)) + (threadIdx.x*8)), 1, 8)] = W[ramp(((((((((kh*393216) + (ax1*131072)) + (ic.outer*16384)) + (ax2*8192)) + (blockIdx.y*2048)) + (threadIdx.y*512)) + (threadIdx.z*256)) + (threadIdx.x*8)), 1, 8)]
             }
           }
-        }
-        for (ax1, 0, 3) {
-          for (ax2, 0, 2) {
-            // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 32
-            W.shared[ramp((((((ax1*4096) + (ax2*2048)) + (threadIdx.y*512)) + (threadIdx.z*256)) + (threadIdx.x*8)), 1, 8)] = W[ramp(((((((((kh*393216) + (ax1*131072)) + (ic.outer*16384)) + (ax2*8192)) + (blockIdx.y*2048)) + (threadIdx.y*512)) + (threadIdx.z*256)) + (threadIdx.x*8)), 1, 8)]
-          }
-        }
-        for (ic.inner, 0, 2) {
-          for (kw, 0, 3) {
-            for (ax0, 0, 2) {
-              tvm_load_matrix_sync(Apad.shared.wmma.matrix_a, 16, 16, 16, ax0, tvm_access_ptr(type_annotation(), Apad.shared, ((((threadIdx.y*3072) + (ax0*1536)) + (kw*512)) + (ic.inner*256)), 256, 1), 16, "row_major")
-            }
-            for (ax3, 0, 4) {
-              tvm_load_matrix_sync(W.shared.wmma.matrix_b, 16, 16, 16, ax3, tvm_access_ptr(type_annotation(), W.shared, ((((kw*4096) + (ic.inner*2048)) + (threadIdx.z*1024)) + (ax3*256)), 256, 1), 16, "row_major")
-            }
-            for (n.c, 0, 2) {
-              for (o.c, 0, 4) {
-                tvm_mma_sync(Conv.wmma.accumulator, ((n.c*4) + o.c), Apad.shared.wmma.matrix_a, n.c, W.shared.wmma.matrix_b, o.c, Conv.wmma.accumulator, ((n.c*4) + o.c))
+          for (ic.inner, 0, 2) {
+            for (kw, 0, 3) {
+              for (ax0, 0, 2) {
+                tvm_load_matrix_sync(Apad.shared.wmma.matrix_a, 16, 16, 16, ax0, tvm_access_ptr(type_annotation(), Apad.shared, ((((threadIdx.y*3072) + (ax0*1536)) + (kw*512)) + (ic.inner*256)), 256, 1), 16, "row_major")
+              }
+              for (ax3, 0, 4) {
+                tvm_load_matrix_sync(W.shared.wmma.matrix_b, 16, 16, 16, ax3, tvm_access_ptr(type_annotation(), W.shared, ((((kw*4096) + (ic.inner*2048)) + (threadIdx.z*1024)) + (ax3*256)), 256, 1), 16, "row_major")
+              }
+              for (n.c, 0, 2) {
+                for (o.c, 0, 4) {
+                  tvm_mma_sync(Conv.wmma.accumulator, ((n.c*4) + o.c), Apad.shared.wmma.matrix_a, n.c, W.shared.wmma.matrix_b, o.c, Conv.wmma.accumulator, ((n.c*4) + o.c))
+                }
               }
             }
           }
         }
       }
-    }
-    for (n.inner, 0, 2) {
-      for (o.inner, 0, 4) {
-        tvm_store_matrix_sync(Conv.wmma.accumulator, 16, 16, 16, ((n.inner*4) + o.inner), tvm_access_ptr(type_annotation(), Conv, (((((((blockIdx.x*12845056) + (threadIdx.y*3211264)) + (n.inner*1605632)) + (blockIdx.z*8192)) + (blockIdx.y*2048)) + (threadIdx.z*1024)) + (o.inner*256)), 256, 2), 16, "row_major")
+      for (n.inner, 0, 2) {
+        for (o.inner, 0, 4) {
+          tvm_store_matrix_sync(Conv.wmma.accumulator, 16, 16, 16, ((n.inner*4) + o.inner), tvm_access_ptr(type_annotation(), Conv, (((((((blockIdx.x*12845056) + (threadIdx.y*3211264)) + (n.inner*1605632)) + (blockIdx.z*8192)) + (blockIdx.y*2048)) + (threadIdx.z*1024)) + (o.inner*256)), 256, 2), 16, "row_major")
+        }
       }
     }
+
 
 
 
@@ -543,7 +549,7 @@ be able to run on our build server
 
  .. code-block:: none
 
-    conv2d with tensor core: 6.301623 ms
+    conv2d with tensor core: 6.288323 ms
 
 
 

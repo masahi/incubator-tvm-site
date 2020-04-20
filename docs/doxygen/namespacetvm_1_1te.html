@@ -259,18 +259,24 @@ Functions</h2></td></tr>
 <tr class="memitem:a485034766309df280239e0994913b34b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1te_1_1Schedule.html">Schedule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#a485034766309df280239e0994913b34b">create_schedule</a> (<a class="el" href="classtvm_1_1Array.html">Array</a>&lt; <a class="el" href="classtvm_1_1te_1_1Operation.html">Operation</a> &gt; ops)</td></tr>
 <tr class="memdesc:a485034766309df280239e0994913b34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a schedule for array of ops(and their dependencies).  <a href="#a485034766309df280239e0994913b34b">More...</a><br /></td></tr>
 <tr class="separator:a485034766309df280239e0994913b34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0effd02bbddf8ce2cce7073e175ca4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1tir_1_1IterVar.html">IterVar</a>, <a class="el" href="classtvm_1_1Range.html">Range</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#ac0effd02bbddf8ce2cce7073e175ca4c">InferBound</a> (const <a class="el" href="classtvm_1_1te_1_1Schedule.html">Schedule</a> &amp;sch)</td></tr>
-<tr class="memdesc:ac0effd02bbddf8ce2cce7073e175ca4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infer the bound of all iteration variables relates to the schedule.  <a href="#ac0effd02bbddf8ce2cce7073e175ca4c">More...</a><br /></td></tr>
-<tr class="separator:ac0effd02bbddf8ce2cce7073e175ca4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5f0fdd7c2d3deb15b7855c5b1ff1aff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#ac5f0fdd7c2d3deb15b7855c5b1ff1aff">ScheduleOps</a> (<a class="el" href="classtvm_1_1te_1_1Schedule.html">Schedule</a> s, <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1tir_1_1IterVar.html">IterVar</a>, <a class="el" href="classtvm_1_1Range.html">Range</a> &gt; dom_map, bool debug_keep_trivial_loop)</td></tr>
-<tr class="memdesc:ac5f0fdd7c2d3deb15b7855c5b1ff1aff"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtvm_1_1te_1_1Schedule.html" title="Global schedule container For operations and all the operations they depend on. The schedule per Oper...">Schedule</a> s' dependent operations.  <a href="#ac5f0fdd7c2d3deb15b7855c5b1ff1aff">More...</a><br /></td></tr>
-<tr class="separator:ac5f0fdd7c2d3deb15b7855c5b1ff1aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26ae0c9351036d0f7ca362e3c857d24a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#a26ae0c9351036d0f7ca362e3c857d24a">AutoInlineElemWise</a> (<a class="el" href="classtvm_1_1te_1_1Schedule.html">Schedule</a> sch)</td></tr>
 <tr class="memdesc:a26ae0c9351036d0f7ca362e3c857d24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">To automatically inline the element-wise operations.  <a href="#a26ae0c9351036d0f7ca362e3c857d24a">More...</a><br /></td></tr>
 <tr class="separator:a26ae0c9351036d0f7ca362e3c857d24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9872626811f38606b4e934faa13b5b9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#a9872626811f38606b4e934faa13b5b9f">AutoInlineInjective</a> (<a class="el" href="classtvm_1_1te_1_1Schedule.html">Schedule</a> sch)</td></tr>
 <tr class="memdesc:a9872626811f38606b4e934faa13b5b9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">To automatically inline operations with injective writes (i.e. writes without reduction or sequential loops). Note that in this case, guarantees about contiguity, transpose, stride, alignemnt and memory footprint in general do not hold.  <a href="#a9872626811f38606b4e934faa13b5b9f">More...</a><br /></td></tr>
 <tr class="separator:a9872626811f38606b4e934faa13b5b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0effd02bbddf8ce2cce7073e175ca4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1tir_1_1IterVar.html">IterVar</a>, <a class="el" href="classtvm_1_1Range.html">Range</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#ac0effd02bbddf8ce2cce7073e175ca4c">InferBound</a> (const <a class="el" href="classtvm_1_1te_1_1Schedule.html">Schedule</a> &amp;sch)</td></tr>
+<tr class="memdesc:ac0effd02bbddf8ce2cce7073e175ca4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infer the bound of all iteration variables relates to the schedule.  <a href="#ac0effd02bbddf8ce2cce7073e175ca4c">More...</a><br /></td></tr>
+<tr class="separator:ac0effd02bbddf8ce2cce7073e175ca4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5f0fdd7c2d3deb15b7855c5b1ff1aff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#ac5f0fdd7c2d3deb15b7855c5b1ff1aff">ScheduleOps</a> (<a class="el" href="classtvm_1_1te_1_1Schedule.html">Schedule</a> s, <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1tir_1_1IterVar.html">IterVar</a>, <a class="el" href="classtvm_1_1Range.html">Range</a> &gt; dom_map, bool debug_keep_trivial_loop)</td></tr>
+<tr class="memdesc:ac5f0fdd7c2d3deb15b7855c5b1ff1aff"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtvm_1_1te_1_1Schedule.html" title="Global schedule container For operations and all the operations they depend on. The schedule per Oper...">Schedule</a> s' dependent operations.  <a href="#ac5f0fdd7c2d3deb15b7855c5b1ff1aff">More...</a><br /></td></tr>
+<tr class="separator:ac5f0fdd7c2d3deb15b7855c5b1ff1aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d673e072fd82ab0cdc68591e8fb071"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#af5d673e072fd82ab0cdc68591e8fb071">SchedulePostProcRewriteForTensorCore</a> (<a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> stmt, <a class="el" href="classtvm_1_1te_1_1Schedule.html">Schedule</a> schedule, <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a>, <a class="el" href="classtvm_1_1tir_1_1Buffer.html">Buffer</a> &gt; extern_buffer)</td></tr>
+<tr class="memdesc:af5d673e072fd82ab0cdc68591e8fb071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to modify the AST generated by ScheduleOps to support TensorCore.  <a href="#af5d673e072fd82ab0cdc68591e8fb071">More...</a><br /></td></tr>
+<tr class="separator:af5d673e072fd82ab0cdc68591e8fb071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eb39ad3aa5af348b1b27e755074f525"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1tir_1_1PrimFunc.html">PrimFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#a9eb39ad3aa5af348b1b27e755074f525">SchedulePostProcToPrimFunc</a> (<a class="el" href="classtvm_1_1Array.html">Array</a>&lt; ObjectRef &gt; arg_list, <a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> body, Optional&lt; <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a>, <a class="el" href="classtvm_1_1tir_1_1Buffer.html">Buffer</a> &gt;&gt; bindings)</td></tr>
+<tr class="memdesc:a9eb39ad3aa5af348b1b27e755074f525"><td class="mdescLeft">&#160;</td><td class="mdescRight">Postprocessing the Stmt generated by ScheduleOps to create a PrimFunc that can then be used for further TIR optimizations.  <a href="#a9eb39ad3aa5af348b1b27e755074f525">More...</a><br /></td></tr>
+<tr class="separator:a9eb39ad3aa5af348b1b27e755074f525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27eae569b04a2d43a513b654b6d2b98c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#a27eae569b04a2d43a513b654b6d2b98c">operator!</a> (const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;a)</td></tr>
 <tr class="separator:a27eae569b04a2d43a513b654b6d2b98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cbaaf91ad0e43d83d88a522fcb4214b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1te.html#a7cbaaf91ad0e43d83d88a522fcb4214b">operator-</a> (const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;a)</td></tr>
@@ -1218,42 +1224,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae558c447bd0877edf4d5b0e612a735a2"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a024b66eea44dbdea15a328e812c75a7f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1307,6 +1277,42 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae558c447bd0877edf4d5b0e612a735a2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -1666,42 +1672,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afba65b87ed8a5587c48b1f63ff9d8437"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a8d52a6dd288ed59dd3f75fac6e3833f4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1772,7 +1742,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a155868a829cdec5e04c00fee9fd6b8ab"></a>
+<a class="anchor" id="afba65b87ed8a5587c48b1f63ff9d8437"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1782,15 +1752,15 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&lt;= </td>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -1878,6 +1848,42 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a155868a829cdec5e04c00fee9fd6b8ab"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a5d186948df24bd18a8aef7eee3b37727"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1897,6 +1903,42 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a640a91e87c3d3a55c5df248c1a194b90"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -1948,7 +1990,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a640a91e87c3d3a55c5df248c1a194b90"></a>
+<a class="anchor" id="a74074c1b06a426adb0f300944b8c4e88"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1958,7 +2000,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator== </td>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt; </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -2054,7 +2096,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a74074c1b06a426adb0f300944b8c4e88"></a>
+<a class="anchor" id="a5cbaee6b481ab46d55c17206e2487eed"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -2064,7 +2106,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt; </td>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt;= </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -2109,42 +2151,6 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a5cbaee6b481ab46d55c17206e2487eed"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt;= </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -2232,6 +2238,40 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a9d3d9a057d5f1a36277ac4005f38bafa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a4a8524467a57ae005654a3f0cb816e3f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2268,45 +2308,9 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9d3d9a057d5f1a36277ac4005f38bafa"></a>
+<a class="anchor" id="a1619810ecdc1c9b051522a4313a2c24e"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtvm_1_1PrimExpr.html">PrimExpr</a> tvm::te::operator&gt;&gt; </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1fd6b8f8380a489cfcd806952c2aae42"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2320,7 +2324,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -2374,9 +2378,11 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a1619810ecdc1c9b051522a4313a2c24e"></a>
+<a class="anchor" id="a1fd6b8f8380a489cfcd806952c2aae42"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2390,7 +2396,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classtvm_1_1te_1_1Tensor_1_1Slice.html">Tensor::Slice</a> &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -2595,6 +2601,96 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result Stmt </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af5d673e072fd82ab0cdc68591e8fb071"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a> tvm::te::SchedulePostProcRewriteForTensorCore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td>
+          <td class="paramname"><em>stmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1te_1_1Schedule.html">Schedule</a>&#160;</td>
+          <td class="paramname"><em>schedule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a>, <a class="el" href="classtvm_1_1tir_1_1Buffer.html">Buffer</a> &gt;&#160;</td>
+          <td class="paramname"><em>extern_buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Try to modify the AST generated by ScheduleOps to support TensorCore. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stmt</td><td>The stmt to be trasnformed. </td></tr>
+    <tr><td class="paramname">schedule</td><td>The original schedule. </td></tr>
+    <tr><td class="paramname">extern_buffer</td><td><a class="el" href="classtvm_1_1Map.html" title="Map container of NodeRef-&gt;NodeRef in DSL graph. Map implements copy on write semantics, which means map is mutable but copy will happen when array is referenced in more than two places. ">Map</a> specifies external buffer assignment of input and outputs. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transformed stmt. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9eb39ad3aa5af348b1b27e755074f525"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1tir_1_1PrimFunc.html">PrimFunc</a> tvm::te::SchedulePostProcToPrimFunc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1Array.html">Array</a>&lt; ObjectRef &gt;&#160;</td>
+          <td class="paramname"><em>arg_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1tir_1_1Stmt.html">Stmt</a>&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Optional&lt; <a class="el" href="classtvm_1_1Map.html">Map</a>&lt; <a class="el" href="classtvm_1_1te_1_1Tensor.html">Tensor</a>, <a class="el" href="classtvm_1_1tir_1_1Buffer.html">Buffer</a> &gt;&gt;&#160;</td>
+          <td class="paramname"><em>bindings</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Postprocessing the Stmt generated by ScheduleOps to create a PrimFunc that can then be used for further TIR optimizations. </p>
+<p>Perform this translation before running any TIR optimizations.</p>
+<p>List of actions taken by the function:</p><ul>
+<li>Remove occurences of <a class="el" href="classtvm_1_1te_1_1Tensor.html" title="Tensor structure representing a possible input, or intermediate computation result. ">te::Tensor</a>, <a class="el" href="classtvm_1_1te_1_1Operation.html" title="Operation that produces tensors. ">te::Operation</a> in the IR and replace them by corresponding IR nodes via <a class="el" href="classtvm_1_1tir_1_1Buffer.html" title="Buffer is a symbolic n-darray structure. It is a composition of primitive symbolic types...">tir::Buffer</a>.</li>
+<li>Add annotation of extern buffers using the buffer_map field in the PrimFunc type.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg_list</td><td><a class="el" href="classtvm_1_1Array.html" title="Array container of NodeRef in DSL graph. Array implements copy on write semantics, which means array is mutable but copy will happen when array is referenced in more than two places. ">Array</a> of Tensor/Var/Buffer arguments to the function. </td></tr>
+    <tr><td class="paramname">body</td><td>The body of the function. </td></tr>
+    <tr><td class="paramname">bindings</td><td>potential <a class="el" href="classtvm_1_1te_1_1Tensor.html" title="Tensor structure representing a possible input, or intermediate computation result. ">Tensor</a> to Buffer bindings for the Tensors in the body. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

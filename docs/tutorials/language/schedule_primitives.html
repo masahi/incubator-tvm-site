@@ -255,9 +255,11 @@ schedule computes tensor in a serial manner in a row-major order.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i, 0, m) {
-  for (j, 0, n) {
-    C[((i*stride) + (j*stride))] = (A[((i*stride) + (j*stride))]*B[((i*stride) + (j*stride))])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i, 0, m) {
+    for (j, 0, n) {
+      C[((i*stride) + (j*stride))] = (A[((i*stride) + (j*stride))]*B[((i*stride) + (j*stride))])
+    }
   }
 }
 </pre></div>
@@ -278,10 +280,12 @@ methods to schedule every stage.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i.outer, 0, floordiv((m + 31), 32)) {
-  for (i.inner, 0, 32) {
-    if (likely((((i.outer*32) + i.inner) &lt; m))) {
-      B[(((i.outer*32) + i.inner)*stride)] = (A[(((i.outer*32) + i.inner)*stride)]*2f)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i.outer, 0, floordiv((m + 31), 32)) {
+    for (i.inner, 0, 32) {
+      if (likely((((i.outer*32) + i.inner) &lt; m))) {
+        B[(((i.outer*32) + i.inner)*stride)] = (A[(((i.outer*32) + i.inner)*stride)]*2f)
+      }
     }
   }
 }
@@ -298,10 +302,12 @@ contrary with <code class="code docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i.outer, 0, 32) {
-  for (i.inner, 0, floordiv((m + 31), 32)) {
-    if (likely(((i.inner + (i.outer*floordiv((m + 31), 32))) &lt; m))) {
-      B[((i.inner + (i.outer*floordiv((m + 31), 32)))*stride)] = A[((i.inner + (i.outer*floordiv((m + 31), 32)))*stride)]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i.outer, 0, 32) {
+    for (i.inner, 0, floordiv((m + 31), 32)) {
+      if (likely(((i.inner + (i.outer*floordiv((m + 31), 32))) &lt; m))) {
+        B[((i.inner + (i.outer*floordiv((m + 31), 32)))*stride)] = A[((i.inner + (i.outer*floordiv((m + 31), 32)))*stride)]
+      }
     }
   }
 }
@@ -321,13 +327,15 @@ axises.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i.outer, 0, floordiv((m + 9), 10)) {
-  for (j.outer, 0, floordiv((n + 4), 5)) {
-    for (i.inner, 0, 10) {
-      for (j.inner, 0, 5) {
-        if (likely((((i.outer*10) + i.inner) &lt; m))) {
-          if (likely((((j.outer*5) + j.inner) &lt; n))) {
-            B[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))] = A[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i.outer, 0, floordiv((m + 9), 10)) {
+    for (j.outer, 0, floordiv((n + 4), 5)) {
+      for (i.inner, 0, 10) {
+        for (j.inner, 0, 5) {
+          if (likely((((i.outer*10) + i.inner) &lt; m))) {
+            if (likely((((j.outer*5) + j.inner) &lt; n))) {
+              B[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))] = A[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))]
+            }
           }
         }
       }
@@ -352,12 +360,14 @@ axises.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i.outer, 0, floordiv((m + 9), 10)) {
-  for (j.outer, 0, floordiv((n + 4), 5)) {
-    for (i.inner.j.inner.fused, 0, 50) {
-      if (likely((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5)) &lt; m))) {
-        if (likely((((j.outer*5) + floormod(i.inner.j.inner.fused, 5)) &lt; n))) {
-          B[((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5))*stride) + (((j.outer*5) + floormod(i.inner.j.inner.fused, 5))*stride))] = A[((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5))*stride) + (((j.outer*5) + floormod(i.inner.j.inner.fused, 5))*stride))]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i.outer, 0, floordiv((m + 9), 10)) {
+    for (j.outer, 0, floordiv((n + 4), 5)) {
+      for (i.inner.j.inner.fused, 0, 50) {
+        if (likely((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5)) &lt; m))) {
+          if (likely((((j.outer*5) + floormod(i.inner.j.inner.fused, 5)) &lt; n))) {
+            B[((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5))*stride) + (((j.outer*5) + floormod(i.inner.j.inner.fused, 5))*stride))] = A[((((i.outer*10) + floordiv(i.inner.j.inner.fused, 5))*stride) + (((j.outer*5) + floormod(i.inner.j.inner.fused, 5))*stride))]
+          }
         }
       }
     }
@@ -381,13 +391,15 @@ axises.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i.inner, 0, 10) {
-  for (j.outer, 0, floordiv((n + 4), 5)) {
-    for (i.outer, 0, floordiv((m + 9), 10)) {
-      for (j.inner, 0, 5) {
-        if (likely((((i.outer*10) + i.inner) &lt; m))) {
-          if (likely((((j.outer*5) + j.inner) &lt; n))) {
-            B[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))] = A[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i.inner, 0, 10) {
+    for (j.outer, 0, floordiv((n + 4), 5)) {
+      for (i.outer, 0, floordiv((m + 9), 10)) {
+        for (j.inner, 0, 5) {
+          if (likely((((i.outer*10) + i.inner) &lt; m))) {
+            if (likely((((j.outer*5) + j.inner) &lt; n))) {
+              B[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))] = A[((((i.outer*10) + i.inner)*stride) + (((j.outer*5) + j.inner)*stride))]
+            }
           }
         }
       }
@@ -412,10 +424,12 @@ in gpu programming.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>// attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = floordiv((n + 63), 64)
-// attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 64
-if (likely((((blockIdx.x*64) + threadIdx.x) &lt; n))) {
-  B[(((blockIdx.x*64) + threadIdx.x)*stride)] = (A[(((blockIdx.x*64) + threadIdx.x)*stride)]*2f)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  // attr [iter_var(blockIdx.x, , blockIdx.x)] thread_extent = floordiv((n + 63), 64)
+  // attr [iter_var(threadIdx.x, , threadIdx.x)] thread_extent = 64
+  if (likely((((blockIdx.x*64) + threadIdx.x) &lt; n))) {
+    B[(((blockIdx.x*64) + threadIdx.x)*stride)] = (A[(((blockIdx.x*64) + threadIdx.x)*stride)]*2f)
+  }
 }
 </pre></div>
 </div>
@@ -433,11 +447,13 @@ tensors at the root separately by default.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i, 0, m) {
-  B[(i*stride)] = (A[(i*stride)] + 1f)
-}
-for (i, 0, m) {
-  C[(i*stride)] = (B[(i*stride)]*2f)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i, 0, m) {
+    B[(i*stride)] = (A[(i*stride)] + 1f)
+  }
+  for (i, 0, m) {
+    C[(i*stride)] = (B[(i*stride)]*2f)
+  }
 }
 </pre></div>
 </div>
@@ -453,9 +469,11 @@ of computation of <cite>C</cite>.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i, 0, m) {
-  B[(i*stride)] = (A[(i*stride)] + 1f)
-  C[(i*stride)] = (B[(i*stride)]*2f)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i, 0, m) {
+    B[(i*stride)] = (A[(i*stride)] + 1f)
+    C[(i*stride)] = (B[(i*stride)]*2f)
+  }
 }
 </pre></div>
 </div>
@@ -475,8 +493,10 @@ tensor is required.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i, 0, m) {
-  C[(i*stride)] = ((A[(i*stride)] + 1f)*2f)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i, 0, m) {
+    C[(i*stride)] = ((A[(i*stride)] + 1f)*2f)
+  }
 }
 </pre></div>
 </div>
@@ -495,11 +515,13 @@ tensor is required.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>for (i, 0, m) {
-  B[(i*stride)] = (A[(i*stride)] + 1f)
-}
-for (i, 0, m) {
-  C[(i*stride)] = (B[(i*stride)]*2f)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre>PrimFunc([A, B, C]) attrs={&quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;main&quot;} {
+  for (i, 0, m) {
+    B[(i*stride)] = (A[(i*stride)] + 1f)
+  }
+  for (i, 0, m) {
+    C[(i*stride)] = (B[(i*stride)]*2f)
+  }
 }
 </pre></div>
 </div>

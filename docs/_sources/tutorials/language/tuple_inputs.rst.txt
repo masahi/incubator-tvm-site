@@ -62,12 +62,15 @@ together in the next schedule procedure.
 
  .. code-block:: none
 
-    for (i, 0, m) {
-      for (j, 0, n) {
-        B.v0[((i*stride) + (j*stride))] = (A0[((i*stride) + (j*stride))] + 2f)
-        B.v1[((i*stride) + (j*stride))] = (A1[((i*stride) + (j*stride))]*3f)
+    PrimFunc([A0, A1, B.v0, B.v1]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i, 0, m) {
+        for (j, 0, n) {
+          B.v0[((i*stride) + (j*stride))] = (A0[((i*stride) + (j*stride))] + 2f)
+          B.v1[((i*stride) + (j*stride))] = (A1[((i*stride) + (j*stride))]*3f)
+        }
       }
     }
+
 
 
 
@@ -122,14 +125,17 @@ with :py:func:`te.comm_reducer` as below:
 
  .. code-block:: none
 
-    for (i, 0, m) {
-      T.v0[(i*stride)] = -1
-      T.v1[(i*stride)] = -2147483648
-      for (k, 0, n) {
-        T.v0[(i*stride)] = tvm_if_then_else((val[((i*stride) + (k*stride))] <= T.v1[(i*stride)]), T.v0[(i*stride)], idx[((i*stride) + (k*stride))])
-        T.v1[(i*stride)] = tvm_if_then_else((val[((i*stride) + (k*stride))] <= T.v1[(i*stride)]), T.v1[(i*stride)], val[((i*stride) + (k*stride))])
+    PrimFunc([idx, val, T.v0, T.v1]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      for (i, 0, m) {
+        T.v0[(i*stride)] = -1
+        T.v1[(i*stride)] = -2147483648
+        for (k, 0, n) {
+          T.v0[(i*stride)] = tvm_if_then_else((val[((i*stride) + (k*stride))] <= T.v1[(i*stride)]), T.v0[(i*stride)], idx[((i*stride) + (k*stride))])
+          T.v1[(i*stride)] = tvm_if_then_else((val[((i*stride) + (k*stride))] <= T.v1[(i*stride)]), T.v1[(i*stride)], val[((i*stride) + (k*stride))])
+        }
       }
     }
+
 
 
 
@@ -171,19 +177,22 @@ in terms of operation.
 
  .. code-block:: none
 
-    // attr [B.v0] storage_scope = "global"
-    allocate B.v0[float32 * n]
-    // attr [B.v1] storage_scope = "global"
-    allocate B.v1[float32 * n]
-    for (i, 0, m) {
-      for (j, 0, n) {
-        B.v0[j] = (A0[((i*stride) + (j*stride))] + 2f)
-        B.v1[j] = (A0[((i*stride) + (j*stride))]*3f)
-      }
-      for (j, 0, n) {
-        C[((i*stride) + (j*stride))] = (A1[((i*stride) + (j*stride))] + B.v0[j])
+    PrimFunc([A0, A1, C]) attrs={"tir.noalias": (bool)1, "global_symbol": "main"} {
+      // attr [B.v0] storage_scope = "global"
+      allocate B.v0[float32 * n]
+      // attr [B.v1] storage_scope = "global"
+      allocate B.v1[float32 * n]
+      for (i, 0, m) {
+        for (j, 0, n) {
+          B.v0[j] = (A0[((i*stride) + (j*stride))] + 2f)
+          B.v1[j] = (A0[((i*stride) + (j*stride))]*3f)
+        }
+        for (j, 0, n) {
+          C[((i*stride) + (j*stride))] = (A1[((i*stride) + (j*stride))] + B.v0[j])
+        }
       }
     }
+
 
 
 

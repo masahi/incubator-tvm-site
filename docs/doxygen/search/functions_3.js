@@ -60,7 +60,7 @@ var searchData=
   ['convert',['convert',['../structtvm_1_1Array_1_1ValueConverter.html#a0401a5aec9c7fa5f4d4388a835528434',1,'tvm::Array::ValueConverter::convert()'],['../structtvm_1_1Map_1_1ValueConverter.html#a82c6961ccf2b833396ff8742506bd32a',1,'tvm::Map::ValueConverter::convert()']]],
   ['convertlayout',['ConvertLayout',['../namespacetvm_1_1relay_1_1transform.html#ad12225e2ad26ae24fca669e180026689',1,'tvm::relay::transform']]],
   ['convertssa',['ConvertSSA',['../namespacetvm_1_1tir.html#afdbcd71b66872684f3dc873b9380520f',1,'tvm::tir']]],
-  ['coprocsync',['CoProcSync',['../namespacetvm_1_1tir.html#a9a890acc3681867fe74ad2207d17278f',1,'tvm::tir']]],
+  ['coprocsync',['CoProcSync',['../namespacetvm_1_1tir_1_1transform.html#aa234deedbe456bf561a1b90f2ed94206',1,'tvm::tir::transform']]],
   ['copy',['copy',['../classtvm_1_1te_1_1Schedule.html#a4991e4eaf1992f45708966c335b92307',1,'tvm::te::Schedule']]],
   ['copy_5fwith_5fsuffix',['copy_with_suffix',['../classtvm_1_1tir_1_1Var.html#a614c7820e199ca7251bc64cac4210465',1,'tvm::tir::Var']]],
   ['copydatafromto',['CopyDataFromTo',['../classtvm_1_1runtime_1_1DeviceAPI.html#a0cdbc58366129d3d6185bf7ae20a3226',1,'tvm::runtime::DeviceAPI']]],

@@ -2,7 +2,7 @@ var searchData=
 [
   ['name',['name',['../classtvm_1_1tir_1_1LayoutAxis.html#a79346e18a79feccd955471d13212fa15',1,'tvm::tir::LayoutAxis::name()'],['../classtvm_1_1tir_1_1Layout.html#a9c22206c841f0f09e20d56b9c96b321d',1,'tvm::tir::Layout::name()']]],
   ['name_5fhint',['name_hint',['../classtvm_1_1relay_1_1VarNode.html#aa9a3d5f1c750ab4e34f23bf21daeb53d',1,'tvm::relay::VarNode']]],
-  ['narrowdatatype',['NarrowDataType',['../namespacetvm_1_1tir.html#a6750ae524235092f44241921f7a17e0f',1,'tvm::tir::NarrowDataType()'],['../namespacetvm_1_1tir_1_1transform.html#aa97b7253e13e662adc5f9ad3367746a8',1,'tvm::tir::transform::NarrowDataType()']]],
+  ['narrowdatatype',['NarrowDataType',['../namespacetvm_1_1tir_1_1transform.html#aa97b7253e13e662adc5f9ad3367746a8',1,'tvm::tir::transform']]],
   ['ndarray',['NDArray',['../classtvm_1_1runtime_1_1NDArray.html#a4bbb80e8e36317829dd63e7f44ffbb0f',1,'tvm::runtime::NDArray::NDArray()'],['../classtvm_1_1runtime_1_1NDArray.html#af5801a105ceb450616a83d19c5c92326',1,'tvm::runtime::NDArray::NDArray(ObjectPtr&lt; Object &gt; data)']]],
   ['ndarray_5fsize',['ndarray_size',['../namespacetopi.html#a8d3203bcbca982300cfdfce1918e05ab',1,'topi']]],
   ['ndim',['ndim',['../classtvm_1_1te_1_1Tensor.html#abe7e5dcf5965fa514ba2a78b2f71a871',1,'tvm::te::Tensor::ndim()'],['../classtvm_1_1tir_1_1Layout.html#a4bca97ce52386c053a442ff960581f92',1,'tvm::tir::Layout::ndim()']]],

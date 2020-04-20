@@ -96,6 +96,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Functions</h2></td></tr>
 <tr class="memitem:a84d2274c83d3370561dae5a12bca0979"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a84d2274c83d3370561dae5a12bca0979">CreatePrimFuncPass</a> (const <a class="el" href="classtvm_1_1runtime_1_1TypedPackedFunc.html">runtime::TypedPackedFunc</a>&lt; <a class="el" href="classtvm_1_1tir_1_1PrimFunc.html">PrimFunc</a>(<a class="el" href="classtvm_1_1tir_1_1PrimFunc.html">PrimFunc</a>, <a class="el" href="classtvm_1_1IRModule.html">IRModule</a>, <a class="el" href="classtvm_1_1transform_1_1PassContext.html">PassContext</a>)&gt; &amp;pass_func, int opt_level, const std::string &amp;name, const <a class="el" href="classtvm_1_1Array.html">tvm::Array</a>&lt; <a class="el" href="classtvm_1_1runtime_1_1String.html">runtime::String</a> &gt; &amp;required)</td></tr>
 <tr class="separator:a84d2274c83d3370561dae5a12bca0979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20aa23d8985679d2e09685729c644f0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a20aa23d8985679d2e09685729c644f0f">InjectPrefetch</a> ()</td></tr>
+<tr class="memdesc:a20aa23d8985679d2e09685729c644f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inject prefetch instructions into stmt.  <a href="#a20aa23d8985679d2e09685729c644f0f">More...</a><br /></td></tr>
+<tr class="separator:a20aa23d8985679d2e09685729c644f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a778d3e1efecdff97e7bcf0e6a5406e61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a778d3e1efecdff97e7bcf0e6a5406e61">StorageFlatten</a> (int cache_line_size, bool create_bound_attribute=false)</td></tr>
+<tr class="memdesc:a778d3e1efecdff97e7bcf0e6a5406e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flatten the multi-dimensional read/write to single dimensional Load/Store.  <a href="#a778d3e1efecdff97e7bcf0e6a5406e61">More...</a><br /></td></tr>
+<tr class="separator:a778d3e1efecdff97e7bcf0e6a5406e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dfecef628981ef6eb93284f44092b9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a9dfecef628981ef6eb93284f44092b9a">InjectCopyIntrin</a> (std::string pragma_key, <a class="el" href="classtvm_1_1runtime_1_1PackedFunc.html">runtime::PackedFunc</a> fintrin)</td></tr>
+<tr class="memdesc:a9dfecef628981ef6eb93284f44092b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inject copy intrinsics with optional pad.  <a href="#a9dfecef628981ef6eb93284f44092b9a">More...</a><br /></td></tr>
+<tr class="separator:a9dfecef628981ef6eb93284f44092b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa234deedbe456bf561a1b90f2ed94206"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#aa234deedbe456bf561a1b90f2ed94206">CoProcSync</a> ()</td></tr>
+<tr class="memdesc:aa234deedbe456bf561a1b90f2ed94206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect and insert sync points to co-processor.  <a href="#aa234deedbe456bf561a1b90f2ed94206">More...</a><br /></td></tr>
+<tr class="separator:aa234deedbe456bf561a1b90f2ed94206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ab4224648e1d3eb8f57cd9d2e9c498"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a31ab4224648e1d3eb8f57cd9d2e9c498">LiftAttrScope</a> (std::string attr_key)</td></tr>
+<tr class="memdesc:a31ab4224648e1d3eb8f57cd9d2e9c498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lift common attrs with attr_key to outer scope.  <a href="#a31ab4224648e1d3eb8f57cd9d2e9c498">More...</a><br /></td></tr>
+<tr class="separator:a31ab4224648e1d3eb8f57cd9d2e9c498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ee46dbc8fdf2c3caac9b23905d92923"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a9ee46dbc8fdf2c3caac9b23905d92923">LoopPartition</a> (bool split_const_loop)</td></tr>
+<tr class="memdesc:a9ee46dbc8fdf2c3caac9b23905d92923"><td class="mdescLeft">&#160;</td><td class="mdescRight">partition loops in the stmt.  <a href="#a9ee46dbc8fdf2c3caac9b23905d92923">More...</a><br /></td></tr>
+<tr class="separator:a9ee46dbc8fdf2c3caac9b23905d92923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3cecb50a8b8fc8021f6a87bc27587da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#af3cecb50a8b8fc8021f6a87bc27587da">VectorizeLoop</a> (bool enable_vectorize=true)</td></tr>
+<tr class="memdesc:af3cecb50a8b8fc8021f6a87bc27587da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower vectorization loops.  <a href="#af3cecb50a8b8fc8021f6a87bc27587da">More...</a><br /></td></tr>
+<tr class="separator:af3cecb50a8b8fc8021f6a87bc27587da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ade618ab7572f92bd37f69049966c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a37ade618ab7572f92bd37f69049966c7">InjectVirtualThread</a> ()</td></tr>
+<tr class="memdesc:a37ade618ab7572f92bd37f69049966c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inject virtual thread loops.  <a href="#a37ade618ab7572f92bd37f69049966c7">More...</a><br /></td></tr>
+<tr class="separator:a37ade618ab7572f92bd37f69049966c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc64a7af5263224e1e7cbf753ce9429d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#adc64a7af5263224e1e7cbf753ce9429d">InjectDoubleBuffer</a> (int split_loop_factor)</td></tr>
+<tr class="memdesc:adc64a7af5263224e1e7cbf753ce9429d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inject double buffer statements.  <a href="#adc64a7af5263224e1e7cbf753ce9429d">More...</a><br /></td></tr>
+<tr class="separator:adc64a7af5263224e1e7cbf753ce9429d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe87b271e2c20e0ad901697f33c01d2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#abe87b271e2c20e0ad901697f33c01d2c">StorageRewrite</a> ()</td></tr>
+<tr class="memdesc:abe87b271e2c20e0ad901697f33c01d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrite storage allocation pattern. Moves the allocation to outer most possible scope. Trying to share space between allocations to make a static allocation plan when possible.  <a href="#abe87b271e2c20e0ad901697f33c01d2c">More...</a><br /></td></tr>
+<tr class="separator:abe87b271e2c20e0ad901697f33c01d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad488c9b0433b789300f333712ecc456c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#ad488c9b0433b789300f333712ecc456c">UnrollLoop</a> (int auto_max_step, int auto_max_depth, int auto_max_extent, bool explicit_unroll)</td></tr>
+<tr class="memdesc:ad488c9b0433b789300f333712ecc456c"><td class="mdescLeft">&#160;</td><td class="mdescRight">unroll the constant loop marked by unroll. This pass also automatically attach pragma unroll tag to loops which meets the standard.  <a href="#ad488c9b0433b789300f333712ecc456c">More...</a><br /></td></tr>
+<tr class="separator:ad488c9b0433b789300f333712ecc456c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aad1159425e29be796562b2ec629b10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a8aad1159425e29be796562b2ec629b10">RemoveNoOp</a> ()</td></tr>
+<tr class="memdesc:a8aad1159425e29be796562b2ec629b10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove No <a class="el" href="classtvm_1_1Op.html" title="Managed reference class to OpNode. ">Op</a> from the <a class="el" href="classtvm_1_1tir_1_1Stmt.html" title="Container of all statements. ">Stmt</a>.  <a href="#a8aad1159425e29be796562b2ec629b10">More...</a><br /></td></tr>
+<tr class="separator:a8aad1159425e29be796562b2ec629b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe43327c4454dd05b6e925577443f49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a4fe43327c4454dd05b6e925577443f49">RewriteUnsafeSelect</a> ()</td></tr>
+<tr class="memdesc:a4fe43327c4454dd05b6e925577443f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect and rewrite unsafe select that contains memory access.  <a href="#a4fe43327c4454dd05b6e925577443f49">More...</a><br /></td></tr>
+<tr class="separator:a4fe43327c4454dd05b6e925577443f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817801e8c9488f712804d2d0b821acf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a817801e8c9488f712804d2d0b821acf0">Simplify</a> ()</td></tr>
+<tr class="memdesc:a817801e8c9488f712804d2d0b821acf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run arithmetic simplifications on the statements and expressions.  <a href="#a817801e8c9488f712804d2d0b821acf0">More...</a><br /></td></tr>
+<tr class="separator:a817801e8c9488f712804d2d0b821acf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c492c5e21f3cd636bc27493153dcbbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#a8c492c5e21f3cd636bc27493153dcbbe">InstrumentBoundCheckers</a> ()</td></tr>
+<tr class="memdesc:a8c492c5e21f3cd636bc27493153dcbbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruments bound checkers.  <a href="#a8c492c5e21f3cd636bc27493153dcbbe">More...</a><br /></td></tr>
+<tr class="separator:a8c492c5e21f3cd636bc27493153dcbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abaf9c953f28d23408872beef5aa33af7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetvm_1_1tir_1_1transform.html#abaf9c953f28d23408872beef5aa33af7">MakePackedAPI</a> (int num_unpacked_args)</td></tr>
 <tr class="memdesc:abaf9c953f28d23408872beef5aa33af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform the high-level <a class="el" href="classtvm_1_1tir_1_1PrimFunc.html" title="Managed reference to PrimFuncNode. ">PrimFunc</a> to a low-level version that can be used as an API function.  <a href="#abaf9c953f28d23408872beef5aa33af7">More...</a><br /></td></tr>
 <tr class="separator:abaf9c953f28d23408872beef5aa33af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +203,24 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa234deedbe456bf561a1b90f2ed94206"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::CoProcSync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Detect and insert sync points to co-processor. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a84d2274c83d3370561dae5a12bca0979"></a>
 <div class="memitem">
 <div class="memproto">
@@ -210,6 +273,171 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Infer the TensorCore fragment infomation using tensor intrinsics. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9dfecef628981ef6eb93284f44092b9a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::InjectCopyIntrin </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pragma_key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtvm_1_1runtime_1_1PackedFunc.html">runtime::PackedFunc</a>&#160;</td>
+          <td class="paramname"><em>fintrin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inject copy intrinsics with optional pad. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pragma_key</td><td>The pragma key for hint of copy. </td></tr>
+    <tr><td class="paramname">fintrin</td><td>The function with signature</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><a class="el" href="classtvm_1_1tir_1_1Stmt.html" title="Container of all statements. ">Stmt</a> fintrin(<a class="el" href="classtvm_1_1tir_1_1Buffer.html" title="Buffer is a symbolic n-darray structure. It is a composition of primitive symbolic types...">Buffer</a> src, <a class="el" href="classtvm_1_1tir_1_1Buffer.html" title="Buffer is a symbolic n-darray structure. It is a composition of primitive symbolic types...">Buffer</a> dst, Array&lt;Expr&gt; pad_before, Array&lt;Expr&gt; pad_after, Expr pad_value) </p><dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adc64a7af5263224e1e7cbf753ce9429d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::InjectDoubleBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>split_loop_factor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inject double buffer statements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">split_loop_factor</td><td>Loop splitting factor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a20aa23d8985679d2e09685729c644f0f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::InjectPrefetch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inject prefetch instructions into stmt. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a37ade618ab7572f92bd37f69049966c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::InjectVirtualThread </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inject virtual thread loops. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8c492c5e21f3cd636bc27493153dcbbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::InstrumentBoundCheckers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Instruments bound checkers. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a31ab4224648e1d3eb8f57cd9d2e9c498"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::LiftAttrScope </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>attr_key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lift common attrs with attr_key to outer scope. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attr_key</td><td>The attribute key to be checked. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9ee46dbc8fdf2c3caac9b23905d92923"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::LoopPartition </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>split_const_loop</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>partition loops in the stmt. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">split_const_loop</td><td>flag to enable partition for const loop</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
 
 </div>
@@ -404,6 +632,60 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8aad1159425e29be796562b2ec629b10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::RemoveNoOp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove No <a class="el" href="classtvm_1_1Op.html" title="Managed reference class to OpNode. ">Op</a> from the <a class="el" href="classtvm_1_1tir_1_1Stmt.html" title="Container of all statements. ">Stmt</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4fe43327c4454dd05b6e925577443f49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::RewriteUnsafeSelect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Detect and rewrite unsafe select that contains memory access. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a817801e8c9488f712804d2d0b821acf0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::Simplify </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run arithmetic simplifications on the statements and expressions. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a6fdd5910b00af823071dcdddd21cd2d3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -440,6 +722,60 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a778d3e1efecdff97e7bcf0e6a5406e61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::StorageFlatten </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cache_line_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>create_bound_attribute</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flatten the multi-dimensional read/write to single dimensional Load/Store. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cache_line_size</td><td>The size of CPU cache line. </td></tr>
+    <tr><td class="paramname">create_bound_attribute</td><td>Whether to create bound attributes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The Pass </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abe87b271e2c20e0ad901697f33c01d2c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::StorageRewrite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rewrite storage allocation pattern. Moves the allocation to outer most possible scope. Trying to share space between allocations to make a static allocation plan when possible. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ae8de49a5e7fe70047962eac796351710"></a>
 <div class="memitem">
 <div class="memproto">
@@ -458,6 +794,81 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">storage_scope</td><td>The storage scope considered. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad488c9b0433b789300f333712ecc456c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::UnrollLoop </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>auto_max_step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>auto_max_depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>auto_max_extent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>explicit_unroll</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>unroll the constant loop marked by unroll. This pass also automatically attach pragma unroll tag to loops which meets the standard. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">auto_max_step</td><td>The maximum step before stop attach automatic unroll </td></tr>
+    <tr><td class="paramname">auto_max_depth</td><td>The maximum depth before stop attach automatic unroll </td></tr>
+    <tr><td class="paramname">auto_max_extent</td><td>The maximum extent of the loop we can unroll, this is an legacy option that do not take the loop total steps into account. </td></tr>
+    <tr><td class="paramname">explicit_unroll</td><td>Whether explicitly unroll the loop, or leave unroll annotation to codegen. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The pass. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af3cecb50a8b8fc8021f6a87bc27587da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtvm_1_1transform_1_1Pass.html">Pass</a> tvm::tir::transform::VectorizeLoop </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable_vectorize</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lower vectorization loops. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable_vectorize</td><td>Whether vectorization is enabled.</td></tr>
   </table>
   </dd>
 </dl>

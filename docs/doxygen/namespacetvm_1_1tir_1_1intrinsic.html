@@ -673,7 +673,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>See pseudo code. </p>
-<p><a class="el" href="classtvm_1_1Type.html" title="Managed reference to TypeNode. ">Type</a> tvm_warp_shuffle(Type value, warp_id) { return (value passed in by warp indicated by warp_id); } </p>
+<p><a class="el" href="classtvm_1_1Type.html" title="Managed reference to TypeNode. ">Type</a> tvm_warp_shuffle(Type value, warp_id, width, warp_size) { return (value passed in by warp indicated by warp_id); }</p>
+<p>Parameter warp_id indicates the source thread ID in a warp.</p>
+<p>Parameter width indicates the number of threads involved in one shuffle. See CUDA document for __shfl.</p>
+<p>Parameter warp_size is the size of a warp, which helps a backend to determine wheter the width paramter is legal. </p>
 
 </div>
 </div>
